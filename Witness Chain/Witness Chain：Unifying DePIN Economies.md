@@ -1,6 +1,6 @@
-# Witness Chain
+# Witness Chain: Unifying DePIN Economies
 
-撰文：Peyton，LYS Lab(X：[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3)**，Github：)
+撰文：Peyton，LYS Lab(X：[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3)**)
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408092049535.jpg)
 
@@ -190,8 +190,6 @@ Optimistic rollups通过在另一个链上验证交易，并将交易数据公�
 7. 挑战者将响应哈希、来自证明者的验证数据（带有证明者签名）、以及其传输时间和包数量（tt, np）与其签名一起转发给挑战协调者。
 8. 挑战协调者计算带宽，并将所有数据（挑战者列表及其响应）发布到链上。
 9. 验证数据后，PoB合约终止，托管中的代币分配给挑战者。
-
-
 
 ## 5.技术
 
