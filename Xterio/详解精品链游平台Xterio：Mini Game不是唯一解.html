@@ -1,0 +1,855 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --base-font: "思源宋体 CN Medium", "Helvetica Neue", "Noto Sans", -apple-system, Ubuntu,
+    "Microsoft YaHei", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans",
+    "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC",
+    "Source Han Sans CN", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
+    SimHei, "WenQuanYi Zen Hei Sharp", "Source Sans Pro", sans-serif;
+    --title-font: "思源宋体 CN Medium", "EB Garamond", Georgia, "Noto Serif", "Noto Serif CJK SC",
+    "Nimbus Roman No9 L", "Songti SC", "Source Han Serif SC",
+    "Source Han Serif CN", STSong, "AR PL New Sung", "AR PL SungtiL GB", NSimSun,
+    SimSun, "TW\-Sung", "WenQuanYi Bitmap Song", "AR PL UMing CN",
+    "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", PMingLiU, MingLiU,
+    "Ubuntu", "Source Sans Pro", serif;
+    --monospace: "JetBrains Mono", "Fira Code", "Cascadia Code", "Sarasa Term SC",
+    Monaco, "Deja Vu Sans Mono", Consolas, "Lucida Console", "Andale Mono",
+    "Roboto Mono", Courier, Monospace !important;
+}
+  
+
+/* 日间 */
+/* light */
+:root {
+    --title-color: #6f79ff;
+    --text-color: #353535;
+    --light-text-color: #666666;
+    --link-color: #55d3e4;
+    --code-color: #937fce;
+
+    --shadow-color: rgba(128, 107, 192, 0.1);
+    --blue: #559CE4;
+    --Mica: #f3f3f3;
+    --border: rgb(179, 179, 179);
+    --shadow: 0.4rem 0.8rem 1.6rem var(--shadow-color);
+
+    --table-background-color: #fcfcfc;
+
+    --side-bar-bg-color: var(--Mica);
+    --control-text-color: var(var(--light-text-color));
+    --active-file-text-color: var(--title-color);
+    --active-file-bg-color: var(--shadow-color);
+    --item-hover-bg-color: var(--shadow-color);
+    --active-file-border-color: var(var(--title-color));
+}
+
+.cm-s-inner {
+    padding: 0.25rem;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.cm-s-inner.CodeMirror,
+.cm-s-inner .CodeMirror-gutters {
+    color: #3a3432 !important;
+    border: none;
+}
+
+.cm-s-inner .CodeMirror-gutters {
+    color: #6d8a88;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+    padding: 0 0.1rem 0 0.3rem;
+    color: #b8b5b4;
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span::-moz-selection,
+.cm-s-inner .CodeMirror-line > span > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::-moz-selection {
+    background: var(--shadow-color);
+}
+
+.md-fences.md-focus .cm-s-inner .CodeMirror-activeline-background {
+    background: var(--shadow-color);
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: #a34e8f !important;
+}
+
+#fences-auto-suggest .active {
+    background: #ddd;
+}
+
+.cm-s-inner span.cm-comment {
+    color: #9daab6;
+}
+
+.cm-s-inner span.cm-builtin {
+    color: #0451a5;
+}
+
+
+/* 打印 */
+/* print */
+@media print {
+    html {
+        font-size: 0.9rem;
+    }
+
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+
+    #write {
+        max-width: 100%;
+    }
+
+    @page {
+        size: A4; /* PDF A4 */
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: initial;
+}
+
+
+/* 页边距 和 页面大小 */
+#write {
+    font-family: var(--base-font);
+    /* max-width: 914px; */
+    margin: 0 auto;
+    padding: 1rem 4rem;
+    padding-bottom: 100px;
+}
+
+#write p {
+    line-height: 1.6rem;
+    word-spacing: 0.05rem;
+}
+
+body {
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6rem;
+    letter-spacing: 0;
+    overflow-x: hidden;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+
+/* 标题 */
+/* title */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    cursor: text;
+    color: var(--title-color);
+    font-family: var(--title-font);
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+    background: linear-gradient(to bottom, #43CBFF, #9708CC);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    caret-color: var(--text-color);
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 2rem;
+}
+
+h1:after {
+    content: "";
+    display: block;
+    margin: 0.2em auto 0;
+    width: 6rem;
+    height: 2.4px;
+    border-bottom: 2px solid var(--title-color);
+}
+
+h2 {
+    padding-left: 0.4em;
+    font-size: 1.6em;
+    border-left: 0.4em solid var(--title-color);
+    border-bottom: 1px solid var(--title-color);
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+h6 {
+    font-size: 1.0em;
+}
+
+
+/* 超链接 */
+/* hyperlink */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+#write a {
+    border-bottom: none;
+    background: linear-gradient(to bottom, #3C8CE7, #00EAFF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    caret-color: var(--text-color);
+}
+
+#write a:hover {
+    border-bottom: 1px solid var(--link-color);
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.md-content {
+    color: var(--light-text-color);
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+/* horizontal rule */
+hr {
+    margin: 1em auto;
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+
+/* 列表 */
+li > ol,
+li > ul {
+    margin: 0 0;
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul,
+ol {
+    padding-left: 2rem;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+#write ol li,
+ul li {
+    padding-left: 0.1rem;
+}
+
+
+/* 表格 */
+table {
+    margin-bottom: 1.25rem;
+}
+
+table th,
+table td {
+    padding: 8px;
+    line-height: 1.25rem;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+
+table th {
+    font-weight: bold;
+}
+
+table thead th {
+    vertical-align: middle;
+}
+
+table tr:nth-child(2n),
+thead {
+    background-color: var(--table-background-color);
+}
+
+
+/* 引用 */
+blockquote {
+    border-left: 0.2em solid var(--blue);
+    padding-left: 1em;
+    color: var(--light-text-color);
+    font-family: var(--base-font);
+}
+
+
+/* 文字样式 */
+strong,
+em,
+code,
+tt,
+mark {
+    padding: 0 4px;
+    border-radius: 8px 8px 8px 8px;
+    margin: 0 2px;
+    color: var(--text-color);
+    background-color: var(--Mica);
+}
+
+/* 粗体 */
+#write strong {
+    font-weight: bold;
+
+}
+
+/* 斜体 */
+#write em {
+
+}
+
+/* 行间公式 */
+/* inline code */
+#write code,
+tt {
+    font-family: var(--monospace);
+    color: var(--code-color);
+    margin: 0 2px;
+}
+
+#write .md-footnote {
+    color: var(--code-color);
+    background-color: #f4f2f9;
+}
+
+/* 高亮 */
+/* highlight */
+#write mark {
+    background-color: #FDEEBB;
+    color: #e9781e;
+}
+
+#write del {
+    padding: 1px 2px;
+}
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: var(--Mica);
+    border: 0;
+    border-radius: 20px 20px 20px 20px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block > .code-tooltip {
+    bottom: 0.375rem;
+}
+
+/* 图片 */
+/* imag */
+.md-image > .md-meta {
+    border-radius: 20px 20px 20px 20px;
+    font-family: var(--monospace);
+    padding: 2px 0 0 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+/* 图片靠左显示 */
+/* p .md-image:only-child {
+  width: auto;
+  text-align: left;
+  margin-left: 2rem;
+} */
+
+/* 写![shadow-...]() 显示图片阴影 */
+img[alt|="shadow"] {
+    box-shadow: 0.4rem 0.8rem 1.6rem var(--shadow-color);
+}
+
+/* 目录 */
+/* TOC */
+#write .md-toc {
+    background-color: var(--Mica);
+    border-radius: 20px 20px 20px 20px;
+    padding: 2px 4px;
+    margin: 0 2px;
+}
+
+#write a.md-toc-inner {
+    line-height: 1.5;
+    white-space: pre-line;
+    border-bottom: none;
+    font-size: 1rem;
+}
+
+.md-toc-h1 {
+    display: none;
+}
+
+#write .md-toc-h2 .md-toc-inner {
+    font-size: 1.2rem;
+}
+
+#write .md-toc-h3 .md-toc-inner {
+    font-size: 1.1rem;
+}
+
+#write .md-toc-item:before {
+    display: block;
+    color: rgb(65, 131, 196);
+}
+
+#write .md-toc-h2 .md-toc-inner {
+    font-weight: bold;
+}
+
+.md-toc-h5,
+.md-toc-h6 {
+    display: none;
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: var(--base-font);
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #e6f0fe;
+}
+
+/* 代码段 背景 */
+pre {
+    --select-text-bg-color: #e4d4f5;
+}
+
+/* border and bg */
+.md-fences {
+    border-radius: 20px 20px 20px 20px;
+    background: var(--Mica);
+    backdrop-filter: blur(15px);
+}
+
+#write pre.md-fences {
+    display: block;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: var(--shadow);
+}
+
+
+/* language tip */
+#write .code-tooltip {
+    border: 1px solid var(--border);
+    border-radius: 24px 24px 24px 24px;
+    padding: 8px 12px 8px 12px;
+    margin: 8px 12px 8px 12px;
+}
+
+
+.auto-suggest-container {
+    border-color: #b4b4b4;
+}
+
+.auto-suggest-container .autoComplt-hint.active {
+    background: #b4b4b4;
+    color: inherit;
+}
+
+/* task list */
+#write .md-task-list-item > input {
+    -webkit-appearance: initial;
+    display: block;
+    position: absolute;
+    border: 1px solid #b4b4b4;
+    border-radius: 20px 20px 20px 20px;
+    margin-top: 0.3rem;
+    height: 1rem;
+    width: 1rem;
+    transition: background 0.3s;
+}
+
+
+#write .md-task-list-item > input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#write .md-task-list-item > input:hover {
+    background: #ddd;
+}
+
+#write .md-task-list-item > input[checked]::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 60%;
+    width: 2px;
+    transform: rotate(40deg);
+    background: #333;
+}
+
+#write .md-task-list-item > input[checked]::after {
+    content: "";
+    position: absolute;
+    top: 46%;
+    left: 25%;
+    height: 30%;
+    width: 2px;
+    transform: rotate(-40deg);
+    background: #333;
+}
+
+#write .md-task-list-item > p {
+    transition: color 0.3s, opacity 0.3s;
+}
+
+#write .md-task-list-item.task-list-done > p {
+    color: #b4b4b4;
+    text-decoration: line-through;
+}
+
+#write .md-task-list-item.task-list-done > p > .md-emoji {
+    opacity: 0.5;
+}
+
+#write .md-task-list-item.task-list-done > p > .md-link > a {
+    opacity: 0.6;
+}
+
+
+/* 侧栏 */
+/* sidebar */
+#typora-sidebar,
+.typora-node #typora-sidebar {
+    box-shadow: 3px 0px 10px var(--shadow-color);
+    color: var(--text-color);
+}
+
+.sidebar-content-content {
+    font-size: 0.9rem;
+}
+
+/* 选中的文字 */
+::selection {
+    background: #ccc;
+    color: var(--blue);
+}
+
+::-moz-selection {
+    background: #ccc;
+    color: var(--blue);
+}
+
+::-webkit-selection {
+    background: #ccc;
+    color: var(--blue);
+}
+
+
+
+
+
+
+
+
+
+</style><title>详解精品链游平台Xterio：Mini Game不是唯一解</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408131650888.png" referrerpolicy="no-referrer" alt="图片1"></p><h1 id='详解精品链游平台xteriomini-game不是唯一解'><span>详解精品链游平台Xterio：Mini Game不是唯一解</span></h1><p><span>撰文：Peyton，LYS Lab(X：</span><a href='https://x.com/LingyueSamaWeb3'><span>@LingyueSamaWeb3</span></a><span>)</span></p><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408092049535.jpg" referrerpolicy="no-referrer"></p><h1 id='结论'><span>结论</span></h1><ul><li><p><span>通过竞品分析可以发现，Xterio在业务、财务、社区这一块表现都不错，如果不考虑TON链这个“另类”一点的竞品，Xterio在这几个指标上均为同类竞品中的第一或第二。而且Xterio还是精品游戏最多的链游平台，在游戏可玩性方面表现突出。</span></p></li><li><p><span>商业模式这块，Xterio既有自研游戏（开发商），又搭游戏平台（发行商），还做AI和NFT市场，2B2C均有涉及，收入来源是比较多元的。而且，能布局出这等业务版图的Xterio团队，也果不其然，在Web2游戏开发方面有深厚经验。</span></p></li><li><p><span>除此之外，Xterio还是币安领投项目，目前披露融资额达5500万，而且还在BNB链上发了Xterio L2链，总的来说和币安合作密切，上所预期较高，值得关注。</span></p><p>&nbsp;</p></li></ul><h1 id='风险'><span>风险</span></h1><ul><li><p><span>Xterio经济模型细节未公布，空投预期也不明确，收益存在不确定性。</span></p></li><li><p><span>Xterio旗下游戏产品很多，盲目参与的机会成本较高，尽可能有选择性参与。但是目前自研游戏的参与机会不多，需要后续保持关注。</span></p></li><li><p><span>Xterio自己开发高质量的链游周期可能会较长，对资金的要求比较高，如果自研游戏不达预期可能拖累整个平台的发展。</span></p></li></ul><h1 id='基本面'><span>基本面</span></h1><h2 id='关键数据速览'><span>关键数据速览</span></h2><p><span>2024年8月中旬数据：</span></p><ul><li><p><span>Xterio游戏</span></p><ul><li><p><span>Age of Dino（恐龙时代）目前融资总额800万美金。推特粉丝数268.9K。</span></p></li><li><p><span>Overworld披露的融资总额达1250万美金。推特粉丝数279.2K。</span></p></li><li><p><span>TTT（现为City Shadows）旧推特粉丝数136.1K，新推特粉丝数2K。</span></p></li><li><p><span>在Xterio平台上（即将）推出的总计68款游戏中，有36款游戏推特粉丝数超过了100K量级，其中4款自研游戏全都突破100K粉丝量。</span></p></li><li><p><span>Xterio入围RootData 2023年GameFi赛道Top20项目。</span></p></li></ul></li><li><p><span>Xterio Chain</span></p><ul><li><p><span>TVL：1.93M ETH rank 5/16</span></p></li><li><p><span>（再）质押者总数：40709 rank 10/16</span></p></li><li><p><span>节点运营商总数：84 rank 4/16</span></p></li></ul></li><li><p><span>Xterio推特粉丝数：523.94 K</span></p></li><li><p><span>Xterio融资信息：已公布5500万美金融资，领投机构包括Binance Labs，Makers Fund， FTX Ventures， FunPlus。</span></p></li><li><p><span>Xterio估值信息：第一轮融资时估值3亿美金，第二轮未披露。</span></p></li></ul><h2 id='团队'><span>团队</span></h2><p><span>Xterio的团队和工作室遍布世界各地，如旧金山、洛杉矶、东京和新加坡等城市。</span></p><ul><li><p><strong><span>Michael Tong</span></strong><span> 是 Xterio 的联合创始人兼首席执行官，同时还是 FunPlus 的首席战略官。他毕业于威斯康星大学麦迪逊分校。网易前首席运营官。他在科技、Web2 游戏和娱乐公司拥有丰富的经验，曾在 Ubisoft、Krafton、Jam City、网易等公司担任高级职位。</span></p></li><li><p><strong><span>Jeremy Horn</span></strong><span>是Xterio的联合创始人兼首席运营官，同时也是FunPlus的副总裁和创新主管。他毕业于阿萨斯大学（University of Assas）。Jeremy Horn 在游戏行业拥有超过 15 年的丰富经验，尤其是在移动社交游戏领域，拥有丰富的自由转型游戏经验。曾被 Pocket Gamer 业内权威网站评选为 2015 年度最具影响力的人物之一。曾任 Jam City 游戏公司的业务和战略副总裁。Jam City 是一家知名的移动游戏开发商，其代表作包括《哈利波特:霍格沃茨神秘事务》等。Jam City 也参与投资了 Xterio 项目。</span></p></li><li><p><span>Brett Krause 是 Xterio 的基金会主席和 Transcend Fund 的普通合伙人。在他 20 年的银行业职业生涯中，他曾担任摩根大通中国总裁和越南花旗银行首席执行官。他毕业于哥伦比亚商学院和乔治城大学。</span></p></li><li><p><span>Dianne Schepers是Xterio基金会的总法律顾问和公司秘书，同时担任FunPlus的西部市场副总裁、总法律顾问和公司秘书。她毕业于荷兰的乌得勒支大学和屯特大学。</span></p></li></ul><p><span>主要创始团队此前都在FunPlus工作过，FunPlus （趣加）是一家总部位于瑞士的视频游戏开发商和发行商，在中国、日本、新加坡、西班牙、瑞典和美国设有业务。同时，FunPlus也参与了对Xterio的投资，后者是前者的web3独家合作伙伴。</span></p><p><img src="https://www.barcelonaandpartners.com/wp-content/uploads/2023/01/funplus-desarrollara-videojuegos-en-barcelona_4245-copia-1024x487.png" referrerpolicy="no-referrer" alt="Swiss gaming company FunPlus announces new video game studio in Barcelona -  Barcelona &amp; Partners"></p><p><span>图源：</span><a href='https://www.pocketgamer.com/interviews/felipe-mata-funplus-barcelona-studio/' target='_blank' class='url'>https://www.pocketgamer.com/interviews/felipe-mata-funplus-barcelona-studio/</a></p><p><span>FunPlus的游戏涵盖多种类型，包括策略、角色扮演和社交游戏。FunPlus旗下的知名游戏包括《State of Survival》（末日生存）、《King of Avalon》（阿瓦隆之王）和《Guns of Glory》（荣耀枪神）等，这些游戏在全球范围内拥有大量玩家。</span></p><h2 id='财务'><span>财务</span></h2><h3 id='商业模式-2b+2c'><span>商业模式 2B+2C</span></h3><p><span>Xterio是一家全球性的跨平台游戏开发和发行公司。</span></p><h4 id='目标客户与收入来源'><span>目标客户与收入来源</span></h4><ul><li><p><span>C端玩家</span></p><ul><li><p><strong><span>发现新游戏</span></strong><span>：帮助玩家在Xterio平台上找到并探索他们可能会迷恋的新游戏。这包括Xterio自己开发的游戏和其他开发商在其平台上架的游戏。</span></p></li><li><p><strong><span>便捷交易</span></strong><span>：玩家可以使用$XTER在集成的市场上积累和交易游戏资产，作为数字收藏品。</span></p></li><li><p><strong><span>成就与奖励</span></strong><span>：通过玩游戏、收集资产以及参与比赛和活动来获得成就和奖励。</span></p></li><li><p><strong><span>展示旅程</span></strong><span>：玩家可以在个人资料上展示自己的成就、珍贵资产和喜欢的游戏。</span></p></li></ul></li><li><p><span>B端游戏制作商</span></p><ul><li><p><strong><span>游戏推广</span></strong><span>：利用Xterio平台的游戏和收藏页面，推动游戏的分发和发现。</span></p></li><li><p><strong><span>市场集成</span></strong><span>：在平台上展示游戏资产和NFT集合，提供无缝的交易机会。</span></p></li><li><p><strong><span>连接玩家</span></strong><span>：通过协作活动和比赛促成玩家之间的联系。</span></p></li><li><p><strong><span>综合工具</span></strong><span>：提供包括市场、自动化做市商（AMM）、“Proof of Play”特性（如成就和任务）在内的游戏开发工具，以及一系列即将推出的服务。</span></p></li><li><p><strong><span>合作计划：</span></strong><span>Game Partners Program支持和加速Web3游戏开发，通过提供顶级的实时运营平台、跨平台发布能力、定制开发工具和基础设施，以及与全球社区和其他开发者合作的机会。该计划还提供跨游戏NFT交易和互操作性，增强玩家参与度，帮助游戏开发者将创意变为现实，推动Web3游戏的未来发展。</span></p></li></ul></li><li><p><span>C端NFT创作者（尤其是Palio）</span></p><ul><li><p><strong><span>创作者为中心的界面</span></strong><span>：用户友好的界面确保铸造和交易 NFT 是一个无缝的体验，让创作者能够专注于他们最擅长的事情——创作。</span></p></li><li><p><strong><span>加密货币或法币轻松购买</span></strong><span>：Xterio的平台为支持者和用户打开了大门，无论他们偏好哪种货币。</span></p></li><li><p><strong><span>无市场费用</span></strong><span>：Xterio消除了服务费，鼓励用户交易，并将收益直接传递给内容创作者。</span></p></li><li><p><strong><span>智能合约桥接</span></strong><span>：内容创作者可以激励他们的社区，轻松转移到新的链上并采用创新的合约标准，以跟上快速发展的 Web3 空间的创新步伐。</span></p></li><li><p><strong><span>资产管理与质押</span></strong><span>：内容开发者可以利用 Xterio 平台向其支持者提供 Web3 功能，如质押和奖励领取。</span></p></li><li><p><strong><span>强制版税</span></strong><span>：Xterio通过支持新的智能合约标准，确保内容创作者因开发和维护其作品而获得适当的激励。</span></p></li><li><p><strong><span>社区建设</span></strong><span>：Xterio认识到社区的重要性，为创作者提供社交功能，以便他们能够相互联系、合作和学习。</span></p></li><li><p><span>可能有人质疑，NFT创作者并不一定是能直接给平台创收，后文我们可以看到，Xterio是如何通过空投预期和Palio NFT等系列活动，让用户“心甘情愿”地掏钱的。</span></p></li></ul></li></ul><h4 id='重要伙伴'><span>重要伙伴</span></h4><ul><li><p><span>Xterio内容创作者（Xterio Creator）：为Xterio识别和表彰社区中有才华的视频内容创作者，增强Xterio游戏与内容创作者之间的联系，促进创作者之间的合作，并在整个Xterio生态系统中提供独特的互动机会。参与者将获得$XTER代币奖励、独家游戏道具、抢先体验测试、官方渠道推广等福利。此外，创作者还需提交申请，经过审核后方可加入该计划。</span></p></li><li><p><span>Xterio 基金会：Xterio 基金会是作为 Xterio 的运营主体在瑞士设立的非营利性基金会。它的成立目的是为了开发和维护 Xterio 平台，使其运作方式最能符合代币持有者的利益。Xterio 基金会拥有独立的资产，没有股权股东，仅由代币持有者组成，其收入全部用于推进 Xterio 平台建设，不能分配给任何利益相关方。同时，Xterio 基金会的董事会成员不拥有基金会的任何所有权，也不从基金会获得报酬，这确保他们不会与代币持有者存在利益冲突。基金会负责 Xterio 平台的技术开发和运营，监督各项工作的推进，还将逐步转向社区治理模式。Xterio 基金会选择在瑞士运营，因为瑞士在监管和国际声誉上都较为友好，能为 Xterio 项目发展提供较好的环境。</span></p></li></ul><h3 id='融资信息'><span>融资信息</span></h3><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408131613787.png" referrerpolicy="no-referrer" alt="Screenshot 2024-08-13 161240"></p><p><span>图源：</span><a href='https://www.rootdata.com/Projects/detail/Xterio?k=MTYyOQ%3D%3D' target='_blank' class='url'>https://www.rootdata.com/Projects/detail/Xterio?k=MTYyOQ%3D%3D</a></p><p><span>Rootdata数据显示，至本文完成前，Xterio公开的融资金额为5500万美金，领投机构包括</span><strong><span>Binance Labs</span></strong><span>，Makers Fund， FTX Ventures， FunPlus。</span></p><h3 id='对外投资'><span>对外投资</span></h3><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408132137530.png" referrerpolicy="no-referrer" alt="Screenshot 2024-08-13 213557"></p><p><span>图源：</span><a href='https://www.rootdata.com/Projects/detail/Xterio?k=MTYyOQ%3D%3D' target='_blank' class='url'>https://www.rootdata.com/Projects/detail/Xterio?k=MTYyOQ%3D%3D</a></p><p><span>据Rootdata数据，Xterio分别于23年2月和9月对外投资了Overworld和Age of Dino两款游戏，具体金额未披露。这两款游戏会在后文详细介绍，此处略。</span></p><h3 id='经济模型'><span>经济模型</span></h3><p><span>据ICODROPS数据及官网内容，目前Xterio尚未公布其代币</span><span>$</span><span>XTER空投细节。</span></p><p><span>不过，在早期的白皮书中的代币分配比例如下图所示，可用作参考：</span></p><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162107567.webp" referrerpolicy="no-referrer" alt="img"></p><p><span>图源：</span><a href='https://icodrops.com/xterio/' target='_blank' class='url'>https://icodrops.com/xterio/</a></p><p><span>据官方披露，XTER 代币与 Gala 等链游项目的代币属性不同。XTER 代币可以直接在整个游戏生态系统中使用，作为各种生态内消耗场景的结算代币。</span></p><p><span>XTER 代币的应用场景广泛，包括购置游戏资产、游戏设备，以及在其他众多游戏内的交易环节中使用。因此，随着 Xterio 游戏生态的不断扩展和壮大，新的游戏不断推出，用户数量持续攀升，每一个新游戏的上线都会直接推动代币需求的增加。这种固定供应的代币模型在需求不断增长的情况下，必然会导致代币总需求大于总供给，从而进一步强化其通缩特性，使得代币价值在长期内具有增长潜力。</span></p><h2 id='产品服务'><span>产品/服务</span></h2><p><span>Xterio是一家全球性的跨平台游戏开发和发行公司，致力于通过数字所有权创造深度吸引人的游戏世界，连接全球数百万人。Xterio专注于开发可以在所有媒体和平台上扩展的Web3原生世界。</span></p><h3 id='xterio游戏'><span>Xterio游戏</span></h3><p><span>截至2024年8月16日，Xterio 已发布Age of Dino，Overworld，TTT，Palio共计4款自主研发链游，并且还推出了64款合作游戏项目。</span><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161939598.png" referrerpolicy="no-referrer" alt="Screenshot 2024-08-16 193859"></p><p><span>图源：</span><a href='https://xter.io/games' target='_blank' class='url'>https://xter.io/games</a></p><p><span>这里着重介绍几款Xterio自主开发的游戏。</span></p><h4 id='age-of-dino恐龙时代'><span>Age of Dino（恐龙时代）</span></h4><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408132142123.jpeg" referrerpolicy="no-referrer" alt="img1_v3"></p><p><span>图源：</span><a href='https://xter.io/games/55f9d090bdb6' target='_blank' class='url'>https://xter.io/games/55f9d090bdb6</a></p><p><span>Age of Dino（恐龙时代）是一款基于Xterio Foundation平台打造的下一代大型多人在线（MMO）策略游戏。游戏设定在一个引人入胜的元宇宙中，融合了模拟游戏（SLG）和角色扮演游戏（RPG）的元素，为玩家带来一段引人入胜的旅程。游戏体验包括喂养恐龙、资源收集、冒险探索、公园建设以及与AI控制的敌人和变异恐龙大军进行史诗般的战斗。目前该游戏已经上线，可以在Xterio官网下载。目前融资总额800万美金。推特粉丝数268.9K。</span></p><p><span> Age of Dino 在4-5 月份进行了小规模测试，其首次面向公众开放的测试便借助iOS的TestFlight平台，成功吸引了超过20万的月度活跃用户（MAU），在当前的Web3游戏移动端市场中展现出了非凡的吸引力与竞争力。</span></p><p><span>在即将 9 月公开测试的 Age of Dino 新版本中，新增了许多独一无二的 Web3 游戏创新和迭代功能。据官方推特透露，新版本亮点包括：</span></p><ul><li><p><span>装扮 / 收集等休闲类型玩法：玩家能够收集独特的游戏头像框、铭牌以及恐龙城堡等数字资产，以此获得奖励，这不仅丰富了游戏策略性（SLG）的核心玩法，还增添了更多休闲乐趣。</span></p></li><li><p><span>NFT 制造功能：新推出的dinosity NFT不仅能在游戏中发挥战斗效能，更创新性地成为“矿机”，玩家可利用其制造熔炉NFT和皮肤工厂NFT，进而生产个性化的装扮NFT，开辟了NFT在游戏内应用的新篇章。</span></p></li><li><p><span>悬赏任务系统：即使没有NFT，玩家也能通过完成日常任务、收集任务徽章的方式，获得双币奖励，这种机制为所有玩家提供了赚取游戏内货币的新途径，开启了全新的“打金”体验。</span></p></li></ul><p><span>此外，Age of Dino始终与Xterio的设计理念保持一致，即重视移动端游戏体验，不仅在手游端提供了丰富的玩法，如DINO SKI的休闲跑酷模式和DINO BRAWL的3v3休闲竞技对战，同时也兼顾了网页端的娱乐需求。</span></p><p><span>值得一提的是，去年年末，Age of Dino的Dino Ski Score NFT在BNB生态系统中取得了显著成就，其24小时及7日链上交易量和用户数一度超越PancakeSwap，登顶榜首。尽管近期有所调整，但目前在OPBNB链上的BEP721 Tokens中仍稳居第七，且在游戏类NFT的持有者数量上保持领先地位，这强有力地证明了《Age of Dino》在游戏领域所建立的深厚用户基础与高度粘性。</span></p><h4 id='overworld'><span>Overworld</span></h4><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408132143851.jpeg" referrerpolicy="no-referrer" alt="img2"></p><p><span>图源：</span><a href='https://xter.io/games/f66404351a91' target='_blank' class='url'>https://xter.io/games/f66404351a91</a></p><p><span>Overworld是一个基于Web 3技术的游戏和社区项目。它专注于集体叙事、实用型数字收藏品以及深入且引人入胜的多人游戏玩法，所有这些都设定在一个雄心勃勃的幻想宇宙中。目前，该游戏仍在开发之中，披露的融资总额达1250万美金。推特粉丝数279.2K。</span></p><p><span>2023年12月，其6000个Incarna NFT在一分钟内迅速售罄，每个价格为0.15 ETH（约340美元），共筹集了200万美元。NFT持有者将在2024年第一季度获得Overworld即将推出的代币空投。在二级市场上，Incarna NFT的地板价格最高飙升至2.8ETH。</span></p><p><span>2024年6月时，该游戏曾开放了</span><strong><span>Overworld Arena</span></strong><span>活动，目前已结束。</span></p><p><img src="https://miro.medium.com/v2/resize:fit:700/0*CfHwngP7N3Ktkq-O.png" referrerpolicy="no-referrer" alt="img"></p><p><span>图源：</span><a href='https://medium.com/@XterioGames_29169/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-overworld-arena-91cba6fc8982' target='_blank' class='url'>https://medium.com/@XterioGames_29169/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-overworld-arena-91cba6fc8982</a></p><p><span>据官方推特消息，在短短的两周内，Arena玩家获得了以下奖励：</span></p><p><span>💸 </span><strong><span>72,000 USDT</span></strong><span>：游戏中的奖励金额，提供了真实的货币价值。</span></p><p><span>♦️ </span><strong><span>750,000 MNCT代币</span></strong><span>：即将推出的Manacite代币，可以用于未来的交易和奖励。</span></p><p><span>🗝️ </span><strong><span>2把Overworld钥匙</span></strong><span>：每把钥匙的最近成交价高达6.80 ETH，为玩家提供了相当高的价值。</span></p><p><span>🚀 </span><strong><span>Xterio积分</span></strong><span>：可用于Xterio生态系统中的其他活动和奖励。</span></p><p><span>🎁 </span><strong><span>20个Project Shadows的白名单名额</span></strong><span>：为即将到来的项目提供了抢先参与的机会。</span></p><h4 id='ttt现为city-shadows'><span>TTT（现为City Shadows）</span></h4><p><img src="https://pbs.twimg.com/media/GC5K61BasAAlItN?format=jpg&amp;name=900x900" referrerpolicy="no-referrer" alt="Image"></p><p><span>图源：</span><a href='https://x.com/3T_shootergame/status/1742546364305756298' target='_blank' class='url'>https://x.com/3T_shootergame/status/1742546364305756298</a></p><p><span>TTT 致力于打造独一无二的沉浸式虚拟体验，涵盖车辆竞速、射击 PVP 游戏玩法以及繁忙的 Web 3.0 经济体系。玩家可以在移动设备上体验到黑帮游戏的刺激，以及在充满感官刺激的都市世界中进行的运气与技巧互动。目前该游戏尚在开发中。旧推特粉丝数136.1K，新推特粉丝数2K。</span></p><p><span>2024年8月14日，其在推特上声明，经过深思熟虑，TTT团队意识到，为了实现应有的质量，需要在设计和艺术风格上做出根本性的调整。他们将朝着新的方向前进，组建了全新的团队，并对黑帮射击游戏概念进行了独特的重新构思，新的项目名称为 </span><strong><span>City Shadows</span></strong><span>。TTT团队不变的承诺是将 Web3 的价值和激励与传统游戏的乐趣融合，为玩家带来令人兴奋的冒险体验。</span></p><p><img src="https://pbs.twimg.com/media/GVBlZWLWcAAZ0mA?format=jpg&amp;name=900x900" referrerpolicy="no-referrer" alt="Image"></p><p><span>图源：</span><a href='https://x.com/XterioGames/status/1824071780807430215' target='_blank' class='url'>https://x.com/XterioGames/status/1824071780807430215</a></p><p><span>联创和CEO Jeremy Horn评论道：“新的方向在很大程度上更符合 Web3 的发展期望和需求。祝贺团队！让我们继续推动 Xterio 的成长前进！”</span></p><h3 id='xteraipalio'><span>Xter.AI（Palio）</span></h3><p><span>2023年7月，Xterio</span><a href='https://medium.com/@XterioGames_29169/my-encounter-with-artificial-intelligence-11e32adaf33'><span>发文</span></a><span>称正在积极利用人工智能技术来推动其产品和服务的发展。他们的团队正在开发一个AI模型工具包，该工具包能够生成独特且风格一致的2D和3D艺术素材。合作伙伴可以使用这个工具包来训练模型，创造出符合特定主题、风格和类型的艺术作品。此外，Xterio还在开发基于AI技术的工具，用于分析游戏数据，以帮助改进和提升游戏体验。</span></p><p><span>更具创新性的是，Xterio正在研发一个“情感引擎”，旨在让非玩家角色（NPC）能够更人性化地与玩家互动，成为在与用户共同创造的虚拟世界中，具有好奇心的数字伙伴。</span></p><p><span>此外，Xterio还计划推出一个基于NFT的去中心化自治组织（DAO），让NFT持有者可以创建并拥有自己的数字伙伴“Xpal”。这些数字伙伴将具有独特的个性，并将在一系列以AI技术为核心的游戏和体验中发挥重要作用。通过这种方式，NFT持有者不仅能够参与这些游戏，还能够从中获得直接收益，并对整个特许经营的未来发展产生影响。</span></p><p><span>2024年3月，Xterio推出旗下AI项目Palio（派力奥），并于4月正式开启奥德赛活动。</span></p><p><img src="https://miro.medium.com/v2/resize:fit:875/1*6aoItefAeq7FEamuZ2eovw.jpeg" referrerpolicy="no-referrer" alt="img"></p><p><span>图源：</span><a href='https://medium.com/@PalioAI/palio-meet-your-anima-odyssey-4c356f7572c7' target='_blank' class='url'>https://medium.com/@PalioAI/palio-meet-your-anima-odyssey-4c356f7572c7</a></p><p><span>由于此活动已经结束，有关该活动的进一步细节不再介绍。不过，其Meet Your Anima实现了 700 万新增钱包用户的成绩。其中，在活动开始的首日（4 月 1 日 )， 就有 20 万新用户涌入，单日峰值（4 月 5 号，活动开始第 5 天）更是达到了 45 万。</span></p><p><span>2024年5月，Xterio联动Palio的同时，继续推出</span><strong><span>Xter.AI</span></strong><span>的更多产品。此活动将持续四个主题，并设有不同的主题供参与者探索。但是，即使在活动结束后，Xter.AI Web3 创建工具仍可供实验使用。</span></p><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161723605.png" referrerpolicy="no-referrer" alt="Screenshot 2024-08-16 172232"></p><p><span>图源：</span><a href='https://xter.io/fans/create' target='_blank' class='url'>https://xter.io/fans/create</a></p><p><span>从上图中可以看到四个主题，它们分别是：</span></p><p><span>主题一：钱包占卜（Wallet-telling）。</span></p><p><span>主题二：魔法家园（Magical Land）。</span></p><p><span>主题三：咒语塔罗（Prompt Tarot）。</span></p><p><span>主题四：像素艺术（BitArt）。</span></p><p><span>不过，想要使用Xter.AI的上述产品，需要持有PalioAI Aura NFT或者是 Gen0 NFT（Palio角色）。</span></p><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161735277.png" alt="Screenshot 2024-08-16 173355" style="zoom: 67%;" /></p><p><span>图源：</span><a href='https://xter.io/fans/works/392306' target='_blank' class='url'>https://xter.io/fans/works/392306</a></p><p><span>Palio Aura NFT 是一款限量版 NFT，供应量为 3333 个，铸造价格为 0.1 ETH（在以太坊主网铸造）。持有 Palio Aura NFT 可以获得专属 Xterio 生态系统奖励池、提前参与游戏测试和奖励机会，还能在打造 Palio IP 特许经营中获得奖励。此外，该 NFT 对后续所有 Palio NFT 系列提供永久奖励加成。获得 Palio Aura 的资格包括：白名单持有者、从公平启动存款中随机抽奖（占总供应量的 50%，每个钱包限一次参与，最低 0.3 BNB，最高 1.5 BNB）、Meet Your Anima 前 3 周的前 100 名（删除重复项）、以及 </span><a href='https://docs.google.com/spreadsheets/d/1DN7JwzMz9RgRJQGRTlD-CkDtTBnrGO6hdHgR83RuAfA/edit#gid=0'><span>AI 测试账号名单</span></a><span>。所有剩余部分将归还金库。</span></p><p><span>总结而言，用户使用Xter.AI服务的可能流程如下：</span></p><ol start='' ><li><p><span>前提：必须持有相应NFT 才有资格创建内容。</span></p></li><li><p><span>创造</span></p><p><img src="https://miro.medium.com/v2/resize:fit:875/1*XNYuXVBr3myHmo1V4aLoaQ.png" referrerpolicy="no-referrer" alt="img"></p><p><span>图源：</span><a href='https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f' target='_blank' class='url'>https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f</a></p></li><li><p><span>发布：作品创造者可以获取每笔交易2.5%的Royalty Fee作为收入，同时还可以设置新玩家铸造NFT的利润在创作者和NFT持有者两者之间的归属比例。</span><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161757887.png" referrerpolicy="no-referrer" alt="Screenshot 2024-08-16 175727"></p><p><span>图源：</span><a href='https://xter.io/fans/works/390575' target='_blank' class='url'>https://xter.io/fans/works/390575</a></p></li><li><p><span>铸造</span></p><p><img src="https://miro.medium.com/v2/resize:fit:875/1*cN4L3GXNV7SBSAZed6CCvA.png" referrerpolicy="no-referrer" alt="img"></p><p><span>图源：</span><a href='https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f' target='_blank' class='url'>https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f</a></p></li></ol><h3 id='xterio-nft市场'><span>Xterio NFT市场</span></h3><p><span>2023 年8月，OpenSea 宣布将停止对二级市场交易执行版税政策。也就是说，创作者不再自动从其作品的每次转售中获得固定比例的收入。这个决定是由于市场竞争加剧、以及买卖双方对于交易成本的敏感度提升。随着市场上涌现了许多不收取版税的平台，OpenSea 决定取消强制性版税以保持竞争力。</span></p><p><span>这一举措在创作者社区引起了强烈反响。许多创作者和支持者认为，这种变化削弱了 Web3 生态系统对创作者的保护，降低了他们通过数字艺术或内容获取长期收入的能力。与此同时，OpenSea 表示，他们仍然允许买家选择支付版税，但这种支付方式不再是强制性的，而是变为可选的，具体由买家决定是否支持创作者。</span></p><p><span>Xterio 和其他一些平台则选择采取相反的立场，他们认为版税对于鼓励创作者持续创作和维护作品至关重要。同月，Xterio </span><a href='https://medium.com/@XterioGames_29169/elevate-creators-and-revolutionize-gaming-nfts-with-xterios-marketplace-81cbb533689f'><span>宣布</span></a><span>将于几周内推出NFT 市场，并提供新颖的铸造、持有和交易奖励。 Xterio 表示，计划通过重新调整激励机制，公平地满足所有利益相关者的需求，从而改变 NFT 领域的格局。</span></p><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161807523.png" referrerpolicy="no-referrer" alt="Screenshot 2024-08-16 180252"></p><p><span>图：Xterio NFT市场界面 图源：</span><a href='https://xter.io/marketplace' target='_blank' class='url'>https://xter.io/marketplace</a></p><p><span>其特点是：</span></p><ul><li><p><strong><span>为创作者打造</span></strong><span>：Xterio的市场旨在为创作者提供一个目的地，在一个安全透明的区块链生态系统中铸造、交易和货币化他们的独特作品。</span></p></li><li><p><strong><span>创作者为中心的界面</span></strong><span>：用户友好的界面确保铸造和交易 NFT 是一个无缝的体验，让创作者能够专注于他们最擅长的事情——创作。</span></p></li><li><p><strong><span>加密货币或法币轻松购买</span></strong><span>：Xterio的平台为支持者和用户打开了大门，无论他们偏好哪种货币。</span></p></li><li><p><strong><span>无市场费用</span></strong><span>：Xterio消除了服务费，鼓励用户交易，并将收益直接传递给内容创作者。</span></p></li><li><p><strong><span>智能合约桥接</span></strong><span>：内容创作者可以激励他们的社区，轻松转移到新的链上并采用创新的合约标准，以跟上快速发展的 Web3 空间的创新步伐。</span></p></li><li><p><strong><span>资产管理与质押</span></strong><span>：内容开发者可以利用 Xterio 平台向其支持者提供 Web3 功能，如质押和奖励领取。</span></p></li><li><p><strong><span>强制版税</span></strong><span>：Xterio通过支持新的智能合约标准，确保内容创作者因开发和维护其作品而获得适当的激励。</span></p></li><li><p><strong><span>社区建设</span></strong><span>：Xterio认识到社区的重要性，为创作者提供社交功能，以便他们能够相互联系、合作和学习。</span></p></li></ul><p><span>目前，Xterio的NFT市场上已上线包括Age of Dino，Overload，Palio等共计25款NFT。</span><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161818682.png" referrerpolicy="no-referrer" alt="Screenshot 2024-08-16 181846"></p><p><span>图源：</span><a href='https://xter.io/marketplace' target='_blank' class='url'>https://xter.io/marketplace</a></p><h3 id='xterio-chain'><span>Xterio Chain</span></h3><p><span>2024年4月，Xterio和BNB Chain宣布，双方将合作推出一个以游戏为核心的全新L2链，该链将利用BNB作为Gas Token，并为BNB Chain生态系统的基础架构贡献力量。 AltLayer还将通过提供关键的技术专长来支持这项工作。</span></p><p><span>Xterio链将由AltLayer执行和管理。 它将作为BNB Chain上的第2层结算执行，并利用OP Stack作为rollup架构，EigenDA充当数据可用性（DA）层。 该rollup技术将专注于Web3和人工智能驱动的游戏，并计划利用$XTER代币围绕AAA级游戏建立一个链上生态系统。</span></p><p><span>除了整合多款Xterio游戏之外，Xterio链还将作为Xterio生态系统的骨干，提供一个通往充满活力的游戏生态系统的入口，让玩家能够在一个安全、可访问的环境中毫不费力地收集、拥有和交易数字资产，并让开发者能够顺畅地铸造、分发和管理数百万资产。 该链与全面的Xterio技术平台一起，旨在通过账户抽象钱包、顺畅链外和链上系统、廉价交易、按一下购买、灵活的支付市场和launchpad等功能，让链上元素几乎不可见。 </span></p><p><span>展望未来，Xterio链将为游戏开发者敞开大门，为他们的创作提供一个复杂但易于使用的解决方案。 透过Xterio链，开发者将可以访问Web3中最广泛的第一方游戏目录，并与其超过200万的用户群建立联络，而该用户群目前正在迅速扩大。 Xterio链承诺提供便捷的整合和尖端的功能，随时准备推动未来游戏的发展。</span></p><p><span>此次合作还进一步强化了Xterio与BNB的策略关系，并为利用BNB生态系统的巨大潜力打开了大门。 它使Xterio和BNB Chain能够合作为数百万BNB用户提供丰富的人工智能沉浸式游戏体验，并通过数字所有权得到强化。 此外，BNB Chain还将通过联合活动和终端用户推荐计划为Xterio提供重要的营销支持。</span></p><p><span>BNB Chain的核心开发团队表示：“BNB Chain与Web3游戏和人工智能领域公认的领导者Xterio之间的战略合作将强化BNB Chain的生态系统，为全球数百万用户带来由数字所有权驱动的卓越链上体验。 Xterio的开创性OPRollUp技术在BNB Chain上的应用树立了顶尖的卓越标杆，其每秒可扩展的交易量和由EigenLayer创新的重新质押功能支持的强大安全性值得称道。 我们期待着与Xterio及其游戏合作伙伴进一步合作。”</span></p><p><span>Xterio执行长Michael Tong补充道：“Xterio将坚定致力于在BNB Chain生态系统中占据突显位置，并成为全球最重要的链和平台，为链上游戏设定黄金标准。 BNB是全球知名的成熟链，与BNB的战略合作必定将重新定义BNB的应用前景，促进繁荣的生态系统，吸引来自全球各个角落的用户。 透过利用BNB的力量并将其与Xterio的愿景和专长相结合，我们希望将Xterio打造成为BNB Chain领域无可争议的领导者。”</span></p><p><a href='https://dune.com/samwbutw/xterio-data-dashboard'><span>根据Dune的数据</span></a><span>，截至2024年8月1日，Xterio Chain(BNB)的链上的总地址数量已经达到8.8M，链上交易量已达到107.72M，甚至比同类竞品，老牌链游平台Gala的Gala Chain的交易量还要多出超过一半的份额（42.1M）。</span></p><h3 id='xterio路线图'><span>Xterio路线图</span></h3><p><span>由于官网或白皮书均为公布其路线图，这里以创始人近期的讲话作为替代。</span></p><p><span>Xterio联创Jeremy Horn与ChainCatcher在4月的对话中提到，其发展计划旨在持续巩固Xterio在市场的领先地位，并进一步扩大Xterio Chain的影响力：Overworld web3体验版发布，将为玩家带来一个更为广阔、更为真实的游戏世界；Palio的AI游戏首秀，将展现AI技术在游戏领域的无限可能；而新游戏City Shadow测试版的推出，则预示着我们将继续为玩家带来更多精彩纷呈的游戏内容。</span></p><p><span>除了为玩家提供在游戏中赚取奖励的机会外，Xterio更关注如何创造长期持有的价值。我们深知，只有让玩家在游戏中获得真正的乐趣和满足感，同时又能保留他们努力获得的奖励，才能让他们对游戏产生深厚的情感连接。因此，Xterio将持续努力，为玩家创造更多具有吸引力的游戏内容，让他们能够在享受游戏的同时，也能实现自身的价值增长。</span></p><h2 id='竞品'><span>竞品</span></h2><p><span>首先，读者请看下面笔者根据两个维度，分析Xterio及其竞品的表格。值得一提的是，笔者曾意图寻求各项目方链上数据作为比较维度三，可惜各方数据实在不齐全，只能作罢。</span></p><h3 id='比较维度一财务社区'><span>比较维度一：财务&amp;社区</span></h3><figure class='table-figure'><table><thead><tr><th><span>项目</span></th><th><span>FDV或估值(*)</span></th><th><span>披露融资</span></th><th><span>参投方或领投方(*)</span></th><th><span>推特粉丝</span></th><th><span>成立时间</span></th></tr></thead><tbody><tr><td><span>Xterio</span></td><td><span>300M*</span></td><td><span>55M</span></td><td><span>Binance Lab</span><span>*</span><span>, Makers Fund</span><span>*</span><span>, FTX Ventures</span><span>*</span><span>, FunPlus*等</span></td><td><span>522.5K</span></td><td><span>2022</span></td></tr><tr><td><span>TON</span></td><td><span>32B</span></td><td><span>8M</span></td><td><span>Pantera Capital, Mirana Ventures, Animoca Brands等</span></td><td><span>2.4M</span></td><td><span>2021</span></td></tr><tr><td><span>Gala</span></td><td><span>580M</span></td><td><span>TBA</span></td><td><span>Binance Lab*</span></td><td><span>938.3K</span></td><td><span>2019</span></td></tr><tr><td><span>Portal</span></td><td><span>258M</span></td><td><span>TBA</span></td><td><span>Kalos, Adrian Lai, Piers Kicks等</span></td><td><span>339.3K</span></td><td><span>2023</span></td></tr><tr><td><span>Iskra</span></td><td><span>38M</span></td><td><span>34M</span></td><td><span>Krust Universe*, Animoca Brands, Wemade等</span></td><td><span>110.3K</span></td><td><span>2022</span></td></tr><tr><td><span>LUXON</span></td><td><span>/</span></td><td><span>10.8M</span></td><td><span>Blocore, Bitkraft, FTX Ventures等</span></td><td><span>23.7K</span></td><td><span>2022</span></td></tr></tbody></table></figure><p><span>数据来源：Rootdata, ICO Analytics, 各项目官网</span></p><h3 id='比较维度二业务游戏'><span>比较维度二：业务&amp;游戏</span></h3><figure class='table-figure'><table><thead><tr><th><span>项目</span></th><th><span>关键业务</span></th><th><span>平台内游戏</span></th><th><span>自研游戏</span></th><th><span>合作游戏</span></th><th><span>游戏平台</span></th><th><span>推特粉丝&gt;100K 游戏</span></th><th><span>知名游戏举例</span></th></tr></thead><tbody><tr><td><span>Xterio</span></td><td><span>游戏、AI绘画、 NFT市场</span></td><td><span>68</span></td><td><span>4</span></td><td><span>64</span></td><td><span>端游、手游、页游、TG小游戏</span></td><td><span>36</span></td><td><span>Age of Dino, Overworld, TTT, Palio, Wilder World, Persona, KMON, Wonderverse, The Machines Arena, Blast Royale等</span></td></tr><tr><td><span>TON(TG)</span></td><td><span>游戏、社交、 钱包、机器人等等</span></td><td><span>160+</span></td><td><span>0</span></td><td><span>160+</span></td><td><span>TG小游戏</span></td><td><span>36</span></td><td><span>Notcoin, Catizen, Hamster Kombat, Gatto, TapSwap, Blum, Fanton Fantasy Football, GAMEE, The Pixels, Sphynx等</span></td></tr><tr><td><span>Gala</span></td><td><span>游戏、NFT市场、 音乐、电影、节点销售</span></td><td><span>18</span></td><td><span>8</span></td><td><span>10</span></td><td><span>端游、手游、页游</span></td><td><span>0</span></td><td><span>Common Ground,Spider Tanks</span></td></tr><tr><td><span>Portal</span></td><td><span>游戏、NFT市场(Magic Eden)、 质押、节点销售、跨链互操作性(LayerZero)</span></td><td><span>声称有200+</span></td><td><span>/</span></td><td><span>/</span></td><td><span>/</span></td><td><span>/</span></td><td><span>/</span></td></tr><tr><td><span>Iskra</span></td><td><span>游戏、NFT市场、 DEX、质押</span></td><td><span>12</span></td><td><span>2</span></td><td><span>10</span></td><td><span>端游、手游、页游</span></td><td><span>0</span></td><td><span>Drawshop Kingdom Reverse, Juicy Adventure, ClashMon:Ignition</span></td></tr><tr><td><span>LUXON</span></td><td><span>游戏、NFT市场</span></td><td><span>1</span></td><td><span>1</span></td><td><span>0</span></td><td><span>端游、手游</span></td><td><span>0</span></td><td><span>DESPERADO B218</span></td></tr></tbody></table></figure><p><span>数据来源：作者自各项目公开信息整理</span></p><p><span>仔细分析上表不难得出如下结论：</span></p><h3 id='ton是打法不同的破局者但与xterio在游戏类型上有所区分'><span>TON是打法不同的破局者，但与Xterio在游戏类型上有所区分</span></h3><p><span>这轮牛市TON的游戏生态因NotCoin，Catizen，Hamster Kombat等轻量级小游戏的爆火出圈而备受关注，但是比较之下可以发现，虽不及前者的巨大流量，但Xterio平台上的游戏类型更丰富，包括端游、页游、手游等多种形式，游戏可玩性方面可能更能吸引深度游戏玩家的喜爱。因此，可以认为TON和Xterio在细分市场方面有所区别，两者的竞争程度较为有限。相比之下，Xterio与Gala，Iskra，Portal，LUXON项目的相似程度更高。</span></p><h3 id='xterio是目前同类竞品中精品游戏最多的玩家'><span>Xterio是目前同类竞品中精品游戏最多的玩家</span></h3><p><span>如果视推特粉丝为反映游戏社区活跃度或者是影响力的指标，在Xterio平台上（即将）推出的总计68款游戏中，有36款游戏推特粉丝数超过了100K量级，其中4款自研游戏全都突破100K粉丝量，这一数字远超除TON(TG)小游戏外的其他链游平台（按比例来看甚至比TON更高），可以视为目前优质链游平台中的领军者。而且，Xterio发行的游戏数量目前也是除TON(TG)以外最多的，给玩家提供了更多选择。除此之外，公布的融资额方面，Xterio也是以5500万美金领先于其他项目方。综上所述，目前来看Xterio在财务、社区、业务方面，相较于其他竞品，都有不错的表现，值得关注。</span></p><h1 id='参与机会'><span>参与机会</span></h1><h2 id='参与xterio-launchpad上新旧游戏的交互'><span>参与Xterio LaunchPad上新旧游戏的交互</span></h2><p><span>前文已提及Xterio几款自主开发的游戏的基本情况，这里不再赘述。但目前其参与机会较少，有兴趣的可保持关注，后续参与。本文仅介绍新游戏的交互。2024年8月16日，有两款游戏上新。</span></p><h3 id='wilder-world'><span>Wilder World</span></h3><p><strong><span>Wilder World</span></strong><span> 是一款大规模多人开放世界游戏，利用了最新的实时逼真技术、区块链、人工智能和大规模多人技术。目前推特粉丝数214.5K。</span></p><p><img src="https://xter.io/_next/image?url=https%3A%2F%2Fresources.xter.io%2Ffunfog_upload%2F0ba1aad508b3%2Flaunchpad%2F1722855120-6777241098248009755.png&amp;w=2100&amp;q=75" referrerpolicy="no-referrer" alt="img"></p><p><span>奖励说明：有机会赢取 $7,500 WILD 的份额。75 名幸运获奖者将获得丰厚奖励（目前参与人数已经接近3K，获奖希望较小，不过谁叫这是零撸任务呢），每位参与者还将获得独特的 XTERIO NFT 贴纸。</span></p><p><span>交互教程：在8月9日-8月30日期间，进入任务界面</span><a href='https://xter.io/launchpad/42' target='_blank' class='url'>https://xter.io/launchpad/42</a><span>，登录后完成包括绑定钱包，关注、点赞、回复推特，访问官网等活动即可。因任务非常简单，具体交互过程不再演示。（不过，目前不知为何在Xterio上面点选小狐狸钱包跳出来的却是OKX钱包，十分奇怪。）</span></p><h3 id='wonderversewonderbits'><span>Wonderverse（WonderBits）</span></h3><p><span>WonderBits是Wonderverse生态系统的首款产品。</span><img src="https://xter.io/_next/image?url=https%3A%2F%2Fresources.xter.io%2Ffunfog_upload%2F9cc6913ca721%2Flaunchpad%2F1721138888-5553241596216102111.png&amp;w=2100&amp;q=75" referrerpolicy="no-referrer" alt="img"></p><p><span>图源：</span><a href='https://xter.io/launchpad/39' target='_blank' class='url'>https://xter.io/launchpad/39</a></p><p><span>WonderBits是一款首个支持 X 和 Telegram 之间互操作的社交闲置游戏。在探索充满无限可能的世界时，升级和培育名为 Bits 的虚拟宠物。成为育种者、交易者、农民、冒险者，或者任何你能想象的角色。WonderBits 有望成为 Telegram Messenger 和 X 上的下一代“Pixels”闲置游戏。许多乐趣和奖励在等待——从 Wonderverse 生态系统及其合作伙伴处获得收益 NFT 和空投。</span></p><p><span>明牌空投：预计在 Q4 初期（可能更早）进行 TGE。</span></p><p><span>奖励说明：特殊 XTERIO Bit 和 Island；每周抽奖。</span></p><p><span>交互教程：在8月12日-9月6日期间，进入任务界面</span><a href='https://xter.io/launchpad/39' target='_blank' class='url'>https://xter.io/launchpad/39</a><span>，登录后完成包括绑定钱包，关注、点赞、回复推特，加入Discord，加入Telegram，访问官网等活动即可。因任务非常简单，具体交互过程不再演示。</span></p><h2 id='再质押ethlst代币进xterio-chain'><span>再质押ETH/LST代币进Xterio Chain</span></h2><p><span>奖励说明：Xterio并未明确说明，因此不推荐。</span></p><p><span>交互教程：1.进入Eigenlayer主网质押ETH或LST代币。这里以stETH为例。</span><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162113150.png" referrerpolicy="no-referrer" alt="Screenshot 2024-08-16 211333"></p><p><span>2.随后选择保护Xterio Chain的节点运营商进行质押即可。进入Xterio Mach的界面</span><a href='https://app.eigenlayer.xyz/avs/0x6026b61bdd2252160691cb3f6005b6b72e0ec044' target='_blank' class='url'>https://app.eigenlayer.xyz/avs/0x6026b61bdd2252160691cb3f6005b6b72e0ec044</a><span>，下拉找到这些节点运营商，选择质押即可。这里以Automata为例。</span><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162115540.png" referrerpolicy="no-referrer" alt="Screenshot 2024-08-16 211333"></p><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162117916.png" referrerpolicy="no-referrer" alt="Screenshot 2024-08-16 211652"></p><h1 id='参考文献'><span>参考文献</span></h1><ol start='' ><li><p><a href='https://www.witnesschain.com/'><span>https://xter.io/</span></a></p></li><li><p><a href='https://xterio.gitbook.io/xterio' target='_blank' class='url'>https://xterio.gitbook.io/xterio</a></p></li><li><p><a href='https://app.eigenlayer.xyz/avs/0x6026b61bdd2252160691cb3f6005b6b72e0ec044' target='_blank' class='url'>https://app.eigenlayer.xyz/avs/0x6026b61bdd2252160691cb3f6005b6b72e0ec044</a></p></li><li><p><a href='https://medium.com/@XterioGames' target='_blank' class='url'>https://medium.com/@XterioGames</a></p></li><li><p><a href='https://medium.com/@XterioGames_29169' target='_blank' class='url'>https://medium.com/@XterioGames_29169</a></p></li><li><p><a href='https://forge-gg.gitbook.io/faq/xterio-ecosystem-missions-faq' target='_blank' class='url'>https://forge-gg.gitbook.io/faq/xterio-ecosystem-missions-faq</a></p></li><li><p><a href='https://foresightnews.pro/article/detail/42913' target='_blank' class='url'>https://foresightnews.pro/article/detail/42913</a></p></li><li><p><a href='https://funplus.com/' target='_blank' class='url'>https://funplus.com/</a></p></li><li><p><a href='https://www.panewslab.com/zh/articledetails/j3ciq4tl.html' target='_blank' class='url'>https://www.panewslab.com/zh/articledetails/j3ciq4tl.html</a></p></li><li><p><a href='https://www.cna.com.tw/postwrite/chi/368803' target='_blank' class='url'>https://www.cna.com.tw/postwrite/chi/368803</a></p></li><li><p><a href='https://medium.com/@a13928414935/xterio-%E9%87%8D%E9%87%8F%E7%BA%A7%E6%B8%B8%E6%88%8F%E5%8F%91-%E5%B9%B3%E5%8F%B0-e410b90cf570' target='_blank' class='url'>https://medium.com/@a13928414935/xterio-%E9%87%8D%E9%87%8F%E7%BA%A7%E6%B8%B8%E6%88%8F%E5%8F%91-%E5%B9%B3%E5%8F%B0-e410b90cf570</a></p></li><li><p><a href='https://www.panewslab.com/en/articledetails/u84i42p3.html' target='_blank' class='url'>https://www.panewslab.com/en/articledetails/u84i42p3.html</a></p></li><li><p><a href='https://www.panewslab.com/zh/sqarticledetails/d5a1wc9j.html' target='_blank' class='url'>https://www.panewslab.com/zh/sqarticledetails/d5a1wc9j.html</a></p></li><li><p><a href='https://www.chaincatcher.com/article/2128683' target='_blank' class='url'>https://www.chaincatcher.com/article/2128683</a></p></li><li><p><a href='https://new.qq.com/rain/a/20230822A03MUY00?suid=&amp;media_id=' target='_blank' class='url'>https://new.qq.com/rain/a/20230822A03MUY00?suid=&media_id=</a></p></li><li><p><a href='https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f' target='_blank' class='url'>https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f</a></p></li><li><p><a href='https://www.techflowpost.com/article/detail_19724.html' target='_blank' class='url'>https://www.techflowpost.com/article/detail_19724.html</a></p></li><li><p><a href='https://icodrops.com/xterio/' target='_blank' class='url'>https://icodrops.com/xterio/</a></p></li><li><p><a href='https://new.qq.com/rain/a/20240510A07T0400' target='_blank' class='url'>https://new.qq.com/rain/a/20240510A07T0400</a></p></li><li><p><a href='https://mp.weixin.qq.com/s/HWxdAcvHa1WHT_6fz8YCUA' target='_blank' class='url'>https://mp.weixin.qq.com/s/HWxdAcvHa1WHT_6fz8YCUA</a></p></li><li><p><a href='https://www.techflowpost.com/article/detail_17546.html' target='_blank' class='url'>https://www.techflowpost.com/article/detail_17546.html</a></p></li><li><p><a href='https://new.qq.com/rain/a/20230915A03VNG00' target='_blank' class='url'>https://new.qq.com/rain/a/20230915A03VNG00</a></p></li><li><p><a href='https://www.forbes.com/sites/zengernews/2023/12/07/portal-unveils-novel-interoperable-ecosystem-to-revolutionize-gaming/' target='_blank' class='url'>https://www.forbes.com/sites/zengernews/2023/12/07/portal-unveils-novel-interoperable-ecosystem-to-revolutionize-gaming/</a></p></li></ol><p>&nbsp;</p><h1 id='利益披露与免责声明'><span>利益披露与免责声明</span></h1><p><span>利益披露：截止发稿前，作者（Peyton）与Xterio无任何商业利益行为。</span></p><p><span>免责声明：教程所有内容均不构成投资建议，仅供参考。加密货币相关资风险极高，极容易归零，请在参与时谨慎做出决策，并严格遵守相关法律法规。</span></p><p><img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408092049535.jpg" referrerpolicy="no-referrer"></p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>本报告正文部分最后编辑于2024年8月17日</span></p></div><p>&nbsp;</p></div></div>
+</body>
+</html>
