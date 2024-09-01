@@ -329,29 +329,11 @@ Xterio联创Jeremy Horn与ChainCatcher在4月的对话中提到，其发展计�
 
 ### 比较维度一：财务&社区
 
-| 项目   | FDV或估值(*) | 披露融资 | 参投方或领投方(*)                                        | 推特粉丝 | 成立时间 |
-| ------ | ------------ | -------- | -------------------------------------------------------- | -------- | -------- |
-| Xterio | 300M*        | 55M      | Binance Lab\*, Makers Fund\*, FTX Ventures\*, FunPlus*等 | 522.5K   | 2022     |
-| TON    | 32B          | 8M       | Pantera Capital, Mirana Ventures, Animoca Brands等       | 2.4M     | 2021     |
-| Gala   | 580M         | TBA      | Binance Lab*                                             | 938.3K   | 2019     |
-| Portal | 258M         | TBA      | Kalos, Adrian Lai, Piers Kicks等                         | 339.3K   | 2023     |
-| Iskra  | 38M          | 34M      | Krust Universe*, Animoca Brands, Wemade等                | 110.3K   | 2022     |
-| LUXON  | /            | 10.8M    | Blocore, Bitkraft, FTX Ventures等                        | 23.7K    | 2022     |
-
-数据来源：Rootdata, ICO Analytics, 各项目官网
+![Gamefi平台对比2_财务社区](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408180938772.png)
 
 ### 比较维度二：业务&游戏
 
-| 项目    | 关键业务                                                     | 平台内游戏 | 自研游戏 | 合作游戏 | 游戏平台                   | 推特粉丝>100K 游戏 | 知名游戏举例                                                 |
-| ------- | ------------------------------------------------------------ | ---------- | -------- | -------- | -------------------------- | ------------------ | ------------------------------------------------------------ |
-| Xterio  | 游戏、AI绘画、 NFT市场                                       | 68         | 4        | 64       | 端游、手游、页游、TG小游戏 | 36                 | Age of Dino, Overworld, TTT, Palio, Wilder World, Persona, KMON, Wonderverse, The Machines Arena, Blast Royale等 |
-| TON(TG) | 游戏、社交、 钱包、机器人等等                                | 160+       | 0        | 160+     | TG小游戏                   | 36                 | Notcoin, Catizen, Hamster Kombat, Gatto, TapSwap, Blum, Fanton Fantasy Football, GAMEE, The Pixels, Sphynx等 |
-| Gala    | 游戏、NFT市场、 音乐、电影、节点销售                         | 18         | 8        | 10       | 端游、手游、页游           | 0                  | Common Ground,Spider Tanks                                   |
-| Portal  | 游戏、NFT市场(Magic Eden)、 质押、节点销售、跨链互操作性(LayerZero) | 声称有200+ | /        | /        | /                          | /                  | /                                                            |
-| Iskra   | 游戏、NFT市场、 DEX、质押                                    | 12         | 2        | 10       | 端游、手游、页游           | 0                  | Drawshop Kingdom Reverse, Juicy Adventure, ClashMon:Ignition |
-| LUXON   | 游戏、NFT市场                                                | 1          | 1        | 0        | 端游、手游                 | 0                  | DESPERADO B218                                               |
-
-数据来源：作者自各项目公开信息整理
+![Gamefi平台对比2_业务 (2)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408180938806.png)
 
 仔细分析上表不难得出如下结论：
 
