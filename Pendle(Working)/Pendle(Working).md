@@ -2,18 +2,22 @@
 
 学习目标
 
-- 了解债券的定义
-- 掌握债券绝对与相对定价法以及债券的合成概念
+- 了解债券的定义*
+- 掌握债券绝对与相对定价法以及债券的合成概念**
 
-- 了解本息分离债券及其历史
+- 了解本息分离债券及其历史*
 
-- 重点掌握Pendle的PT和YT代币本质
+- 了解Pendle项目的发展历史*
 
-- 重点掌握Pendle的PT/SY AMM
+- 重点掌握Pendle的PT和YT代币本质**
 
-- 掌握Pendle的代币池中Long Yield收益率为负的可能原因
+- 了解SY代币和EIP-5115代币标准**
 
-- 了解Pendle的治理结构
+- 重点掌握Pendle的PT/SY AMM***
+
+- 掌握Pendle的代币池中Long Yield收益率为负的可能原因***
+
+- 了解Pendle的治理结构*
 
   
 
@@ -74,3 +78,11 @@ In general, yield bearing assets can be broadly categorized as:
 [解读Ve(3,3) ，「Curve＋Olympus」 - BlockBeats (theblockbeats.info)](https://www.theblockbeats.info/news/28998)
 
 [Yield Protocol Documentation](https://docs.yieldprotocol.com/#/)
+
+[pendle-v2-resources/whitepapers at main · pendle-finance/pendle-v2-resources (github.com)](https://github.com/pendle-finance/pendle-v2-resources/tree/main/whitepapers)
+
+[About Notional | Notional V3 User Docs](https://docs.notional.finance/notional-v3)
+
+[FAQs | Sense](https://docs.sense.finance/docs/faq/)
+
+[ERC-5115: SY Token (ethereum.org)](https://eips.ethereum.org/EIPS/eip-5115)
