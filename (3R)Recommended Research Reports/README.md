@@ -1,9 +1,9 @@
-# Recommended Research Reports
+# Recommended Research Reports(3R)
 Here are high-quality research reports recommended(3R) by Peyton, worth studying and learning from.
 
  
 
-这里是Peyton推荐阅读的优质研报，值得学习和借鉴。以下排名不分先后：
+这里是Peyton推荐阅读的优质研报（3R），值得学习和借鉴。以下排名不分先后：
 
 
 
