@@ -1,10 +1,18 @@
-# 高性能EVM公链Monad增长秘诀：技术、社区、生态
+# 解析高性能EVM公链Monad增长秘诀：技术、社区、生态
 
-署名：Alvin，Peyton（LYS Lab）
+排名不分先后，作者：Peyton，Kon杰（LYS Lab  @LingyueSamaWeb3）
 
-
+![LYS Lab品牌形象_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
 ## 摘要
+
+- Monad 是一条高性能 EVM 区块链，通过并行处理优化 EVM 的执行效率，获得2024年度第二大笔融资额，由 Paradigm 领投，累计融资额达到2.44亿美金，且其原生生态项目也成功吸引了超千万美金的融资。
+- **技术特点上**，兼容性方面，Monad为EVM提供了完全的字节码兼容性，因此为以太坊构建的应用程序无需更改代码就可以移植到 Monad，并且完全兼容以太坊 RPC；性能上，通过共识和执行层面的技术创新实现了每秒10,000笔交易的高吞吐量。
+- **团队背景上**，Monad创始团队大多来自 Jump Trading，拥有深厚的技术背景和行业经验。而且其与Wormhole，Phantom，Pyth等建立了密切的合作关系，被称为“紫色联盟”。
+- **社区运营方面**，Monad通过有效的分级管理、鼓励meme文化、定期的成员筛选、丰富的线下活动成功打造了高凝聚力的社区。
+- **生态项目上**，Monad原生生态项目已吸引了多个投资机构入局，总计融资额超千万美元，反映了市场对其技术优势和发展潜力的高度认可。
+- **潜在造富机会上**，建议关注紫色联盟生态板块、DeFi板块的机会，随着Monad生态的快速发展，行业内的用户、投资机构、交易所有较大机会。
+- **未来发展方向与瓶颈方面**，技术上，Monad计划继续优化其EVM性能，并引入更多创新技术以提升区块链的扩展性和安全性；生态与运营方面，Monad需在减轻用户疲劳与保持社区活跃度之间找到平衡；以及思考如何打破“空投魔咒”，空投预期落地后如何维持用户留存度。
 
 ## 正文
 
@@ -14,15 +22,15 @@ Monad 是一条高性能 EVM 区块链，通过并行处理优化 EVM 的执行�
 
 ## 一、Monad整体情况
 
-### Monad公链技术特点
+### 1.Monad公链技术特点
 
 Monad 技术特点可以从两个层面分析：**可移植性（兼容EVM）**和**性能提升**（可拓展性）。
 
-#### 可移植性
+#### 1.1  可移植性
 
 从可移植性角度来看，Monad为以太坊虚拟机（EVM）提供了**完全的字节码兼容性，因此为以太坊构建的应用程序无需更改代码就可以移植到 Monad，并且完全兼容以太坊 RPC**，从而可以无缝使用 MetaMask 或 Etherscan 等基础设施。
 
-#### 性能提升
+#### 1.2  性能提升
 
 从性能角度来看，Monad 提供**10,000 tps**的吞吐量，即每天 10 亿笔交易，同时提供**1 秒的出块时间**和**1 秒的最终性**。这使得 Monad 能够支持比现有区块链更多的用户和更多的交互式体验，同时提供更便宜的每笔交易成本。
 
@@ -30,24 +38,24 @@ Monad 技术特点可以从两个层面分析：**可移植性（兼容EVM）**�
 
 1.共识层面的优化：
 
-- [MonadBFT](https://docs.monad.xyz/technical-discussion/consensus/monadbft)（流水线式 HotStuff 共识，附加研究改进）
-- [延迟执行](https://docs.monad.xyz/technical-discussion/consensus/deferred-execution)（共识和执行之间的流水线，以显著增加执行预算）
-- 共享内存池
+- MonadBFT（流水线式 HotStuff 共识，附加研究改进）
+- 延迟执行（执行过程从共识过程中解耦）
+- 共享内存池（降低验证器节点的带宽要求）
 - 传输成本和储备余额（防范拒绝服务攻击）
 
 2.执行层面的提升：
 
-- [乐观并行执行](https://docs.monad.xyz/technical-discussion/execution/parallel-execution)（允许同时处理多个交易）
-- 超标量流水线
-- [Monad数据库](https://docs.monad.xyz/technical-discussion/execution/monaddb)（高性能状态后端）
+- 乐观并行执行（乐观地提前开始后续交易的执行）
+- 超标量流水线（将工作划分为多个阶段并行执行）
+- Monad数据库（高性能状态后端）
 
-##### MonadBFT
+##### 1.2.1  MonadBFT
 
 MonadBFT是一种具有乐观响应性的流水线式两阶段拜占庭容错（BFT）算法，在常见情况下具有线性通信开销，在超时情况下具有二次通信开销。与大多数BFT算法一样，通信是分阶段进行的；在每个阶段，领导者向投票者发送签名消息，投票者向下一轮领导者发送签名响应。流水线技术允许区块k的法定人数证书（QC）或超时证书（TC）与区块k+1的提案一起传输。
 
 为了通俗易懂，我们可以把它想象成一个班级的决策会议。假设班级每周要选一个活动项目。首先，班长（类似于领导者）提出一个方案，大家（即验证者）举手投票。如果超过一半人支持，那么方案通过。如果没达到半数，班长会提出新的方案，大家继续投票。为了更快达成共识，MonadBFT 用了一些高效的数学方法（例如 BLS 签名），让系统可以同时处理多个投票，减少讨论时间。这就像每个同学在给出投票时，还能帮其他同学打勾相同的选择，从而加快整个过程。关键点是，即使有同学不遵守规则（相当于拜占庭错误），整个决策过程还是能正常运行，最终做出班级一致认同的决定。
 
-##### 延迟执行
+##### 1.2.2  延迟执行
 
 在以太坊中，执行是共识的先决条件，因此当节点就一个块达成共识时，它们既同意（1）块中的交易列表，也同意（2）执行这些交易后所有状态的Merkle根。因此，领导者必须在分享提案之前执行提议块中的所有交易，而验证节点必须在投票之前执行这些交易。
 
@@ -65,15 +73,15 @@ MonadBFT是一种具有乐观响应性的流水线式两阶段拜占庭容错（
 
 为了更生动地解释 Monad 的延迟执行机制，我们可以把它想象成一个大型项目的任务分配。假设老师（相当于共识机制）给每个学生分配了任务（交易顺序），但不要求学生马上完成这些任务。任务的顺序已经确定，所以学生们知道任务最终会如何影响结果，但他们可以在之后的时间里慢慢完成。这种方法避免了所有学生必须同时完成任务，提升了效率，就像 Monad 通过推迟执行来加快共识过程。
 
-##### 共享内存池
+##### 1.2.3  共享内存池
 
 MonadBFT是一种高效达成任意负载共识的方法。然而，区块传播仍然是一个显著的瓶颈；例如，一个包含10,000笔交易且每笔交易为500字节的区块将达到5MB；如此大小的区块将对验证器节点提出过高的带宽要求。
 
-为了缓解这个问题，Monad的区块提案仅通过只有32字节哈希引用交易——这是一个显著的节省，。因此，在投票提案和提交区块时，所有验证器的内存池都需要包含自己内存池中的交易。提交给验证器内存池的交易通过擦除编码后，再通过广播树与其他验证器的内存池共享，以提高效率。
+为了缓解这个问题，Monad的区块提案仅通过只有32字节哈希引用交易，这是一个显著的节省。因此，在投票提案和提交区块时，所有验证器的内存池都需要包含自己内存池中的交易。提交给验证器内存池的交易通过擦除编码后，再通过广播树与其他验证器的内存池共享，以提高效率。
 
 想象你在一次班级活动中，每个学生要写一个活动提议（交易）。这些提议暂时存放在每个学生的笔记本（验证者的 mempool）里，直到最后选出活动。为了确保每个学生都看到所有的提议，大家会通过一种特别的方式（类似于“擦除编码”）来分享自己的想法，避免重复浪费时间和资源。在提出最终方案时，班长不会给出每个提议的完整内容，只是用一个短代码（类似哈希）来代表每个想法。这样所有人都能快速确认提议的存在和有效性，减少班级会议的通信负担。
 
-##### 传输成本和储备余额
+##### 1.2.4  传输成本和储备余额
 
 延迟执行具有极大的优势，因为它允许执行和共识并行发生，从而极大地扩展了执行的时间预算。反对者担心：既然共识节点没有最新的状态视图，那么它们如何防止错误地包含那些已经耗尽所有gas的账户的交易？这将导致拒绝服务（Denial-of-Service, DoS）攻击。
 
@@ -96,33 +104,33 @@ MonadBFT是一种高效达成任意负载共识的方法。然而，区块传播
 
 举一个通俗易懂的例子，想象一下你想寄一封包裹（交易）给朋友，即使包裹最后没送到，快递员（验证节点）要收取一笔“运输费”（carriage cost），这笔运输费目的是防止有人疯狂寄无效包裹来占用资源。为了确保你有足够的钱支付这些费用，系统会提前从你的账户中保留一部分作为“备用金”（reserve balance）。当交易失败或成功后，系统会根据情况调整你的备用金，但必须确保每个交易都付得起“运输费”。
 
-##### 乐观并行执行
+##### 1.2.5  乐观并行执行
 
-并行执行使得Monad能够同时执行多个交易。这种方法在首次看来似乎与以太坊的执行语义不同，但实际上并不是。Monad的区块与以太坊的区块相同，都是线性排序的交易集合。执行这些交易的结果在Monad和以太坊之间是相同的。
+Monad 的并行执行允许同时处理多个交易，表面上看似与以太坊的执行语义不同，但实质上并无差异。两者的区块都是线性排序的交易集合，执行结果一致。
 
-在并行执行过程中，Monad使用乐观执行的方法，即在块中较早的交易完成之前开始执行后续交易。这有时会导致执行结果不正确。为解决这个问题，Monad通过追踪在执行交易过程中使用的输入，并将它们与之前交易的输出进行比较。如果存在差异，表明需要使用正确的数据重新执行该交易。
+在并行执行中，Monad 采用乐观执行方法，提前开始后续交易的执行，尽管这可能导致不正确的结果。为了解决这一问题，Monad 会追踪执行过程中使用的输入，并与之前交易的输出进行比对，如有差异则重新执行该交易。
 
-此外，Monad在执行交易时采用了一种静态代码分析器来预测交易间的依赖关系，以避免无效的并行执行。在最佳情况下，Monad可以提前预测许多依赖关系；在最坏情况下，它会回退到简单的执行模式。
+此外，Monad 使用静态代码分析器来预测交易间的依赖关系，从而避免无效的并行执行。在最佳情况下，Monad 可以准确预测许多依赖关系；在最坏情况下，则退回到简单执行模式。
 
-Monad的并行执行技术不仅提高了网络效率和吞吐量，而且通过优化执行策略，减少了因为并行执行导致的交易失败的情况。
+总体来看，Monad 的并行执行技术不仅提高了网络效率和吞吐量，还通过优化策略减少了由于并行执行而导致的交易失败情况。
 
 同样举例说明，假设你和朋友们同时做不同的任务，虽然一些任务彼此相关，但你们乐观地提前开始工作。完成后，系统会检查你们的结果是否一致。如果有冲突，系统会重新安排并再次执行。这个过程通过跟踪交易之间的数据依赖，确保最终的执行顺序是正确的。如果冲突很少，这种方式能大大加快处理速度。
 
 再比如，想象一下你在厨房里做几道菜，每道菜都需要不同的步骤。如果你必须按顺序完成每道菜，整个过程会很慢。而 Monad 的乐观并行执行机制就像让你同时开始多个步骤。例如，你可能先开始做第二道菜，尽管第一道菜还没完全完成。如果过程中发现某个步骤用错了材料（数据不一致），你可以重新做那个步骤，而不用从头开始，这大大提高了效率。这种方法能平衡速度与准确性，防止大量出错。
 
-##### 超标量流水线
+##### 1.2.6  超标量流水线
 
 超标量流水线（Superscalar pipelining）是一种将工作划分为多个阶段并在并行中执行这些阶段的实践。这种技术允许处理器在同一时间处理多个指令，从而显著提高处理器的吞吐量和执行效率。在超标量处理器中，指令被分解为多个可以同时执行的更小的部分（或称为阶段），这些部分可以并行地在处理器的不同部分上执行。这种并行处理的能力使得超标量处理器能够在相同的时钟周期内完成更多的工作，从而提高了整体的计算性能。
 
 可以用洗衣的例子去理解这项技术特点：当要洗很多批批衣物时，简单的策略是先洗涤、烘干、折叠和存放第一批衣物，然后再开始洗第二批（这就是所谓的“串行执行”）。流水线策略是当第一批衣物进入烘干机时开始洗涤第二批衣物。流水线通过同时利用多种资源更有效地完成工作。
 
-##### MonadDb
+##### 1.2.7  MonadDb
 
 MonadDb 是一个用于存储区块链状态的自定义数据库。MonadDb用于数据存储和处理的优化。它是Monad优化策略的一部分，旨在提高整体网络性能，尤其是在处理状态数据和交易数据方面。这样的组件设计用于增强数据存储的效率和可扩展性，提高区块链网络处理大量数据的能力。它包括改进的数据索引机制、更高效的存储结构和优化的数据访问路径。这些优化有助于减少数据存取时间，提高交易处理速度，从而提升整个区块链网络的性能。
 
 想象一下你正在组织一个超级复杂的书架，每本书都装在抽屉里。以太坊的数据库（比如 RocksDB 或 LevelDB）就像是你每次找书都得翻开不同类型的抽屉，非常繁琐。MonadDB 就是直接为你设计了专用的抽屉（Patricia Trie），无论是从内存还是硬盘查找都非常高效。更酷的是，MonadDB 还能多任务处理——就像你在找一本书的同时，还能让其他人帮你继续查找别的书，避免等待时间，从而大大提高效率。这对优化数据处理能力非常有帮助。
 
-#### TPS标准与性能对比
+#### 1.3  TPS标准与性能对比
 
 TPS是每秒交易量的缩写，是区块链最常见的性能基准。但是，关于其计算方式存在很多误导，没有统一的标准基准，而且容易用简化环境或简化交易数据（如转账）很容易提高该指标。
 
@@ -132,43 +140,41 @@ TPS是每秒交易量的缩写，是区块链最常见的性能基准。但是�
 
 根据CoinGecko在2024年5月公布的数据中，目前最快的区块链Solana主网上TPS（实际TPS）仍在1k徘徊，但是 Solana 仍然仅达到其理论最大速度 65,000 TPS 的 1.6%。在EVM 区块链，BSC在铭文驱动的链上活动激增中实现了 378 的实际 TPS排行第三，而Polygon则以190的实际TPS排名第四，是目前最快的EVM兼容链。
 
-![Screenshot 2024-09-29 114047](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291141570.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291141570.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291141570.png)
 
 数据来源：https://www.coingecko.com/research/publications/fastest-blockchains
 
 在3月的测试环境中，Monad的TPS达到10k+，远远高于现有的EVM区块链项目。不过考虑到Solana也曾在测试网阶段实现50k的TPS，未来Monad能否成为最快的高性能公链还需要时间检验。
 
-### Monad团队与融资情况
+### 2.Monad团队与融资情况
 
 Monad的团队背景可以追溯到强大的**Jump Trading**集团，这是一家全球领先的高频量化交易公司，成立于1999年，以其卓越的交易技术在金融市场上取得了巨大成功。Monad的创始团队大多来自Jump Trading，这为Monad的区块链性能提供了坚实的技术支持。
 
 1. **Keone Hon**，Monad的联合创始人兼CEO，曾在Jump Trading领导高频交易部门长达9年。
-
 2. **James Hunsaker**，联合创始人，曾在Jump Trading担任高级软件工程师，负责高频交易相关技术开发。
-
 3. **Eunice Giarta**，联合创始人兼 COO，曾在 Shutterstock 支付和基础设施许可部分，曾领导开发团队在 Broadway Technology 构建企业交易系统。
 
 Jump Trading还通过其风险投资部门**Jump Capital**以及加密货币部门**Jump Crypto**，全方位支持Monad的生态构建，其合作伙伴包括：
 
 - Wormhole（Jump Trading母公司直接投资，高管团队均为Jump系）
 - Phantom（Jump Capital 投资，三位联创来自@0xProject，该项目曾受Jump Capital 和 Jump Crypto投资）
-- Pyth Network（虽无 Jump 系直投资，但创始团队全为 Jump 系） 
+- Pyth Network（虽无 Jump 系直投资，但创始团队全为 Jump 系）
 
 由于这些项目logo底色均为紫色，被业内人士戏称为“紫色联盟”。
 
-![图片1](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291543274.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291543274.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291543274.png)
 
 Monad推特的相互关注 图源：RootData
 
 在豪华团队阵容的加持下，Monad公链项目向来不缺融资。2023年2月14日，Monad Labs 完成 1900 万美元种子轮融资。2024年4月9日，Monad Labs 完成 2.25 亿美元融资。本轮融资由 Paradigm 领投，其他投资者包括 Electric Capital、Castle Island Ventures、Greenoaks、eGirl Capital、Amber Group等。天使投资人包括Inversebrah、Ansem、Hsaka、punk6529等。
 
-### Monad社区运营特点
+### 3.Monad社区运营特点
 
-#### **1.有效的分级管理**
+#### 3.1  有效的分级管理
 
 Monad 社区通过分级制度有效地管理成员的权限和活动范围。成员的访问权限与他们在 Discord 上所获得的角色密切相关，这种角色分级制度极大地激励了成员的参与。例如，社区成员通过完成任务和互动活动逐步获得更高的权限，而期待未来的代币生成活动（TGE）奖励则进一步激发了他们的参与热情。根据 DeSpread 的整理，Monad Discord 中的角色等级划分明确，并对应不同的权限和特权。
 
-![img](https://upload.techflowpost.com/upload/images/20240925/2024092513341673992337.jpeg)
+![https://upload.techflowpost.com/upload/images/20240925/2024092513341673992337.jpeg](https://upload.techflowpost.com/upload/images/20240925/2024092513341673992337.jpeg)
 
 图源：https://www.techflowpost.com/article/detail_20592.html
 
@@ -176,55 +182,53 @@ Monad 也为长期贡献的成员在 Telegram 上提供了更为私密的环境�
 
 这种游戏化机制让社区充满活力。成员们可以通过互动和参与活动来获得 XP，并通过官方团队及其他成员的认可，解锁特殊角色。简而言之，Monad 将简单的聊天变成了游戏，让用户在不知不觉中沉浸其中。
 
-#### **2.鼓励meme文化**
+#### 3.2  鼓励meme文化
 
 在 Monad 社区的早期，紫色版的 Pepe 成为了其标志性的 Meme 之一。这个角色采用 Monad 标志性的紫色作为主色调，逐渐成为社群中广泛使用的符号，广泛应用于 Telegram 贴纸和推特 Memes。随着社区的壮大，更多角色如 Molandak、Moyaki 和 Chog 应运而生，并成为 Monad 文化的象征。
 
 Monad 社区每周举办 “周一 Meme” 评选，官方会重点介绍获奖 Memes 及其创作者。此外，Monad 的社区文化不仅限于 Memes，还扩展至视频制作、实物商品创作，甚至音乐创作。这些创意活动让社区的每个成员，无论他们是否拥有区块链或技术背景，都能参与并享受乐趣。
 
-#### **3.定期的成员筛选**
+#### 3.3  定期的成员筛选
 
 Monad 通过每周的“周四清理”（Purge Day）定期筛选成员，清理不活跃的用户。只有最活跃、最投入的成员才能保留在独家聊天频道中，这一机制确保了社区的核心群体始终是那些真正关心项目并且积极参与的人。
 
-#### **4.丰富的线下活动**
+#### 3.4  丰富的线下活动
 
 相比于传统的区块链活动，Monad 更加注重为本地社区和开发者组织的线下活动。迄今为止，Monad 已经在日本、中国和泰国等多个国家成功举办了聚会。这种方式既加强了本地社区的凝聚力，也为 Monad 生态的全球化发展提供了动力。
 
-![图片1](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291729392.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291729392.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291729392.png)
 
 图源：Monad官网
 
 近期，Monad Madness 比赛将在多个地点进行，包括即将在 2024 年 10 月 2 日至 4 日于纽约举办的线下路演。这是Monad 生态系统中的一项全球性创业路演比赛，旨在吸引有志于在 Monad 生态中构建创新应用的创业团队。首批参赛的 20 个项目已公布，涵盖了去中心化交易所（DEX）、游戏、AI 等多个领域，如预测市场 Levr、杠杆 DEX InfPools、Cork Protocol、借贷交易协议 Ammalgam 等。此外，韩国首尔站的比赛将于 2024 年 12 月 6 日至 8 日举行。Monad Madness 吸引了包括 Pantera、Archetype、Dragonfly 等知名风投的赞助和支持。通过这一赛事，Monad 生态的创业者不仅有机会争夺高额奖励，还能够与风投机构建立深度联系，并获得进一步的融资支持。
 
-### Monad生态项目现状
+### 4.Monad生态项目现状
 
-![48a869ae-86f1-409f-a7cf-0ecab4d84585](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291449837.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291449837.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291449837.png)
 
-Monad 生态版图  图源：Drops Tab
+Monad 生态版图 图源：Drops Tab
 
-Monad 生态版图参见上图（数据截至 2024 年 8 月 1 日）。
-
-Monad区块链尚未在主网上启动，其生态系统仍在发展中。在2024年2月，已有80多个独立的协议和dApp承诺在该协议上构建。随着主网的启动日期临近，预计这个数字将接近150或200个。
+Monad 生态版图参见上图（数据截至 2024 年 8 月 1 日）。Monad区块链尚未在主网上启动，其生态系统仍在发展中。在2024年2月，已有80多个独立的协议和dApp承诺在该协议上构建。随着主网的启动日期临近，预计这个数字将接近150或200个。
 
 Monad原生的生态项目发展也呈现出繁荣态势，吸引多个投资机构纷纷入局。由于很多原生生态项目仍处在早期阶段，这里我们主要选用公布融资总额和推特分数两个指标，与其他的并行EVM公链生态发展做一个简单对比，数据源自RootData。
 
-![并行EVM公链对比_总表](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291432381.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291432381.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291432381.png)
 
 可以看出，Monad原生项目数量在四者中位列第二，为12个，但是公布的融资总额远超第一Sei公链，已经达到1365万美元。其中aPriori，Kuru和Monad Pad分别吸引了1070万，200万和95万美元融资。不过，我们也可以看到Monad原生生态项目（即使取平均后）在推特粉丝数量方面不及竞争对手Sei公链生态。
 
-![并行EVM公链对比_Monad Exclusive(1)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291515542.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291515542.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291515542.png)
 
-![并行EVM公链对比_Sei Exclusive(1)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291444834.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291444834.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291444834.png)
 
-![并行EVM公链对比_Neon Exclusive](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443459.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443459.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443459.png)
 
-![并行EVM公链对比_Canto Exclusive](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443857.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443857.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443857.png)
 
 这里，我们再重点介绍Monad上已经成功融资的几个原生项目。
 
-##### aPriori
+#### 4.1  aPriori
 
-![Screenshot 2024-09-29 150906](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291509722.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291509722.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291509722.png)
 
 **aPriori** 是一个基于 Monad 原生构建的 MEV（矿工可提取价值）基础设施和流动性质押协议，旨在为 Monad 提供以交易为核心的基础架构，降低 gas 费用、优化网络流量，并为验证者提供可持续的激励，从而提升吞吐量和用户体验。
 
@@ -232,15 +236,15 @@ Monad原生的生态项目发展也呈现出繁荣态势，吸引多个投资机
 
 截至2024年9月29日，aPriori产品还未开放，官网仅支持跳转推特和Discord及官方博客，用户可以考虑通过参与其Discord社区活动，获得特殊角色等。
 
-##### Kuru
+#### 4.2  Kuru
 
-![Screenshot 2024-09-29 150108](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291501662.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291501662.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291501662.png)
 
 Kuru正在开创一种完全链上的中央限价订单(CLOB)，以增强DeFi领域的交易体验。传统的自动做市商(amm)以巨大的交易量主导了DeFi，但存在高滑点和流动性使用效率低下等缺点。Kuru旨在通过允许做市商主动报价流动性来克服这些限制，为用户提供更好的价格和减少滑点。与Monad的集成，使得操作功能性CLOB变得可行，使做市商能够频繁地调整报价，而不必担心高昂的交易成本。Kuru的平台是为流动性和长尾资产设计的，旨在简化流动性供应，并将交易过程整合到一个界面中。通过弥合去中心化交易所和用户友好型交易体验之间的差距，Kuru试图重新定义交易者与链上资产的互动方式。2024年7 月，Kuru 宣布完成了 200 万美元种子轮融资，由 Electric Capital 领投，Brevan Howard Digital、CMS Holdings 等机构，以及 Keone Hon 等天使投资人参投。
 
-##### Monad Pad
+#### 4.3  Monad Pad
 
-![Screenshot 2024-09-29 150000](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291500428.png)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291500428.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291500428.png)
 
 Monad Pad是一个基于Monad区块链的代币和NFT启动平台，支持项目团队和开发者通过预售或公开发售的形式进行早期募资。目前，Monad Pad已经发行了以紫色青蛙为形象的原创NFT系列**Purple Frens**，总发行量为3333个，每个NFT的初始售价为500美元。此外，Monad Pad平台的20%收入将分配给Purple Frens NFT的持有人。Monad Pad的原生代币是**MPAD**，总发行量为1亿枚，其中10%（1000万枚）将以质押的方式分配给Purple Frens NFT持有人。
 
@@ -250,19 +254,19 @@ Monad Pad已于7月5日完成了94.5万美元的种子轮融资，投资机构�
 
 除了上述三个原生生态项目，这两个项目也是与Monad公链推特相关，而且获得紫色联盟投资，可以被视为紫色联盟的成员，值得关注：
 
-##### Curvance
+#### 4.4  Curvance
 
-![Untitled](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291518507.webp)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291518507.webp](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291518507.webp)
 
 Curvance 是一种去中心化的稳定币借贷协议，最初专注于来自 Curve、Convex、Aura 和 Frax 生态系统的 LP。 Curvance 目标让用户获得优化的收益，同时通过点对点借贷最大限度地提高资本效率。 cvxCRV、auraBAL 和 yCRV 等资产可以获得与其在原始平台上获得的类似或更高的 APR，但具有为安全稳定币贷款抵押存款的额外能力。Curvance在23年12月获得了来自Arbitrum / Offchain Labs, Wormhole, Frax等共计360万美金投资。
 
 如持有 Monad Nads、DegenScore 等都可以获得官方角色，拥有验证码后，便可以真正交互 Monad 生态，且是最早期的参与者，获得空投的赔率会较为可观。
 
-只有3类人：“ **紫色联盟、持有邀请码、合作伙伴**”  有资格进入测试网，所以如果想要进行Curvance的交互，那么我们需要获得邀请码，参加官方 AMA 有机会获取内测邀请码。
+只有3类人：“ **紫色联盟、持有邀请码、合作伙伴**” 有资格进入测试网，所以如果想要进行Curvance的交互，那么我们需要获得邀请码，参加官方 AMA 有机会获取内测邀请码。
 
-##### Backpack
+#### 4.5  Backpack
 
-![Untitled (1)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291519810.webp)
+![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291519810.webp](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291519810.webp)
 
 Backpack 是 Sol 系最重要的交易所，Backpack 拥有交易所和多链钱包。Backpack 的技术提供了一种自我托管解决方案，该解决方案集成了多方计算 (MPC) 技术，以确保资金安全。2022年，Backpack获得了来自Jump Crypto和FTX Ventures领投的2000万美金融资，且于2024年2月获得1700万美金的A轮融资，共计融资额达到3700万。
 
@@ -270,46 +274,50 @@ Backpack 是 Sol 系最重要的交易所，Backpack 拥有交易所和多链钱
 
 ### 1.会有哪些板块造富效应强
 
-#### 紫色联盟生态板块
+#### 1.1  紫色联盟生态板块
 
 这里主要是指Curvance和Backpack这两个项目。例如，Backpack在前几期活动中也通过交易量模式来进行代币的空投。很大概率 Monad 会有空投给到 Backpack 用户，因为它是 Sol 系 Jump 系，未来背包交易所发平台币，也能和 Monad 空投一鱼两吃。
 
-#### DeFi板块
+#### 1.2  DeFi板块
 
 DeFi的发展往往与公链的发展息息相关。虽然目前Monad未上线主网，无法预测其链上TVL的增长情况，但是从投资机构的偏好来看，流动性质押赛道的aPriori，独特的订单谱交易所Kuru均获得大额融资，足以说明这一板块造富效应的巨大潜力。而且，考虑到Monad作为高性能公链，能够将交易费用大幅降低，届时应能够极大释放流动性，为DeFi应用创造出巨大的增长潜力。
 
 ### 2.行业各玩家面临的机会和风险
 
-#### 2.1从用户角度
+#### 2.1  从用户角度
 
-机会：获取潜在Monad及其生态项目如Curvance，Backpack，aPriori和Kuru等的空投，考虑到这些项目的融资额度，预计将有不小的一部分配置给社区贡献者，收益预期较高。随着Monad生态系统的发展，更多的DApps、DeFi协议和NFT项目将上线，用户能够参与早期项目并获得潜在的高回报。
+**机会**：获取潜在Monad及其生态项目如Curvance，Backpack，aPriori和Kuru等的空投，考虑到这些项目的融资额度，预计将有不小的一部分配置给社区贡献者，收益预期较高。随着Monad生态系统的发展，更多的DApps、DeFi协议和NFT项目将上线，用户能够参与早期项目并获得潜在的高回报。
 
-风险：需要花费大量时间参与到Monad社区，创造符合社群韵味的meme需要对外国文化有一定了解，此外Monad的Discord社区目前暂未看到中文频道，可能对部分华人群体参与交互门槛较高，需要自行平衡投入产出比。
+**风险**：需要花费大量时间参与到Monad社区，创造符合社群韵味的meme需要对外国文化有一定了解，此外Monad的Discord社区目前暂未看到中文频道，可能对部分华人群体参与交互门槛较高，需要自行平衡投入产出比。
 
-#### 2.2从投资机构角度
+#### 2.2  从投资机构角度
 
-机会：由于Monad公链自身已经获得大额融资，投资机构可以考虑布局其下优质生态项目，来捕获Monad生态发展的alpha，获得更多的生态话语权。
+**机会**：由于Monad公链自身已经获得大额融资，投资机构可以考虑布局其下优质生态项目，来捕获Monad生态发展的alpha，获得更多的生态话语权。
 
-风险：Monad生态或者投资的生态项目发展不及预期。
+**风险**：Monad生态或者投资的生态项目发展不及预期。
 
-#### 2.3 从交易所角度
+#### 2.3  从交易所角度
 
-机会：
+**机会：**
 
+- **多样化产品服务**: 通过提供Monad相关的金融产品和服务，如质押、借贷、跨链桥等，交易所可以扩大其业务范围和服务深度，满足用户多元化的需求。
+- **上架项目代币**: 将来随着Monad的推进发展，上架Monad及其生态项目代币能够使交易所保持市场竞争力，吸引更多的用户和流动性，从而提升市场份额和影响力。
+- **战略合作机会**: 交易所可以与Monad生态中的项目建立合作关系，通过联合营销、技术共享等方式，共同推动市场发展和品牌影响力。
 
+**风险：**
 
-
+- **市场接受度不确定**: 尽管Monad及其生态项目具有潜在的高回报，但市场对新项目，VC代币的接受度在发生改变。如果Monad的市场表现不及预期，可能会导致低交易量和用户流失。
 
 ## 三、Monad未来的发展方向与面临瓶颈
 
 ### 1.Monad发展路线
 
-- 2022年4月11日：Jump Trading 前研究负责人 Keone Hon 创立 Monad
-- 2023年2月14日：Monad Labs 完成 1900 万美元种子轮融资
-- 2023 年 9 月：Monad 文档发布，首次详细介绍了 Monad 区块链的架构
-- 2024年4月9日：Monad Labs 完成 2.25 亿美元融资
-- 2024年7月17日：Monad 与 Backpack 合作上线测试网，并在测试网上线首日与 Backpack 达成合作关系
-- Monad 预计将在2024年晚些时候的某个时刻在主网上推出，可能是第三季度
+- 2022年4月：Jump Trading 前研究负责人 Keone Hon 创立 Monad；
+- 2023年2月：Monad Labs 完成 1900 万美元种子轮融资；
+- 2023 年 9 月：Monad 文档发布，首次详细介绍了 Monad 区块链的架构；
+- 2024年4月：Monad Labs 完成 2.25 亿美元融资；
+- 2024年7月：Monad 与 Backpack 合作上线测试网，并在测试网上线首日与 Backpack 达成合作关系；
+- 此外，Monad 预计将在2024年晚些时候的某个时刻在主网上推出。
 
 ### 2.技术层面
 
@@ -327,6 +335,73 @@ Monad公链未来生态与运营层面的发展瓶颈为：
 
 ## 四、总结
 
+Monad 是一条高性能 EVM 区块链，通过并行处理优化 EVM 的执行效率，凭借豪华的团队、过硬的技术、有效的社群运营和繁荣的生态表现，成功获得2024年Web3领域第二大的融资，增长潜力不容小觑。本篇主要从“整体情况”、“Monad生态的潜在机会与风险”、“Monad未来的发展方向和瓶颈”这三大维度，通过充分的调研，向读者充分介绍Monad生态的情况。
 
+**Monad整体情况来看**，Monad 提供了高达 10,000 TPS（每秒交易）的吞吐量，具备完全的 EVM 兼容性和显著的性能提升。通过 MonadBFT 共识算法、延迟执行、共享内存池和乐观并行执行等技术创新，Monad 在性能和可扩展性方面展现出了巨大的优势。同时，MonadDb 作为高效的数据存储方案，进一步提升了系统的交易处理速度和效率。
+
+Monad创始团队大多来自 Jump Trading，拥有深厚的技术背景和行业经验。Monad 已获得大量投资，包括 Paradigm、Electric Capital、Castle Island Ventures 等知名风投的支持。豪华的团队阵容和丰厚的资本支持，为 Monad 的快速发展提供了坚实的基础。
+
+Monad 拥有一个高度活跃和分层管理的社区，通过角色分级管理和奖励机制激励成员参与。社区内的创意活动丰富多样，包括 Meme 文化、视频制作和音乐创作等，进一步增强了社区的凝聚力。Monad 还定期清理不活跃成员，确保社区的活跃度和高质量互动。此外，Monad 通过举办线下活动和创业路演比赛，促进了本地社区的凝聚力和全球化发展。
+
+Monad区块链尚未在主网上启动，其生态系统仍在发展中。在2024年2月，已有80多个独立的协议和dApp承诺在该协议上构建。随着主网的启动日期临近，预计这个数字将接近150或200个。Monad原生的生态项目发展也呈现出繁荣态势，吸引多个投资机构纷纷入局。
+
+**Monad生态的潜在造富机会巨大**，其中有三个板块可能有超过生态平均的表现，它们包括紫色联盟生态板块、DeFi 板块。Monad 生态潜力巨大，对于用户、投资者、交易所等角度，都有参与获得财富效应的机会。机会与风险并存，在参与Monad 生态财富挖掘的过程中，也要注意Monad生态风险。
+
+**Monad未来的发展方向和瓶颈方面**，Monad面临包括高性能区块链赛道的激烈竞争、技术实现的复杂性以及社区管理和用户留存的风险。Monad 需在保持技术创新的同时，解决社区成员的疲劳问题，并在空投后保持用户的长期参与，确保生态系统的可持续发展。
+
+最后，通过对生态的充分调研，展望未来，我们预计Monad生态可能会出现以下发展的变化，供读者参考：
+
+- Monad 计划在 2024 年晚些时候上线主网，预计将有更多的 DApps 和 DeFi 协议在其生态系统中上线。
+- 随着技术的不断迭代和社区的持续壮大，Monad 有望在高性能区块链领域占据重要地位，为开发者和用户提供更加高效和低成本的区块链解决方案。
+
+- 鉴于社区浓厚的meme氛围，我们认为Monad生态会跑出1-2个原生的Meme币，能够实现超过百倍的收益，并获得头部交易所的上线支持；
 
 ## 参考文献
+
+1. https://x.com/monad_xyz
+2. https://www.youtube.com/watch?v=Bk67RqBVXPM
+3. https://news.marsshare.cc/20240428145307995984.html
+4. https://followin.io/zh-Hans/feed/8675441
+5. https://www.techflowpost.com/article/detail_16284.html
+6. https://news.marsbit.co/20240408163128724651.html
+7. https://x.com/Airdrop_Guard/status/1805062680354693189
+8. https://linktr.ee/monad_xyz
+9. https://www.techflowpost.com/article/detail_18394.html
+10. https://www.techflowpost.com/article/detail_18791.html
+11. https://www.chaincatcher.com/article/2120003
+12. https://www.chaincatcher.com/article/2133918
+13. https://www.techflowpost.com/article/detail_19258.html
+14. https://linktr.ee/curvance
+15. https://app.curvance.com
+16. https://mirror.xyz/jieer793.eth/g9t7-7fU1o2RhKK4PT0uE7FDCIopLVYPm5T8L42vuZU
+17. https://www.rootdata.com/Projects/detail/Monad?k=Mjc3NA%3D%3D
+18. https://medium.com/cryptokudasaijp/monad-46cf3f4616a0
+19. https://www.hyperchain.net/blog/zh/archives/2577
+20. https://mp.weixin.qq.com/s/TiR4TcIjmHzsYZhyKYasvQ
+21. http://www.bikuaibao.info/news/60358.html
+22. http://www.nuomart.com.cn/post/406.html
+23. https://news.marsbit.co/20240729055941040185.html
+24. https://news.marsbit.co/20240813173043177411.html
+25. https://news.marsbit.co/20240812192410590408.html
+26. https://www.techflowpost.com/article/detail_20072.html
+27. https://www.techflowpost.com/article/detail_19950.html
+28. https://www.techflowpost.com/article/detail_16284.html
+29. https://www.learnblockchain.cn/article/8483
+30. https://www.learnblockchain.cn/article/8485
+31. https://www.odaily.news/post/5193834
+32. https://new.qq.com/rain/a/20240920A05ZM000?suid=&media_id=
+33. https://www.gate.io/zh/learn/articles/monad-the-end-game-of-blockchain-infrastructure/2149
+34. https://finance.sina.cn/blockchain/2024-02-20/detail-inaiseum1610088.d.html?from=wap
+35. https://www.techflowpost.com/article/detail_15849.html
+36. https://news.marsbit.co/20240822135956023071.html
+37. https://docs.monad.xyz/
+38. https://www.monad.xyz/post/monads-1m-pitch-competition-monad-madness
+39. https://www.monad.xyz/post/monad-labs-raises-225m-in-funding
+40. https://www.monad.xyz/wtf-is-tps
+41. https://www.techflowpost.com/article/detail_19211.html
+42. https://www.panewslab.com/zh/sqarticledetails/6auo88dm.html
+43. https://www.techflowpost.com/article/detail_20015.html
+44. https://www.techflowpost.com/article/detail_20592.html
+
+
+
