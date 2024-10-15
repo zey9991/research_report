@@ -17,13 +17,10 @@
 
 ## Others
 
-<<<<<<< HEAD
 * [2409-Web3 Project Research Report Guide](others/2409-web3-project-research-report-guide.md)
 * [2407-Restaking](2407-Restaking/"再质押赛道第一课PPT%20LYS%20Lab%20讲师Peyton.pdf")
-=======
 * [2409Web3 Project Research Report Guide](others/2409web3-project-research-report-guide.md)
 * [2407Restaking](others/2407restaking.md)
->>>>>>> 9424cc81b0d00726f2e9f3e880ad2988fa4e72b5
 * [Recommended Research Reports](<Recommended Research Reports/README.md>)
 
 ## Postponed
