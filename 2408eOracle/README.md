@@ -2,11 +2,13 @@
 
 ## 黑马还是被高估？TVL第二的AVS项目eOracle研报 LYS Lab出品 @Peyton
 
-作者：Peyton（LYS Lab  @LingyueSamaWeb3）
+作者：Peyton（LYS Lab @LingyueSamaWeb3）
 
-在Techub News上阅读：https://www.techub.news/newDetails?id=48d7165e2c7a4e7cb78d0d147dd0389d
+在Techub News上阅读：
 
-![LYS Lab品牌形象_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
+{% embed url="https://www.techub.news/newDetails?id=48d7165e2c7a4e7cb78d0d147dd0389d" %}
+
+![LYS Lab品牌形象\_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
 ## 结论
 
@@ -105,7 +107,7 @@ eOracle积分既授予运营商，也授予 ETH 委托人，通过质押 ETH 的
 
 质押者积分=质押的代币数量（ETH或LST）×质押小时数
 
-举例来说，用户质押了1ETH10天的时间，那么获取的积分就为1_10天_24小时/天=240。
+举例来说，用户质押了1ETH10天的时间，那么获取的积分就为1\_10天\_24小时/天=240。
 
 如果用户质押了多种代币，那么质押者的总积分就是这些积分的总和。
 
@@ -113,7 +115,7 @@ eOracle积分既授予运营商，也授予 ETH 委托人，通过质押 ETH 的
 
 运营商积分=其下所有用户的总积分\*0.03
 
-举例来说，如果有5位用户将资金共计10ETH委托给运营商A共计10天，那么运营商获取的积分就是10_10天_24小时/天\*0.03=72。当然，如果运营商自己也有质押的资金，那么也会获得相应的质押者积分，这里不再举例了。
+举例来说，如果有5位用户将资金共计10ETH委托给运营商A共计10天，那么运营商获取的积分就是10\_10天\_24小时/天\*0.03=72。当然，如果运营商自己也有质押的资金，那么也会获得相应的质押者积分，这里不再举例了。
 
 ### 产品
 
