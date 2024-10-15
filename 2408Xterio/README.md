@@ -4,6 +4,8 @@
 
 撰文：Peyton，LYS Lab(X：[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3))
 
+在Techub News上阅读：https://www.techub.news/newDetails?id=0d79b9f70fc040b1b3eef0685323d1d5
+
 ![LYS Lab品牌形象_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
 # 结论

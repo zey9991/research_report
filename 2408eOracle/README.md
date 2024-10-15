@@ -2,9 +2,9 @@
 
 ## 黑马还是被高估？TVL第二的AVS项目eOracle研报 LYS Lab出品 @Peyton
 
-> \[!NOTE]
->
-> _**本报告正文部分最后编辑于2024年8月9日**_
+作者：Peyton（LYS Lab  @LingyueSamaWeb3）
+
+在Techub News上阅读：https://www.techub.news/newDetails?id=48d7165e2c7a4e7cb78d0d147dd0389d
 
 ![LYS Lab品牌形象_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
