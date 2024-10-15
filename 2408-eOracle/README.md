@@ -364,5 +364,3 @@ https://tokenterminal.com/terminal/financial-statements/chainlink
 利益披露：截止发稿前，作者（Peyton）与 eOracle无任何商业利益行为。
 
 免责声明：教程所有内容均不构成投资建议，仅供参考。加密货币相关资风险极高，极容易归零，请在参与时谨慎做出决策，并严格遵守相关法律法规。
-
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408092049535.jpg)

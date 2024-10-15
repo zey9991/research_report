@@ -131,7 +131,9 @@ Xterio是一家全球性的跨平台游戏开发和发行公司，致力于通�
 
 #### Xterio游戏
 
-截至2024年8月16日，Xterio 已发布Age of Dino，Overworld，TTT，Palio共计4款自主研发链游，并且还推出了64款合作游戏项目。![Screenshot 2024-08-16 193859](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161939598.png)
+截至2024年8月16日，Xterio 已发布Age of Dino，Overworld，TTT，Palio共计4款自主研发链游，并且还推出了64款合作游戏项目。
+
+![Screenshot 2024-08-16 193859](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161939598.png)
 
 图源：https://xter.io/games
 
@@ -404,9 +406,3 @@ WonderBits是一款首个支持 X 和 Telegram 之间互操作的社交闲置游
 利益披露：截止发稿前，作者（Peyton）与Xterio无任何商业利益行为。
 
 免责声明：教程所有内容均不构成投资建议，仅供参考。加密货币相关资风险极高，极容易归零，请在参与时谨慎做出决策，并严格遵守相关法律法规。
-
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408092049535.jpg)
-
-> \[!NOTE]
->
-> 本报告正文部分最后编辑于2024年8月17日
