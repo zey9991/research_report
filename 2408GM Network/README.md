@@ -4,11 +4,7 @@
 >
 > ***本报告正文部分最后编辑于2024年8月2日***
 
-<img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091430377.jpeg" style="zoom:25%;" />
-
-[TOC]
-
-
+![LYS Lab品牌形象_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
 # 结论
 

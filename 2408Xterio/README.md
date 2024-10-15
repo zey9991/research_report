@@ -4,7 +4,7 @@
 
 撰文：Peyton，LYS Lab(X：[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3))
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408092049535.jpg)
+![LYS Lab品牌形象_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
 # 结论
 
