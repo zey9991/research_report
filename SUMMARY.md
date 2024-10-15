@@ -4,21 +4,21 @@
 
 ## Research Reports
 
-* [2409Monad](2409Monad/README.md)
-* [2409Pendle](research-reports/2409pendle.md)
-* [2408Xterio](2408Xterio/README.md)
-* [2408eOracle](2408eOracle/README.md)
-* [2408Witness Chain](<2408Witness Chain/README.md>)
-* [2408GM Network](<2408GM Network/README.md>)
-* [2407Symbiotic](2407Symbiotic/README.md)
-* [2406Ton](research-reports/2406ton.md)
-* [2406Lumoz](research-reports/2406lumoz.md)
-* [2405GoPlus](research-reports/2405goplus.md)
+* [2409-Monad](2409-Monad/README.md)
+* [2409-Pendle](research-reports/2409-pendle.md)
+* [2408-Xterio](2408-Xterio/README.md)
+* [2408-eOracle](2408-eOracle/README.md)
+* [2408-Witness Chain](<2408-Witness Chain/README.md>)
+* [2408-GM Network](<2408-GM Network/README.md>)
+* [2407-Symbiotic](2407-Symbiotic/README.md)
+* [2406-Ton](research-reports/2406-ton.md)
+* [2406-Lumoz](research-reports/2406-lumoz.md)
+* [2405-GoPlus](research-reports/2405-goplus.md)
 
 ## Others
 
-* [2409Web3 Project Research Report Guide](others/2409web3-project-research-report-guide.md)
-* [2407Restaking](2407Restaking/"再质押赛道第一课PPT%20LYS%20Lab%20讲师Peyton.pdf")
+* [2409-Web3 Project Research Report Guide](others/2409-web3-project-research-report-guide.md)
+* [2407-Restaking](2407-Restaking/"再质押赛道第一课PPT%20LYS%20Lab%20讲师Peyton.pdf")
 * [Recommended Research Reports](<Recommended Research Reports/README.md>)
 
 ## Postponed
