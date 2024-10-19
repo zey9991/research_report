@@ -8,7 +8,7 @@
 
 日期： 2024年05月21日
 
-这篇是我加入SevenUP DAO时被要求学习模仿风格的研报。后我据此写出了GoPlus和Lumoz等研报，推荐各位搭配阅读学习，看看我的行文结构和这篇研报有何相同与不同之处？
+推荐理由：这篇是我加入SevenUP DAO时被要求学习模仿风格的研报。后我据此写出了GoPlus和Lumoz等研报，推荐各位搭配阅读学习，看看我的行文结构和这篇研报有何相同与不同之处？
 
 2.[万字解读并行 EVM ：如何突破区块链性能瓶颈？ (qq.com)](https://mp.weixin.qq.com/s/DfABge5nww7snxSbV85l-A)
 
@@ -16,4 +16,12 @@
 
 日期：2024.4.5
 
-这篇是我看到介绍并行EVM最详尽，同时又非常读者友好的一篇研报，作者在介绍原理时深入浅出，即使是非技术人员也可以轻松读懂，因此推荐大家阅读学习。
+推荐理由：这篇是我看到介绍并行EVM最详尽，同时又非常读者友好的一篇研报，作者在介绍原理时深入浅出，即使是非技术人员也可以轻松读懂，因此推荐大家阅读学习。
+
+3.[Deciphering GMX V2: A Research Report (castlecapital.vc)](https://chronicle.castlecapital.vc/p/deciphering-gmx-v2-next-wave-decentralized-perps)
+
+作者：[DeFi Man](https://chronicle.castlecapital.vc/authors/4aa28e4c-baef-464f-acf0-b91b5f4e38ea) & [Atomist](https://chronicle.castlecapital.vc/authors/4b9b3f10-ebd4-4f11-ac15-670423112ed7)
+
+日期：2023年7月3日
+
+推荐理由：能够专业地介绍去中心化现货与合约交易所GMX从V1到V2的变迁及未来路线，并分析其中原因、机遇、挑战和交易策略。值得一看。
