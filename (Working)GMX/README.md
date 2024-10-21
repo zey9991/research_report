@@ -14,6 +14,16 @@ GMX 是一个去中心化的现货和永续合约交易所，支持低交易费�
 
 ### 团队
 
+团队成员均为匿名。
+
+- 根据RootData信息，coinflipcanada 是 GMX 的核心贡献者，专注于战略和生态系统开发。他也是 Camelot DAO 的创始顾问，制定其生态系统战略。
+- GMX DAO 管理员（Admins）：xdev_10，Saurabh，BlueBerry_KR
+- GMX DAO 版主（Moderators）：Seraph，Tano，Jonezee
+
+![image-20241020165623750](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241020165623750.png)
+
+图源：[About - GMX](https://gov.gmx.io/about)
+
 ### 产品
 
 #### GMX V1
@@ -80,7 +90,7 @@ GMX V1无疑是去中心化衍生品交易行业中最成功的模型之一，�
 
 - 注意：V2中也保留了V1中GLP池的类似设计，创建了GLV池，购买GLV代币就相当于同时持有多个池子的GM代币，更多细节将在下文代币经济学一节中介绍。
 
-3. **引入合成市场（Synthetic markets）**
+3. **引入合成资产市场（Synthetic markets）**
 
 - 其特点是可以通过多种资产的组合来模拟其他资产的表现，而非直接使用实际的资产。比如ETH-USDC支持的DOGE永续合约市场。
 - V1中是 全额支持市场（Fully backed markets），例如由ETH-USDC支持的ETH永续市场，仓位的上限由池中的ETH和USDC数量决定。
