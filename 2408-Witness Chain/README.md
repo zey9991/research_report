@@ -217,3 +217,5 @@ Witness Chain每个产品/服务背后都是有学术论文支撑的。
 利益披露：截至发稿前，作者（Peyton）与Witness Chain无任何商业利益行为。
 
 免责声明：教程所有内容均不构成投资建议，仅供参考。加密货币相关资风险极高，极容易归零，请在参与时谨慎做出决策，并严格遵守相关法律法规。
+
+![LYS Lab介绍初稿_09](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)
