@@ -246,19 +246,20 @@ Palio Aura NFT 是一款限量版 NFT，供应量为 3333 个，铸造价格为 
 总结而言，用户使用Xter.AI服务的可能流程如下：
 
 1. 前提：必须持有相应NFT 才有资格创建内容。
-2.  创造
+2. 创造
 
-    ![img](https://miro.medium.com/v2/resize:fit:875/1\*XNYuXVBr3myHmo1V4aLoaQ.png)
+   ![img](https://miro.medium.com/v2/resize:fit:875/1\*XNYuXVBr3myHmo1V4aLoaQ.png)
 
-    图源：https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f
-3.  发布：作品创造者可以获取每笔交易2.5%的Royalty Fee作为收入，同时还可以设置新玩家铸造NFT的利润在创作者和NFT持有者两者之间的归属比例。![Screenshot 2024-08-16 175727](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161757887.png)
+   图源：https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f
+3. 发布：作品创造者可以获取每笔交易2.5%的Royalty Fee作为收入，同时还可以设置新玩家铸造NFT的利润在创作者和NFT持有者两者之间的归属比例。
+4. ![Screenshot 2024-08-16 175727](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161757887.png)
 
-    图源：https://xter.io/fans/works/390575
-4.  铸造
+   图源：https://xter.io/fans/works/390575
+5. 铸造
 
-    ![img](https://miro.medium.com/v2/resize:fit:875/1\*cN4L3GXNV7SBSAZed6CCvA.png)
+   ![img](https://miro.medium.com/v2/resize:fit:875/1\*cN4L3GXNV7SBSAZed6CCvA.png)
 
-    图源：https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f
+   图源：https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f
 
 #### Xterio NFT市场
 
@@ -283,7 +284,9 @@ Xterio 和其他一些平台则选择采取相反的立场，他们认为版税�
 * **强制版税**：Xterio通过支持新的智能合约标准，确保内容创作者因开发和维护其作品而获得适当的激励。
 * **社区建设**：Xterio认识到社区的重要性，为创作者提供社交功能，以便他们能够相互联系、合作和学习。
 
-目前，Xterio的NFT市场上已上线包括Age of Dino，Overload，Palio等共计25款NFT。![Screenshot 2024-08-16 181846](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161818682.png)
+目前，Xterio的NFT市场上已上线包括Age of Dino，Overload，Palio等共计25款NFT。
+
+![Screenshot 2024-08-16 181846](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161818682.png)
 
 图源：https://xter.io/marketplace
 
@@ -369,9 +372,12 @@ WonderBits是一款首个支持 X 和 Telegram 之间互操作的社交闲置游
 
 奖励说明：Xterio并未明确说明，因此不推荐。
 
-交互教程：1.进入Eigenlayer主网质押ETH或LST代币。这里以stETH为例。![Screenshot 2024-08-16 211333](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162113150.png)
+交互教程：1.进入Eigenlayer主网质押ETH或LST代币。这里以stETH为例。
+![Screenshot 2024-08-16 211333](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162113150.png)
 
-2.随后选择保护Xterio Chain的节点运营商进行质押即可。进入Xterio Mach的界面https://app.eigenlayer.xyz/avs/0x6026b61bdd2252160691cb3f6005b6b72e0ec044，下拉找到这些节点运营商，选择质押即可。这里以Automata为例。![Screenshot 2024-08-16 211333](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162115540.png)
+2.随后选择保护Xterio Chain的节点运营商进行质押即可。进入Xterio Mach的界面https://app.eigenlayer.xyz/avs/0x6026b61bdd2252160691cb3f6005b6b72e0ec044，下拉找到这些节点运营商，选择质押即可。这里以Automata为例。
+
+![Screenshot 2024-08-16 211333](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162115540.png)
 
 ![Screenshot 2024-08-16 211652](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162117916.png)
 
