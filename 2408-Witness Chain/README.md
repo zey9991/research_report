@@ -38,7 +38,9 @@
 
 #### 融资信息
 
-Rootdata上未有公开的融资信息，但是从其官网可以看出，Witness Chain 获得了包括Ethereal Ventures，**Polychain Capital**，Robot Vetures，Frontier Capital和dao5的投资。![Screenshot 2024-08-12 222255](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122223249.png)
+Rootdata上未有公开的融资信息，但是从其官网可以看出，Witness Chain 获得了包括Ethereal Ventures，**Polychain Capital**，Robot Vetures，Frontier Capital和dao5的投资。
+
+![Screenshot 2024-08-12 222255](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122223249.png)
 
 图源：https://www.witnesschain.com/
 
