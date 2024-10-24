@@ -25,3 +25,15 @@
 日期：2023年7月3日
 
 推荐理由：能够专业地介绍去中心化现货与合约交易所GMX从V1到V2的变迁及未来路线，并分析其中原因、机遇、挑战和交易策略。值得一看。
+
+4.[Uniswap V2 数学与源码解读](https://mp.weixin.qq.com/s/XXjoZG6wMRkbCDk65lubMg)
+
+作者： cryptoyzr（Gryphsis Academy 学员）
+
+日期：2024.6.27
+
+推荐理由：里面源码分析的流程图、架构图等对于展现合约工作细节很有帮助，源码分析时可以借鉴：
+
+![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/nVDicFHmv83Z8DibJLep1gAjWPnkxJgzfib9D1dGGypfbFZiaFn8feYQz4c2loRscibJYzTt6tPnEkHd6IGVnwVIvLw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/nVDicFHmv83Z8DibJLep1gAjWPnkxJgzfibL1v4MR4vMYjUic4sEG8o2nH2NIeXqtMeRypGyNeO26ABB6rOMSicZialw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/nVDicFHmv83Z8DibJLep1gAjWPnkxJgzfibsyIt6ibP0z2h6PYkmRQic47vLv1t3sOf9VhjZU7KC1XNLEW8oqPicfXmg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/nVDicFHmv83Z8DibJLep1gAjWPnkxJgzfib20KU2wk2hIEhgBFGicfibf42bPX8WwGniahBiceUSKDcia9SlpBcv4ybU0w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
