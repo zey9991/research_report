@@ -1,3 +1,7 @@
-URL: https://dune.com/zey9991/gtradeactiveusers
+# 2410-gTrade Active Users
 
-![gTrade_Active_Users](https://cdn.jsdelivr.net/gh/zey9991/mdpic/gTrade_Active_Users.png)
+URL:
+
+{% embed url="https://dune.com/zey9991/gtradeactiveusers" %}
+
+![gTrade\_Active\_Users](https://cdn.jsdelivr.net/gh/zey9991/mdpic/gTrade\_Active\_Users.png)
