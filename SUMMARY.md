@@ -4,6 +4,7 @@
 
 ## Research Reports
 
+* [2410-GMX](research_reports/2410-GMX/README.md)
 * [2409-Monad](research_reports/2409-Monad/README.md)
 * [2409-Pendle](research_reports/2409-Pendle/README.md)
 * [2408-Xterio](research_reports/2408-Xterio/README.md)
@@ -20,7 +21,7 @@
 
 ## Others
 
-* [2407-Restaking](others/2407-Restaking/README.md)
+* [2407-Easy Explanation of Restaking](others/2407-Restaking/README.md)
 * [Web3 Project Research Report Guide](<others/2409-Web3 Project Research Report Guide/README.md>)
 * [Recommended Research Reports](<others/Recommended Research Reports/README.md>)
 
