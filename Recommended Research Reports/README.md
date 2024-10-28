@@ -37,3 +37,12 @@
 ![](https://mmbiz.qpic.cn/sz_mmbiz_png/nVDicFHmv83Z8DibJLep1gAjWPnkxJgzfib9D1dGGypfbFZiaFn8feYQz4c2loRscibJYzTt6tPnEkHd6IGVnwVIvLw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)![](https://mmbiz.qpic.cn/sz_mmbiz_png/nVDicFHmv83Z8DibJLep1gAjWPnkxJgzfibL1v4MR4vMYjUic4sEG8o2nH2NIeXqtMeRypGyNeO26ABB6rOMSicZialw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
 ![](https://mmbiz.qpic.cn/sz_mmbiz_png/nVDicFHmv83Z8DibJLep1gAjWPnkxJgzfibsyIt6ibP0z2h6PYkmRQic47vLv1t3sOf9VhjZU7KC1XNLEW8oqPicfXmg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)![](https://mmbiz.qpic.cn/sz_mmbiz_png/nVDicFHmv83Z8DibJLep1gAjWPnkxJgzfib20KU2wk2hIEhgBFGicfibf42bPX8WwGniahBiceUSKDcia9SlpBcv4ybU0w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+5.[从 ETHLend 到 Aave V4 : 借贷龙头的生态建成计划](https://mp.weixin.qq.com/s/8LGS3diMT24ENsNr9xr0hQ)
+
+作者：Elias201179（Gryphsis Academy 学员）
+
+日期：2024.5.21
+
+推荐理由：框架很清晰，值得模仿，在写GMX研报时借鉴了。本文的框架笔者整理了，有需要的读者可移步https://gsgmqpvuf85c.sg.larksuite.com/wiki/HBxtwuiuBi9UW2kNLWBlOz7Wg3d?from=from_copylink
+
