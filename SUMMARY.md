@@ -20,7 +20,7 @@
 
 ## Others
 
-* [2409-Web3 Project Research Report Guide](<others/2409-Web3 Project Research Report Guide/README.md>)
 * [2407-Restaking](others/2407-Restaking/README.md)
+* [Web3 Project Research Report Guide](<others/2409-Web3 Project Research Report Guide/README.md>)
 * [Recommended Research Reports](<others/Recommended Research Reports/README.md>)
 
