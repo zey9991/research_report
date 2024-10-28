@@ -1,9 +1,0 @@
-# 2406-Ton
-
-PDF文件下载：
-
-{% embed url="https://github.com/zey9991/research_report/blob/main/2406-Ton/Ton%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A%20%40Peyton.pdf" %}
-
-摘要：
-
-TON公链的爆发不是牛市利好行情下的偶然，而且TON公链久久为功下的必然：TON基金会与Telegram正式合作使得其TON公链的用户转化成本大大降低；此外，TON公链的钱包应用与Telegram Bot/Mini Apps的无缝融合进一步优化了用户体验；同时，Defi，Gamefi等赛道生态百花齐放，甚至涌现出如Notcoin等的爆款应用。总的来说，TON公链极致的用户体验是其近期代币持续攀升的根本原因。展望未来，TON公链的生态发展无疑值得投资者们长期关注与积极布局。
