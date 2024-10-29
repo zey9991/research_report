@@ -522,3 +522,85 @@ GMX竞争对手的吃单（以市价接单）费用 图源：[GMX Fee reduction 
 ## 结论
 
 作为领先的去中心化现货与永续合约交易所，GMX无风投支持，完全由匿名团队和社区驱动。自 2023 年 V2 上线后，流动性池种类增加，创收能力强，自 2021 年以来累计交易费用达 3.499 亿美元，其中大部分收入分配给流动性提供者和治理代币持有者。尽管用户向 V2 的迁移仍在进行，GMX 在多个指标上优于同类项目，尤其在费用收入方面遥遥领先。GMX 采用双代币模式，治理代币 $GMX 几乎全流通，抛压小，主要面临费率竞争和跨链吸引力的挑战。
+
+## 参考文献
+
+1. [GMX | GMX Docs](https://docs.gmx.io/docs/intro/)
+2. [**去中心化永续合约交易所：技术、市场与前沿预测 (qq.com)**](https://mp.weixin.qq.com/s/LPiJYixkGyE0wbw2Xs6SMw)
+3. **[GMX的常见误解总结，GLP在极端行情中会归零？ - PANews (panewslab.com)](https://www.panewslab.com/zh/articledetails/ievrx7b2.html)**
+4. [逆市而涨的GMX，能否成为去中心化永续合约新的王者？ - PANews (panewslab.com)](https://www.panewslab.com/zh/articledetails/1643522822971920.html)
+5. [GMX：Arbitrum 生态头部衍生品交易平台 | defi.to](https://www.defi.to/cn/gmx/)
+6. [GMX逆势生长的背后：真实收益、代币设计及潜在风险_腾讯新闻 (qq.com)](https://new.qq.com/rain/a/20221011A03XWU00)
+7. [GMX (GMX) (binance.com)](https://www.binance.com/zh-CN/research/projects/gmx)
+8. [GMX V2 及其竞争对手：颠覆去中心化衍生品市场的新浪潮 - 深潮TechFlow (techflowpost.com)](https://www.techflowpost.com/article/detail_17141.html)
+9. [回顾 GMX V1 发展情况，简述 GMX V2 的改动与影响 - Foresight News](https://foresightnews.pro/article/detail/40451)
+10. [GMX 的转型之路：从 V1 到 V2 的市场表现与前景分析 - Foresight News](https://foresightnews.pro/article/detail/44769)
+
+2. [千呼万唤始出来，全方位解读 GMX V2 - CapitalismLab (substack.com)](https://capitalismlab.substack.com/p/gmx-v2)
+
+3. [播客笔记｜对话 GMX 核心贡献者： V2 的创新与市场期望 - 深潮TechFlow (techflowpost.com)](https://www.techflowpost.com/article/detail_12877.html)
+
+4. [深入解析GMX、DYDX和SNX：衍生品 DEX 协议的代币经济模型对比分析 - 深潮TechFlow (techflowpost.com)](https://www.techflowpost.com/article/detail_12325.html)
+
+5. [GMX 生态速览：GLP 乐高正在搭建，有哪些协议值得关注？ - 深潮TechFlow (techflowpost.com)](https://www.techflowpost.com/article/detail_11414.html)
+
+6. [About - GMX](https://gov.gmx.io/about)
+7. [GMX Fee reduction proposal - Feature Discussion - GMX](https://gov.gmx.io/t/gmx-fee-reduction-proposal/3988)
+8. [Implementation of GMX Liquidity Vaults (GLV) for Enhancing Liquidity - Proposals - GMX](https://gov.gmx.io/t/implementation-of-gmx-liquidity-vaults-glv-for-enhancing-liquidity/3860)
+
+9. [Gmx v2: new low-latency chainlink feeds - GMX](https://gov.gmx.io/t/gmx-v2-new-low-latency-chainlink-feeds/2050)
+10. [# GMX V2: (i) UPDATING THE GMX-INTERFACE CODEBASE AND (ii) GMX V2 FEE SETTINGS - Proposals - GMX](https://gov.gmx.io/t/gmx-v2-i-updating-the-gmx-interface-codebase-and-ii-gmx-v2-fee-settings/2017)
+
+11. [GMX Update 2 - Proposals - GMX](https://gov.gmx.io/t/gmx-update-2/38)
+
+12. [GMX V2的改动与影响. GMX V2版本于2023年8月4日正式上线。本文回顾GMX… | by LD Capital | Medium](https://ld-capital.medium.com/gmx-v2的改动与影响-f3f72ffe2384)
+
+13. [Proposal for Reintroducing esGMX Incentives to Boost GMX APR - GMX](https://gov.gmx.io/t/proposal-for-reintroducing-esgmx-incentives-to-boost-gmx-apr/2794)
+
+14. [全局流动性的威力，被低估的链上衍生品交易平台 Gmx（GMX）项目分析 - Foresight News](https://s.foresightnews.pro/article/detail/9580)
+15. [GMX 将向交易员、流动性提供者和建设者分发 540 万枚 ARB，作为其 Arbitrum STIP-Bridge 激励活动的一部分](https://gmxio.substack.com/p/gmx-will-distribute-54-million-arb)
+
+16. [GMX 将如何利用 Arbitrum 资助计划的 1200 万$ARB奖励激励](https://gmxio.substack.com/p/how-gmx-will-utilise-the-12-million)
+
+17. [Announcement: GMX V2 Testnet is now publicly available!](https://gmxio.substack.com/p/announcement-gmx-v2-testnet-is-now)
+
+18. [GMX V2 Beta is now live! - GMX News](https://gmxio.substack.com/p/gmx-v2-beta-is-now-live)
+
+19. [GMX announces the launch of Single-Token Pools on V2, starting with yield-earning BTC and ETH liquidity pools on Arbitrum](https://gmxio.substack.com/p/gmx-announces-the-launch-of-single)
+
+20. [GMX introduces GMX Liquidity Vaults (GLV), now live on Arbitrum & Avalanche](https://gmxio.substack.com/p/gmx-introduces-gmx-liquidity-vaults)
+
+21. [由 Chainlink Data Streams 提供支持的 GMX V2 现已在 Arbitrum 主网上线](https://gmxio.substack.com/p/gmx-v2-powered-by-chainlink-data)
+
+22. [GMX V2 现已在 Avalanche 上与 Chainlink Data Streams 一起上线](https://gmxio.substack.com/p/gmx-v2-is-now-live-with-chainlink)
+
+23. [GMX V2：GMX 将集成 Chainlink 的新低延迟预言机](https://gmxio.substack.com/p/gmx-v2-gmx-will-integrate-chainlinks)
+
+24. [GMX 2024 - GMX 新闻](https://gmxio.substack.com/p/gmx-2024)
+
+25. [X4：协议控制交换 - GMX 新闻](https://gmxio.substack.com/p/x4-protocol-controlled-exchange)
+
+26. [案例研究：GMX x Arbitrum x Chainlink - GMX 新闻](https://gmxio.substack.com/p/case-study-gmx-x-arbitrum-x-chainlink)
+27. [GMX 启动计划 - GMX 新闻](https://gmxio.substack.com/p/gmx-launch-plan)
+28. [公告：年终 #GMXRush Avalanche 交易大赛，奖池 150,000 美元](https://gmxio.substack.com/p/launching-this-friday-the-year-end)
+
+29. [GMX is now live on Avalanche! - GMX News](https://gmxio.substack.com/p/gmx-is-now-live-on-avalanche)
+30. [GMX 更新 1 - GMX 新闻](https://gmxio.substack.com/p/gmx-update-1)
+
+31. [GMX 更新 2 - GMX 新闻](https://gmxio.substack.com/p/gmx-update-2)
+32. [GMX 更新 3 - GMX 新闻](https://gmxio.substack.com/p/gmx-update-3)
+33. [GMX Arbitrum 奥德赛 - GMX 新闻](https://gmxio.substack.com/p/gmx-arbitrum-odyssey)
+
+34. [GMX 部署更新（2022 年 11 月） - GMX 新闻](https://gmxio.substack.com/p/gmx-deployment-updates-nov-2022)
+
+35. [GMX 加入 Avalanche Rush，获得 $4M 交易奖励 |作者 Avalanche |雪崩 |中等](https://medium.com/avalancheavax/gmx-joins-avalanche-rush-with-4m-in-trading-rewards-ce5c66f0e3b3)
+36. [GMX 推出由 Notifi 提供支持的实时交易和治理警报](https://gmxio.substack.com/p/gmx-introduces-real-time-trading)
+
+37. [常见问题解答： - 作者：Jonezee - GMX 新闻](https://gmxio.substack.com/p/frequently-asked-questions)
+
+38. [GBC 2022 年计划 |作者 GBC |中等](https://findgbc.medium.com/gbc-plans-for-2022-3ffe57e04087)
+
+39. [GBC 路线图更新 1 |作者 GBC |中等](https://findgbc.medium.com/gbc-roadmap-update-1-22b06f4f6353)
+40. [Blueberry Lab 版本 + 更新 |作者 GBC |中等](https://findgbc.medium.com/blueberry-lab-release-2-upcoming-products-a4db306e4658)
+
+41. [GBC 路线图更新（第 1 部分）。嘿，浆果！是时候更新一下了... |作者 GBC |中等](https://findgbc.medium.com/gbc-roadmap-update-pt-1-316228c1ebe7)
