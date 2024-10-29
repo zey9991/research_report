@@ -526,8 +526,8 @@ GMX竞争对手的吃单（以市价接单）费用 图源：[GMX Fee reduction 
 ## 参考文献
 
 1. [GMX | GMX Docs](https://docs.gmx.io/docs/intro/)
-2. [**去中心化永续合约交易所：技术、市场与前沿预测 (qq.com)**](https://mp.weixin.qq.com/s/LPiJYixkGyE0wbw2Xs6SMw)
-3. **[GMX的常见误解总结，GLP在极端行情中会归零？ - PANews (panewslab.com)](https://www.panewslab.com/zh/articledetails/ievrx7b2.html)**
+2. [去中心化永续合约交易所：技术、市场与前沿预测 (qq.com)](https://mp.weixin.qq.com/s/LPiJYixkGyE0wbw2Xs6SMw)
+3. [GMX的常见误解总结，GLP在极端行情中会归零？ - PANews (panewslab.com)](https://www.panewslab.com/zh/articledetails/ievrx7b2.html)
 4. [逆市而涨的GMX，能否成为去中心化永续合约新的王者？ - PANews (panewslab.com)](https://www.panewslab.com/zh/articledetails/1643522822971920.html)
 5. [GMX：Arbitrum 生态头部衍生品交易平台 | defi.to](https://www.defi.to/cn/gmx/)
 6. [GMX逆势生长的背后：真实收益、代币设计及潜在风险_腾讯新闻 (qq.com)](https://new.qq.com/rain/a/20221011A03XWU00)
