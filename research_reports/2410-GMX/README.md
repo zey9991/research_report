@@ -1,8 +1,6 @@
-# 2410-GMX
-
 # 读懂零融资的DEX龙头GMX：产品美学与真实收益
 
-撰文：Peyton
+撰文：Peyton，LYS Lab（X：[@0xPeyton404](https://x.com/0xPeyton404)，[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3) ）
 
 ## 摘要
 
