@@ -2,7 +2,7 @@
 
 排名不分先后，作者：Peyton，Kon杰（LYS Lab  @LingyueSamaWeb3）
 
-![LYS Lab品牌形象_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
+![![]($1)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
 ## 摘要
 
@@ -140,7 +140,7 @@ TPS是每秒交易量的缩写，是区块链最常见的性能基准。但是�
 
 根据CoinGecko在2024年5月公布的数据中，目前最快的区块链Solana主网上TPS（实际TPS）仍在1k徘徊，但是 Solana 仍然仅达到其理论最大速度 65,000 TPS 的 1.6%。在EVM 区块链，BSC在铭文驱动的链上活动激增中实现了 378 的实际 TPS排行第三，而Polygon则以190的实际TPS排名第四，是目前最快的EVM兼容链。
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291141570.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291141570.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291141570.png)
 
 数据来源：https://www.coingecko.com/research/publications/fastest-blockchains
 
@@ -162,7 +162,7 @@ Jump Trading还通过其风险投资部门**Jump Capital**以及加密货币部�
 
 由于这些项目logo底色均为紫色，被业内人士戏称为“紫色联盟”。
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291543274.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291543274.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291543274.png)
 
 Monad推特的相互关注 图源：RootData
 
@@ -174,7 +174,7 @@ Monad推特的相互关注 图源：RootData
 
 Monad 社区通过分级制度有效地管理成员的权限和活动范围。成员的访问权限与他们在 Discord 上所获得的角色密切相关，这种角色分级制度极大地激励了成员的参与。例如，社区成员通过完成任务和互动活动逐步获得更高的权限，而期待未来的代币生成活动（TGE）奖励则进一步激发了他们的参与热情。根据 DeSpread 的整理，Monad Discord 中的角色等级划分明确，并对应不同的权限和特权。
 
-![https://upload.techflowpost.com/upload/images/20240925/2024092513341673992337.jpeg](https://upload.techflowpost.com/upload/images/20240925/2024092513341673992337.jpeg)
+![](https://upload.techflowpost.com/upload/images/20240925/2024092513341673992337.jpeg)
 
 图源：https://www.techflowpost.com/article/detail_20592.html
 
@@ -196,7 +196,7 @@ Monad 通过每周的“周四清理”（Purge Day）定期筛选成员，清�
 
 相比于传统的区块链活动，Monad 更加注重为本地社区和开发者组织的线下活动。迄今为止，Monad 已经在日本、中国和泰国等多个国家成功举办了聚会。这种方式既加强了本地社区的凝聚力，也为 Monad 生态的全球化发展提供了动力。
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291729392.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291729392.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291729392.png)
 
 图源：Monad官网
 
@@ -204,7 +204,7 @@ Monad 通过每周的“周四清理”（Purge Day）定期筛选成员，清�
 
 ### 4.Monad生态项目现状
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291449837.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291449837.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291449837.png)
 
 Monad 生态版图 图源：Drops Tab
 
@@ -212,23 +212,23 @@ Monad 生态版图参见上图（数据截至 2024 年 8 月 1 日）。Monad区
 
 Monad原生的生态项目发展也呈现出繁荣态势，吸引多个投资机构纷纷入局。由于很多原生生态项目仍处在早期阶段，这里我们主要选用公布融资总额和推特分数两个指标，与其他的并行EVM公链生态发展做一个简单对比，数据源自RootData。
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291432381.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291432381.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291432381.png)
 
 可以看出，Monad原生项目数量在四者中位列第二，为12个，但是公布的融资总额远超第一Sei公链，已经达到1365万美元。其中aPriori，Kuru和Monad Pad分别吸引了1070万，200万和95万美元融资。不过，我们也可以看到Monad原生生态项目（即使取平均后）在推特粉丝数量方面不及竞争对手Sei公链生态。
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291515542.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291515542.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291515542.png)
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291444834.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291444834.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291444834.png)
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443459.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443459.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443459.png)
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443857.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443857.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291443857.png)
 
 这里，我们再重点介绍Monad上已经成功融资的几个原生项目。
 
 #### 4.1  aPriori
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291509722.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291509722.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291509722.png)
 
 **aPriori** 是一个基于 Monad 原生构建的 MEV（矿工可提取价值）基础设施和流动性质押协议，旨在为 Monad 提供以交易为核心的基础架构，降低 gas 费用、优化网络流量，并为验证者提供可持续的激励，从而提升吞吐量和用户体验。
 
@@ -238,13 +238,13 @@ Monad原生的生态项目发展也呈现出繁荣态势，吸引多个投资机
 
 #### 4.2  Kuru
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291501662.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291501662.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291501662.png)
 
 Kuru正在开创一种完全链上的中央限价订单(CLOB)，以增强DeFi领域的交易体验。传统的自动做市商(amm)以巨大的交易量主导了DeFi，但存在高滑点和流动性使用效率低下等缺点。Kuru旨在通过允许做市商主动报价流动性来克服这些限制，为用户提供更好的价格和减少滑点。与Monad的集成，使得操作功能性CLOB变得可行，使做市商能够频繁地调整报价，而不必担心高昂的交易成本。Kuru的平台是为流动性和长尾资产设计的，旨在简化流动性供应，并将交易过程整合到一个界面中。通过弥合去中心化交易所和用户友好型交易体验之间的差距，Kuru试图重新定义交易者与链上资产的互动方式。2024年7 月，Kuru 宣布完成了 200 万美元种子轮融资，由 Electric Capital 领投，Brevan Howard Digital、CMS Holdings 等机构，以及 Keone Hon 等天使投资人参投。
 
 #### 4.3  Monad Pad
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291500428.png](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291500428.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291500428.png)
 
 Monad Pad是一个基于Monad区块链的代币和NFT启动平台，支持项目团队和开发者通过预售或公开发售的形式进行早期募资。目前，Monad Pad已经发行了以紫色青蛙为形象的原创NFT系列**Purple Frens**，总发行量为3333个，每个NFT的初始售价为500美元。此外，Monad Pad平台的20%收入将分配给Purple Frens NFT的持有人。Monad Pad的原生代币是**MPAD**，总发行量为1亿枚，其中10%（1000万枚）将以质押的方式分配给Purple Frens NFT持有人。
 
@@ -256,7 +256,7 @@ Monad Pad已于7月5日完成了94.5万美元的种子轮融资，投资机构�
 
 #### 4.4  Curvance
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291518507.webp](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291518507.webp)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291518507.webp)
 
 Curvance 是一种去中心化的稳定币借贷协议，最初专注于来自 Curve、Convex、Aura 和 Frax 生态系统的 LP。 Curvance 目标让用户获得优化的收益，同时通过点对点借贷最大限度地提高资本效率。 cvxCRV、auraBAL 和 yCRV 等资产可以获得与其在原始平台上获得的类似或更高的 APR，但具有为安全稳定币贷款抵押存款的额外能力。Curvance在23年12月获得了来自Arbitrum / Offchain Labs, Wormhole, Frax等共计360万美金投资。
 
@@ -266,7 +266,7 @@ Curvance 是一种去中心化的稳定币借贷协议，最初专注于来自 C
 
 #### 4.5  Backpack
 
-![https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291519810.webp](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291519810.webp)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409291519810.webp)
 
 Backpack 是 Sol 系最重要的交易所，Backpack 拥有交易所和多链钱包。Backpack 的技术提供了一种自我托管解决方案，该解决方案集成了多方计算 (MPC) 技术，以确保资金安全。2022年，Backpack获得了来自Jump Crypto和FTX Ventures领投的2000万美金融资，且于2024年2月获得1700万美金的A轮融资，共计融资额达到3700万。
 
@@ -403,5 +403,5 @@ Monad区块链尚未在主网上启动，其生态系统仍在发展中。在202
 43. https://www.techflowpost.com/article/detail_20015.html
 44. https://www.techflowpost.com/article/detail_20592.html
 
-![LYS Lab介绍初稿_09](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)
 

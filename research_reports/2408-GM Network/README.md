@@ -4,7 +4,7 @@
 >
 > ***本报告正文部分最后编辑于2024年8月2日***
 
-![LYS Lab品牌形象_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
 # 结论
 
@@ -31,9 +31,9 @@ GM Labs通过为Web3和AI开发dApps和Appchain来加快大规模采用。它是
 
 ### 商业模式 2B2C
 
-![1](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091431755.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091431755.png)
 
-![2](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091431005.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091431005.png)
 
 GM瞄准的2B客户是那些消费级AIOT项目方（包括出产消费级智能设备的物联网公司iot，已经合作的如Starpower，以及希望利用这些数据的ai公司，已经合作的如Gonesis AI ），整个商业闭环是这样的：
 
@@ -57,7 +57,7 @@ GM瞄准的2B客户是那些消费级AIOT项目方（包括出产消费级智能
 - **训练：**分布在全球的不同类型的物联网设备每天会产生大量数据。这些数据可用于训练 AI，并允许开发人员和用户从中受益。
 - **转化：**大规模的物联网项目部署在GM网络上，人工智能将物联网转化为AIoT，创造更多的使用场景，产生更多的数据，从而带动GM Network 的正增长飞轮。
 
-![4](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091431120.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091431120.png)
 
 2C主要是Agent与Gear NFT及AIoT产品售卖，NFT介绍具体参见下面的经济模型一节。GM Store（https://ai.gmnetwork.ai/）将专注于直接向消费者提供广泛的消费者AIoT解决方案。通过简化销售流程，提供精心策划的产品和服务，GM商店旨在成为所有AIoT产品的首选目的地。
 
@@ -71,7 +71,7 @@ Rootdata上未有GM Network的融资信息（2024年7月25日）。
 
 ## 经济模型
 
-![5](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091432847.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091432847.png)
 
 ### 治理代币$GM
 
@@ -93,7 +93,7 @@ General GN完成任务，在GM Store上购买产品以及持有和质押 NFT可�
 
  Referral GN对于每个获得一般 GN 的有效推荐人，您将获得他们收入的 1% 作为推荐 GN
 
-![6](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091444675.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091444675.png)
 
 
 
@@ -106,9 +106,9 @@ General GN完成任务，在GM Store上购买产品以及持有和质押 NFT可�
 
 有五个稀有级别，它们决定了收入和数据采集的数量。所有 NFT 都可以通过锻造系统增加其稀有性。
 
-![7](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091443851.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091443851.png)
 
-![8](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091443336.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091443336.png)
 
 来源：https://docs.gmnetwork.ai/docs/nft-engagement/staking
 
@@ -116,9 +116,9 @@ General GN完成任务，在GM Store上购买产品以及持有和质押 NFT可�
 
 最初，每个用户有1个Agent槽位和6个Gear槽位。随着用户等级的提高，将解锁更多插槽。
 
-![9](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091433609.jpeg)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091433609.jpeg)
 
-![10](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091442073.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091442073.png)
 
 **NFT质押（装备）**
 
@@ -140,11 +140,11 @@ General GN完成任务，在GM Store上购买产品以及持有和质押 NFT可�
 
 目前Uncommon，Rare和Epic等级的GMAI BAND（手环+NFT）开放预售，价格分别为0.035ETH，0.055ETH和0.075ETH
 
-![11](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091433792.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091433792.png)
 
 据官网介绍这个手环还是有一些实际功能的
 
-![12](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091433185.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091433185.png)
 
 NFT持有者的三重收益：空投预期、质押奖励和挖矿奖励（提供数据）
 
@@ -152,7 +152,7 @@ NFT持有者的三重收益：空投预期、质押奖励和挖矿奖励（提�
 
 - **Starpower Plug（**[**https://gmnetwork.medium.com/gm-store-unveils-new-consumer-aiot-product-starplug-be1743298f48**](https://gmnetwork.medium.com/gm-store-unveils-new-consumer-aiot-product-starplug-be1743298f48)**）**
 
-![14](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091445711.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091445711.png)
 
 Starpower作为新成员加入了GM Network的生态系统，进一步丰富了平台的产品，他们的最新产品Starplug现已在GM商店销售。售价$99
 
@@ -166,7 +166,7 @@ GMAI Companion，您的个人AI语音伴侣，由GM Studio孵化，是一个人�
 
 本质上，GMAI Companion是一个智能家庭枢纽，无缝结合智能家居控制和个人助理能力，提供整体智能生活解决方案，实现更智能、方便和舒适的生活方式。
 
-![15](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091435027.jpeg)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091435027.jpeg)
 
 更多未来产品包括
 
@@ -183,7 +183,7 @@ GM Network是第一个消费者AIoT网络。与AltLayer和EigenLayer合作开发
 
 GM Network是GM实验室开发的一项创新，旨在弥合现实世界和虚拟世界之间的差距。它是一款为人工智能驱动的消费者DePIN设计的AVS L2。与AltLayer和EigenLayer合作开发的GM Network代表了人工智能和Web3技术集成的飞跃。
 
-![16](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091435138.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091435138.png)
 
 AIoT=AI+IoT，物联网为AI提供数据和场景，并向AIoT转型。GM Network目标是成为连接人工智能和物联网的最大通信和激励网络，持续为人工智能提供：
 
@@ -194,13 +194,13 @@ AIoT=AI+IoT，物联网为AI提供数据和场景，并向AIoT转型。GM Networ
 
 GM Network的模块化生态系统旨在通过显著降低开发人员的成本和障碍，促进AIoT (AI + IoT)的大规模采用。它由三个主要层组成:资产层、数据层和用户层。每一层在为AIoT开发和部署创建一个全面、可伸缩和安全的生态系统方面发挥着至关重要的作用。
 
-![17](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091435877.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091435877.png)
 
 #### 资产层
 
 该层主要满足AIoT资产发行、流通、交易等需求。通过使用专门的第 2 层，它可以更好地符合 AIoT 所需的特性。
 
-![18](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091436246.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091436246.png)
 
 AVS：第一个由 AltLayer 和 EigenLayer 支持的消费者 AIoT 网络。
 
@@ -216,7 +216,7 @@ Scalability: GM Network支持所有AIoT项目在GM上部署DApps或Layer 3, GM N
 
 ##### GM ID
 
-![19](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091436206.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091436206.png)
 
 GM ID 是一个聚合钱包 SDK，结合了 Passkey、账户抽象和 DID。借助 GM ID 的强大功能，所有开发者都可以在他们的产品中提供无缝的钱包和 DID 创建服务
 
@@ -226,7 +226,7 @@ GM ID 兼容 Web、iOS、Android，使用简单，大大降低了开发者的门
 
 GM OS 是一种链上和链下数据协议。通过利用链上安全性和链下速度，GM OS可实现实时数据处理和分析，从而促进更高效的AI训练和决策。这种强大的协议使物联网设备能够向 AI 系统提供有价值的数据，从而增强其学习能力和整体性能。此外，GM OS 确保数据所有权和隐私得到维护，让用户能够控制他们的信息。
 
-![20](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091436548.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091436548.png)
 
 GM OS将具有以下主要功能：
 
@@ -238,7 +238,7 @@ GM OS将具有以下主要功能：
 
 GM OS已累计来自QuestN的链上数据条目达1000万条，服务超过6000名开发者，覆盖DePIN、AI、Gaming、Social、DeFi等多个领域。随着越来越多的消费类AIoT产品涌现，GM OS上的数据将变得越来越准确和有价值。
 
-![21](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091436316.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091436316.png)
 
 #### 用户层（QUESTN+GM Launchpad+GM AI）
 
@@ -246,15 +246,15 @@ GM OS已累计来自QuestN的链上数据条目达1000万条，服务超过6000�
 
 ##### QUESTN（https://app.questn.com/）
 
-![22](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091436845.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091436845.png)
 
-![23](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091437373.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091437373.png)
 
 QuestN是一个的社区增长和营销平台（使用感觉很类似做交互空投任务的Galxe）。
 
 推出两年后，QuestN已经积累了超过10M+的唯一地址，DAU数量超过200K+，MAU达到1M+。用户分布在超过 25 个国家和地区。QuestN 每天通过众多任务和活动吸引庞大的用户群，帮助 6,000 多个项目实现社区增长和冷启动，并向用户提供超过 300 万美元的代币奖励。
 
-![24](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091437105.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091437105.png)
 
 QuestN将从链上数据角度持续生成更多数据，这些数据与链下数据一起，将辅助AI训练。它还将帮助更多的AIoT项目建立链上用户画像、声誉管理和行为分析。QuestN将继续支持社区发展、设备和NFT的预售、更多消费者AIoT项目的产品推广。
 
@@ -306,7 +306,7 @@ GM Network的模块化设计允许灵活的集成和定制。开发人员可以�
 
 #### GM Network关键数据
 
-![25](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091437161.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091437161.png)
 
 来源：https://app.eigenlayer.xyz/avs/0xb3acaf09a1b801e36655b786da4eaa6ae9f5dc37
 
@@ -339,7 +339,7 @@ AIoT 设备越多，铸造的 NFT 就越多，加入 GM Network 生态系统的�
 - GM和GN开放兑换
 - 引入更多高级的激励机制，以促进设备和数据生成
 
-![26](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091449035.jpeg)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091449035.jpeg)
 
 
 
@@ -361,7 +361,7 @@ Telegram频道人数94338
 
 ==每日签到==
 
-![27](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091449822.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091449822.png)
 
 奖励说明：第一天10$GN，逐渐增长至第七天的$100GN
 
@@ -369,7 +369,7 @@ Telegram频道人数94338
 
 ==SOCIAL CHALLENGE==
 
-![28](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091438142.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091438142.png)
 
 **奖励说明：**除了最后一个Boost项目，其他都是关注GM一系列社交媒体账号即可完成，这部分可获取共950$GN。
 
@@ -379,21 +379,21 @@ Telegram频道人数94338
 
 注意：完成任务后需要回到Misson界面（https://ai.gmnetwork.ai/mission）索取报酬，点击“CLAIM REWARD”。
 
-![30](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091438982.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091438982.png)
 
 在QUESTN界面完成任务后，右侧也会显示有Reward，是一个$GN Whitelist（soulbound NFT），目前作用未知，各位可以领取一个即可，目前不推荐重复领取（需要耗费BNB Smart Chain上的BNB）
 
-![31](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091439843.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091439843.png)
 
 ==GM‘S SECRET桥接任务==
 
-![32](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091439075.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091439075.png)
 
 **奖励说明：**桥接0.01ETH获得300$GN，完成10+交易获得1000$GN。
 
 **交互教程：**首先是桥接任务，需要桥接0.01ETH进入GM网络。进入桥接网址：https://bridge.gmnetwork.ai/，链接钱包后点击“存款按钮”，从以太坊主网存入0.01ETH即可，注意要保留一定的Gas费用（这里的桥接费用看来是比较便宜的，真正需要注意的是提币到主网要预留的gas费！）。
 
-![33](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091449682.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091449682.png)
 
 如果各位以太坊主网的ETH不够，则需要从自己使用的交易所上面提现，提现过程各位可以搜索网上各类教程，这里不再赘述。唯一一点要强调的是，提现到以太坊主网的gas费用比较贵，各位需要注意提币时多提一些作为预留。
 
@@ -406,9 +406,9 @@ Telegram频道人数94338
 
 至此，基础任务已经完成，只剩下需要买买买的任务了，各位需要量力而行。
 
-![34](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091449283.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091449283.png)
 
-![35](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091449409.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091449409.png)
 
 
 
@@ -448,4 +448,4 @@ https://app.eigenlayer.xyz/avs/0xb3acaf09a1b801e36655b786da4eaa6ae9f5dc37
 
 免责声明：教程所有内容均不构成投资建议，仅供参考。加密货币相关资风险极高，极容易归零，请在参与时谨慎做出决策，并严格遵守相关法律法规。
 
-![LYS Lab介绍初稿_09](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)

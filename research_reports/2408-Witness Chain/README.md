@@ -4,7 +4,7 @@
 
 撰文：Peyton，LYS Lab(X：[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3))
 
-![LYS Lab品牌形象\_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
 ## 结论
 
@@ -40,7 +40,7 @@
 
 Rootdata上未有公开的融资信息，但是从其官网可以看出，Witness Chain 获得了包括Ethereal Ventures，**Polychain Capital**，Robot Vetures，Frontier Capital和dao5的投资。
 
-![Screenshot 2024-08-12 222255](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122223249.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122223249.png)
 
 图源：https://www.witnesschain.com/
 
@@ -70,7 +70,7 @@ Optimistic rollups通过在另一个链上验证交易，并将交易数据公�
 
 **Rollup Watchtower网络架构**
 
-![Screenshot 2024-08-12 214059](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122141693.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122141693.png)
 
 图源：https://docs.witnesschain.com/rollup-watchtower-network-live/watchtower-protocol/how-it-works
 
@@ -101,7 +101,7 @@ Optimistic rollups通过在另一个链上验证交易，并将交易数据公�
 
 #### DePIN协调层（DCL）
 
-![Screenshot 2024-08-12 201131](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122011352.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122011352.png)
 
 图源：https://docs.witnesschain.com/
 
@@ -126,7 +126,7 @@ Optimistic rollups通过在另一个链上验证交易，并将交易数据公�
 
 **位置证明Proof of Location（仍在开发中）**
 
-![image](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122013974.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122013974.png)
 
 图源：https://docs.witnesschain.com/depin-coordination-layer/proof-of-location
 
@@ -185,7 +185,7 @@ Optimistic rollups通过在另一个链上验证交易，并将交易数据公�
 
 Witness Chain每个产品/服务背后都是有学术论文支撑的。
 
-![Screenshot 2024-08-12 224725](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122247749.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122247749.png)
 
 图源：https://docs.witnesschain.com/resources/technical-papers
 
@@ -220,4 +220,4 @@ Witness Chain每个产品/服务背后都是有学术论文支撑的。
 
 免责声明：教程所有内容均不构成投资建议，仅供参考。加密货币相关资风险极高，极容易归零，请在参与时谨慎做出决策，并严格遵守相关法律法规。
 
-![LYS Lab介绍初稿_09](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)

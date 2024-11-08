@@ -4,7 +4,7 @@
 >
 > ***本报告正文部分最后编辑于2024年7月25日***
 
-![LYS Lab品牌形象_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
 # 结论
 
@@ -27,7 +27,7 @@
 
 Symbiotic 是一个无需许可的共享安全协议。共享安全（Shared security）指的是多个网络可以共享同一组节点运营商的服务和安全保障，从而提高资本效率和安全性。该概念此前已经在 EigenLayer 再质押中得到应用。
 
-![image1](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091346278.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091346278.png)
 
 ### 与Eigenlayer的对比
 
@@ -43,7 +43,7 @@ Symbiotic 是一个无需许可的共享安全协议。共享安全（Shared sec
 
 Symbiotic 被设计为一个极其灵活、无许可且可靠的轻量协调层（thin coordination layer），目的在于简化系统架构并减少操作成本，同时确保网络能够高效处理交易和执行协议。根据 Symbiotic文档，Symbiotic 网络架构由五个核心组件构成，它们相互协作以维护和提升去中心化网络的安全性和效率。
 
-![img](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091401317.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091401317.png)
 
 
 
@@ -101,7 +101,7 @@ Symbiotic 被设计为一个极其灵活、无许可且可靠的轻量协调层�
 
 目前，Symbiotic 已经与 16 个项目建立了合作伙伴关系，包括 USDe 开发商 Ethena、跨链应用构建平台 Hyperlane、预言机网络 Ojo、正在构建可验证的人工智能网络的 Aizel 及全链账本协议 Cycle Network 等。其中，Ethena正在将 Symbiotic 与 LayerZero 的去中心化验证网络（DVN）框架集成，以实现 Ethena 资产的跨链安全性；全链账本协议Cycle Network计划使用 Symbiotic 为其共享定序器提供动力；Celestia 旗下模块化 Rollup 框架产品Rollkit正在探索将 Symbiotic 再质押集成至其模块化堆栈中，以促进在 Celestia 上启动主权 Rollup。
 
-![image3](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091348270.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091348270.png)
 
 ###  Symbiotic 数据
 
@@ -131,20 +131,20 @@ Binlayer (\$151.36)
 
 - TVL 增长趋势
 
-![image4](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355859.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355859.png)
 
 来源：https://defillama.com/protocol/symbiotic?denomination=ETH
 
 - TVL Token 组成 主要是wstETH
 
-![image5](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091348673.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091348673.png)
 
 来源：https://defillama.com/protocol/symbiotic?denomination=USD
 
 - 独立再质押者总数393.19K
 - 独立再质押者总数增长趋势
 
-![image6](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091348024.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091348024.png)
 
 来源：https://dune.com/pyor_xyz/symbiotic
 
@@ -162,7 +162,7 @@ pseudo是Symbiotic的策略主管，之前是Variant Fund的投资合伙人，�
 
 ## 融资
 
-![image7](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091349536.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091349536.png)
 
 种子轮融资\$580万，领投机构为Paradigm和cyber Fund。
 
@@ -184,7 +184,7 @@ pseudo是Symbiotic的策略主管，之前是Variant Fund的投资合伙人，�
 
 **交互教程：**进入官网https://app.symbiotic.fi/restake，点选要质押的资产进行质押即可，目前主网支持的资产包括wstETH，cbETH，wBETH，sUSDE，rETH，mETH，ENA，swETH（Swell未发币），sfrxETH和ETHx，其中仅cbETH池子目前未达上限。
 
-![image8](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355470.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355470.png)
 
 
 
@@ -196,21 +196,21 @@ Swell网络是一个非托管的流动性ETH质押协议，为质押者、节点
 
 Veda是协议和应用程序的原生收益基础设施。用户将资产存入Veda的合约中，然后Veda通过DeFi协议安全地部署这些资金。Veda的使命是通过透明和可获得的产量实现加密的大规模采用。Stephanie Vaughan是Veda的联合创始人和首席运营官，也是Seven Seas Capital的联合创始人和管理合伙人。此前，她是Sommelier的运营主管。她毕业于美国海军学院，并持有哥伦比亚大学工商管理硕士学位。
 
-![image9](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355771.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355771.png)
 
 **交互教程：**（主要参考https://x.com/MetaHunter168/status/1813112684432486500）
 
 1.进入Swell官网：[https://app.Swellnetwork.io/stake](https://app.swellnetwork.io/stake)，选择stake，先把以太主网的ETH质押到Swell，兑换成swETH（记得要留点gas备用）
 
-![image10](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355971.jpeg)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355971.jpeg)
 
 2.点击etherfi网站：https://app.ether.fi/liquid ，首页上方选择liquid，点击Super Symbiotic LRT，进入质押池。
 
-![image11](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355706.jpeg)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355706.jpeg)
 
 3.点击Deposit 质押，记得选择swETH质押代币。选择好后就可以进行质押了。
 
-![image12](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355696.jpeg)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091355696.jpeg)
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091356499.png)
 
@@ -228,27 +228,27 @@ Fuel是一个专门为以太坊Rollups构建的操作系统。Fuel结合了几�
 
 1.先进入Renzo官网https://app.renzoprotocol.com/discover点击pzETH池子参与质押
 
-![image14](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091350408.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091350408.png)
 
 2.选择要质押的代币，可选(w)stETH和(w)ETH
 
-![image15](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091350138.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091350138.png)
 
 3.如果需要stETH，可以前去Lido官网https://stake.lido.fi/质押以太坊主网的ETH
 
-![image16](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091356204.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091356204.png)
 
 4.质押成功后获得pzETH（积分每日刷新需要等待），跳转Fuel活动官网https://app.fuel.network/earn-points/deposit/，并选择pzETH进行质押（积分同样24小时刷新）
 
-![image17](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091356404.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091356404.png)
 
-![image18](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091356911.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091356911.png)
 
 根据Fuel项目方FAQ的说明，7月22日到8月2日质押pzETH的为2倍积分。
 
 注意：如果前面选择了Swell+Ether.fi的模式，获得的weETH也可以参与Fuel的积分活动，但是只有1.5倍积分。
 
-![image19](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091356322.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091356322.png)
 
 # 参考文献
 
@@ -282,4 +282,4 @@ https://new.qq.com/rain/a/20240710A03IWI00
 
 免责声明：教程所有内容均不构成投资建议，仅供参考。加密货币相关资风险极高，极容易归零，请在参与时谨慎做出决策，并严格遵守相关法律法规。
 
-![LYS Lab介绍初稿_09](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)

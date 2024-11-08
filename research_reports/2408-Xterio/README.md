@@ -1,6 +1,6 @@
 # 2408Xterio
 
-![图片1](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408131650888.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408131650888.png)
 
 ## 详解精品链游平台Xterio：Mini Game不是唯一解
 
@@ -10,7 +10,7 @@
 
 {% embed url="https://www.techub.news/newDetails?id=0d79b9f70fc040b1b3eef0685323d1d5" %}
 
-![LYS Lab品牌形象\_00](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
 ## 结论
 
@@ -55,7 +55,7 @@ Xterio的团队和工作室遍布世界各地，如旧金山、洛杉矶、东�
 
 主要创始团队此前都在FunPlus工作过，FunPlus （趣加）是一家总部位于瑞士的视频游戏开发商和发行商，在中国、日本、新加坡、西班牙、瑞典和美国设有业务。同时，FunPlus也参与了对Xterio的投资，后者是前者的web3独家合作伙伴。
 
-![Swiss gaming company FunPlus announces new video game studio in Barcelona -  Barcelona & Partners](https://www.barcelonaandpartners.com/wp-content/uploads/2023/01/funplus-desarrollara-videojuegos-en-barcelona\_4245-copia-1024x487.png)
+![](https://www.barcelonaandpartners.com/wp-content/uploads/2023/01/funplus-desarrollara-videojuegos-en-barcelona\_4245-copia-1024x487.png)
 
 图源：https://www.pocketgamer.com/interviews/felipe-mata-funplus-barcelona-studio/
 
@@ -97,7 +97,7 @@ Xterio是一家全球性的跨平台游戏开发和发行公司。
 
 #### 融资信息
 
-![Screenshot 2024-08-13 161240](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408131613787.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408131613787.png)
 
 图源：https://www.rootdata.com/Projects/detail/Xterio?k=MTYyOQ%3D%3D
 
@@ -105,7 +105,7 @@ Rootdata数据显示，至本文完成前，Xterio公开的融资金额为5500�
 
 #### 对外投资
 
-![Screenshot 2024-08-13 213557](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408132137530.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408132137530.png)
 
 图源：https://www.rootdata.com/Projects/detail/Xterio?k=MTYyOQ%3D%3D
 
@@ -117,7 +117,7 @@ Rootdata数据显示，至本文完成前，Xterio公开的融资金额为5500�
 
 不过，在早期的白皮书中的代币分配比例如下图所示，可用作参考：
 
-![img](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162107567.webp)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162107567.webp)
 
 图源：https://icodrops.com/xterio/
 
@@ -133,7 +133,7 @@ Xterio是一家全球性的跨平台游戏开发和发行公司，致力于通�
 
 截至2024年8月16日，Xterio 已发布Age of Dino，Overworld，TTT，Palio共计4款自主研发链游，并且还推出了64款合作游戏项目。
 
-![Screenshot 2024-08-16 193859](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161939598.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161939598.png)
 
 图源：https://xter.io/games
 
@@ -141,7 +141,7 @@ Xterio是一家全球性的跨平台游戏开发和发行公司，致力于通�
 
 **Age of Dino（恐龙时代）**
 
-![img1\_v3](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408132142123.jpeg)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408132142123.jpeg)
 
 图源：https://xter.io/games/55f9d090bdb6
 
@@ -161,7 +161,7 @@ Age of Dino 在4-5 月份进行了小规模测试，其首次面向公众开放�
 
 **Overworld**
 
-![img2](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408132143851.jpeg)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408132143851.jpeg)
 
 图源：https://xter.io/games/f66404351a91
 
@@ -171,7 +171,7 @@ Overworld是一个基于Web 3技术的游戏和社区项目。它专注于集体
 
 2024年6月时，该游戏曾开放了**Overworld Arena**活动，目前已结束。
 
-![img](https://miro.medium.com/v2/resize:fit:700/0\*CfHwngP7N3Ktkq-O.png)
+![](https://miro.medium.com/v2/resize:fit:700/0\*CfHwngP7N3Ktkq-O.png)
 
 图源：https://medium.com/@XterioGames\_29169/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-overworld-arena-91cba6fc8982
 
@@ -189,7 +189,7 @@ Overworld是一个基于Web 3技术的游戏和社区项目。它专注于集体
 
 **TTT（现为City Shadows）**
 
-![Image](https://pbs.twimg.com/media/GC5K61BasAAlItN?format=jpg\&name=900x900)
+![](https://pbs.twimg.com/media/GC5K61BasAAlItN?format=jpg\&name=900x900)
 
 图源：https://x.com/3T\_shootergame/status/1742546364305756298
 
@@ -197,7 +197,7 @@ TTT 致力于打造独一无二的沉浸式虚拟体验，涵盖车辆竞速、�
 
 2024年8月14日，其在推特上声明，经过深思熟虑，TTT团队意识到，为了实现应有的质量，需要在设计和艺术风格上做出根本性的调整。他们将朝着新的方向前进，组建了全新的团队，并对黑帮射击游戏概念进行了独特的重新构思，新的项目名称为 **City Shadows**。TTT团队不变的承诺是将 Web3 的价值和激励与传统游戏的乐趣融合，为玩家带来令人兴奋的冒险体验。
 
-![Image](https://pbs.twimg.com/media/GVBlZWLWcAAZ0mA?format=jpg\&name=900x900)
+![](https://pbs.twimg.com/media/GVBlZWLWcAAZ0mA?format=jpg\&name=900x900)
 
 图源：https://x.com/XterioGames/status/1824071780807430215
 
@@ -213,7 +213,7 @@ TTT 致力于打造独一无二的沉浸式虚拟体验，涵盖车辆竞速、�
 
 2024年3月，Xterio推出旗下AI项目Palio（派力奥），并于4月正式开启奥德赛活动。
 
-![img](https://miro.medium.com/v2/resize:fit:875/1\*6aoItefAeq7FEamuZ2eovw.jpeg)
+![](https://miro.medium.com/v2/resize:fit:875/1\*6aoItefAeq7FEamuZ2eovw.jpeg)
 
 图源：https://medium.com/@PalioAI/palio-meet-your-anima-odyssey-4c356f7572c7
 
@@ -221,7 +221,7 @@ TTT 致力于打造独一无二的沉浸式虚拟体验，涵盖车辆竞速、�
 
 2024年5月，Xterio联动Palio的同时，继续推出**Xter.AI**的更多产品。此活动将持续四个主题，并设有不同的主题供参与者探索。但是，即使在活动结束后，Xter.AI Web3 创建工具仍可供实验使用。
 
-![Screenshot 2024-08-16 172232](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161723605.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161723605.png)
 
 图源：https://xter.io/fans/create
 
@@ -237,7 +237,7 @@ TTT 致力于打造独一无二的沉浸式虚拟体验，涵盖车辆竞速、�
 
 不过，想要使用Xter.AI的上述产品，需要持有PalioAI Aura NFT或者是 Gen0 NFT（Palio角色）。
 
-![Screenshot 2024-08-16 173355](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161735277.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161735277.png)
 
 图源：https://xter.io/fans/works/392306
 
@@ -248,16 +248,16 @@ Palio Aura NFT 是一款限量版 NFT，供应量为 3333 个，铸造价格为 
 1. 前提：必须持有相应NFT 才有资格创建内容。
 2. 创造
 
-   ![img](https://miro.medium.com/v2/resize:fit:875/1\*XNYuXVBr3myHmo1V4aLoaQ.png)
+   ![](https://miro.medium.com/v2/resize:fit:875/1\*XNYuXVBr3myHmo1V4aLoaQ.png)
 
    图源：https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f
 3. 发布：作品创造者可以获取每笔交易2.5%的Royalty Fee作为收入，同时还可以设置新玩家铸造NFT的利润在创作者和NFT持有者两者之间的归属比例。
-4. ![Screenshot 2024-08-16 175727](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161757887.png)
+4. ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161757887.png)
 
    图源：https://xter.io/fans/works/390575
 5. 铸造
 
-   ![img](https://miro.medium.com/v2/resize:fit:875/1\*cN4L3GXNV7SBSAZed6CCvA.png)
+   ![](https://miro.medium.com/v2/resize:fit:875/1\*cN4L3GXNV7SBSAZed6CCvA.png)
 
    图源：https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f
 
@@ -269,7 +269,7 @@ Palio Aura NFT 是一款限量版 NFT，供应量为 3333 个，铸造价格为 
 
 Xterio 和其他一些平台则选择采取相反的立场，他们认为版税对于鼓励创作者持续创作和维护作品至关重要。同月，Xterio [宣布](https://medium.com/@XterioGames\_29169/elevate-creators-and-revolutionize-gaming-nfts-with-xterios-marketplace-81cbb533689f)将于几周内推出NFT 市场，并提供新颖的铸造、持有和交易奖励。 Xterio 表示，计划通过重新调整激励机制，公平地满足所有利益相关者的需求，从而改变 NFT 领域的格局。
 
-![Screenshot 2024-08-16 180252](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161807523.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161807523.png)
 
 图：Xterio NFT市场界面 图源：https://xter.io/marketplace
 
@@ -286,7 +286,7 @@ Xterio 和其他一些平台则选择采取相反的立场，他们认为版税�
 
 目前，Xterio的NFT市场上已上线包括Age of Dino，Overload，Palio等共计25款NFT。
 
-![Screenshot 2024-08-16 181846](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161818682.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161818682.png)
 
 图源：https://xter.io/marketplace
 
@@ -322,11 +322,11 @@ Xterio联创Jeremy Horn与ChainCatcher在4月的对话中提到，其发展计�
 
 #### 比较维度一：财务&社区
 
-![Gamefi平台对比2\_财务社区](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408180938772.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408180938772.png)
 
 #### 比较维度二：业务&游戏
 
-![Gamefi平台对比2\_业务 (2)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408180938806.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408180938806.png)
 
 仔细分析上表不难得出如下结论：
 
@@ -348,7 +348,7 @@ Xterio联创Jeremy Horn与ChainCatcher在4月的对话中提到，其发展计�
 
 **Wilder World** 是一款大规模多人开放世界游戏，利用了最新的实时逼真技术、区块链、人工智能和大规模多人技术。目前推特粉丝数214.5K。
 
-![img](https://xter.io/\_next/image?url=https%3A%2F%2Fresources.xter.io%2Ffunfog\_upload%2F0ba1aad508b3%2Flaunchpad%2F1722855120-6777241098248009755.png\&w=2100\&q=75)
+![](https://xter.io/\_next/image?url=https%3A%2F%2Fresources.xter.io%2Ffunfog\_upload%2F0ba1aad508b3%2Flaunchpad%2F1722855120-6777241098248009755.png\&w=2100\&q=75)
 
 奖励说明：有机会赢取 $7,500 WILD 的份额。75 名幸运获奖者将获得丰厚奖励（目前参与人数已经接近3K，获奖希望较小，不过谁叫这是零撸任务呢），每位参与者还将获得独特的 XTERIO NFT 贴纸。
 
@@ -356,7 +356,7 @@ Xterio联创Jeremy Horn与ChainCatcher在4月的对话中提到，其发展计�
 
 #### Wonderverse（WonderBits）
 
-WonderBits是Wonderverse生态系统的首款产品。![img](https://xter.io/\_next/image?url=https%3A%2F%2Fresources.xter.io%2Ffunfog\_upload%2F9cc6913ca721%2Flaunchpad%2F1721138888-5553241596216102111.png\&w=2100\&q=75)
+WonderBits是Wonderverse生态系统的首款产品。![](https://xter.io/\_next/image?url=https%3A%2F%2Fresources.xter.io%2Ffunfog\_upload%2F9cc6913ca721%2Flaunchpad%2F1721138888-5553241596216102111.png\&w=2100\&q=75)
 
 图源：https://xter.io/launchpad/39
 
@@ -373,13 +373,13 @@ WonderBits是一款首个支持 X 和 Telegram 之间互操作的社交闲置游
 奖励说明：Xterio并未明确说明，因此不推荐。
 
 交互教程：1.进入Eigenlayer主网质押ETH或LST代币。这里以stETH为例。
-![Screenshot 2024-08-16 211333](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162113150.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162113150.png)
 
 2.随后选择保护Xterio Chain的节点运营商进行质押即可。进入Xterio Mach的界面https://app.eigenlayer.xyz/avs/0x6026b61bdd2252160691cb3f6005b6b72e0ec044，下拉找到这些节点运营商，选择质押即可。这里以Automata为例。
 
-![Screenshot 2024-08-16 211333](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162115540.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162115540.png)
 
-![Screenshot 2024-08-16 211652](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162117916.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162117916.png)
 
 ## 参考文献
 
@@ -413,4 +413,4 @@ WonderBits是一款首个支持 X 和 Telegram 之间互操作的社交闲置游
 
 免责声明：教程所有内容均不构成投资建议，仅供参考。加密货币相关资风险极高，极容易归零，请在参与时谨慎做出决策，并严格遵守相关法律法规。
 
-![LYS Lab介绍初稿_09](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)

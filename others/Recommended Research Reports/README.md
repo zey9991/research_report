@@ -46,3 +46,11 @@
 
 推荐理由：框架很清晰，值得模仿，在写GMX研报时借鉴了。本文的框架笔者整理了，有需要的读者可移步https://gsgmqpvuf85c.sg.larksuite.com/wiki/HBxtwuiuBi9UW2kNLWBlOz7Wg3d?from=from_copylink
 
+6.[重新审视 Ethena：大跌 80% 后反弹，ENA 是否仍在低估击球区？ - 深潮TechFlow](https://www.techflowpost.com/article/detail_21307.html)
+
+作者：Alex Xu(Mint Ventures)
+
+日期：2024.11.01
+
+推荐理由：对Ethena进行了详尽的收支分析，并给出了自己的看空理由，虽然部分结论推导比较粗糙，因此结论也不一定成立，但是不失为一个具有高度批判性的文章。
+
