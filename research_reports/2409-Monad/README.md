@@ -1,6 +1,6 @@
 # 解析高性能EVM公链Monad增长秘诀：技术、社区、生态
 
-排名不分先后，作者：Peyton，Kon杰（LYS Lab  @LingyueSamaWeb3）
+排名不分先后，撰文：Peyton，Kon杰，LYS Lab出品（X：[@0xPeyton404](https://x.com/0xPeyton404)，[@HeidiMarti54461](https://x.com/HeidiMarti54461)，[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3) ）
 
 ![![]($1)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 

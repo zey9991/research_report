@@ -1,5 +1,7 @@
 # Symbiotic实操向研报 LYS Lab出品 @Peyton
 
+撰文：Peyton，LYS Lab（X：[@0xPeyton404](https://x.com/0xPeyton404)，[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3) ）
+
 > [!NOTE]
 >
 > ***本报告正文部分最后编辑于2024年7月25日***

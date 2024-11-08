@@ -2,7 +2,7 @@
 
 ## Witness Chain: Unifying DePIN Economies
 
-撰文：Peyton，LYS Lab(X：[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3))
+撰文：Peyton，LYS Lab（X：[@0xPeyton404](https://x.com/0xPeyton404)，[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3) ）
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 

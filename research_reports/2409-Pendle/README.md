@@ -1,5 +1,7 @@
 # 2409-Pendle
 
+# Pendle 收益交易协议的金融原理讲义（第二版）
+
 在WHU Web3 Club公众号上阅读：
 
 {% embed url="https://mp.weixin.qq.com/s/R7KALVYosCN5dS1Ig6dRqA" %}
