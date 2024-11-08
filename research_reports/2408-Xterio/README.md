@@ -1,5 +1,3 @@
-# 2408Xterio
-
 ## 详解精品链游平台Xterio：Mini Game不是唯一解
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408131650888.png)

@@ -1,5 +1,3 @@
-# 2408Witness Chain
-
 ## Witness Chain: Unifying DePIN Economies
 
 撰文：Peyton，LYS Lab（X：[@0xPeyton404](https://x.com/0xPeyton404)，[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3) ）
