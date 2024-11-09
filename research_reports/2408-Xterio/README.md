@@ -1,4 +1,6 @@
-## 详解精品链游平台Xterio：Mini Game不是唯一解
+# 2408-Xterio
+
+### 详解精品链游平台Xterio：Mini Game不是唯一解
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408131650888.png)
 
@@ -10,21 +12,21 @@
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
-## 结论
+### 结论
 
 * 通过竞品分析可以发现，Xterio在业务、财务、社区这一块表现都不错，如果不考虑TON链这个“另类”一点的竞品，Xterio在这几个指标上均为同类竞品中的第一或第二。而且Xterio还是精品游戏最多的链游平台，在游戏可玩性方面表现突出。
 * 商业模式这块，Xterio既有自研游戏（开发商），又搭游戏平台（发行商），还做AI和NFT市场，2B2C均有涉及，收入来源是比较多元的。而且，能布局出这等业务版图的Xterio团队，也果不其然，在Web2游戏开发方面有深厚经验。
 * 除此之外，Xterio还是币安领投项目，目前披露融资额达5500万，而且还在BNB链上发了Xterio L2链，总的来说和币安合作密切，上所预期较高，值得关注。
 
-## 风险
+### 风险
 
 * Xterio经济模型细节未公布，空投预期也不明确，收益存在不确定性。
 * Xterio旗下游戏产品很多，盲目参与的机会成本较高，尽可能有选择性参与。但是目前自研游戏的参与机会不多，需要后续保持关注。
 * Xterio自己开发高质量的链游周期可能会较长，对资金的要求比较高，如果自研游戏不达预期可能拖累整个平台的发展。
 
-## 基本面
+### 基本面
 
-### 关键数据速览
+#### 关键数据速览
 
 2024年8月中旬数据：
 
@@ -42,7 +44,7 @@
 * Xterio融资信息：已公布5500万美金融资，领投机构包括Binance Labs，Makers Fund， FTX Ventures， FunPlus。
 * Xterio估值信息：第一轮融资时估值3亿美金，第二轮未披露。
 
-### 团队
+#### 团队
 
 Xterio的团队和工作室遍布世界各地，如旧金山、洛杉矶、东京和新加坡等城市。
 
@@ -59,9 +61,9 @@ Xterio的团队和工作室遍布世界各地，如旧金山、洛杉矶、东�
 
 FunPlus的游戏涵盖多种类型，包括策略、角色扮演和社交游戏。FunPlus旗下的知名游戏包括《State of Survival》（末日生存）、《King of Avalon》（阿瓦隆之王）和《Guns of Glory》（荣耀枪神）等，这些游戏在全球范围内拥有大量玩家。
 
-### 财务
+#### 财务
 
-#### 商业模式 2B+2C
+**商业模式 2B+2C**
 
 Xterio是一家全球性的跨平台游戏开发和发行公司。
 
@@ -93,7 +95,7 @@ Xterio是一家全球性的跨平台游戏开发和发行公司。
 * Xterio内容创作者（Xterio Creator）：为Xterio识别和表彰社区中有才华的视频内容创作者，增强Xterio游戏与内容创作者之间的联系，促进创作者之间的合作，并在整个Xterio生态系统中提供独特的互动机会。参与者将获得$XTER代币奖励、独家游戏道具、抢先体验测试、官方渠道推广等福利。此外，创作者还需提交申请，经过审核后方可加入该计划。
 * Xterio 基金会：Xterio 基金会是作为 Xterio 的运营主体在瑞士设立的非营利性基金会。它的成立目的是为了开发和维护 Xterio 平台，使其运作方式最能符合代币持有者的利益。Xterio 基金会拥有独立的资产，没有股权股东，仅由代币持有者组成，其收入全部用于推进 Xterio 平台建设，不能分配给任何利益相关方。同时，Xterio 基金会的董事会成员不拥有基金会的任何所有权，也不从基金会获得报酬，这确保他们不会与代币持有者存在利益冲突。基金会负责 Xterio 平台的技术开发和运营，监督各项工作的推进，还将逐步转向社区治理模式。Xterio 基金会选择在瑞士运营，因为瑞士在监管和国际声誉上都较为友好，能为 Xterio 项目发展提供较好的环境。
 
-#### 融资信息
+**融资信息**
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408131613787.png)
 
@@ -101,7 +103,7 @@ Xterio是一家全球性的跨平台游戏开发和发行公司。
 
 Rootdata数据显示，至本文完成前，Xterio公开的融资金额为5500万美金，领投机构包括**Binance Labs**，Makers Fund， FTX Ventures， FunPlus。
 
-#### 对外投资
+**对外投资**
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408132137530.png)
 
@@ -109,7 +111,7 @@ Rootdata数据显示，至本文完成前，Xterio公开的融资金额为5500�
 
 据Rootdata数据，Xterio分别于23年2月和9月对外投资了Overworld和Age of Dino两款游戏，具体金额未披露。这两款游戏会在后文详细介绍，此处略。
 
-#### 经济模型
+**经济模型**
 
 据ICODROPS数据及官网内容，目前Xterio尚未公布其代币$XTER空投细节。
 
@@ -123,11 +125,11 @@ Rootdata数据显示，至本文完成前，Xterio公开的融资金额为5500�
 
 XTER 代币的应用场景广泛，包括购置游戏资产、游戏设备，以及在其他众多游戏内的交易环节中使用。因此，随着 Xterio 游戏生态的不断扩展和壮大，新的游戏不断推出，用户数量持续攀升，每一个新游戏的上线都会直接推动代币需求的增加。这种固定供应的代币模型在需求不断增长的情况下，必然会导致代币总需求大于总供给，从而进一步强化其通缩特性，使得代币价值在长期内具有增长潜力。
 
-### 产品/服务
+#### 产品/服务
 
 Xterio是一家全球性的跨平台游戏开发和发行公司，致力于通过数字所有权创造深度吸引人的游戏世界，连接全球数百万人。Xterio专注于开发可以在所有媒体和平台上扩展的Web3原生世界。
 
-#### Xterio游戏
+**Xterio游戏**
 
 截至2024年8月16日，Xterio 已发布Age of Dino，Overworld，TTT，Palio共计4款自主研发链游，并且还推出了64款合作游戏项目。
 
@@ -201,7 +203,7 @@ TTT 致力于打造独一无二的沉浸式虚拟体验，涵盖车辆竞速、�
 
 联创和CEO Jeremy Horn评论道：“新的方向在很大程度上更符合 Web3 的发展期望和需求。祝贺团队！让我们继续推动 Xterio 的成长前进！”
 
-#### Xter.AI（Palio）
+**Xter.AI（Palio）**
 
 2023年7月，Xterio[发文](https://medium.com/@XterioGames\_29169/my-encounter-with-artificial-intelligence-11e32adaf33)称正在积极利用人工智能技术来推动其产品和服务的发展。他们的团队正在开发一个AI模型工具包，该工具包能够生成独特且风格一致的2D和3D艺术素材。合作伙伴可以使用这个工具包来训练模型，创造出符合特定主题、风格和类型的艺术作品。此外，Xterio还在开发基于AI技术的工具，用于分析游戏数据，以帮助改进和提升游戏体验。
 
@@ -244,22 +246,24 @@ Palio Aura NFT 是一款限量版 NFT，供应量为 3333 个，铸造价格为 
 总结而言，用户使用Xter.AI服务的可能流程如下：
 
 1. 前提：必须持有相应NFT 才有资格创建内容。
-2. 创造
+2.  创造
 
-   ![](https://miro.medium.com/v2/resize:fit:875/1\*XNYuXVBr3myHmo1V4aLoaQ.png)
+    ![](https://miro.medium.com/v2/resize:fit:875/1\*XNYuXVBr3myHmo1V4aLoaQ.png)
 
-   图源：https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f
+    图源：https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f
 3. 发布：作品创造者可以获取每笔交易2.5%的Royalty Fee作为收入，同时还可以设置新玩家铸造NFT的利润在创作者和NFT持有者两者之间的归属比例。
-4. ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161757887.png)
+4.
 
-   图源：https://xter.io/fans/works/390575
-5. 铸造
+    ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408161757887.png)
 
-   ![](https://miro.medium.com/v2/resize:fit:875/1\*cN4L3GXNV7SBSAZed6CCvA.png)
+    图源：https://xter.io/fans/works/390575
+5.  铸造
 
-   图源：https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f
+    ![](https://miro.medium.com/v2/resize:fit:875/1\*cN4L3GXNV7SBSAZed6CCvA.png)
 
-#### Xterio NFT市场
+    图源：https://medium.com/@PalioAI/xter-ai-bnb-chain-airdrop-alliance-program-2600-000-bitart-points-giveaway-cebd4f5c4d6f
+
+**Xterio NFT市场**
 
 2023 年8月，OpenSea 宣布将停止对二级市场交易执行版税政策。也就是说，创作者不再自动从其作品的每次转售中获得固定比例的收入。这个决定是由于市场竞争加剧、以及买卖双方对于交易成本的敏感度提升。随着市场上涌现了许多不收取版税的平台，OpenSea 决定取消强制性版税以保持竞争力。
 
@@ -288,7 +292,7 @@ Xterio 和其他一些平台则选择采取相反的立场，他们认为版税�
 
 图源：https://xter.io/marketplace
 
-#### Xterio Chain
+**Xterio Chain**
 
 2024年4月，Xterio和BNB Chain宣布，双方将合作推出一个以游戏为核心的全新L2链，该链将利用BNB作为Gas Token，并为BNB Chain生态系统的基础架构贡献力量。 AltLayer还将通过提供关键的技术专长来支持这项工作。
 
@@ -306,7 +310,7 @@ Xterio执行长Michael Tong补充道：“Xterio将坚定致力于在BNB Chain�
 
 [根据Dune的数据](https://dune.com/samwbutw/xterio-data-dashboard)，截至2024年8月1日，Xterio Chain(BNB)的链上的总地址数量已经达到8.8M，链上交易量已达到107.72M，甚至比同类竞品，老牌链游平台Gala的Gala Chain的交易量还要多出超过一半的份额（42.1M）。
 
-#### Xterio路线图
+**Xterio路线图**
 
 由于官网或白皮书均为公布其路线图，这里以创始人近期的讲话作为替代。
 
@@ -314,35 +318,35 @@ Xterio联创Jeremy Horn与ChainCatcher在4月的对话中提到，其发展计�
 
 除了为玩家提供在游戏中赚取奖励的机会外，Xterio更关注如何创造长期持有的价值。我们深知，只有让玩家在游戏中获得真正的乐趣和满足感，同时又能保留他们努力获得的奖励，才能让他们对游戏产生深厚的情感连接。因此，Xterio将持续努力，为玩家创造更多具有吸引力的游戏内容，让他们能够在享受游戏的同时，也能实现自身的价值增长。
 
-### 竞品
+#### 竞品
 
 首先，读者请看下面笔者根据两个维度，分析Xterio及其竞品的表格。值得一提的是，笔者曾意图寻求各项目方链上数据作为比较维度三，可惜各方数据实在不齐全，只能作罢。
 
-#### 比较维度一：财务&社区
+**比较维度一：财务&社区**
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408180938772.png)
 
-#### 比较维度二：业务&游戏
+**比较维度二：业务&游戏**
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408180938806.png)
 
 仔细分析上表不难得出如下结论：
 
-#### TON是打法不同的破局者，但与Xterio在游戏类型上有所区分
+**TON是打法不同的破局者，但与Xterio在游戏类型上有所区分**
 
 这轮牛市TON的游戏生态因NotCoin，Catizen，Hamster Kombat等轻量级小游戏的爆火出圈而备受关注，但是比较之下可以发现，虽不及前者的巨大流量，但Xterio平台上的游戏类型更丰富，包括端游、页游、手游等多种形式，游戏可玩性方面可能更能吸引深度游戏玩家的喜爱。因此，可以认为TON和Xterio在细分市场方面有所区别，两者的竞争程度较为有限。相比之下，Xterio与Gala，Iskra，Portal，LUXON项目的相似程度更高。
 
-#### Xterio是目前同类竞品中精品游戏最多的玩家
+**Xterio是目前同类竞品中精品游戏最多的玩家**
 
 如果视推特粉丝为反映游戏社区活跃度或者是影响力的指标，在Xterio平台上（即将）推出的总计68款游戏中，有36款游戏推特粉丝数超过了100K量级，其中4款自研游戏全都突破100K粉丝量，这一数字远超除TON(TG)小游戏外的其他链游平台（按比例来看甚至比TON更高），可以视为目前优质链游平台中的领军者。而且，Xterio发行的游戏数量目前也是除TON(TG)以外最多的，给玩家提供了更多选择。除此之外，公布的融资额方面，Xterio也是以5500万美金领先于其他项目方。综上所述，目前来看Xterio在财务、社区、业务方面，相较于其他竞品，都有不错的表现，值得关注。
 
-## 参与机会
+### 参与机会
 
-### 参与Xterio LaunchPad上新旧游戏的交互
+#### 参与Xterio LaunchPad上新旧游戏的交互
 
 前文已提及Xterio几款自主开发的游戏的基本情况，这里不再赘述。但目前其参与机会较少，有兴趣的可保持关注，后续参与。本文仅介绍新游戏的交互。2024年8月16日，有两款游戏上新。
 
-#### Wilder World
+**Wilder World**
 
 **Wilder World** 是一款大规模多人开放世界游戏，利用了最新的实时逼真技术、区块链、人工智能和大规模多人技术。目前推特粉丝数214.5K。
 
@@ -352,7 +356,7 @@ Xterio联创Jeremy Horn与ChainCatcher在4月的对话中提到，其发展计�
 
 交互教程：在8月9日-8月30日期间，进入任务界面https://xter.io/launchpad/42，登录后完成包括绑定钱包，关注、点赞、回复推特，访问官网等活动即可。因任务非常简单，具体交互过程不再演示。（不过，目前不知为何在Xterio上面点选小狐狸钱包跳出来的却是OKX钱包，十分奇怪。）
 
-#### Wonderverse（WonderBits）
+**Wonderverse（WonderBits）**
 
 WonderBits是Wonderverse生态系统的首款产品。![](https://xter.io/\_next/image?url=https%3A%2F%2Fresources.xter.io%2Ffunfog\_upload%2F9cc6913ca721%2Flaunchpad%2F1721138888-5553241596216102111.png\&w=2100\&q=75)
 
@@ -366,12 +370,11 @@ WonderBits是一款首个支持 X 和 Telegram 之间互操作的社交闲置游
 
 交互教程：在8月12日-9月6日期间，进入任务界面https://xter.io/launchpad/39，登录后完成包括绑定钱包，关注、点赞、回复推特，加入Discord，加入Telegram，访问官网等活动即可。因任务非常简单，具体交互过程不再演示。
 
-### 再质押ETH/LST代币进Xterio Chain
+#### 再质押ETH/LST代币进Xterio Chain
 
 奖励说明：Xterio并未明确说明，因此不推荐。
 
-交互教程：1.进入Eigenlayer主网质押ETH或LST代币。这里以stETH为例。
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162113150.png)
+交互教程：1.进入Eigenlayer主网质押ETH或LST代币。这里以stETH为例。 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162113150.png)
 
 2.随后选择保护Xterio Chain的节点运营商进行质押即可。进入Xterio Mach的界面https://app.eigenlayer.xyz/avs/0x6026b61bdd2252160691cb3f6005b6b72e0ec044，下拉找到这些节点运营商，选择质押即可。这里以Automata为例。
 
@@ -379,7 +382,7 @@ WonderBits是一款首个支持 X 和 Telegram 之间互操作的社交闲置游
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408162117916.png)
 
-## 参考文献
+### 参考文献
 
 1. [https://xter.io/](https://www.witnesschain.com/)
 2. https://xterio.gitbook.io/xterio
@@ -405,10 +408,10 @@ WonderBits是一款首个支持 X 和 Telegram 之间互操作的社交闲置游
 22. https://new.qq.com/rain/a/20230915A03VNG00
 23. https://www.forbes.com/sites/zengernews/2023/12/07/portal-unveils-novel-interoperable-ecosystem-to-revolutionize-gaming/
 
-## 利益披露与免责声明
+### 利益披露与免责声明
 
 利益披露：截至发稿前，作者（Peyton）与Xterio无任何商业利益行为。
 
 免责声明：教程所有内容均不构成投资建议，仅供参考。加密货币相关资风险极高，极容易归零，请在参与时谨慎做出决策，并严格遵守相关法律法规。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF_09.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/LYS%20Lab%E4%BB%8B%E7%BB%8D%E5%88%9D%E7%A8%BF\_09.png)
