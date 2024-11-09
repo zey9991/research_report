@@ -334,7 +334,7 @@ else:
 >
 > 如果出现报错**PermissionError**: [Errno 13] Permission denied: 'pendle_tvl_data.xlsx'，请先确保你已经关闭pendle_tvl_data.xlsx文件。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109140303084.png)
+<img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109140303084.png" style="zoom:200%;" />
 
 ## 案例：Dune
 
@@ -469,7 +469,7 @@ else:
 
 导出成功后打开gTrade_monthly_users.csv文件可以看到：
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109160753037.png)
+<img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109160753037.png" style="zoom:200%;" />
 
 ## 步骤总结
 
