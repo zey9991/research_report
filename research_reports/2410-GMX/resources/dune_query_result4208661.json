@@ -1,0 +1,306 @@
+{
+    "execution_id": "01JB8KHM2VMYP5JCBVKV8BFGYK",
+    "query_id": 4208661,
+    "state": {
+        "_value_": "QUERY_STATE_COMPLETED",
+        "_name_": "COMPLETED",
+        "__objclass__": {
+            "py/type": "dune_client.models.ExecutionState"
+        }
+    },
+    "times": {
+        "submitted_at": "2024-10-28T03:43:34.491628+00:00",
+        "execution_started_at": "2024-10-28T03:43:37.308232+00:00",
+        "execution_ended_at": "2024-10-28T03:44:06.373752+00:00",
+        "expires_at": "2025-01-26T03:44:06.373754+00:00",
+        "cancelled_at": null
+    },
+    "result": {
+        "rows": [
+            {
+                "cumulative_users": 273,
+                "month": "2021-10-01 00:00:00.000 UTC",
+                "monthly_users": 273,
+                "new_users": 273,
+                "returned_users": 0
+            },
+            {
+                "cumulative_users": 500,
+                "month": "2021-11-01 00:00:00.000 UTC",
+                "monthly_users": 432,
+                "new_users": 227,
+                "returned_users": 205
+            },
+            {
+                "cumulative_users": 853,
+                "month": "2021-12-01 00:00:00.000 UTC",
+                "monthly_users": 595,
+                "new_users": 353,
+                "returned_users": 242
+            },
+            {
+                "cumulative_users": 2320,
+                "month": "2022-01-01 00:00:00.000 UTC",
+                "monthly_users": 1835,
+                "new_users": 1467,
+                "returned_users": 368
+            },
+            {
+                "cumulative_users": 3448,
+                "month": "2022-02-01 00:00:00.000 UTC",
+                "monthly_users": 1552,
+                "new_users": 1128,
+                "returned_users": 424
+            },
+            {
+                "cumulative_users": 3981,
+                "month": "2022-03-01 00:00:00.000 UTC",
+                "monthly_users": 1004,
+                "new_users": 533,
+                "returned_users": 471
+            },
+            {
+                "cumulative_users": 4533,
+                "month": "2022-04-01 00:00:00.000 UTC",
+                "monthly_users": 1223,
+                "new_users": 552,
+                "returned_users": 671
+            },
+            {
+                "cumulative_users": 4892,
+                "month": "2022-05-01 00:00:00.000 UTC",
+                "monthly_users": 904,
+                "new_users": 359,
+                "returned_users": 545
+            },
+            {
+                "cumulative_users": 5085,
+                "month": "2022-06-01 00:00:00.000 UTC",
+                "monthly_users": 679,
+                "new_users": 193,
+                "returned_users": 486
+            },
+            {
+                "cumulative_users": 5421,
+                "month": "2022-07-01 00:00:00.000 UTC",
+                "monthly_users": 766,
+                "new_users": 336,
+                "returned_users": 430
+            },
+            {
+                "cumulative_users": 5832,
+                "month": "2022-08-01 00:00:00.000 UTC",
+                "monthly_users": 936,
+                "new_users": 411,
+                "returned_users": 525
+            },
+            {
+                "cumulative_users": 6365,
+                "month": "2022-09-01 00:00:00.000 UTC",
+                "monthly_users": 1125,
+                "new_users": 533,
+                "returned_users": 592
+            },
+            {
+                "cumulative_users": 7121,
+                "month": "2022-10-01 00:00:00.000 UTC",
+                "monthly_users": 1438,
+                "new_users": 756,
+                "returned_users": 682
+            },
+            {
+                "cumulative_users": 8534,
+                "month": "2022-11-01 00:00:00.000 UTC",
+                "monthly_users": 2503,
+                "new_users": 1413,
+                "returned_users": 1090
+            },
+            {
+                "cumulative_users": 9141,
+                "month": "2022-12-01 00:00:00.000 UTC",
+                "monthly_users": 1678,
+                "new_users": 607,
+                "returned_users": 1071
+            },
+            {
+                "cumulative_users": 10463,
+                "month": "2023-01-01 00:00:00.000 UTC",
+                "monthly_users": 2627,
+                "new_users": 1322,
+                "returned_users": 1305
+            },
+            {
+                "cumulative_users": 11748,
+                "month": "2023-02-01 00:00:00.000 UTC",
+                "monthly_users": 2777,
+                "new_users": 1285,
+                "returned_users": 1492
+            },
+            {
+                "cumulative_users": 12818,
+                "month": "2023-03-01 00:00:00.000 UTC",
+                "monthly_users": 2678,
+                "new_users": 1070,
+                "returned_users": 1608
+            },
+            {
+                "cumulative_users": 13822,
+                "month": "2023-04-01 00:00:00.000 UTC",
+                "monthly_users": 2496,
+                "new_users": 1004,
+                "returned_users": 1492
+            },
+            {
+                "cumulative_users": 14493,
+                "month": "2023-05-01 00:00:00.000 UTC",
+                "monthly_users": 1941,
+                "new_users": 671,
+                "returned_users": 1270
+            },
+            {
+                "cumulative_users": 15215,
+                "month": "2023-06-01 00:00:00.000 UTC",
+                "monthly_users": 2096,
+                "new_users": 722,
+                "returned_users": 1374
+            },
+            {
+                "cumulative_users": 15893,
+                "month": "2023-07-01 00:00:00.000 UTC",
+                "monthly_users": 1918,
+                "new_users": 678,
+                "returned_users": 1240
+            },
+            {
+                "cumulative_users": 16319,
+                "month": "2023-08-01 00:00:00.000 UTC",
+                "monthly_users": 1660,
+                "new_users": 426,
+                "returned_users": 1234
+            },
+            {
+                "cumulative_users": 16600,
+                "month": "2023-09-01 00:00:00.000 UTC",
+                "monthly_users": 1095,
+                "new_users": 281,
+                "returned_users": 814
+            },
+            {
+                "cumulative_users": 17049,
+                "month": "2023-10-01 00:00:00.000 UTC",
+                "monthly_users": 1416,
+                "new_users": 449,
+                "returned_users": 967
+            },
+            {
+                "cumulative_users": 17559,
+                "month": "2023-11-01 00:00:00.000 UTC",
+                "monthly_users": 1714,
+                "new_users": 510,
+                "returned_users": 1204
+            },
+            {
+                "cumulative_users": 18436,
+                "month": "2023-12-01 00:00:00.000 UTC",
+                "monthly_users": 2046,
+                "new_users": 877,
+                "returned_users": 1169
+            },
+            {
+                "cumulative_users": 23177,
+                "month": "2024-01-01 00:00:00.000 UTC",
+                "monthly_users": 6253,
+                "new_users": 4741,
+                "returned_users": 1512
+            },
+            {
+                "cumulative_users": 24147,
+                "month": "2024-02-01 00:00:00.000 UTC",
+                "monthly_users": 5542,
+                "new_users": 970,
+                "returned_users": 4572
+            },
+            {
+                "cumulative_users": 24740,
+                "month": "2024-03-01 00:00:00.000 UTC",
+                "monthly_users": 2080,
+                "new_users": 593,
+                "returned_users": 1487
+            },
+            {
+                "cumulative_users": 25091,
+                "month": "2024-04-01 00:00:00.000 UTC",
+                "monthly_users": 1313,
+                "new_users": 351,
+                "returned_users": 962
+            },
+            {
+                "cumulative_users": 25358,
+                "month": "2024-05-01 00:00:00.000 UTC",
+                "monthly_users": 1025,
+                "new_users": 267,
+                "returned_users": 758
+            },
+            {
+                "cumulative_users": 25580,
+                "month": "2024-06-01 00:00:00.000 UTC",
+                "monthly_users": 970,
+                "new_users": 222,
+                "returned_users": 748
+            },
+            {
+                "cumulative_users": 25951,
+                "month": "2024-07-01 00:00:00.000 UTC",
+                "monthly_users": 1203,
+                "new_users": 371,
+                "returned_users": 832
+            },
+            {
+                "cumulative_users": 26318,
+                "month": "2024-08-01 00:00:00.000 UTC",
+                "monthly_users": 1218,
+                "new_users": 367,
+                "returned_users": 851
+            },
+            {
+                "cumulative_users": 26739,
+                "month": "2024-09-01 00:00:00.000 UTC",
+                "monthly_users": 1208,
+                "new_users": 421,
+                "returned_users": 787
+            },
+            {
+                "cumulative_users": 27324,
+                "month": "2024-10-01 00:00:00.000 UTC",
+                "monthly_users": 1432,
+                "new_users": 585,
+                "returned_users": 847
+            }
+        ],
+        "metadata": {
+            "column_names": [
+                "month",
+                "monthly_users",
+                "new_users",
+                "returned_users",
+                "cumulative_users"
+            ],
+            "column_types": [
+                "timestamp with time zone",
+                "bigint",
+                "bigint",
+                "bigint",
+                "bigint"
+            ],
+            "row_count": 37,
+            "result_set_bytes": 1915,
+            "total_row_count": 37,
+            "total_result_set_bytes": 1915,
+            "datapoint_count": 185,
+            "pending_time_millis": 2816,
+            "execution_time_millis": 29065
+        }
+    },
+    "next_uri": null,
+    "next_offset": null
+}
