@@ -1,8 +1,6 @@
-撰文：Peyton（X：[@0xPeyton404](https://x.com/0xPeyton404)）
+# 写给零基础小白：一文学会API调用
 
-> [!NOTE]
->
-> 笔者注：请读者不要迷失在各种花哨的术语中，在本文中遇到暂时不理解的术语也没有任何关系，这不影响你继续。希望本文对你有所帮助！
+撰文：Peyton（X：[@0xPeyton404](https://x.com/0xPeyton404)，[@WHU_web3](https://x.com/WHU_web3)，[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3)）
 
 # 前置要求
 
@@ -12,8 +10,14 @@
 
 通过本文，你将：
 
-- 了解API的概念以及它与ABI，RPC之间的区别；
+- 熟悉API的概念；
+- 知道API与ABI，RPC之间的区别；
 - 熟悉调用API的一般步骤。
+
+笔者注：
+
+1. 本篇教程的目标群体是零基础小白，大佬可以另找教程。
+2. 请读者不要迷失在各种花哨的术语中，在本文中遇到暂时不理解的术语也没有任何关系，这不影响你继续。希望本文对你有所帮助！
 
 # 为什么要用API？
 
@@ -326,11 +330,11 @@ else:
 
 如果请求成功，接下来你应该可以在对应路径下找到pendle_tvl_data.xlsx了。
 
-> [!NOTE]
+> [!TIP]
 >
 > 如果出现报错**PermissionError**: [Errno 13] Permission denied: 'pendle_tvl_data.xlsx'，请先确保你已经关闭pendle_tvl_data.xlsx文件。
 
-<img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109140303084.png" alt="pendle_tvl_data.xlsx" style="zoom: 50%;" />
+<img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109140303084.png" alt="pendle_tvl_data.xlsx" style="zoom:80%;" />
 
 ## 案例：Dune
 
@@ -465,7 +469,7 @@ else:
 
 导出成功后打开gTrade_monthly_users.csv文件可以看到：
 
-<img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109160753037.png" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109160753037.png" style="zoom: 80%;" />
 
 ## 步骤总结
 
@@ -476,9 +480,12 @@ else:
 3. 分析响应体的结构，定位需要的数据。这一步可借助JSON Viewer等等工具辅助解决。
 4. 应用所需要的数据进行后续的操作。
 
+由于时间和篇幅限制，还有很多其他API本文没有涉及，不过大道至简，基本的流程应该与此处总结的相差无几，还望读者自行学习。最后，如果对本文有任何建议，非常欢迎通过X（[@0xPeyton404](https://x.com/0xPeyton404)）或邮箱（zey9991@gmail.com）联系我。
+
 # 参考文献
 
 1. [Contract ABI Specification — Solidity 0.8.29 documentation](https://docs.soliditylang.org/en/develop/abi-spec.html)
 2. [第一周：基建之周 | 区块链节点客户端及RPC_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1sj411d7Nb/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=fd015ccdec6337c64cc98064986a4512)
 3. [简单api的使用教程_api使用教程-CSDN博客](https://blog.csdn.net/m15801872696/article/details/90141941)
 4. [什么是 API 调用？ | Cloudflare](https://www.cloudflare.com/zh-cn/learning/security/api/what-is-api-call/)
+5. [Python数据结构与算法分析 第3版 | 米勒 拉努姆 罗曼 | download on Z-Library](https://zh.z-lib.gl/book/29042122/0704e2/python数据结构与算法分析-第3版.html)
