@@ -4,6 +4,7 @@
 
 ## Research Reports
 
+* [2411-ReflectionAI](research_reports/2411-ReflectionAI/README.md)
 * [2410-GMX](research_reports/2410-GMX/README.md)
 * [2409-Monad](research_reports/2409-Monad/README.md)
 * [2409-Pendle](research_reports/2409-Pendle/README.md)
