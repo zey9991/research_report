@@ -2,7 +2,7 @@
 
 * [README](README.md)
 
-## Research Reports
+## Works
 
 * [2411-ReflectionAI](works/2411-ReflectionAI/README.md)
 * [2410-GMX](works/2410-GMX/README.md)
@@ -17,7 +17,7 @@
 * [2406-Lumoz](works/2406-Lumoz/README.md)
 * [2405-GoPlus](works/2405-GoPlus/README.md)
 
-## Dune Dashboards
+## Dune
 * [2410-gTrade Active Users](<dune/2410-gTrade Active Users/README.md>)
 
 ## Others
