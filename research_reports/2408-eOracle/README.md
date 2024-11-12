@@ -1,4 +1,4 @@
-## 黑马还是被高估？TVL第二的AVS项目eOracle研报 LYS Lab出品 @Peyton
+# 黑马还是被高估？TVL第二的AVS项目eOracle研报 LYS Lab出品 @Peyton
 
 撰文：Peyton，LYS Lab（X：[@0xPeyton404](https://x.com/0xPeyton404)，[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3) ）
 
@@ -8,20 +8,20 @@
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
-## 结论
+# 结论
 
 * 这是一个非常契合以太坊的基本价值观的项目，期望通过 EigenLayer实现去中心化预言机和一个数据&计算市场，同时也正因此你们可以发现其商业模式这块相对较薄弱，盈利预期可能并不比其他预言机项目强，甚至要实现盈利可能也需要较长一段时间（还要考虑到预言机项目的收入能力并不算高的）。而且，相比ChainLink这样的去中心化预言机龙头项目，目前eOracle的基本面唯一优势是其提供的OVS（Oracle Validated Service），也就是eOracle允许开发者开发各种定制化的预言机，并且在eOracle的市场上出售。这就相当于一个去中心化的软件市场一样，eOracle提供了在其中扮演了平台的角色。如果这个市场未来实现以后，能够形成正向的增长飞轮，那么eOracle就有继续起飞的可能。当然，如果eOracle能够提供更低价的去中心化预言机服务，将会更有吸引力。
 * 目前参与方式比较有限，目前主要是需要质押ETH或LST代币，是否参与需要DYOR。
 
-## 风险
+# 风险
 
 * 团队的具体信息未公开
 * 项目代币经济学细节未公开，收益存在不确定性
 * 去中心化预言机赛道竞争激烈，项目发展可能不及预期，收益存在不确定性
 
-## 基本面
+# 基本面
 
-### 团队
+## 团队
 
 关于 eOracle 团队的具体信息，目前没有详细的公开资料。不过，根据其技术团队写的Aegis协议论文（https://arxiv.org/abs/2406.05904）可以窥得一角。在该篇论文上署名的包括：
 
@@ -33,9 +33,9 @@
 
 目前我们可以暂时假设上述所有人都是eOracle的团队成员，看起来似乎eOracle是一个来自以色列的团队。
 
-### 财务
+## 财务
 
-#### 商业模式2B
+### 商业模式2B
 
 最终目的是构建一个完全去中心化、无需许可且值得信赖的中立数据和计算市场。
 
@@ -57,11 +57,11 @@ Dapp开发者可以将Dapp与eOracle集成，以访问eOracle提供的价格数�
 
 eOracle 基于 EigenLayer 构建，受益于以太坊验证者支持的加密经济安全性。运营商可以通过向 eOracle 生态系统做出贡献来注册以获得奖励。（注意：下文提及的“数据验证者”的收益实际上由Eigenlayer来保障，而维护EO链的“链验证者”将）
 
-#### 融资信息
+### 融资信息
 
 Rootdata上未有eOracle的融资信息（2024年8月6日）。
 
-#### 收入预测
+### 收入预测
 
 这里根据Token Terminal数据，参照去中心化预言机赛道项目ChainLink，Pyth以及UMA的收入或使用的Gas费总数作为参考。
 
@@ -115,11 +115,11 @@ eOracle积分既授予运营商，也授予 ETH 委托人，通过质押 ETH 的
 
 举例来说，如果有5位用户将资金共计10ETH委托给运营商A共计10天，那么运营商获取的积分就是10\_10天\_24小时/天\*0.03=72。当然，如果运营商自己也有质押的资金，那么也会获得相应的质押者积分，这里不再举例了。
 
-### 产品
+## 产品
 
 eOracle是首个以太坊原生预言机，它被设计为一个由以太坊保障安全、EigenLayer构建的模块化且可编程的数据层。eOracle为去中心化应用提供了与现实世界相连的原生安全性以及链下计算能力，并得到了再质押的以太币和以太坊验证者去中心化网络的支持。eOracle 的使命是构建一个完全去中心化、无需许可且值得信赖的中立数据和计算市场。
 
-#### eOracle特点
+### eOracle特点
 
 eOracle与传统oracle的比较：
 
@@ -143,7 +143,7 @@ eOracle与传统oracle的比较：
 
 信息的开放和免费访问不仅是生态系统的一个价值，也是创新的一个关键方面。任何区块链上的去中心化应用都可以访问和使用eOracle数据。应用不再受到基础设施限制的束缚，从而限制了行业进步，而是可以在不牺牲效率的情况下，在任何地方使用所需的数据。
 
-#### eOracle架构
+### eOracle架构
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091516106.png)
 
@@ -174,7 +174,7 @@ eos链上的智能合约，可以聚合和验证验证者提交的数据。这�
 
 eOracle 提供Websocket和REST API，以便将eOracle数据用作拉取型预言机（pull oracle）。结合eOracle Solidity SDK，dapps可以使用Python、Typescript或其他自动化解决方案来自动化其数据使用。
 
-#### eOracle工作流程
+### eOracle工作流程
 
 分为四个阶段：**报告、验证 与 聚合、发布、使用。**
 
@@ -214,9 +214,9 @@ Dapps 可以使用eOracle的标准聚合，这些聚合采用先进的算法和�
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091516525.png)
 
-### 技术
+## 技术
 
-#### Aegis - 验证者集合重新配置协议
+### Aegis - 验证者集合重新配置协议
 
 eOracle Validator Set通过Aegis协议集成到以太坊PoS Validator Set中，使以太坊验证者无需许可即可自由参与eOracle网络。
 
@@ -232,7 +232,7 @@ Aegis 使用从Aegis块到主链块的引用来定义验证者集合，在主链
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091516525.png)
 
-#### eOracle 拜占庭容错（eBFT）
+### eOracle 拜占庭容错（eBFT）
 
 eBFT 是 eOracle 采用的一种安全且新颖的网络。它由共识引擎（IBFT）和外部验证者集合配置协议（Aegis）组成。eBFT 利用 IBFT 共识引擎来封装区块，提供特定的网络能力，并管理网络。与 Tendermint 基于共识引擎配合使用的 eOracle EigenLayer 集成智能合约，完全实现了 Aegis 协议。
 
@@ -268,7 +268,7 @@ IBFT 2.0 定义了一系列状态转换，这些转换决定了对区块链状�
 
 Aegis协议与EigenLayer的集成：Aegis协议通过EigenLayer与以太坊原生验证者进行集成，从而完成了对网络的安全性和完整性的保障。这种集成不仅增强了eBFT的容错性，还使其能够利用以太坊强大的社区和生态资源。
 
-### 关键数据
+## 关键数据
 
 2024年8月6日数据：
 
@@ -278,7 +278,7 @@ Aegis协议与EigenLayer的集成：Aegis协议通过EigenLayer与以太坊原�
 * 推特粉丝：26.9K
 * 融资信息：Rootdata上暂无融资信息
 
-### 竞品
+## 竞品
 
 说起预言机项目，就不得不提及龙头项目Chainlink了。说实话，目前eOracle项目与之同样期望打造一个去中心化预言机网络，而且在架构上面也是采用了类似于数据源（交易所）→数据采集节点（API 服务商）→数据处理中心（预言机链→最终用户（智能合约项目方）的模式，并没有看见eOracle项目的突出优势。
 
@@ -297,9 +297,9 @@ Chainlink的团队阵容也是非常豪华的：
 
 再者就是，eOracle未来如果能够在价格方面低于Chainlink等一众老牌项目，也会对开发者更有吸引力。
 
-## 参与机会
+# 参与机会
 
-### 再质押ETH及LST
+## 再质押ETH及LST
 
 \*\*奖励说明：\*\*eOracle积分
 
@@ -323,7 +323,7 @@ Chainlink的团队阵容也是非常豪华的：
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408091517679.png)
 
-## 参考链接
+# 参考链接
 
 https://x.com/eoracle\_network
 
@@ -357,7 +357,7 @@ https://foresightnews.pro/article/detail/32719
 
 https://tokenterminal.com/terminal/financial-statements/chainlink
 
-## 利益披露与免责声明
+# 利益披露与免责声明
 
 利益披露：截至发稿前，作者（Peyton）与 eOracle无任何商业利益行为。
 

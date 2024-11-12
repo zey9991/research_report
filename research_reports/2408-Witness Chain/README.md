@@ -1,22 +1,22 @@
-## Witness Chain: Unifying DePIN Economies
+# Witness Chain: Unifying DePIN Economies
 
 撰文：Peyton，LYS Lab（X：[@0xPeyton404](https://x.com/0xPeyton404)，[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3) ）
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202409301525035.png)
 
-## 结论
+# 结论
 
 * 22年的项目，商业模式是主要2B的，到24年目前只有一个服务OP Rollup的Watchtower是上线了Eigenlayer主网，而且有关经济模型这一块的细节完全未公布。
 * 除了节点运营商不推荐参与，特别是提供资金质押这种方式，因为收益存在巨大不确定性。
 
-## 风险
+# 风险
 
 * 项目经济模型细节未公布，收益存在巨大不确定性。
 * 项目开发进度不能说快，目前只上线了一个给OP Rollup服务的2B业务，考虑到L2 ZK这一块技术愈发成熟后，OP Rollup的情况本就不容乐观，所以这个业务有没有持续的造血能力还是存疑的。
 
-## 基本面
+# 基本面
 
-### 1.团队
+## 1.团队
 
 团队在丹佛，创始人包括：
 
@@ -24,9 +24,9 @@
 * Pramod Viswanath 是普林斯顿大学的知名教授，专攻电气与计算机工程。在2022年加入普林斯顿之前，他在无线通信领域做出了重要贡献，包括共同开发了Flash-OFDM技术，该技术成为4G LTE网络的基础。他还深入研究区块链技术，专注于其技术和经济方面。此外，Viswanath 共同创立了区块链初创公司 Kaleidoscope，并撰写了一本广受欢迎的无线通信教科书。
 * Himanshu Tyagi 是 Sentient 和 Witness Chain 的联合创始人，也是印度科学研究所的副教授。他拥有马里兰大学的博士学位和印度德里理工学院电气工程硕士学位。Sentient 是一个开源的人工智能开发平台。Sentient 将为贡献者发起“活动”，每个活动都有特定的指标来评估贡献，并根据这些指标给予奖励。
 
-### 2.财务
+## 2.财务
 
-#### 商业模式 2B
+### 商业模式 2B
 
 目标客户和收入来源：Optimisitic Rollups项目方+DePIN项目方+开发人员
 
@@ -34,7 +34,7 @@
 * 另一方面，DePIN协调层（DCL）提供的PoL（位置证明）和PoB（带宽证明）能够给DePIN项目方提供真实的节点位置和网络性能等数据，不过目前这两个服务均未正式上线。
 * 除此之外，Witness Chain计划使我们的Rollup Watchtower具备可编程性，以便其他人可以有利地利用它们进行创新应用，如快速finality和跨链桥保险等。
 
-#### 融资信息
+### 融资信息
 
 Rootdata上未有公开的融资信息，但是从其官网可以看出，Witness Chain 获得了包括Ethereal Ventures，**Polychain Capital**，Robot Vetures，Frontier Capital和dao5的投资。
 
@@ -42,15 +42,15 @@ Rootdata上未有公开的融资信息，但是从其官网可以看出，Witnes
 
 图源：https://www.witnesschain.com/
 
-### 3.经济模型
+## 3.经济模型
 
 未公布。
 
-### 4.产品/服务
+## 4.产品/服务
 
 Witness Chain 是 EigenLayer AVS，将以太坊的安全性带入新的Optimisitic Rollups 和 DePIN 项目。
 
-#### Rollup Watchtower网络（主网阶段）
+### Rollup Watchtower网络（主网阶段）
 
 该服务已在Eigenlayer主网上线。
 
@@ -97,7 +97,7 @@ Optimistic rollups通过在另一个链上验证交易，并将交易数据公�
 
 这里比较奇怪的是，主网二三阶段理应早就开始了，但是其官方文档中仍然注明尚未开始。
 
-#### DePIN协调层（DCL）
+### DePIN协调层（DCL）
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/202408122011352.png)
 
@@ -179,7 +179,7 @@ Optimistic rollups通过在另一个链上验证交易，并将交易数据公�
 8. 挑战协调者计算带宽，并将所有数据（挑战者列表及其响应）发布到链上。
 9. 验证数据后，PoB合约终止，托管中的代币分配给挑战者。
 
-### 5.技术
+## 5.技术
 
 Witness Chain每个产品/服务背后都是有学术论文支撑的。
 
@@ -189,7 +189,7 @@ Witness Chain每个产品/服务背后都是有学术论文支撑的。
 
 目前，团队已发表了**Proof of Backhaul**，**Proof of Location**，**Proof of Diligence**和**Proof of Service**共计四篇论文。
 
-### 6.关键数据
+## 6.关键数据
 
 2024年8月12日数据：
 
@@ -199,20 +199,20 @@ Witness Chain每个产品/服务背后都是有学术论文支撑的。
 * 推特粉丝数：28.7K
 * 融资信息：未公布，但参投机构包括Polychain等
 
-## 参与机会
+# 参与机会
 
-\*\*奖励说明：\*\*目前仅Eigenlayer节点运营商有参与机会，对其他群体而言除了参与质押没有其他参与方式，而且经济模型等细节完全未公开，甚至质押的积分也是没有计算方式，贸然参与不确定性较大，不推荐现阶段参与。
+**奖励说明**：目前仅Eigenlayer节点运营商有参与机会，对其他群体而言除了参与质押没有其他参与方式，而且经济模型等细节完全未公开，甚至质押的积分也是没有计算方式，贸然参与不确定性较大，不推荐现阶段参与。
 
 交互方式：类似于eOracle，首先质押资金进入Eigenlayer，然后在AVS项目中选择质押
 
-## 参考文献
+# 参考文献
 
 1. [Witness Chain Watchtowers](https://www.witnesschain.com/)
 2. [Introduction to Witness Chain | Witness Chain](https://docs.witnesschain.com/)
 3. https://app.eigenlayer.xyz/avs/0xd25c2c5802198cb8541987b73a8db4c9bcae5cc7
 4. https://www.rootdata.com/Projects/detail/Witness%20Chain?k=OTA3MA%3D%3D
 
-## 利益披露与免责声明
+# 利益披露与免责声明
 
 利益披露：截至发稿前，作者（Peyton）与Witness Chain无任何商业利益行为。
 
