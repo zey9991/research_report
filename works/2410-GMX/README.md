@@ -1,4 +1,4 @@
-# 读懂零融资的DEX龙头GMX：产品美学与真实收益
+# 零融资衍生品DEX龙头GMX：产品美学与真实收益
 
 撰文：Peyton（X：[@0xPeyton404](https://x.com/0xPeyton404)）
 
@@ -28,13 +28,11 @@
 
 自2021年9月推出以来，GMX协议总费用收入达到3.48亿美金，在DEX赛道中排名第5，在衍生品DEX赛道排名第2；在过去一年总费用收入达到0.89亿美金，在DEX赛道中排名第4，衍生品DEX赛道力压dYdX排名第1。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019110207350.png)
+![过去一年DEX板块费用排名 图源：[Token Terminal | Fundamentals for crypto](](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019110207350.png)
 
-过去一年DEX板块费用排名 图源：[Token Terminal | Fundamentals for crypto](https://tokenterminal.com/terminal/metrics/fees?v=NjBhOGJjYjk4ODUyNTEyYTNjMDkxZWRk)
+https://tokenterminal.com/terminal/metrics/fees?v=NjBhOGJjYjk4ODUyNTEyYTNjMDkxZWRk)
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019110707327.png)
-
-过去一年衍生品DEX板块费用排名 图源：[Token Terminal | Fundamentals for crypto](!https:/tokenterminal.com/terminal/metrics/fees/)
+![过去一年衍生品DEX板块费用排名 图源：[Token Terminal | Fundamentals for crypto](!https:/tokenterminal.com/terminal/metrics/fees/)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019110707327.png)
 
 本文介绍了GMX的基本面，重点分析了其产品体验和商业模式，以求尽可能地让读者了解到GMX背后的成功原因。
 
@@ -54,9 +52,7 @@ GMX 是一个部署在Arbitrum和Avalanche区块链上的去中心化的现货�
 * GMX DAO 管理员（Admins）：xdev\_10，Saurabh，BlueBerry\_KR
 * GMX DAO Mods（Moderators）：Seraph，Tano，Jonezee
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241020165623750.png)
-
-图源：[About - GMX](https://gov.gmx.io/about)
+![图源：[About - GMX](https://gov.gmx.io/about)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241020165623750.png)
 
 2023年7月，GMX DAO Mod Jonezee回答核心贡献者匿名的原因：
 
@@ -101,9 +97,7 @@ GMX 是一个部署在Arbitrum和Avalanche区块链上的去中心化的现货�
 
 ## 价格与TVL走势
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241027101439734.png)
-
-图源：[GMX - DefiLlama](https://defillama.com/protocol/gmx?twitter=false\&tokenPrice=true\&events=false)
+![图源：[GMX - DefiLlama](https://defillama.com/protocol/gmx?twitter=false\&tokenPrice=true\&events=false)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241027101439734.png)
 
 # 4.主营业务
 
@@ -122,9 +116,7 @@ GMX 的长期目标是成为 DeFi 生态中的无许可基础层。其战略方�
 
 此外，随着 DeFi 跟单项目、链上管理基金和 Telegram 交易机器人等技术的兴起，GMX 期望成为 Web3 下一阶段的重要组成部分，类似于 Chainlink 的角色。该愿景包含账户抽象等概念，借助社交平台的简化界面，使用户能在聊天室或去中心化自治组织（DAO）内便捷地执行复杂的交易策略。
 
-![](https://substackcdn.com/image/fetch/w\_2400,c\_limit,f\_auto,q\_auto:good,fl\_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F85eda229-acb2-4a5b-a321-550c81c94cc2\_1555x1080.png)
-
-GMX生态系统 图源：[Case Study: GMX x Arbitrum x Chainlink - GMX News](https://gmxio.substack.com/p/case-study-gmx-x-arbitrum-x-chainlink)
+![GMX生态系统 图源：https://gmxio.substack.com/p/case-study-gmx-x-arbitrum-x-chainlink](https://cdn.jsdelivr.net/gh/zey9991/mdpic/gmx%E7%94%9F%E6%80%81.webp)
 
 ## 交易
 
@@ -166,9 +158,7 @@ GMX V2新的交易费用方案可以总结如下：
 * 价格影响机制，使多空倾向于平衡的交易将获得更有利的价格，不平衡的交易获得负面价格影响。这不利于中大型交易。
 * 引入资金费率，奖励市场中的弱势方，鼓励套利交易驱动市场达到均衡，对LP更加友好。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019142832869.png)
-
-图源：[Dashboard | Decentralized Perpetual Exchange | GMX](https://app.gmx.io/#/dashboard)
+![图源：https://app.gmx.io/#/dashboard](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019142832869.png)
 
 本文将在“收入来源”部分详尽介绍V1和V2的协议交易费用的有关细节。
 
@@ -180,13 +170,11 @@ GMX V2新的交易费用方案可以总结如下：
 
 在V1的GLP模型下，每一个可交易资产都必须被纳入GLP池中，也就是说只有一个单一的GLP池在提供流动性。GLP池类似股票市场中的指数基金，由多个“成分股”（代币）组成，只不过该基金不是意在主动管理提高收益，而是专门用于给交易者提供流动性。虽然GLP池能够一定程度上聚合流动性，但LP有可能“被迫”持有其原本不希望持有的资产，而且单一资产出现风险可能导致所有 GLP 持有者面临损失。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019143047154.png)
-
-图源：[Dashboard | Decentralized Perpetual Exchange | GMX](https://app.gmx.io/#/dashboard)
+![图源：https://app.gmx.io/#/dashboard](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019143047154.png)
 
 V2中，可以将单一的流动性池 GLP 用多个风险隔离的 GM 池代替，每一种资产的流动性都是独立的，可以支持更多长尾资产。 总之，LP可以自由选择他们希望提供流动性的资产。当一种资产价格面临风险时，也不会使所有流动性提供者面临风险。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019142959038.png)
+![图源：https://app.gmx.io/#/dashboard](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019142959038.png)
 
 **基于隔离池的聚合池**
 
@@ -211,9 +199,7 @@ GLV的出现平衡了V1和V2流动性池的设计理念，让GMX的流动性池�
 
 目前GMX支持3个单代币GM池，分别是BTC抵押支持的BTC/USD市场，tBTC抵押支持的BTC/USD市场和WETH抵押支持的ETH/USD市场。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241026194728474.png)
-
-图源：[V2 Pools | Decentralized Perpetual Exchange | GMX](https://app.gmx.io/#/pools/)
+![图源：https://app.gmx.io/#/pools/](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241026194728474.png)
 
 这些新的GM市场将使GMX能够释放更大的市场流动性。它们将吸引一批新的流动性提供者，这些提供者希望拥有100%敞口于单一基础抵押品（BTC、ETH、稳定币或山寨币），而无需像现有GM市场、GLP和一般的流动性池那样进行再平衡。
 
@@ -252,21 +238,15 @@ LP在铸造或销毁流动性提供代币时，均需要考虑价格影响，交
 
 GMX V1给GLP池中每个代币设定一个目标权重，并基于目标权重和实际权重的大小关系实现上述的各种调节。可以通过官网前端的Dashboard查看代币的权重。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241018224526933.png)
-
-图源：[Dashboard | Decentralized Perpetual Exchange | GMX](https://app.gmx.io/#/dashboard)
+![图源：https://app.gmx.io/#/dashboard](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241018224526933.png)
 
 从下图可以看出，低于目标权重的几个代币（ETH，USDC.e，USDT）的手续费都是比较低的。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241018230036616.png)
-
-图源：[GMX | Decentralized Perpetual Exchange](https://app.gmx.io/#/buy\_glp)
+![图源：https://app.gmx.io/#/buy\_glp](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241018230036616.png)
 
 V2的GM池则是基于池中代币对的以美元价格计算的平衡关系来设定价格影响费用，如果购买会破坏池中代币的平衡，增加费用；如果改善池中代币的平衡，则减少费用。例如下图中的694.61个BNB的美元价格就约占整个流动性池价值的50.45%。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241026135301274.png)
-
-图源：[V2 Pools | Decentralized Perpetual Exchange | GMX](https://app.gmx.io/#/pools/)
+![图源：https://app.gmx.io/#/pools/](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241026135301274.png)
 
 如果资金池大体上是平衡的，大额购买可能会导致较大的负面价格影响，此时可以用等量的美元价值的多头代币和空头代币来购买GM代币以减小价格影响。
 
@@ -352,13 +332,9 @@ GMX 协议的收入分配总结在下表中：
 
 尽管V1的交易总量更大，但V2的未平仓位更多，是V1的超7倍，而笔者认为**未平仓位总量更能反映协议近期的发展情况，V2的交易实际上要更加活跃**。而且V2的TVL也超过了V1的3倍，从下面两幅图也可以看出自2023年8月V2版本推出以来，V1的TVL逐步下降，并向V2转移。不过，由于费用结构的变更和存续时间较短，V2产生的费用总量还仅占V1的25.91%。而且，用户向V2的转移仍在进行中。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241026223655022.png)
+![GMX V1的TVL走势 图源：https://defillama.com/protocol/gmx-v1#information](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241026223655022.png)
 
-GMX V1的TVL走势 图源：[GMX V1 - DefiLlama](https://defillama.com/protocol/gmx-v1#information)
-
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241026163519483.png)
-
-GMX V2的TVL走势 图源：[GMX V2 Perps - DefiLlama](https://defillama.com/protocol/gmx-v2-perps#information)
+![GMX V2的TVL走势 图源：https://defillama.com/protocol/gmx-v2-perps#information](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241026163519483.png)
 
 ## Arbitrum和Avalanche
 
@@ -390,7 +366,7 @@ Arbitrum在各项指标上均显著领先。在两者最接近的TVL和费用总
 在去中心化（现货及）衍生品交易所赛道中，本文选取了如下蓝筹项目进行比较，下面是它们的基本情况：
 
 | 衍生品DEX        | 简介             | 公布融资（\$M） | 推特粉丝（K） |
-| ------------- | -------------- | -------- | ------- |
+| :------------ | -------------- | -------- | ------- |
 | GMX           | 现货和杠杆交易        | 0        | 227.41  |
 | dYdX          | 在订单簿上交易现货和永续合约 | 85       | 249.51  |
 | Vertex        | 在订单簿上交易现货和永续合约 | 8.5      | 114.53  |
@@ -403,29 +379,33 @@ Arbitrum在各项指标上均显著领先。在两者最接近的TVL和费用总
 
 本文选择如下指标，简要说明参见下表：
 
-| 指标       | 说明                            |
-| -------- | ----------------------------- |
-| 月活       | 基于30天滚动窗口，使用协议服务的独立地址数（每月统计）。 |
-| 交易       | 交易量                           |
-| TVL      | 用户存入协议智能合约的资产（这些资产不属于协议所有）。   |
-| 流通市值     | 基于治理代币的流通供应量计算协议的估值。          |
-| Mcap/TVL | 值小于1，则说明项目价值可能被低估了            |
-| 费用       | 由终端用户支付的费用。                   |
-| 收入       | 协议（及其代币持有者）保留的费用部分。           |
-| 利润       | 协议的净收入（不包括链下支出）。              |
-| 备注       | 基于2023年第4季度至2024年第3季度的数据取平均值。 |
+| 指标            | 说明                                                   |
+| --------------- | ------------------------------------------------------ |
+| 月活            | 使用协议服务的独立地址数，基于30天滚动窗口，每月统计。 |
+| 交易            | 交易量                                                 |
+| TVL             | 用户存入协议智能合约的资产，这些资产不属于协议所有。   |
+| 流通市值        | 基于治理代币的流通供应量计算协议的估值。               |
+| Mcap/TVL        | 值小于1，则说明项目价值可能被低估了                    |
+| 费用            | 由终端用户支付的费用。                                 |
+| 收入            | 协议（及其代币持有者）保留的费用部分。                 |
+| 利润            | 协议的净收入，不包括链下支出。                         |
+| 费用-收入转化率 | 收入/费用                                              |
+| 收入-利润转化率 | 利润/收入                                              |
+| 备注            | 基于2023年第4季度至2024年第3季度的数据取平均值。       |
 
-比较选取的协议23Q4-24Q3几个重要指标的平均值：
+让我们来比较选取的协议23Q4-24Q3几个重要指标的平均值：
 
-![23Q4-24Q3项目关键指标对比 数据来源：Token terminal, DeFilama, Dune](https://cdn.jsdelivr.net/gh/zey9991/mdpic/GMX_%E7%AB%9E%E4%BA%89%E5%B9%B3%E5%9D%87.png)
+![23Q4-24Q3项目月活等指标对比 数据来源：Token terminal, DeFilama, Dune](https://cdn.jsdelivr.net/gh/zey9991/mdpic/GMX_%E7%AB%9E%E4%BA%89%E5%B9%B3%E5%9D%87%E6%9C%88%E6%B4%BB%E7%AD%89.png)
 
-笔者对该表的解读如下：
+![23Q4-24Q3项目费用等指标对比 数据来源：Token terminal, DeFilama, Dune](https://cdn.jsdelivr.net/gh/zey9991/mdpic/GMX_%E7%AB%9E%E4%BA%89%E5%B9%B3%E5%9D%87%E8%B4%B9%E7%94%A8%E7%AD%89%E7%AD%89.png)
+
+笔者对此前两表的解读如下：
 
 1. GMX在23Q4-24Q3时间段的平均月活、交易量、Mcap/TVL、费用和收入以及利润这几个指标的表现上要优于选取样本的平均值。
-2. GMX 的平均费用总量（\$28.8M）遥遥领先于其他竞争对手，其平均收入（\$8.3M）位列第2，不过在利润方面的表现并不算突出，仅占到dYdX利润的一半左右，费用-利润转化率低（约6.80%），利润率（利润/收入）也较低（约23.52%）。
-3. 已知收入和利润是归属给GMX代币持有者的，这虽然可能会对项目的运营有一定影响，但是考虑到费用的剩余很大一部分（大约比\$28.8M-\$8.3M=\$20.5M小一些）要分红给LP，导致GMX对LP有更大的吸引力，这是在表中无法体现的。
-4. GMX 的月活跃用户（19.98K）在衍生品 DEX 中处于领先地位，在23Q4-24Q3时间段的平均表现仅次于 Pendle ，显示了其用户基础的稳定性。
-5. GMX 的 Mcap/TVL 为 83.99%，明显低于 dYdX（280.61%） 和 gTrade（433.31%）。该比值小于 1 通常被视为该项目的价值在23Q4-24Q3时间段可能被低估，表明 GMX 相对于其锁仓量而言可能具有更高的增值潜力。
+2. GMX 的平均费用总量$28.8M遥遥领先于其他竞争对手，其平均收入\$8.3M位列第2，费用-收入转化率并不高，仅为23.91%，低于样本平均值。而且GMX利润的表现并不算突出，仅占到dYdX利润的一半左右，收入-利润转化率约为23.52%。
+3. 收入和利润是归属给GMX代币持有者的。笔者认为，虽然费用-收入转化率、收入-利润转化率不高可能会对项目的运营有一定影响，但是考虑到费用的剩余很大一部分（V1费用的70%，V2费用的63%，因此该部分略小于\$28.8M-\$8.3M=\$20.5M）要分红给LP，导致GMX对LP有更大的吸引力，这是在表中无法体现的。
+4. GMX 的月活跃用户19.98K在样本衍生品 DEX 中处于领先地位，在23Q4-24Q3时间段的平均表现仅次于 Pendle ，略高于dYdX，显示了其用户基础的稳定性。
+5. GMX 的 Mcap/TVL 为 83.99%，明显低于 dYdX（280.61%） 和 gTrade（433.31%）。该比值小于 1 通常被视为该项目的价值可能被低估，这表明 GMX 相对于其锁仓量而言可能具有更高的增值潜力。
 
 # 8.经济模型
 
@@ -437,9 +417,9 @@ GMX有两种代币：效用与治理代币\$GMX和流动性提供代币，后者
 
 \$GLP和\$GLV代币因其聚合池的特性，可以依据公式计算出一个统一的市场价格，例如，
 
-\$\$
+$$
 p_{GLP}\equiv \frac{GLP池所有资产的总价值，包括未平仓头寸的利润和损失}{GLP 的总供应量}
-\$\$
+$$
 
 而GM代币的价格则因不同的GM池而异。
 
@@ -466,9 +446,7 @@ p_{GLP}\equiv \frac{GLP池所有资产的总价值，包括未平仓头寸的利
 
 目前只剩下esGMX的份额仍在释放，预计将线性释放至2028年9月，其他份额已经释放完毕，因此后续因解锁导致的抛压小。
 
-![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019095325403.png)
-
-图源：[GMX (GMX) | Tokenomics, Supply & Release Schedule (tokenomist.ai)](https://tokenomist.ai/gmx)
+![图源：https://tokenomist.ai/gmx](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241019095325403.png)
 
 \$GMX代币用例包括：
 
