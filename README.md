@@ -4,7 +4,9 @@ icon: github
 
 # README
 
-📖 [Gitbook](https://peyton404.gitbook.io/research_reports/) 💻 [Github](https://github.com/zey9991/research\_report) 🔮 X [@0xPeyton404](https://x.com/0xPeyton404) 📧[zey9991@gmail.com](zey9991@gmail.com)
+
+| 📖 [Gitbook](https://peyton404.gitbook.io/research_reports/) | 💻 [Github](https://github.com/zey9991/research\_report) | 🔮 X[@0xPeyton404](https://x.com/0xPeyton404) | 📧[zey9991@gmail.com](zey9991@gmail.com) |
+| :---------------------------------------------------------: | :-----------------------------------------------------: | :------------------------------------------: | :-------------------------------------: |
 
 {% tabs %}
 {% tab title="中文" %}
