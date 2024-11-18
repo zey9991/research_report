@@ -4,6 +4,7 @@
 
 ## Works
 
+* [2411-DeSci](works/2411-DeSci/README.md)
 * [2411-ReflectionAI](works/2411-ReflectionAI/README.md)
 * [2410-GMX](works/2410-GMX/README.md)
 * [2409-Monad](works/2409-Monad/README.md)
