@@ -569,3 +569,4 @@ else:
 4. [什么是 API 调用？ | Cloudflare](https://www.cloudflare.com/zh-cn/learning/security/api/what-is-api-call/)
 5. [Python数据结构与算法分析 第3版 | 米勒 拉努姆 罗曼 | download on Z-Library](https://zh.z-lib.gl/book/29042122/0704e2/python数据结构与算法分析-第3版.html)
 6. [JSON 教程 | 菜鸟教程](https://www.runoob.com/json/json-tutorial.html)
+7. [duneanalytics/dune-client: A framework for interacting with Dune Analytics' officially supported API service](https://github.com/duneanalytics/dune-client)
