@@ -420,7 +420,7 @@ else:
 
 调用成功时的返回结果是`<class 'dune_client.models.ResultsResponse'>`，看起来这是dune_client一个自定义类的实例，而不是Python内置的字典或列表数据类型。
 
-经过尝试后发现，可以用`jsonpickle.encode()`来序列化 `query_result` 对象，将该对象转换为一个 JSON 格式的字符串并导出：
+可以用`jsonpickle.encode()`来序列化 `query_result` 对象，也就是将该对象转换为一个 JSON 格式的字符串并导出：
 
 ```py
 from dune_client.client import DuneClient
@@ -449,7 +449,7 @@ else:
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109152626189.png)
 
-可以发现我们需要的数据存放在result键下面的rows子键（数组）里面。
+可以发现我们需要的数据存放在result键下面的rows子键的值（数组）里面。
 
 ### 提取数据
 
@@ -486,7 +486,7 @@ else:
 
 ### Dune API免费额度和代码优化
 
-Dune平台规定，免费用户每月拥有2,500个Credits，每1,000个数据点消耗1点Credit，因此每月共能调用总计2,500×1,000=2,500,000个数据点。就读者体验而言，大部分情况下是够用的，不过我们能通过简单的优化节省部分Credit。
+Dune平台规定，免费用户每月拥有2,500个Credits，每1,000个数据点消耗1点Credit，因此每月共能调用总计2,500×1,000=2,500,000个数据点。就笔者的体验而言，大部分情况下是够用的，不过我们能通过简单的优化节省部分Credit。
 
 首先，上面的案例中，对于同一个Dashboard重复调用了三次，显然是一种浪费，可以先将数据存储到本地的变量中。
 
