@@ -1,29 +1,39 @@
-# 写给零基础小白：一文学会API调用
+
+
+
+
+# 链上分析必点技能：API调用简明教程
 
 撰文：Peyton（X：[@0xPeyton404](https://x.com/0xPeyton404)，[@WHU_web3](https://x.com/WHU_web3)，[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3)）
 
+# 笔者注
+
+1. 这是一个**偏数据分析的实操向教程**，对**资深开发者**可能帮助不大。**推荐有需要的读者跟着本文一起实现简单的调用**。
+2. 请小白读者不要迷失在各种花哨的术语中，在本文中遇到暂时不理解的术语也没有任何关系，这不影响你继续。
+3. 希望本文对你有所帮助！欢迎反馈！
+
 # 前置要求
 
-能够运用科学上网工具访问外网即可。
+1. 能够运用科学上网工具访问外网。
+2. 本文的具体实现例子涉及到Python程序，实操建议安装Python并配置环境，但不安装也不会影响理解。
 
 # 学习目标
 
-通过本文，你将：
+基础目标：
 
-- 熟悉API的概念；
-- 知道API与ABI，RPC之间的区别；
+- 了解API的概念；
 - 熟悉调用API的一般步骤。
 
-笔者注：
+进阶目标：
 
-1. 本篇教程的目标群体是零基础小白，大佬可以另找教程。
-2. 请读者不要迷失在各种花哨的术语中，在本文中遇到暂时不理解的术语也没有任何关系，这不影响你继续。希望本文对你有所帮助！
+- 了解**API**与**ABI**，**RPC**之间的区别；
+- 能够仿照案例自主实现**Dune平台的API调用**。
 
 # 为什么要用API？
 
 很多区块链数据平台，比如DeFilama，Tokenterminal或者Dune，都有现成的图表等等可视化，甚至有些支持直接下载原始数据，那为什么还要学习调用API呢？不是多此一举吗？下面是笔者提供的几个理由：
 
-**数据**：有一些数据平台，如DeFiLlama，可以直接下载原始数据，这很好。有一些数据平台，如Dune，虽然提供原始数据下载选项，但是要求会员才能使用，但是普通用户有免费API使用额度，从而让使用API成为直接和灵活地获取数据的必要手段。
+**数据**：有一些数据平台，如DeFiLlama，可以直接下载原始数据，这很好。但也有一些数据平台，如Dune，虽然提供原始数据下载选项，但是要求会员才能使用，但是普通用户有免费API使用额度，从而让使用API成为直接和灵活地获取数据的必要手段。**因此，本文的重点也是教会各位读者如何实现Dune API的调用**。
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/%E5%9B%BE%E7%89%872.png)
 
@@ -256,7 +266,7 @@ C端用户其实不需要理解RPC到底是什么或者RPC怎么样工作，他�
 
 ## JSON API
 
-在这个行业你遇到的API绝大部分都是JSON API，这是一种专注于用 JSON 格式传输数据的 API 规范。其特点是：
+在这个行业笔者遇到的API绝大部分都是JSON API，这是一种专注于用 JSON 格式传输数据的 API 规范。其特点是：
 
 - **统一的 JSON 数据格式**：JSON API 规范定义了数据、关系、元数据的表示方法，使得响应格式更加一致，便于客户端处理。
 - **规范的响应结构**：规定了对象、数组、关系以及分页信息等应如何在 JSON 中表示。比如，它规定了使用“data”键来封装主数据，“errors”键封装错误信息等。
@@ -274,6 +284,8 @@ DeFiLlama是去中心化金融（DeFi）领域最大的总锁仓价值（TVL）�
 
 假设我们要获取Pendle协议在所有已经部署了的区块链上的历史TVL（以USD计价）数据，应该怎么实现呢？
 
+### 选择接口
+
 我们首先需要找到能够获取特定协议的历史TVL的数据的接口，可以发现如下图所示的接口能够满足需要：
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109124814252.png)
@@ -284,50 +296,51 @@ DeFiLlama是去中心化金融（DeFi）领域最大的总锁仓价值（TVL）�
 
 可以看到Responses（响应）下面多了很多信息，让我们来逐个看看：
 
-- Curl：这是一个命令行工具，用于与API进行交互。显示的curl命令展示了如何在终端或命令行中请求DeFiLlama API中关于Pendle的数据。本文用不到这一项。
+- Curl：这是一个命令行工具，用于与API进行交互。显示的curl命令展示了如何在终端或命令行中请求DeFiLlama API中关于Pendle的数据。**本文用不到这一项。**
 - Request URL（请求URL）：这是通过请求访问的地址，具体为https://api.llama.fi/protocol/pendle。
 - Server response（服务器响应）：这里提供了HTTP状态码（此处为200），表明响应是成功的。随后是Response body（响应体），这里是以JSON格式获取的Pendle的实际API数据。Response Header（响应头部）字段则指定数据格式为 JSON，表示数据的缓存和更新时间，用于管理数据的刷新频率。
 
-接下来让我们需要检查Response body的结构（也可以直接访问https://api.llama.fi/protocol/pendle），定位我们要的TVL数据究竟存放在这个超大的JSON文件的何处。请注意，不推荐用肉眼直接查找，这个JSON文件太大了（共计34万行+），我们需要工具来帮助我们。本文中，让我们把此JSON文件的内容复制粘贴到这个JSON Viewer里面：
+### 定位数据
+
+接下来让我们需要检查Response body的结构（也可以直接访问https://api.llama.fi/protocol/pendle），定位我们要的TVL数据究竟存放在这个超大的JSON文件的何处。
+
+请注意，非常不推荐用肉眼直接查找，这个JSON文件太大了（共计34万行+），我们需要工具来帮助我们。本文中，让我们把此JSON文件的内容复制粘贴到这个JSON Viewer里面：
 {% embed url="https://jsonviewer.stack.hu/" %}
 
 然后在Viewer处就可以看到这个JSON文件的格式了。其中的tvl键（数组）下面的数据就是我们需要的。
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109153920127.png)
 
-现在我们已经定位了Pendle在以太坊上的TVL数据，接下来让我们“取出”对应的数据，导出成类似csv或者xlsx等格式的表格。本文使用的是Python，当然你可以使用任意其他你喜欢的编程语言尝试。
+### 提取数据
+
+现在我们已经定位了Pendle在以太坊上的TVL数据，接下来让我们“取出”对应的数据，导出成类似csv或者xlsx等格式的表格。本文使用的是Python，当然你可以使用任意其他你喜欢的编程语言尝试。提示：以下实现的具体代码不需要记忆，让GPT等AI模型帮你生成即可。
 
 ```py
 import requests # 用于发送 HTTP 请求，可选择其他库
-import pandas as pd # 数据处理和存储
+import pandas as pd # 数据处理和存储库
 
 # 设置 API URL
 url = 'https://api.llama.fi/protocol/pendle'
-
 # 发起 GET 请求
 response = requests.get(url)
-
 # 检查响应状态
 if response.status_code == 200:
-    # 解析 JSON 数据
     # 将 response 的内容转换成 JSON 格式的 Python 字典。
     data = response.json() 
-    
-    # 提取 tvl 部分数据
-    chain_data = data['tvl']
-    
-    # 将提取的数据加载到 DataFrame 中
-    df = pd.DataFrame(chain_data)
-    
-    # 将日期转换为可读格式（可选）
-    df['date'] = pd.to_datetime(df['date'], unit='s')
-    
-    # 导出为 Excel 文件
-    df.to_excel('pendle_tvl_data.xlsx', index=False)  # index=False 可以不保存行索引
-    
-    print("数据已成功保存为 pendle_tvl_data.xlsx")
 else:
-    print(f"Error: {response.status_code}") # 如果请求失败，打印出状态码以便于调试。
+    # 如果请求失败，打印出状态码以便于调试。
+    print(f"Error: {response.status_code}")   
+# 提取 tvl 部分数据
+chain_data = data['tvl']
+   
+# 使用Pandas库进行数据类型的转换
+# 将提取的数据加载到 DataFrame 中
+df = pd.DataFrame(chain_data)
+# 将日期转换为可读格式（可选）
+df['date'] = pd.to_datetime(df['date'], unit='s')    
+# 导出为 Excel 文件
+df.to_excel('pendle_tvl_data.xlsx', index=False)  # index=False 可以不保存行索引
+print("数据已成功保存为 pendle_tvl_data.xlsx")
 ```
 
 如果请求成功，接下来你应该可以在对应路径下找到pendle_tvl_data.xlsx了。
@@ -341,6 +354,8 @@ else:
 ## 案例：Dune
 
 Dune Analytics 是一个允许任何人发布和访问由区块链数据驱动的加密仪表板的网站。 Dune 为用户提供了从区块链中查询、提取和可视化大量数据的所有工具，任何人都可以免费创建对区块链数据的 SQL 查询，结果以图表的形式可视化。
+
+### 申请API Key
 
 与DeFilama不同的是，你必须首先申请一个Dune的API Key才能调用他们的API。API Key通常用于区分不同级别的服务。免费用户可能有基本权限，而付费用户可以获得更高的请求限额或访问更多数据。此外，API Key允许平台控制访问频率和权限，以保障服务稳定、防止滥用。
 
@@ -368,6 +383,8 @@ Dune Analytics 是一个允许任何人发布和访问由区块链数据驱动�
 
 虽然不似钱包私钥那样直接管理资产，API密钥的泄露也能造成间接或潜在的经济损失，因此必须妥善保管。
 
+### 选择接口
+
 现在，让我们进入一个仪表盘，例如：
 
 {% embed url="https://dune.com/zey9991/gtradeactiveusers" %}
@@ -380,7 +397,11 @@ Dune Analytics 是一个允许任何人发布和访问由区块链数据驱动�
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109145934613.png)
 
-使用`pip install dune-client`以后，我们可以执行和DeFilama类似的步骤。不同的是，这次我们无法直接预览Response body，也无法确定其到底是不是一个JSON文件。为此，我们可以尝试：
+使用`pip install dune-client`以后，我们可以执行和DeFilama案例中类似的步骤。
+
+### 定位数据
+
+不同的是，这次我们无法直接预览Response body，也无法确定其到底是不是一个JSON文件。为此，我们可以尝试：
 
 ```py
 from dune_client.client import DuneClient
@@ -388,22 +409,19 @@ from dune_client.client import DuneClient
 # 设置 API 密钥
 api_key = "<此处替换成你的API Key>"  
 dune = DuneClient(api_key)
-
 # 设置要执行的查询 ID
 query_id = 4208661  # 替换为你的查询 ID
-
 # 获取最新的查询结果
 query_result = dune.get_latest_result(query_id)
-
 if query_result:
     print(type(query_result))
 else:
     print("No results returned.")
 ```
 
-调用成功时的返回结果是`<class 'dune_client.models.ResultsResponse'>`，看起来这是dune_client一个自定义类的实例，而不是Python内置的字典或列表。
+调用成功时的返回结果是`<class 'dune_client.models.ResultsResponse'>`，看起来这是dune_client一个自定义类的实例，而不是Python内置的字典或列表数据类型。
 
-我们可以用`jsonpickle.encode()`来序列化 `query_result` 对象，将该对象转换为一个 JSON 格式的字符串并导出：
+经过尝试后发现，可以用`jsonpickle.encode()`来序列化 `query_result` 对象，将该对象转换为一个 JSON 格式的字符串并导出：
 
 ```py
 from dune_client.client import DuneClient
@@ -412,18 +430,14 @@ import jsonpickle  # 用于序列化非 JSON 格式的对象
 # 设置 API 密钥
 api_key = "<此处替换成你的API Key>"  
 dune = DuneClient(api_key)
-
 # 设置要执行的查询 ID
 query_id = 4208661  # 替换为你的查询 ID
-
 # 获取最新的查询结果
 query_result = dune.get_latest_result(query_id)
-
 # 检查结果并保存为 JSON 文件
 if query_result:
     # 使用 jsonpickle 进行序列化
     json_data = jsonpickle.encode(query_result, unpicklable=False)
-    
     # 将结果写入 JSON 文件
     with open("dune_query_result4208661.json", "w") as file:
         file.write(json_data)
@@ -436,53 +450,117 @@ else:
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109152626189.png)
 
-可以发现我们需要的数据存放在result键下面的rows子键（数组）里面，定位好以后提取即可：
+可以发现我们需要的数据存放在result键下面的rows子键（数组）里面。
+
+### 提取数据
+
+实现代码如下所示：
 
 ```py
 from dune_client.client import DuneClient
 import jsonpickle  # 用于序列化非 JSON 格式的对象
-import pandas as pd
+import pandas as pd 
 
 # 设置 API 密钥
 api_key = "<此处替换成你的API Key>"
 dune = DuneClient(api_key)
-
 # 设置要执行的查询 ID
 query_id = 4208661  # 替换为你的查询 ID
-
 # 获取最新的查询结果
 query_result = dune.get_latest_result(query_id)
-
 # 检查结果并保存为 JSON 文件
 if query_result:
     # 提取 rows 数据
     user_data = query_result.result.rows  # 直接从 'result' 中提取 'rows'
-    
     # 转换为 DataFrame
     df = pd.DataFrame(user_data)
-
     # 保存为 CSV 文件
     df.to_csv("gTrade_monthly_users.csv", index=False)
     print("Data saved to gTrade_monthly_users.csv")
 else:
     print("No results returned.")
-
 ```
 
 导出成功后打开gTrade_monthly_users.csv文件可以看到：
 
 <img src="https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241109160753037.png" style="zoom:200%;" />
 
+### Dune API免费额度和代码优化
+
+Dune平台规定，免费用户每月拥有2,500个Credits，每1,000个数据点消耗1点Credit，因此每月共能调用总计2,500×1,000=2,500,000个数据点。就读者体验而言，大部分情况下是够用的，不过我们能通过简单的优化节省部分Credit。
+
+首先，上面的案例中，对于同一个Dashboard重复调用了三次，显然是一种浪费，可以先将数据存储到本地的变量中。
+
+```py
+from dune_client.client import DuneClient
+import jsonpickle  # 用于序列化非 JSON 格式的对象
+import pandas as pd 
+
+# 1.定位数据
+# 设置 API 密钥
+api_key = "<此处替换成你的API Key>"  
+dune = DuneClient(api_key)
+# 设置要执行的查询 ID
+query_id = 4208661  # 替换为你的查询 ID
+# 获取最新的查询结果
+query_result = dune.get_latest_result(query_id)
+# 检查结果并保存为 JSON 文件
+if query_result:
+    # 使用 jsonpickle 进行序列化
+    json_data = jsonpickle.encode(query_result, unpicklable=False)    
+    # 将结果写入 JSON 文件
+    with open("dune_query_result4208661.json", "w") as file:
+        file.write(json_data)
+    print("Data saved to dune_query_result4208661.json")
+else:
+    print("No results returned.")
+  
+# 2.提取数据
+user_data = query_result.result.rows  # 直接从 'result' 中提取 'rows'
+# 转换为 DataFrame
+df = pd.DataFrame(user_data)
+# 保存为 CSV 文件
+df.to_csv("gTrade_monthly_users.csv", index=False)
+print("Data saved to gTrade_monthly_users.csv")
+```
+此外，根据笔者经验，大部分情况下所需要的数据都存储在`query_result.result.rows`中，因此很多情况下我们可以跳过分析响应体结构定位数据这一步，直接针对性提取所需数据即可：
+
+```py
+#实操中只要微调这部分的代码即可
+from dune_client.client import DuneClient
+import jsonpickle  # 用于序列化非 JSON 格式的对象
+import pandas as pd 
+# 设置 API 密钥
+api_key = "<此处替换成你的API Key>"
+dune = DuneClient(api_key)
+# 设置要执行的查询 ID
+query_id = 4208661  # 替换为你的查询 ID
+# 获取最新的查询结果
+query_result = dune.get_latest_result(query_id)
+# 检查结果并保存为 JSON 文件
+if query_result:
+    # 提取 rows 数据
+    user_data = query_result.result.rows  # 直接从 'result' 中提取 'rows'
+    # 转换为 DataFrame
+    df = pd.DataFrame(user_data)
+    # 保存为 CSV 文件
+    df.to_csv("gTrade_monthly_users.csv", index=False)
+    print("Data saved to gTrade_monthly_users.csv")
+else:
+    print("No results returned.")
+```
+
 ## 步骤总结
 
-根据前面几个案例学习，我们可以总结出如下调用API的一般步骤：
+根据前面几个案例学习，我们可以总结出如下调用API的标准作业程序（SOP）：
 
-1. 【可选】获取API Key Token。
-2. 根据需要的数据，查找平台的API文档，选择适合的接口和请求URL（请求地址）。
-3. 分析响应体的结构，定位需要的数据。这一步可借助JSON Viewer等等工具辅助解决。
-4. 应用所需要的数据进行后续的操作。
+1. 可能需要获取API Key Token。
+2. 选择接口：根据需要的数据，查找平台的API文档，选择适合的接口和请求地址。
+3. 定位数据：分析响应体的结构，定位所需的数据。这一步可借助JSON Viewer等等工具辅助解决。
+4. 提取数据：应用Python等多种编程语言，提取响应体中所需要的数据。这一步往往涉及数据类型的转换，可借助Chat GPT等AI模型辅助解决。
+5. 应用所需要的数据进行后续的操作。
 
-由于时间和篇幅限制，还有很多其他API本文没有涉及，不过大道至简，基本的流程应该与此处总结的相差无几，还望读者自行学习。最后，如果对本文有任何建议，非常欢迎通过X（[@0xPeyton404](https://x.com/0xPeyton404)）或邮箱（zey9991@gmail.com）联系我。
+由于时间和篇幅限制，还有很多其他API本文没有涉及，还望读者自行学习摸索。最后，如果对本文有任何建议，非常欢迎通过X（[@0xPeyton404](https://x.com/0xPeyton404)）或邮箱（zey9991@gmail.com）联系我。
 
 # 参考文献
 
