@@ -8,9 +8,9 @@
 
 # 笔者注
 
-1. 这是一个**偏数据分析的实操向教程**，对**资深开发者**可能帮助不大。**推荐有需要的读者跟着本文一起实现简单的调用**。
+1. 这是一个**偏数据分析的小白实操向教程**，对**资深开发者**可能帮助不大。**推荐有需要的读者跟着本文一起实现简单的调用**。
 2. 请小白读者不要迷失在各种花哨的术语中，在本文中遇到暂时不理解的术语也没有任何关系，这不影响你继续。
-3. 希望本文对你有所帮助！欢迎反馈！
+3. 希望本文对你有所帮助，也欢迎反馈！
 
 # 前置要求
 
@@ -161,10 +161,13 @@ https://api.openweathermap.org/data/2.5/weather?q=Beijing&appid=YOUR_API_KEY
 
 这里的JSON数据包含多个**键值对**（key-value pairs），每个键表示数据的名称（比如`"temp"`表示温度），每个值对应实际数据（比如`15.0`摄氏度）。这些数据会由天气应用解析和展示。
 
-总结：
+JSON的语法格式也是非常简单的，可以简单了解一下：
 
-- **HTTP请求**帮助应用和API进行通信，就像点菜时说明想要什么。
-- **JSON格式**则是API返回数据的打包方式，就像服务员端上你点的餐品，每道菜都清晰标明。
+- 数据在**名称/值**对中
+- 数据由逗号 **,** 分隔
+- 使用斜杆 \\ 来转义字符
+- 大括号 **{}** 保存对象
+- 中括号 **[]** 保存数组，数组可以包含多个对象
 
 ## API，ABI与RPC
 
@@ -569,3 +572,4 @@ else:
 3. [简单api的使用教程_api使用教程-CSDN博客](https://blog.csdn.net/m15801872696/article/details/90141941)
 4. [什么是 API 调用？ | Cloudflare](https://www.cloudflare.com/zh-cn/learning/security/api/what-is-api-call/)
 5. [Python数据结构与算法分析 第3版 | 米勒 拉努姆 罗曼 | download on Z-Library](https://zh.z-lib.gl/book/29042122/0704e2/python数据结构与算法分析-第3版.html)
+6. [JSON 教程 | 菜鸟教程](https://www.runoob.com/json/json-tutorial.html)
