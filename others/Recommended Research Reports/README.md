@@ -44,7 +44,9 @@
 
 日期：2024.5.21
 
-推荐理由：框架很清晰，值得模仿，在写GMX研报时借鉴了。本文的框架笔者整理了，有需要的读者可移步https://gsgmqpvuf85c.sg.larksuite.com/wiki/HBxtwuiuBi9UW2kNLWBlOz7Wg3d?from=from_copylink
+推荐理由：框架很清晰，值得模仿，在写GMX研报时借鉴了。本文的框架笔者整理了，有需要的读者可移步：
+
+https://gsgmqpvuf85c.sg.larksuite.com/wiki/HBxtwuiuBi9UW2kNLWBlOz7Wg3d?from=from_copylink
 
 6.[重新审视 Ethena：大跌 80% 后反弹，ENA 是否仍在低估击球区？ - 深潮TechFlow](https://www.techflowpost.com/article/detail_21307.html)
 
@@ -52,5 +54,32 @@
 
 日期：2024.11.01
 
-推荐理由：对Ethena进行了详尽的收支分析，并给出了自己的看空理由，虽然部分结论推导比较粗糙，因此结论也不一定成立，但是不失为一个具有高度批判性的文章。
+推荐理由：对Ethena进行了详尽的收支分析，并给出了自己的看空理由。
 
+7.[Covalent Network：去中心化基础设施赛道的遗珠 - Mint Ventures](https://research.mintventures.fund/2024/01/24/zh-covalent-network-the-hidden-gem-of-decentralized-infrastructure/)
+
+作者：Alex Xu(Mint Ventures)
+
+日期：2024-01-24
+
+推荐理由：行文结构值得学习借鉴。
+
+报告要点
+1.1 核心投资逻辑
+1.2 主要风险
+1.3 估值
+2.项目基本情况
+2.1业务定位
+2.2业务逻辑
+2.3业务情况
+2.4 团队、融资和合作伙伴情况
+2.5项目基本情况总结
+3.通证模型
+3.1代币总量和分配
+3.2代币用例和需求
+4.市场和竞争对手情况
+4.1市场分层
+4.2竞争对手对比
+5.估值
+6.风险
+7.参考资料和致谢
