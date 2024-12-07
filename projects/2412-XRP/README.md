@@ -17,6 +17,14 @@
 
 ## 近期行情
 
+写作风格可以参考
+
+[重新审视Ethena：大跌80%后反弹，ENA是否仍在低估击球区？ - Mint Ventures](https://research.mintventures.fund/2024/11/01/zh-revisiting-ethena-after-an-80-plunge-is-ena-still-positioned-in-the-undervalued-strike-zone/#2未来业务展望：Ethena值得期待的叙事和未来发展)
+
+
+
+
+
 https://www.binance.com/en-BH/square/post/16306098656497
 
 以下是笔者对近期XRP强势行情走势的解读：
@@ -414,8 +422,6 @@ XRPL上的费用主要包括：
 - 储备要求（reserve requirement）：账户必须持有的最低XRP数量。该数量随账户在账本中拥有的对象数量增加而增加。
 - 转账费用（transfer fees）：可选费用。发行方在将发行的货币转移到XRP Ledger内的其他地址时可选择收取的百分比费用
 - 信任线质量（trust line quality）：可选费用。允许账户将信用额度上的余额设定为高于或低于面值。这可能会导致类似于收取费用的情况。
-
-# XRPL 链上数据解读：
 
 ## 链上数据
 
