@@ -2,6 +2,7 @@
 * [README](README.md)
 
 ## Projects
+* [2411-ReflectionAI](projects/2412-XRP/README.md)
 * [2411-ReflectionAI](projects/2411-ReflectionAI/README.md)
 * [2410-GMX](projects/2410-GMX/README.md)
 * [2409-Monad](projects/2409-Monad/README.md)
