@@ -558,82 +558,53 @@ XRPL公链的生态拓展可以从两个方面看待。一方面，特别是2020
 # 参考文献
 
 1. [Global Payments & Financial Solutions for Businesses | Ripple](https://ripple.com/)
-
 2. [Stablecoins: Essentials and Impact](https://ripple.com/reports/Stablecoins-Essentials-and-Impact.pdf)
-
 3. [Ripple Documentation](https://docs.ripple.com/)
-
 4. [XRP Ledger Documentation & Developer Resources](https://xrpl.org/docs)
-
 5. [Fungible Tokens](https://xrpl.org/docs/concepts/tokens/fungible-tokens)
-
 6. [Authorized Trust Lines](https://xrpl.org/docs/concepts/tokens/fungible-tokens/authorized-trust-lines)
-
 7. [Deposit Authorization](https://xrpl.org/docs/concepts/accounts/depositauth)
-
 8. [Freezing Tokens](https://xrpl.org/docs/concepts/tokens/fungible-tokens/freezes)
-
 9. [XRPL Explorer | Ledgers](https://livenet.xrpl.org/)
-
 10. [XRP Ledger Explorer - XRPSCAN](https://xrpscan.com/)
-
-11. [XRPL Commons - Building the commons with the XRPL Community](https://www.xrpl-commons.org/)
-
-12. [Software Developer Grants Program - XRPLGrants.org](https://xrplgrants.org/)
-
-13. [Travelex Bank | Customer Case Study | Ripple](https://ripple.com/customer-case-study/travelex-bank/)
-
-14. [Instarem | Customer Case Study | Ripple](https://ripple.com/customer-case-study/instarem/)
-
-15. [Flash Payments Expands Globally Through Partnership with Ripple | Ripple](https://ripple.com/customer-case-study/flash-payments/)
-
-16. [XRPL Hooks - XRP 账本的智能合约提案](https://xrpl-hooks.readme.io/)
-
-17. [XRP 市值重返加密第三，XRP ETF 先行一步？ - Foresight News](https://foresightnews.pro/article/detail/72855)
-
-18. [错过 XRP 涨幅？不妨看看瑞波生态内的热点 Meme 币（附参与教程） - 深潮TechFlow](https://www.techflowpost.com/article/detail_21969.html)
-
-19. [XRP 一路高涨：为什么零风投、无智能合约、低用户量，反而成就了 1,800 亿美元市值？ - 深潮TechFlow](https://www.techflowpost.com/article/detail_21962.html)
-
-20. [金色观察 | 单月上涨400% XRP还能上车吗](https://www.jinse.cn/blockchain/3704258.html)
-
-21. [利好频出，老牌公链代币XRP焕发新生，未来能走多远？-非小号](https://www.feixiaohao.com/news/13033930.html)
-
-22. [與川普會面討論加密幣政策？ Ripple CEO 耐人尋味回應引爆 XRP 飆漲 - 區塊客](https://blockcast.it/2024/11/18/ripple-ceos-remarks-spark-rumors-of-presidential-talks-during-xrp-surge/)
-
-23. [Ripple和XRP：加密政策驱动与去中心化挑战](https://www.jinse.cn/blockchain/3704195.html)
-
-24. [万字解析 Web3 支付赛道：全球化支付的未来](https://mp.weixin.qq.com/s/zRwYAunc8Am5HHzhyJIDew)
-
-25. [XRP 调研分析报告 - Foresight News](https://dev.foresightnews.pro/article/detail/49717)
-
-26. [SEC解密Ripple坐庄手法：拉拢机构出货，配合利好拉盘 - 深潮TechFlow](https://www.techflowpost.com/article/detail_9541.html)
-
-27. [Read RIPPLE 开放式全球支付网络 | Leanpub](https://leanpub.com/ripple/read#leanpub-auto-ripple-1)
-
-28. [饱受诟病的Ripple 凭什么估值100亿美金？_手机新浪网](https://finance.sina.cn/blockchain/2020-02-18/detail-iimxyqvz3912668.d.html)
-
-29. [深扒！市值暴跌80%,共识机制被质疑,Ripple从天堂跌落地狱](https://www.sohu.com/a/221640234_114877)
-
-30. [Ripple 声称在 SEC 诉讼中获胜，XRP 价格飙升 - Securities.io](https://www.securities.io/zh-CN/xrp-price-surges-as-ripple-claims-victory-in-sec-lawsuit/)
-
-31. [日内涨幅近70%！XRP带飞整个加密市场，但监管走向依旧不明朗_腾讯新闻](https://news.qq.com/rain/a/20230714A06JBR00)
-
-32. [Stellar 与 Ripple：评估长期竞争对手的表现 - Securities.io](https://www.securities.io/zh-CN/Stellar-与-Ripple-评估长期竞争对手的表现/)
-
-33. [Messari XRP 深度报告：Q3 原生智能合约提案新高，日交易量环比增长 94% - 深潮TechFlow](https://www.techflowpost.com/article/detail_22024.html)
-
-34. [XRP Ledger: More than Ripples | Messari](https://messari.io/report/xrp-ledger-more-than-ripples)
-
-35. https://cryptoslate.com/ripples-stablecoin-rlusd-expected-to-launch-on-dec-4-with-nydfs-approval/
-
-    https://fintechmagazine.com/articles/ripple-unveils-rlusd-stablecoin-with-exchange-partners
-
-    https://www.pymnts.com/cryptocurrency/2024/ripple-names-exchange-partners-for-us-dollar-denominated-stablecoin-rlusd/
+11. [XRP Rich list and balance distribution | XRPSCAN](https://xrpscan.com/balances)
+12. [XRPL Commons - Building the commons with the XRPL Community](https://www.xrpl-commons.org/)
+13. [Software Developer Grants Program - XRPLGrants.org](https://xrplgrants.org/)
+14. https://ripple.com/customer-case-study/flash-payments/)
+15. [运行 XRP Ledger Validator](https://xrpl.org/blog/2020/running-an-xrp-ledger-validator)
+16. [rippled 版本 1.0.0](https://xrpl.org/blog/2018/rippled-1.0.0)
+17. [去中心化策略更新](https://xrpl.org/blog/2017/decent-strategy-update)
+18. [XRPL Hooks - XRP 账本的智能合约提案](https://xrpl-hooks.readme.io/)
+19. [XRP 市值重返加密第三，XRP ETF 先行一步？ - Foresight News](https://foresightnews.pro/article/detail/72855)
+20. [Ripple 首席执行官 Garlinghouse 揭示 XRP 上涨的主要原因 | 加密探险家o on Binance Square](https://www.binance.com/en-BH/square/post/16306098656497)
+21. [错过 XRP 涨幅？不妨看看瑞波生态内的热点 Meme 币（附参与教程） - 深潮TechFlow](https://www.techflowpost.com/article/detail_21969.html)
+22. [XRP 一路高涨：为什么零风投、无智能合约、低用户量，反而成就了 1,800 亿美元市值？ - 深潮TechFlow](https://www.techflowpost.com/article/detail_21962.html)
+23. [金色观察 | 单月上涨400% XRP还能上车吗](https://www.jinse.cn/blockchain/3704258.html)
+24. [利好频出，老牌公链代币XRP焕发新生，未来能走多远？-非小号](https://www.feixiaohao.com/news/13033930.html)
+25. [與川普會面討論加密幣政策？ Ripple CEO 耐人尋味回應引爆 XRP 飆漲 - 區塊客](https://blockcast.it/2024/11/18/ripple-ceos-remarks-spark-rumors-of-presidential-talks-during-xrp-surge/)
+26. [Ripple和XRP：加密政策驱动与去中心化挑战](https://www.jinse.cn/blockchain/3704195.html)
+27. [万字解析 Web3 支付赛道：全球化支付的未来](https://mp.weixin.qq.com/s/zRwYAunc8Am5HHzhyJIDew)
+28. [XRP 调研分析报告 - Foresight News](https://dev.foresightnews.pro/article/detail/49717)
+29. [SEC解密Ripple坐庄手法：拉拢机构出货，配合利好拉盘 - 深潮TechFlow](https://www.techflowpost.com/article/detail_9541.html)
+30. [Read RIPPLE 开放式全球支付网络 | Leanpub](https://leanpub.com/ripple/read#leanpub-auto-ripple-1)
+31. [饱受诟病的Ripple 凭什么估值100亿美金？_手机新浪网](https://finance.sina.cn/blockchain/2020-02-18/detail-iimxyqvz3912668.d.html)
+32. [深扒！市值暴跌80%,共识机制被质疑,Ripple从天堂跌落地狱](https://www.sohu.com/a/221640234_114877)
+33. [Ripple 声称在 SEC 诉讼中获胜，XRP 价格飙升 - Securities.io](https://www.securities.io/zh-CN/xrp-price-surges-as-ripple-claims-victory-in-sec-lawsuit/)
+34. [日内涨幅近70%！XRP带飞整个加密市场，但监管走向依旧不明朗_腾讯新闻](https://news.qq.com/rain/a/20230714A06JBR00)
+35. [Stellar 与 Ripple：评估长期竞争对手的表现 - Securities.io](https://www.securities.io/zh-CN/Stellar-与-Ripple-评估长期竞争对手的表现/)
+36. [Messari XRP 深度报告：Q3 原生智能合约提案新高，日交易量环比增长 94% - 深潮TechFlow](https://www.techflowpost.com/article/detail_22024.html)
+37. [XRP Ledger: More than Ripples | Messari](https://messari.io/report/xrp-ledger-more-than-ripples)
+38. [Ripple Drops Another $25M Into Crypto PAC to Sway 2026 Congressional Races](https://finance.yahoo.com/news/ripple-drops-another-25m-crypto-004106887.html)
+39. [Ripple Vs. Stellar (2024 Edition) - Securities.io](https://www.securities.io/xrp-vs-stellar/)
+40. [XLM vs XRP: What's the difference?](https://atomicwallet.io/academy/articles/xlm-vs-xrp-whats-the-difference)
+41. [Ripple的策略性成长与未来前景 | Binance News发布于币安广场](https://www.binance.com/zh-CN/square/post/12-04-2024-ripple-s-strategic-growth-and-future-prospects-17102872602922)
+42. [Ripple’s stablecoin RLUSD expected to launch on Dec. 4 with NYDFS approval](https://cryptoslate.com/ripples-stablecoin-rlusd-expected-to-launch-on-dec-4-with-nydfs-approval/)
+43. [Ripple launches RLUSD stablecoin with global exchange partners | FinTech Magazine](https://fintechmagazine.com/articles/ripple-unveils-rlusd-stablecoin-with-exchange-partners)
+44. https://www.pymnts.com/cryptocurrency/2024/ripple-names-exchange-partners-for-us-dollar-denominated-stablecoin-rlusd/
 
 # 利益披露与免责声明
 
-利益披露：截至发稿前，作者（Peyton）与Xterio无任何商业利益关系。
+利益披露：截至发稿前，作者（Peyton）与Ripple、XRPL等主体无任何商业利益关系。
 
 免责声明：本文观点带有主观性，文中可能存在数据和推理上的错误，欢迎批评指正。教程所有内容均不构成投资建议，仅供参考。加密货币相关资风险极高，极容易归零，请在参与时谨慎做出决策，并严格遵守相关法律法规。
 
