@@ -309,11 +309,11 @@ AMM池中的锁仓量要小得多，自10下旬开始快速增长，但2024年12
 
 ### 日交易体量
 
-![](D:\Learning Materials\Web3俱乐部\research_report\projects\2412-XRP\data\Ripple瑞波XRP - 图片副本_Trading Volume.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_Trading%20Volume.png)
 
 因为实际数据中有非常多数值特别大的极值，上图中的竖轴取了对数平滑处理。可以看出，截至2024年12月8日，大部分时段XRPL交易体量保持在100万至1000万美元之间。2024年11月末突破1000万美元大关后仍然保持。
 
-![](D:\Learning Materials\Web3俱乐部\research_report\projects\2412-XRP\data\Ripple瑞波XRP - 图片副本_DEX vs. CEX.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_DEX%20vs.%20CEX.png)
 
 根据上面这幅图可以看清楚DEX和CEX的交易体量占比情况，CEX自2022年8月初有数据以来，几乎瞬间就占据了主导态势，此后的大多数时间段还是CEX交易量占主导，其中有部分时间段DEX占比短暂大幅提升，可能是meme热潮的结果。
 
@@ -327,7 +327,7 @@ AMM池中的锁仓量要小得多，自10下旬开始快速增长，但2024年12
 
 ### Token数量
 
-![](D:\Learning Materials\Web3俱乐部\research_report\projects\2412-XRP\data\Ripple瑞波XRP - 图片副本_Listed Tokens.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_Listed%20Tokens.png)
 
 从2024年10月末（美大选接近尾声时）开始，XRPL上的资产数量开始暴增，2024年12月8日已经达到了12,428。其余时段，资产数量缓慢增长。
 
@@ -378,7 +378,7 @@ XRP没有特别的用途，主要是支付XRPL网络上的各种费用、购买�
 
 经济模型方面，虽然现阶段Ripple的XRP排放实质上相当于网络通胀机制，但是没有新增发的XRP，而Stellar Network的经济模型中，其中一小部分新创建的 XLM 被分发以激励参与网络，形成缓慢通胀。总之，请读者注意，此处的估值仅具有一定参考意义，不一定完全准确。
 
-![](D:\Learning Materials\Web3俱乐部\research_report\projects\2412-XRP\data\Ripple瑞波XRP - 图片副本_估值.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_%E4%BC%B0%E5%80%BC.png)
 
 注：
 
