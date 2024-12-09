@@ -1,5 +1,7 @@
 # 审视起飞的XRP：业务、数据、潜力和风险
 
+撰文：Peyton，Core Builder of LYS Lab（X：[@0xPeyton404](https://x.com/0xPeyton404)，[@LingyueSamaWeb3](https://x.com/LingyueSamaWeb3) ）
+
 # 前情提要
 
 ## 近期行情
@@ -48,58 +50,15 @@ Ripple（瑞波）是由Ripple Labs创建的全球跨境支付网络，基于分
 
 Ripple 是一家私人投资公司。该公司已完成五轮融资，其中包括两轮天使投资、一轮种子投资、一轮A 轮、一轮B 轮和一轮C 轮。详情见下表：
 
-表：Ripple 融资背景  数据来源：Wikipedia
-
-|     日期      | 轮次 |                            投资者                            | 金额 （百万美元） |
-| :-----------: | :--: | :----------------------------------------------------------: | :---------------: |
-| 2013 年 4 月  | 天使 | [Andreessen Horowitz](https://en.wikipedia.org/wiki/Andreessen_Horowitz)(a16z)、FF Angel LLC、[Lightspeed Venture Partners](https://en.wikipedia.org/wiki/Lightspeed_Venture_Partners)、Pantera Capital、Vast Ventures、比特币机会基金 |        2.5        |
-| 2013 年 5 月  | 天使 | [谷歌风投](https://en.wikipedia.org/wiki/GV_(company))、[IDG资本](https://en.wikipedia.org/wiki/IDG_Ventures) |        3.0        |
-| 2013 年 11 月 | 种子 | 核心创新资本、Venture51、Camp One Ventures、[IDG资本](https://en.wikipedia.org/wiki/IDG_Ventures) |        3.5        |
-| 2015 年 5 月  | A 轮 | [IDG资本](https://en.wikipedia.org/wiki/IDG_Ventures)、[希捷科技](https://en.wikipedia.org/wiki/Seagate_Technology)、[AME Cloud Ventures](https://en.wikipedia.org/wiki/Jerry_Yang#AME_Cloud_Ventures)、ChinaRock Capital Management、China Growth Capital、Wicklow Capital、Bitcoin Opportunity Corp、Core Innovation Capital、Route 66 Ventures、[RRE Ventures](https://en.wikipedia.org/wiki/RRE_Ventures)、Vast Ventures、Venture 51 |        28         |
-| 2015 年 10 月 | A 轮 | [桑坦德创新创业公司](https://en.wikipedia.org/wiki/Banco_Santander) |         4         |
-| 2016 年 9 月  | B 轮 | [渣打银行](https://en.wikipedia.org/wiki/Standard_Chartered)、[埃森哲](https://en.wikipedia.org/wiki/Accenture)、[SCB Digital Ventures](https://en.wikipedia.org/wiki/Siam_Commercial_Bank)、[SBI 控股](https://en.wikipedia.org/wiki/SBI_Group)、[桑坦德银行创新投资](https://en.wikipedia.org/wiki/Banco_Santander)公司、[芝加哥商品交易所集团](https://en.wikipedia.org/wiki/CME_Group)、[希捷科技](https://en.wikipedia.org/wiki/Seagate_Technology) |        55         |
-| 2019 年 12 月 | C 轮 | Tetragon、[SBI Holdings](https://en.wikipedia.org/wiki/SBI_Group)、Route 66 Ventures |        200        |
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_%E8%9E%8D%E8%B5%84.png)
 
 ## 发展历程
 
-表：Ripple发展历程  数据来源：据XRPM文档、Wikipedia等信息源整理
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_Ripple2011.png)
 
-| 年       | 月     | 事件                                                         |
-| -------- | ------ | ------------------------------------------------------------ |
-| **2011** |        | **Arthur Britto、Jed McCaleb 和 David Schwartz 共同开发 XRP Ledger（XRPL）** |
-| 2012     | 06     | XRP Ledger首次推出，不久后现今联合创始人兼执行主席Chris Larsen加入团队 |
-|          | 09     | Ripple Labs前身OpenCoin成立                                  |
-| **2013** | **04** | **获天使轮融资250万美元，投资方包括a16z、DCG等**             |
-|          | **05** | **获种子轮融资300万美元，投资方为IDG Capital**               |
-|          | 07     | Jed McCaleb因发展方向存在分歧离开，创立竞品Stellar           |
-|          | 10     | OpenCoin品牌重塑为Ripple Labs, Inc.                          |
-|          | **11** | **获种子轮追加融资350万美元，投领投方为Core Innovation Capital** |
-| **2015** | **05** | **Ripple Labs被指控未经授权出售瑞波币违反“银行保密法”，被罚70万美元并整改** |
-|          | **05** | **获A轮融资2800万美元，领投方为IDG Capital，参投方包括CME Ventures和Seagate Technology等** |
-|          | **10** | **获A轮追加融资400万美元，领投方为Santander，参投方包括CME Ventures和Seagate Technology等** |
-|          | 10     | Ripple Labs品牌重塑为Ripple                                  |
-| 2016     | 06     | 获得纽约州金融服务部颁发的虚拟货币许可证，成为第四家获得BitLicense的公司 |
-|          | **09** | **获B轮融资5500万美元，估值3.55亿美元，领投方为SBI Investment，参投方包括渣打银行等** |
-| 2017     | 05     | 推出新功能Escrow，透过第三方托管的方式逐步释放XRP            |
-|          | 09     | 区块链初创公司 R3 起诉 Ripple，要求其履行期权协议，Ripple 提起反诉 |
-|          | **12** | **将550亿个XRP分别放进55个Escrow的托管合约帐户中，每个帐户分别是10亿XRP，每个月的头一天解锁一个托管合约帐户，开放让企业购买，而当月末未被购买的XRP，将会放回到新的智能合约。** |
-| 2018     | 03     | 由 Ripple 驱动的移动应用程序“MoneyTap”，被日本银行财团采用，可在日本提供按需国内支付 |
-|          | 05     | 基于Ripple 的 xCurrent 技术的国际支付移动应用程序“One Pay FX”，被西班牙银行集团桑坦德银行采用 |
-|          | 09     | Ripple 和 R3 达成了一项未披露的和解协议                      |
-| 2019     | 06     | 西联汇款首席执行官 Hikmet Ersek 表示他的公司曾在 2018 年尝试过 Ripple，但选择不采用其基于加密货币的支付软件，声称这比使用现有基础设施“贵五倍” |
-|          | **12** | **获C轮融资2亿美元，估值100亿美元，领投方为Tetragon，参投方包括Bossanova和SBI等等** |
-| **2020** | 02     | 《金融时报》Alphaville 版的一篇文章透露MoneyGram 因使用 XRP 而持续获得补贴，2019 年第四季度补贴金额达到 890 万美元，并认为 Ripple 依赖 XRP 的销售来保持盈利 |
-|          | 09     | XRPL基金会成立，获得初始捐赠650万美金                        |
-|          | **12** | **SEC 指控 Ripple、联合创始人 Christian Larsen 和首席执行官 Bradley Garlinghouse 通过未经注册的证券发行筹集了超过 13 亿美元。** |
-| **2023** | 05     | 以 2.5 亿美元收购了总部位于瑞士的加密货币托管公司 Metaco     |
-|          | 06     | 获得新加坡央行的许可，提供受监管的数字支付代币产品和服务     |
-|          | **07** | **地方法院裁定Ripple在交易所和通过算法出售XRP代币并不构成投资合同，但机构出售代币确实违反了联邦证券法。** |
-|          | 10     | SEC宣布将撤销对 Brad Garlinghouse 和 Chris Larsen 的诉讼。   |
-|          | **12** | **Ripple 捐赠 2500 万美元成立了一个名为Fairshake的超级政治行动委员会，还有两个附属的超级政治行动委员会，共从加密货币行业公司、高管和投资者那里筹集了 7800 万美元。** |
-| 2024     | 04     | 《福布斯》将其称为“加密僵尸”，指出该公司在破坏 SWIFT 方面没有取得进展，2023 年产生了 583,000 美元的费用，并且该公司托管了价值 240 亿美元的 XRP 代币，可以在接下来的四年内出售。 |
-|          | 05     | Ripple CEO Brad Garlinghouse宣布 Ripple 将额外捐赠 2500 万美元，并承诺每年再捐赠 2500 万美元 |
-|          | 06     | Ripple 的法律总监 Stuart Alderoty 表示，该公司已花费超过 1 亿美元在SEC提起的诉讼中为自己辩护 |
-|          | **11** | **纽约金融服务部已向 Ripple 表示将批准其推出新稳定币产品 RLUSD，并计划于 12 月 4 日正式推出** |
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_Ripple2016.png)
+
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_Ripple2020.png)
 
 值得指出的是，Ripple多次面对监管机构的调查和诉讼，例如2015年因未经授权销售瑞波币被罚款，以及2020年SEC指控其未经注册发行证券。
 
@@ -178,22 +137,7 @@ XRP的价值真的与Ripple的核心产品挂钩吗？
 - **Ripple Payments ODL**：ODL 使用 XRP 作为过渡货币，按需获取流动性，并实时转移资金。在这个场景中，XRP被用作资金转换的媒介，涉及XRP的买入和卖出操作，似乎可能会对XRP有一定的买盘支撑。**但根据笔者整理的Ripple历史季度报告中的数据，ODL业务的结果是净出售XRP代币，业务中出售的XRP数额往往高于回购的XRP数额**。此外，2020年[深潮文章](https://www.techflowpost.com/article/detail_9541.html)分析称“实际上它（指ODL）的成本要高得多，因此，如果没有 Ripple 的大量补偿，机构不希望使用这种产品”，“货币支付机构成为 Ripple 销售未注册的 XRP 的又一渠道”。
 - **Ripple USD (RLUSD)**：跨境支付解决方案中，**客户出于减小汇兑损失的目的，在RLUSD推出后，理应更倾向于选择稳定币RLUSD作为支付方案，使人更难相信这个业务的推出能够为XRP赋能**。
 
-表：净ODL销售额历史数据  数据来源：Ripple季度市场报告
-
-| 年份 | 季度 | 净ODL相关销售额 | 净ODL销售额/交易量 |
-| ---- | ---- | --------------- | ------------------ |
-| 2020 | Q2   | $32.6M          | 0.18%              |
-|      | Q3   | $35.8M          | 0.10%              |
-|      | Q4   | $76.3M          | 0.05%              |
-| 2021 | Q1   | $150.3M         | 0.07%              |
-|      | Q2   | $157.9M         | 0.04%              |
-|      | Q3   | $491.7M         | 0.26%              |
-|      | Q4   | $717.1M         | 0.43%              |
-| 2022 | Q1   | $273.3M         | 0.29%              |
-|      | Q2   | $408.9M         | 0.47%              |
-|      | Q3   | $310.7M         | 0.42%              |
-|      | Q4   | $226.3M         | 0.35%              |
-| 2023 | Q1   | $361.1M         | 0.44%              |
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_ODL.png)
 
 注：
 
@@ -221,67 +165,17 @@ XRP的价值真的与Ripple的核心产品挂钩吗？
 
 XRP Ledger 的主要优势之一是快速高效的共识算法，它可以在 4 到 5 秒内结算交易，同时以每秒高达 1,500 笔交易的吞吐量进行处理，适用于企业级客户的日常支付和跨境交易和汇款。
 
-[XRP Ledger Home | XRPL.org](https://xrpl.org/)
-
-https://x.com/i/trending/1861796585988047235
-
-https://www.xrpl-commons.org/
-
-https://waveofinnovation.com/
-
 ## 发展历程
 
-表：XRPL发展历程  数据来源：XRPL文档及博客
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_XRPL2011.png)
 
-| 年   | 月   | 事件                                                         |
-| ---- | ---- | ------------------------------------------------------------ |
-| 2011 |      | Arthur Britto、Jed McCaleb 和 David Schwartz 共同开发 XRP Ledger（XRPL） |
-| 2012 | 06   | XRP Ledger首次推出                                           |
-| 2013 | 07   | Jed McCaleb因发展方向存在分歧离开，创立竞品Stellar           |
-| 2014 | 07   | 发布XRP Ledger 0.26.1                                        |
-|      | 11   | 发布XRP Ledger 0.26.4                                        |
-| 2016 | 02   | 发布XRP Ledger 0.30.1，包括对 account_offers、server_info、peer subscriptions 等的更新 |
-|      | 06   | 推出新的 RippleAPI                                           |
-|      | 12   | 发布XRP Ledger 0.40.0，新增延迟支付的交易类型                |
-| 2017 | 01   | 发布XRP Ledger 0.50.0                                        |
-|      | 03   | 发布XRP Ledger 0.60.0，引入托管功能，用户可以在 RCL 上使用加密条件（如哈希锁）设置托管功能，指定到期日期锁定 XRP |
-|      | 06   | 发布XRP Ledger 0.70.0                                        |
-|      | 10   | 发布XRP Ledger 0.80.0                                        |
-|      | 12   | 将550亿个XRP（总供应量的 55%）分别放进55个Escrow的托管合约帐户中，每个帐户分别是10亿XRP，在接下来的55个月内，每个月的头一天解锁一个托管合约帐户，开放让企业购买，而当月末未被购买的XRP，将会放回到新的托管账户中。 |
-| 2018 | 02   | 发布XRP Ledger 0.9.0，允许账户严格拒绝来自其他账户发送的交易的任何资金，允许用户创建可以由其预期收款人取消或兑现的延期付款，引入历史记录分片功能，单个服务器无需存储整个历史记录 |
-|      | 05   | 发布XRP Ledger 1.0.0                                         |
-|      | 09   | 发布ripple-lib 1.0.0（xrpl.js的前身）                        |
-|      | 09   | 发布XRP Ledger 1.1.0，允许用户通过将发送方地址加入白名单，预先授权入账交易 |
-| 2019 | 02   | 发布XRP Ledger 1.2.0                                         |
-|      | 04   | MultiSignReserve 修正案启用                                  |
-|      | 06   | xrpl.org网站上线                                             |
-|      | 12   | 发布XRP Ledger 1.4.0，新版本允许用户在此过程中删除 XRP Ledger 账户并恢复部分账户基础准备金 |
-| 2020 | 04   | 发布XRP Ledger 1.5.0，新版本引入了一些改进和新功能，包括对 gRPC API、API 版本控制等等 |
-|      | 08   | 发布XRP Ledger 1.6.0，新版本使得共识机制更加健壮             |
-|      | 09   | XRPL基金会成立，获得初始捐赠650万美金                        |
-| 2021 | 02   | 发布XRP Ledger 1.7.0，新版本重新设计了延迟节点逻辑和异步获取行为等等 |
-|      | 04   | 发布xrpl-py 1.0.0，一个用于与XRPL交互的Python库              |
-|      | 09   | 降低账户储备金要求修正案生效                                 |
-|      | 10   | 发布xrpl.js 2.0.0，一个用于与XRPL交互的JavaScript/TypeScript库 |
-| 2022 | 04   | 发布XRP Ledger 1.9.0，新版本引入 NFT（XLS-20）供开发人员测试、简化作业队列、优化信任线缓存等等 |
-|      | 06   | 发布Clio 1.0.0，这是一个针对 HTTP 和 WebSocket API 调用进行了优化的 XRP Ledger API 服务器 |
-|      | 07   | 提出AMM修正案（XLS-30），预计支持与CLOB DEX的集成、自动路由最佳交换路径，同时允许单侧和双侧流动性贡献 |
-|      | 10   | XRPL学习教育门户上线                                         |
-|      | 10   | NFT修正案通过，正式支持在XRPL上使用NFT功能                   |
-| 2023 | 03   | 发布XRP Ledger 1.10.0                                        |
-|      | 06   | 发布XRP Ledger 1.11.0，新版本节点操作员现在可以使用冒号或空格指定端口、消除了关键路径中的内存分配操作等等 |
-|      | 07   | 发布xrpl-py 2.0.0                                            |
-|      | 09   | 发布XRP Ledger 1.12.0，新版本添加 AMM 核心功能 InstanceCreate、Deposit、Withdraw、Governance、Auctioning和支付引擎集成。 |
-| 2024 | 01   | 发布XRP Ledger 2.0.0，新版本引入跨链桥功能（XChainBridge），实现 XRP Ledger 与侧链之间的互操作性；引入去中心化标识符（DID）等等 |
-|      | 02   | 发布XRP Ledger 2.1.0，新版本为 NFTokenAcceptOffer 事务处理器增加了一个检查，为 STObject 构造函数新增了一个重载版本 |
-|      | 03   | AMM修正案通过，正式支持在 XRPL 上使用 AMM                    |
-|      | 06   | 发布XRP Ledger 2.2.0，新版本实施 XLS-0047 规范中定义的价格预言机、修改 DID 修正案的行为、修改 XChainBridge 修正案的行为等等 |
-|      | 11   | 发布XRP Ledger 2.3.0，新版本包括多用途代币（MPTs）、凭证（Credentials）、AMM 的回收（Clawback）支持，以及在铸造 NFT 的同时创建报价的功能。 |
-|      | 11   | 新的 XRPL 基金会的注册文件在法国提交                         |
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_XRPL2016.png)
 
-注：
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_XRPL2020.png)
 
-1. XRP Ledger客户端软件旧称为rippled，这里为了方便统一写了XRP Ledger。
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_XRPL2022.png)
+
+注：XRP Ledger客户端软件旧称为rippled，这里为了方便统一写了XRP Ledger。
 
 XRPL 的发展历程反映出其技术导向、市场化需求与去中心化生态建设之间的平衡。它从一个基础支付解决方案逐步演变为一个多功能、开放的区块链生态系统，具有不错的行业适应力和创新能力。
 
@@ -415,11 +309,11 @@ AMM池中的锁仓量要小得多，自10下旬开始快速增长，但2024年12
 
 ### 日交易体量
 
-![2022年5月-2024年12月XRPL交易体量 数据来源：https://xpmarket.com/xrpl-statistics/tokens](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241208104540318.png)
+![](D:\Learning Materials\Web3俱乐部\research_report\projects\2412-XRP\data\Ripple瑞波XRP - 图片副本_Trading Volume.png)
 
 因为实际数据中有非常多数值特别大的极值，上图中的竖轴取了对数平滑处理。可以看出，截至2024年12月8日，大部分时段XRPL交易体量保持在100万至1000万美元之间。2024年11月末突破1000万美元大关后仍然保持。
 
-![2022年5月-2024年12月DEX和CEX交易体量 数据来源：https://xpmarket.com/xrpl-statistics/tokens](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241208094111470.png)
+![](D:\Learning Materials\Web3俱乐部\research_report\projects\2412-XRP\data\Ripple瑞波XRP - 图片副本_DEX vs. CEX.png)
 
 根据上面这幅图可以看清楚DEX和CEX的交易体量占比情况，CEX自2022年8月初有数据以来，几乎瞬间就占据了主导态势，此后的大多数时间段还是CEX交易量占主导，其中有部分时间段DEX占比短暂大幅提升，可能是meme热潮的结果。
 
@@ -433,13 +327,13 @@ AMM池中的锁仓量要小得多，自10下旬开始快速增长，但2024年12
 
 ### Token数量
 
-![2022年5月-2024年12月链上资产数量 数据来源：https://xpmarket.com/xrpl-statistics/tokens](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241208100204473.png)
+![](D:\Learning Materials\Web3俱乐部\research_report\projects\2412-XRP\data\Ripple瑞波XRP - 图片副本_Listed Tokens.png)
 
 从2024年10月末（美大选接近尾声时）开始，XRPL上的资产数量开始暴增，2024年12月8日已经达到了12,428。其余时段，资产数量缓慢增长。
 
 ### Token市值
 
-![2022年5月-2024年12月链上资产市值 数据来源：https://xpmarket.com/xrpl-statistics/tokens](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20241208100422745.png)
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_Token%20Mcap.png)
 
 代币市值方面，同样在10月底11月初（美大选接近尾声时）有一个突破，11月22日曾短暂达到过\$393.96M的历史峰值。2024年12月8日这一数字为\$347.33M。
 
@@ -466,17 +360,7 @@ XRP代币是XRP Ledger（XRPL）上的原生代币。
 
 从2023年Q1开始，Ripple在季度报告中会公布排放的XRP数量。Ripple 拥有的 XRP 分为两类：目前在其钱包中可用的 XRP，以及受账本托管锁定的 XRP。对于后一类，Ripple 无法直接访问该 XRP，这类XRP从2017年12月开始排放至今，月末未被购买的XRP，将会放回到新的智能合约。
 
-表：23Q1-24Q3 Ripple的XRP减持量及美元价值  数据来源：Ripple季度市场报告
-
-|            | 钱包中可用的XRP总量 | 托管锁定的XRP总量 | 减持XRP总量 | XRP/USD平均收盘价 | 减持USD价值 |
-| ---------- | ------------------- | ----------------- | ----------- | ----------------- | ----------- |
-| 2024/9/30  | 4.44B               | 38.90B            | 845.4M      | 0.55              | $465.0M     |
-| 2024/6/30  | 4.68B               | 39.50B            | 754.1M      | 0.52              | $392.1M     |
-| 2024/3/31  | 4.84B               | 40.10B            | 841.5M      | 0.56              | $471.2M     |
-| 2023/12/31 | 5.08B               | 40.70B            | 780.5M      | 0.59              | $460.5M     |
-| 2023/9/30  | 5.26B               | 41.30B            | 893.0M      | 0.55              | $491.1M     |
-| 2023/6/30  | 5.55B               | 41.90B            | 855.5M      | 0.48              | $410.6M     |
-| 2023/3/31  | 5.51B               | 42.80B            | -           | 0.40              | -           |
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Ripple%E7%91%9E%E6%B3%A2XRP%20-%20%E5%9B%BE%E7%89%87%E5%89%AF%E6%9C%AC_XRP%E6%89%98%E7%AE%A1%E6%95%B0%E9%87%8F.png)
 
 注：减持XRP总量=本季度钱包中可用的XRP总量+本季度托管锁定的XRP总量-上季度钱包中可用的XRP总量-上季度托管锁定的XRP总量
 
@@ -494,13 +378,7 @@ XRP没有特别的用途，主要是支付XRPL网络上的各种费用、购买�
 
 经济模型方面，虽然现阶段Ripple的XRP排放实质上相当于网络通胀机制，但是没有新增发的XRP，而Stellar Network的经济模型中，其中一小部分新创建的 XLM 被分发以激励参与网络，形成缓慢通胀。总之，请读者注意，此处的估值仅具有一定参考意义，不一定完全准确。
 
-表：XRP估值  数据来源：Tokenterminal, CoinMarketCap, The Wall Street Journal
-
-| 项目                | FDV       | MC       | 近30天年化费用 | P/F(FDV)   | P/F(MC)  |
-| ------------------- | --------- | -------- | -------------- | ---------- | -------- |
-| XRP                 | $241.7B   | $137.9B  | $3.1M          | 78635.87   | 44860.41 |
-| XLM                 | $24.8B    | $14.9B   | $17.4K         | 1169410.00 | 70442.70 |
-| XRP(P/F比值参考XLM) | $3594.22B | $216.51B | $3.1M          | 1169410.00 | 70442.70 |
+![](D:\Learning Materials\Web3俱乐部\research_report\projects\2412-XRP\data\Ripple瑞波XRP - 图片副本_估值.png)
 
 注：
 
