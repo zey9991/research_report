@@ -42,14 +42,14 @@ Here is the link to the table:
 
 https://docs.google.com/spreadsheets/d/1ZSQj-uIBgoqB7tQp4fZTD8gqJCtKFAqtfAHkzdqXsDE/edit?usp=sharing
 
+- **Sheet "Old Pools Separate"**: Lists all active pools on Pendle, sorted by "value" in descending order for easy comparison.
+- **Sheet "Old Pools Aggregate"**: Groups pools with the same underlying asset but different expiry dates, aggregating their data and sorting by "value" in descending order.
+- **Sheet "Old Pools Aggregate Dec 26, 2024"**: Groups pools with the expiry date of Dec 26, 2024, aggregating their data and sorting by "value" in descending order.
 - **Sheet "New Pools Sorted"**: Lists potential new pools I've investigated, sorted in descending order based on their calculated "value."
 - **Sheet "New Pools Merged"**: Similar to "New Pools Sorted," but pools from the same protocol are grouped together for better organization.
 - **Sheet "Top New Pools Breakdown"**: Displays new pools with values above the median, grouped by category and protocol.
 - **Sheet "Category Count"**: Shows the distribution of pool categories, providing insights into the prevalence of each type.
 - **Sheet "Protocol Count"**: Summarizes the number of protocols I reviewed in this investigation.
-- **Sheet "Old Pools Separate"**: Lists all active pools on Pendle, sorted by "value" in descending order for easy comparison.
-- **Sheet "Old Pools Aggregate"**: Groups pools with the same underlying asset but different expiry dates, aggregating their data and sorting by "value" in descending order.
-- **Sheet "Old Pools Aggregate Dec 26, 2024"**: Groups pools with the expiry date of Dec 26, 2024, aggregating their data and sorting by "value" in descending order.
 
 **Data sources**:
 
