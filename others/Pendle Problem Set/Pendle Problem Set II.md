@@ -60,30 +60,32 @@ https://docs.google.com/spreadsheets/d/1ZSQj-uIBgoqB7tQp4fZTD8gqJCtKFAqtfAHkzdqX
 
 Let's begin by analyzing the active pools on Pendle. As of December 18, 2024, there are 102 pools on Pendle.
 
-| Token  | Separate Pool  |           |             |        |
-| ------ | -------------- | --------- | ----------- | ------ |
-| Market | Pool Liquidity | Total TVL | Implied APY | Value  |
-| Avg.   | $2.23M         | $2.69M    | 7.54%       | $0.15M |
-| Median | $1.35M         | $1.72M    | 5.79%       | $0.12M |
-| Std.   | $2.55M         | $2.95M    | 4.91%       | $0.14M |
+| Token    | Separate Pool  |           |             |        |
+| -------- | -------------- | --------- | ----------- | ------ |
+| Market   | Pool Liquidity | Total TVL | Implied APY | Value  |
+| Avg.     | $2.23M         | $2.69M    | 7.54%       | $0.15M |
+| Median   | $1.35M         | $1.72M    | 5.79%       | $0.12M |
+| Std.     | $2.55M         | $2.95M    | 4.91%       | $0.14M |
+| Skewness | 1.78           | 1.63      | 1.41        | 0.94   |
+| Kurtosis | 2.69           | 2.25      | 1.64        | 0.02   |
 
 In this analysis, we found that the average value of all active pools is approximately \$0.15M, with a median value of \$0.12M. A simple strategy would be to continue supporting those pools with values above these two statistics. Specifically, 70 pools have values greater than the average, and 75 pools have values exceeding the median.
 
 Alternatively, we can focus on the highest-value pools. Here are the top 10 pools by value:
 
-| Token              |             | Separate Pool  |           |             |          | Interoperatiblity  |
-| ------------------ | ----------- | -------------- | --------- | ----------- | -------- | ------------------ |
-| Market             | Expiry      | Pool Liquidity | Total TVL | Implied APY | Value    | Matched Blockchain |
-| sUSDe              | 27 Mar 2025 | $151.32M       | $1060.00M | 25.35%      | $268.71M | Ethereum           |
-| sUSDe              | 26 Dec 2024 | $91.01M        | $835.31M  | 25.63%      | $214.09M | Ethereum           |
-| USD0++             | 27 Mar 2025 | $63.19M        | $149.05M  | 27.91%      | $41.60M  | Ethereum           |
-| sUSDe              | 29 May 2025 | $84.33M        | $171.38M  | 21.58%      | $36.98M  | Ethereum           |
-| USD0++             | 30 Jan 2025 | $16.05M        | $89.72M   | 37.04%      | $33.23M  | Ethereum           |
-| sENA               | 24 Apr 2025 | $19.22M        | $76.53M   | 40.55%      | $31.03M  | Ethereum           |
-| USDe               | 27 Mar 2025 | $13.39M        | $113.88M  | 25.44%      | $28.97M  | Ethereum           |
-| SolvBTC.BBN (Corn) | 26 Dec 2024 | $97.11M        | $180.80M  | 14.11%      | $25.51M  | Ethereum           |
-| LBTC (Corn)        | 26 Dec 2024 | $43.95M        | $123.68M  | 16.46%      | $20.36M  | Ethereum           |
-| eBTC               | 26 Dec 2024 | $31.25M        | $181.12M  | 9.86%       | $17.86M  | Ethereum           |
+| Token              |             | Separate Pool  |           |             |          | Interoperatiblity |
+| ------------------ | ----------- | -------------- | --------- | ----------- | -------- | ----------------- |
+| Market             | Expiry      | Pool Liquidity | Total TVL | Implied APY | Value    | Network           |
+| sUSDe              | 27 Mar 2025 | $151.32M       | $1060.00M | 25.35%      | $268.71M | Ethereum          |
+| sUSDe              | 26 Dec 2024 | $91.01M        | $835.31M  | 25.63%      | $214.09M | Ethereum          |
+| USD0++             | 27 Mar 2025 | $63.19M        | $149.05M  | 27.91%      | $41.60M  | Ethereum          |
+| sUSDe              | 29 May 2025 | $84.33M        | $171.38M  | 21.58%      | $36.98M  | Ethereum          |
+| USD0++             | 30 Jan 2025 | $16.05M        | $89.72M   | 37.04%      | $33.23M  | Ethereum          |
+| sENA               | 24 Apr 2025 | $19.22M        | $76.53M   | 40.55%      | $31.03M  | Ethereum          |
+| USDe               | 27 Mar 2025 | $13.39M        | $113.88M  | 25.44%      | $28.97M  | Ethereum          |
+| SolvBTC.BBN (Corn) | 26 Dec 2024 | $97.11M        | $180.80M  | 14.11%      | $25.51M  | Ethereum          |
+| LBTC (Corn)        | 26 Dec 2024 | $43.95M        | $123.68M  | 16.46%      | $20.36M  | Ethereum          |
+| eBTC               | 26 Dec 2024 | $31.25M        | $181.12M  | 9.86%       | $17.86M  | Ethereum          |
 
 ### Aggregated Pools
 
@@ -154,12 +156,14 @@ Now, let’s focus on some notable potential pools. It’s important to emphasiz
 
 Below are the basic statistics from my investigation of 54 pools across 13 different DeFi protocols:
 
-| Token  | Pool                 | Hype             |            |             |                            |                 |                   |
-| ------ | -------------------- | ---------------- | ---------- | ----------- | -------------------------- | --------------- | ----------------- |
-|        | Underlying Asset TVL | Est. Implied APY | Est. Value | X Followers | RootData X Influence Index | TrendX Heat 30d | RootData Heat 30d |
-| Avg.   | $117.94M             | 103.25%          | $30.05M    | 387.25K     | 1156.69                    | 1071.43         | 71.85             |
-| Median | $41.03M              | 22.81%           | $10.51M    | 131.40K     | 983.00                     | 6.89            | 25.00             |
-| Std.   | $219.34M             | 285.92%          | $62.44M    | 606.61K     | 1212.55                    | 2191.29         | 93.60             |
+| Token    | Pool                 | Hype             |            |             |                            |                 |                   |
+| -------- | -------------------- | ---------------- | ---------- | ----------- | -------------------------- | --------------- | ----------------- |
+|          | Underlying Asset TVL | Est. Implied APY | Est. Value | X Followers | RootData X Influence Index | TrendX Heat 30d | RootData Heat 30d |
+| Avg.     | $117.94M             | 103.25%          | $30.05M    | 387.25K     | 1156.69                    | 1071.43         | 71.85             |
+| Median   | $41.03M              | 22.81%           | $10.51M    | 131.40K     | 983.00                     | 6.89            | 25.00             |
+| Std.     | $219.34M             | 285.92%          | $62.44M    | 606.61K     | 1212.55                    | 2191.29         | 93.60             |
+| Skewness | 3.06                 | 5.34             | 4.42       | 2.17        | 1.61                       | 2.32            | 1.87              |
+| Kurtosis | 9.91                 | 31.84            | 23.35      | 4.17        | 2.27                       | 5.22            | 3.15              |
 
 Note:
 
@@ -168,7 +172,7 @@ Note:
 3. **RootData X Influence Index** is calculated based on the weighted sum of the cumulative number of top followers and regular followers.
 4. **RootData Heat Index** is based on the weighted calculation of recent increases in top followers and regular followers. The data used for this analysis is from December 16, 2024.
 
-TThere are only 10 pools above the average and 26 pools above the median. This indicates that extreme outliers are inflating the average value (the skewness and kurtosis also support this conclusion). Given this, pools with values above the median are also competitive and should not be overlooked.
+There are only 10 pools above the average and 26 pools above the median. This indicates that extreme outliers are inflating the average value (the skewness and kurtosis also support this conclusion). Given this, pools with values above the median are also competitive and should not be overlooked.
 
 Let’s dive deeper into these pools:
 
