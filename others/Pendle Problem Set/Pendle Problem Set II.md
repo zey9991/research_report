@@ -532,7 +532,7 @@ In a production environment, the **YieldToken** contract is deployed by the **Yi
 
 ### PendleMarket
 
-**Once the new YT contracts are deployed, a marketplace for trading PT, YT, and SY tokens is required**. The core logic for this is outlined in the PT-AMM whitepaper and implemented in `PendleMarketV3.sol`.
+**Once the new YT contracts are deployed, a marketplace for trading PT, YT, and SY tokens is required**. **YT** are traded on the Pendle AMM in the **same pool as PT**. The core logic for this is outlined in the PT-AMM whitepaper and implemented in `PendleMarketV3.sol`.
 
 **Key Events**:
 
