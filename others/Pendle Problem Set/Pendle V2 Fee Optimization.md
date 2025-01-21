@@ -1,10 +1,10 @@
-### Glossary
+## Glossary
 
 - **Fee**: Refers to the fee settings related to the V2 PT-AMM pools.
 - **The Whitepaper**: Refers to the whitepaper `V2_AMM.pdf` unless otherwise specified.
 - **Asset**: Refers to the underlying asset of the SY token.
 
-### Guideline
+## Guideline
 
 This report aims to achieve two main objectives:
 
