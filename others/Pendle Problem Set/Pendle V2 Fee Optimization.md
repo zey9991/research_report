@@ -111,6 +111,10 @@ while in the `calcTrade` function, we define
 
 $$d_{asset}=-\frac{d_{pt}}{exchangeRate(t)}$$
 
+```
+int256 preFeeAssetToAccount = netPtToAccount.divDown(preFeeExchangeRate).neg();
+```
+
 Summary of the Execution Flow:
 
 1. **Calculate the pre-fee exchange rate** using `_getExchangeRate` to determine the amount of assets per PT token.
