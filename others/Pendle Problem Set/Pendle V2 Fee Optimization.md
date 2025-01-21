@@ -2,7 +2,9 @@
 
 - **Fee**: Refers to the fee settings related to the V2 PT-AMM pools.
 - **The Whitepaper**: Refers to the whitepaper `V2_AMM.pdf` unless otherwise specified.
+- **SY** : is a Standardized Yield token.
 - **Asset**: Refers to the underlying asset of the SY token.
+- **PT** : is a PT token of the same SY token.
 
 ## Guideline
 
@@ -33,7 +35,7 @@ $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\times feeRateRoot^{yearsToExpiry(t)}$
 
 The fee is:
 
-$$fee=\frac{d_{pt}}{exchangeRate(t)}(1-feeRateRoot^{yearsToExpiry(t)})$$
+$$fee=\frac{d_{pt}}{exchangeRate(t)}(feeRateRoot^{yearsToExpiry(t)}-1)$$
 
 if swapping PT for assets, then
 
@@ -89,8 +91,25 @@ function calcTrade(
 
 where:
 
-1. `fee`  corresponds to $feeRateRoot^{yearsToExpiry(t)}$as described in the whitepaper.
-2. `netPtToAccount` corresponds to $d_{pt}$ in the whitepaper.
+1. `fee`  corresponds to 
+
+   $feeRateRoot^{yearsToExpiry(t)}$
+
+   as described in the whitepaper.
+
+2. `netPtToAccount` corresponds to 
+
+   $d_{pt}$ 
+
+   in the whitepaper.
+
+3. A key divergence to note: The whitepaper defines
+
+$$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}$$
+
+while in the `calcTrade` function, we define
+
+$$d_{asset}=-\frac{d_{pt}}{exchangeRate(t)}$$
 
 Summary of the Execution Flow:
 
@@ -105,3 +124,7 @@ Summary of the Execution Flow:
 
 
 
+## References
+
+1. [MarketMathCore.sol - WORKSPACE - Blockscan contract source code viewer](https://vscode.blockscan.com/ethereum/0x40789E8536C668c6A249aF61c81b9dfaC3EB8F32)
+2. [PendleMarketV3.sol - WORKSPACE - Blockscan contract source code viewer](https://vscode.blockscan.com/ethereum/0x40789E8536C668c6A249aF61c81b9dfaC3EB8F32)
