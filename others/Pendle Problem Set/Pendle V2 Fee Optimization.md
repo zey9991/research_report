@@ -91,18 +91,41 @@ where:
 int256 preFeeAssetToAccount = netPtToAccount.divDown(preFeeExchangeRate).neg();
 ```
 
-Summary of the Execution Flow:
+> Summary of the Execution Flow of the `calcTrade` function:
+>
+> 1. **Calculate the pre-fee exchange rate** using `_getExchangeRate` to determine the amount of assets per PT token.
+> 2. **Calculate the pre-fee asset amount** from `netPtToAccount` by dividing it by the pre-fee exchange rate and negating it (since the assets are being withdrawn from the user).
+> 3. **Set the fee rate** from `comp.feeRate` to calculate the transaction fee.
+> 4. **Check if `netPtToAccount` is positive**:
+> - If positive, adjust the fee and check the post-fee exchange rate to ensure it's above 1.
+> - If non-positive, adjust the fee accordingly, considering asset withdrawal.
+> 6. **Calculate the reserve fee** (`netAssetToReserve`) and subtract the fee from the pre-fee asset amount to calculate the final amount to the user (`netAssetToAccount`).
+> 7. **Convert asset amounts into SY tokens** for the account, fee, and reserve using the `assetToSy` or `assetToSyUp` functions provided by `PYIndex`.
+>
 
-1. **Calculate the pre-fee exchange rate** using `_getExchangeRate` to determine the amount of assets per PT token.
-2. **Calculate the pre-fee asset amount** from `netPtToAccount` by dividing it by the pre-fee exchange rate and negating it (since the assets are being withdrawn from the user).
-3. **Set the fee rate** from `comp.feeRate` to calculate the transaction fee.
-4. **Check if `netPtToAccount` is positive**:
-- If positive, adjust the fee and check the post-fee exchange rate to ensure it's above 1.
-- If non-positive, adjust the fee accordingly, considering asset withdrawal.
-6. **Calculate the reserve fee** (`netAssetToReserve`) and subtract the fee from the pre-fee asset amount to calculate the final amount to the user (`netAssetToAccount`).
-7. **Convert asset amounts into SY tokens** for the account, fee, and reserve using the `assetToSy` or `assetToSyUp` functions provided by `PYIndex`.
+Users focus on the single fee payment, denoted as $$fee$$ , while from the protocol's perspective, we are concerned with the sum of fees generated from the pool, represented as $$\sum_tfee$$.
 
+We may view $$fee$$ as a function of time $$t$$ and $$feeRateRoot$$ we set. Then the partial derivative of $$fee$$ can be derived as follows(consistent with the formula in the whitepaper):
 
+if $$d_{pt}>0$$,
+$$
+\frac{\part fee(t, feeRateRoot)}{\part feeRateRoot}=\frac{d_{pt}\cdot yearsToExpiry(t)}{exchangeRate(t)}feeRateRoot^{yearsToExpiry(t)-1}
+$$
+Generally speaking, $$exchangeRate\ge1$$. As long as $$yearsToExpiry(t)>0$$, which holds true before the expiry date, we can conclude that:
+$$
+\frac{\part fee(t, feeRateRoot)}{\part feeRateRoot}>0
+$$
+This inequality shows that, given time $$t$$, when users swap assets for PT, the fee generated is higher if the $$feeRateRoot$$ is larger.
+
+if $$d_{pt}<0$$,
+$$
+\frac{\part fee(t, feeRateRoot)}{\part feeRateRoot}=\frac{d_{pt}\cdot yearsToExpiry(t)}{exchangeRate(t)}\cdot \frac{1}{feeRateRoot^{yearsToExpiry(t)-1}}
+$$
+Before the expiry date, we derive that
+$$
+\frac{\part fee(t, feeRateRoot)}{\part feeRateRoot}<0
+$$
+This inequality indicates that, given time $$t$$, when users swap PT for assets, the fee generated is higher if the $$feeRateRoot$$ is smaller.
 
 ## References
 
