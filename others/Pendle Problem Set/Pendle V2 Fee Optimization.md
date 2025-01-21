@@ -23,7 +23,11 @@ $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\div or \times feeRateRoot^{yearsToExp
 
 Accordingly, the fee can be computed as follows:
 
-if $d_{pt}>0$ (swapping assets for PT), then
+if swapping assets for PT, then
+
+$$d_{pt}>0$$
+
+and
 
 $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\times feeRateRoot^{yearsToExpiry(t)}$$
 
@@ -31,7 +35,11 @@ The fee is:
 
 $$fee=\frac{d_{pt}}{exchangeRate(t)}(1-feeRateRoot^{yearsToExpiry(t)})$$
 
-if $d_{pt}<0$ (swapping PT for assets), then
+if swapping PT for assets, then
+
+$$d_{pt}<0$$ 
+
+and
 
 $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\div feeRateRoot^{yearsToExpiry(t)}$$
 

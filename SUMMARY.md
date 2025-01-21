@@ -1,5 +1,5 @@
 # Table of contents
-* [README](README.md)
+* [Introduction](README.md)
 
 ## Projects
 * [2412-XRP](projects/2412-XRP/README.md)
