@@ -19,27 +19,27 @@ This report aims to achieve two main objectives:
 
 In V2, the mechanics of pool-related fees are described in the whitepaper `V2_AMM.pdf` and implemented in the smart contracts `MarketMathCore.sol` (Core Logic) and `PendleMarketV3.sol`.
 
-The whitepaper defines the amount of assets going in, denoted as $d_{asset}$  as a function of the amount of PT tokens going out, denoted as $d_{pt}$:
+The whitepaper defines the amount of assets going in, denoted as $$d_{asset}$$  as a function of the amount of PT tokens going out, denoted as $$d_{pt}$$:
 
 $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\div or \times feeRateRoot^{yearsToExpiry(t)}$$
 
 Accordingly, the fee can be computed as follows:
 
-if $$d_{pt}>0$$ i.e. swapping assets for PT, then
+- if $$d_{pt}>0$$ i.e. swapping assets for PT, then 
 
-$$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\times feeRateRoot^{yearsToExpiry(t)}$$
+  $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\times feeRateRoot^{yearsToExpiry(t)}$$
 
-The fee is:
+  The fee is:
 
-$$fee=\frac{d_{pt}}{exchangeRate(t)}(feeRateRoot^{yearsToExpiry(t)}-1)$$
+  $$fee=\frac{d_{pt}}{exchangeRate(t)}(feeRateRoot^{yearsToExpiry(t)}-1)$$
 
-if $$d_{pt}<0$$  i.e. swapping PT for assets, then 
+- if $$d_{pt}<0$$  i.e. swapping PT for assets, then 
 
-$$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\div feeRateRoot^{yearsToExpiry(t)}$$
+  $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\div feeRateRoot^{yearsToExpiry(t)}$$
 
-The fee is:
+  The fee is:
 
-$$fee=-\frac{d_{pt}}{exchangeRate(t)}(\frac{1-feeRateRoot^{yearsToExpiry(t)}}{feeRateRoot^{yearsToExpiry(t)}})$$
+  $$fee=-\frac{d_{pt}}{exchangeRate(t)}(\frac{1-feeRateRoot^{yearsToExpiry(t)}}{feeRateRoot^{yearsToExpiry(t)}})$$
 
 This logic is implemented in the `calcTrade` function of `MarketMathCore.sol`. The relevant source code is as follows:
 
@@ -85,13 +85,7 @@ where:
 
 1. `fee`  corresponds to $$feeRateRoot^{yearsToExpiry(t)}$$ as described in the whitepaper.
 2. `netPtToAccount` corresponds to $$d_{pt}$$ in the whitepaper.
-3. A key divergence to note: The whitepaper defines
-
-$$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}$$
-
-while in the `calcTrade` function, we define
-
-$$d_{asset}=-\frac{d_{pt}}{exchangeRate(t)}$$
+3. A key divergence to note: The whitepaper defines $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}$$ while in the `calcTrade` function, we define $$d_{asset}=-\frac{d_{pt}}{exchangeRate(t)}$$:
 
 ```
 int256 preFeeAssetToAccount = netPtToAccount.divDown(preFeeExchangeRate).neg();
