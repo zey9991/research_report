@@ -91,18 +91,8 @@ function calcTrade(
 
 where:
 
-1. `fee`  corresponds to 
-
-   $$feeRateRoot^{yearsToExpiry(t)}$$
-
-   as described in the whitepaper.
-
-2. `netPtToAccount` corresponds to 
-
-   $$d_{pt}$$
-
-   in the whitepaper.
-
+1. `fee`  corresponds to $$feeRateRoot^{yearsToExpiry(t)}$$ as described in the whitepaper.
+2. `netPtToAccount` corresponds to $$d_{pt}$$ in the whitepaper.
 3. A key divergence to note: The whitepaper defines
 
 $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}$$
