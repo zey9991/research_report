@@ -21,8 +21,9 @@ In V2, the mechanics of pool-related fees are described in the whitepaper `V2_AM
 
 The whitepaper defines the amount of assets going in, denoted as $$d_{asset}$$  as a function of the amount of PT tokens going out, denoted as $$d_{pt}$$:
 
-$$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\div or \times feeRateRoot^{yearsToExpiry(t)}$$
-
+$$
+d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\div or \times feeRateRoot^{yearsToExpiry(t)}
+$$
 Accordingly, the fee can be computed as follows:
 
 - if $$d_{pt}>0$$ i.e. swapping assets for PT, then 
@@ -109,21 +110,21 @@ We may view $$fee$$ as a function of time $$t$$ and $$feeRateRoot$$ we set. Then
 
 if $$d_{pt}>0$$,
 $$
-\frac{\part fee(t, feeRateRoot)}{\part feeRateRoot}=\frac{d_{pt}\cdot yearsToExpiry(t)}{exchangeRate(t)}feeRateRoot^{yearsToExpiry(t)-1}
+\frac{\partial fee(t, feeRateRoot)}{\partial feeRateRoot}=\frac{d_{pt}\cdot yearsToExpiry(t)}{exchangeRate(t)}feeRateRoot^{yearsToExpiry(t)-1}
 $$
 Generally speaking, $$exchangeRate\ge1$$. As long as $$yearsToExpiry(t)>0$$, which holds true before the expiry date, we can conclude that:
 $$
-\frac{\part fee(t, feeRateRoot)}{\part feeRateRoot}>0
+\frac{\partial fee(t, feeRateRoot)}{\partial feeRateRoot}>0
 $$
 This inequality shows that, given time $$t$$, when users swap assets for PT, the fee generated is higher if the $$feeRateRoot$$ is larger.
 
 if $$d_{pt}<0$$,
 $$
-\frac{\part fee(t, feeRateRoot)}{\part feeRateRoot}=\frac{d_{pt}\cdot yearsToExpiry(t)}{exchangeRate(t)}\cdot \frac{1}{feeRateRoot^{yearsToExpiry(t)-1}}
+\frac{\partial fee(t, feeRateRoot)}{\partial feeRateRoot}=\frac{d_{pt}\cdot yearsToExpiry(t)}{exchangeRate(t)}\cdot \frac{1}{feeRateRoot^{yearsToExpiry(t)-1}}
 $$
 Before the expiry date, we derive that
 $$
-\frac{\part fee(t, feeRateRoot)}{\part feeRateRoot}<0
+\frac{\partial fee(t, feeRateRoot)}{\partial feeRateRoot}<0
 $$
 This inequality indicates that, given time $$t$$, when users swap PT for assets, the fee generated is higher if the $$feeRateRoot$$ is smaller.
 
