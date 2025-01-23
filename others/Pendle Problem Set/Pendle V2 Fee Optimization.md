@@ -28,19 +28,26 @@ Accordingly, the fee can be computed as follows:
 
 - if $$d_{pt}>0$$ i.e. swapping assets for PT, then 
 
-  $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\times feeRateRoot^{yearsToExpiry(t)}$$
-
+  $$
+  d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\times feeRateRoot^{yearsToExpiry(t)}
+  $$
   The fee is:
 
-  $$fee=\frac{d_{pt}}{exchangeRate(t)}(feeRateRoot^{yearsToExpiry(t)}-1)$$
+  $$
+  fee=\frac{d_{pt}}{exchangeRate(t)}(feeRateRoot^{yearsToExpiry(t)}-1)
+  $$
 
 - if $$d_{pt}<0$$  i.e. swapping PT for assets, then 
 
-  $$d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\div feeRateRoot^{yearsToExpiry(t)}$$
-
+  $$
+  d_{asset}=\frac{d_{pt}}{exchangeRate(t)}\div feeRateRoot^{yearsToExpiry(t)}
+  $$
   The fee is:
-
-  $$fee=-\frac{d_{pt}}{exchangeRate(t)}(\frac{1-feeRateRoot^{yearsToExpiry(t)}}{feeRateRoot^{yearsToExpiry(t)}})$$
+  
+  $$
+  fee=-\frac{d_{pt}}{exchangeRate(t)}(\frac{1-feeRateRoot^{yearsToExpiry(t)}}{feeRateRoot^{yearsToExpiry(t)}})
+  $$
+  
 
 This logic is implemented in the `calcTrade` function of `MarketMathCore.sol`. The relevant source code is as follows:
 
