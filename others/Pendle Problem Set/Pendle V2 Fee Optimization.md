@@ -13,7 +13,7 @@ In Pendle V2, a variety of AMM pools are available, allowing traders to swap ass
 - **Too High**: This would deter traders from swapping, ultimately reducing the profits of LPs and vePendle voters. Although the fee per transaction may increase, the overall volume of swaps would decrease.
 - **Too Low**: This would undermine the profits of LPs and vePendle voters, even though the volume of swaps might increase significantly.
 
-This situation is analogous to a **market competition model** in economics. In such models, a company’s revenue is given by $$R= P \times Q$$, where $$P$$ is the price and $$Q$$ is the quantity sold. If the price is set incorrectly, the revenue will not be optimized, even though the quantity $$Q$$ may fluctuate.
+This situation is analogous to a **market competition model** in economics. In such models, a company’s revenue is given by $$R= P \times Q$$, where $$P$$ is the price and $$Q$$ is the quantity sold. If the price is set incorrectly, the revenue will not be optimized, even though the quantity $$Q$$ may increase.
 
 Previously, our team introduced the “Efficient Ratio” as an indicator to measure the effectiveness of fee settings in specific pools. This is similar to the concept of revenue $$R$$ in a market competition model.
 
@@ -153,7 +153,7 @@ In V2, YT swaps are facilitated through flash swaps within the same pool. Typica
 For example, suppose Bob wants to swap 50 USDe → 1100 YT-USDe:
 
 - This is equivalent to a 1100 PT swap.
-- Fees = 1000 USDe\*0.3%\*0.5=1.5 USDe.
+- Fees = 1000 USDe \* 0.3% \* 0.5=1.5 USDe.
 
 Even though the amount of assets involved is only 50 USDe, the fees generated are the same as those in Alice’s case, where she swaps 1000 USDe → 1100 PT-USDe.
 
@@ -183,7 +183,7 @@ Slippage_y=\frac{dx}{dy}-\frac{x}{y}=\frac{dx}{y}
 $$
 It is obvious that as $$dx$$ increases, becomes larger.
 
-Now, let's return to the Pendle V2 case. According to the V2_AMM whitepaper, if a user *u* buys $$d_{pt}$$ PT from the market, the actual swap price is 
+Now, let's return to the Pendle V2 case. According to the `V2_AMM` whitepaper, if a user *u* buys $$d_{pt}$$ PT from the market, the actual swap price is 
 $$
 \begin{aligned}
 \frac{d_{pt}}{d_{asset}}&\equiv exchangeRate_{trade}\\
@@ -204,7 +204,7 @@ $$
 Slippage&=exchangeRate_{trade}-exchangeRate
 \end{aligned}
 $$
-Expanding the full expression leads to a more complex derivation.
+Expanding the full expression leads to a more complex derivation. 
 
 #### Definition of Implicit Fee
 
@@ -220,9 +220,32 @@ Thus, we can define implicit fees as follows:
 
 ## Evaluation of Efficient Ratio
 
+In microeconomics, when a company increases the selling price $$P$$ of its product, the demand $$Q$$ typically decreases. At some point, there exists an optimal price point where the revenue $$R=P\times Q$$ is maximized. It's important to note that the revenue in this context isn't solely determined by the price alone.
 
+This situation is somewhat analogous to the one we face. Our goal is to maximize the “revenue” of a pool, where the fees act as the “price” in this context. However, the case we are dealing with is far more complex than the simple economic model described above.
 
+- **Firstly**, the "price" $$P$$ in our case continuously changes with each transaction, impacted by factors such as the fee tier and the time remaining until maturity. While we know how each "price" is calculated for an individual swap, this dynamic pricing adds complexity to the problem.
+- **Secondly**, the "demand" $$Q$$ in our scenario is difficult to estimate because the "price" fluctuates. It's impossible to track the exact "demand" at each discrete price level, unlike in traditional economics.
 
+Given these complexities, we have no choice but to use metrics such as the **Efficient Ratio** to serve as a proxy for the "revenue" $$R$$ in this case.
+
+### Efficient Ratio
+
+There are two key types of efficient ratio we consider:
+$$
+\begin{aligned}
+&EfficientRatio=\frac{Average\ Daily\ Swap\ Fee * 365}{ Average\ Daily\ LP\ TVL}\\
+&EfficientRatioB= \frac{NotionalTradingVolume }{Average\ Daily\ LP\ TVL}
+\end{aligned}
+$$
+Explanation of the Metrics:
+
+1. **EfficientRatio**:
+   This ratio measures the efficiency of the liquidity pool (LP) in generating fees relative to the total value of liquidity provided. It compares the total annualized swap fees to the average daily TVL (Total Value Locked) of the pool. A higher value indicates that the pool is generating more fees for each unit of liquidity provided, which suggests better efficiency. This ratio gives a snapshot of how profitable the liquidity provision is based on the fees generated from daily swaps.
+2. **EfficientRatioB**:
+   This ratio provides insight into the scale of trading activity relative to the liquidity in the pool. It compares the notional trading volume (the total value of trades executed) to the average daily TVL of the pool. This metric helps evaluate how active the pool is relative to the liquidity it holds. A higher value indicates more trading activity per unit of liquidity, suggesting a more liquid and active market.
+
+Both of these ratios are crucial for understanding how well a liquidity pool is performing in terms of fee generation and trading volume relative to the liquidity it holds. They serve as indicators of pool efficiency, guiding decisions on optimal liquidity allocation.
 
 
 
