@@ -235,7 +235,7 @@ There are two key types of efficient ratio we consider:
 $$
 \begin{aligned}
 &EfficientRatio=\frac{Average\ Daily\ Swap\ Fee * 365}{ Average\ Daily\ LP\ TVL}\\
-&EfficientRatioB= \frac{NotionalTradingVolume }{Average\ Daily\ LP\ TVL}
+&EfficientRatioB= \frac{Notional\ Trading\ Volume }{Average\ Daily\ LP\ TVL}
 \end{aligned}
 $$
 Explanation of the Metrics:
