@@ -146,6 +146,17 @@ This approximation holds because, as $$feeRateRoot \rightarrow 1$$ (i.e., $$feet
 2. $$lim_{feeRateRoot\rightarrow1}feeRateRoot^{yearsToExpiry(t)}-1=0$$
 3. $$lim_{feeRateRoot\rightarrow1}-\frac{1-feeRateRoot^{yearsToExpiry(t)}}{feeRateRoot^{yearsToExpiry(t)}}=0$$
 
+#### YT-related Fees
+
+In V2, YT swaps are facilitated through flash swaps within the same pool. Typically, YT swaps incur higher fees than PT swaps.
+
+For example, suppose Bob wants to swap 50 USDe → 1100 YT-USDe:
+
+- This is equivalent to a 1100 PT swap.
+- Fees = 1000 USDe\*0.3%\*0.5=1.5 USDe.
+
+Even though the amount of assets involved is only 50 USDe, the fees generated are the same as those in Alice’s case, where she swaps 1000 USDe → 1100 PT-USDe.
+
 ### Implicit Fees
 
 It is important to clarify that **implicit fees are not caused by the price impact (slippage)** inherent in the AMM model.
@@ -158,7 +169,7 @@ Suppose there is a pool containing $$x$$ amount of A tokens and $$y$$ amount of 
 $$
 (x+dx)(y-dy)=k
 $$
-Thus, we can express dydydy as:
+Thus, we can express $$dy$$ as:
 $$
 dy=\frac{y\cdot dx}{x+dx}
 $$
@@ -207,7 +218,9 @@ Thus, we can define implicit fees as follows:
 
 **Implicit Fees** = The additional cost to the user compared to trading an infinitesimally small amount until the full trade is completed, excluding the portion of the cost caused by price impact.
 
-### YT-related Fees
+## Evaluation of Efficient Ratio
+
+
 
 
 
