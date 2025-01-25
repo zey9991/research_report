@@ -26,7 +26,7 @@ icon: github
 - 区块链游戏（GameFi）
 
 获奖经历：
-- AI狗庄速成奖，LXDAO AI开发工具黑客松，2025
+- AI狗庄速成奖😂，LXDAO AI开发工具黑客松，2025
 ```
 
 --------------
@@ -53,6 +53,6 @@ Research Areas:
 - Blockchain Gaming (GameFi)
 
 Awards:
-- AI Doge Whale Fast-Track Award, LXDAO AI Casual Hackathon, 2025
+- AI Doge Whale Fast-Track Award😂, LXDAO AI Casual Hackathon, 2025
 ```
 
