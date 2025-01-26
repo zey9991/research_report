@@ -10,7 +10,7 @@
 * [2409-Pendle](projects/2409-Pendle/README.md)
 * [2408-Xterio](projects/2408-Xterio/README.md)
 * [2408-eOracle](projects/2408-eOracle/README.md)
-* [Archived]()
+* [Archived](<projects/Archived.md>)
   * [2408-Witness Chain](<projects/2408-Witness Chain/README.md>)
   * [2408-GM Network](<projects/2408-GM Network/README.md>)
   * [2407-Symbiotic](projects/2407-Symbiotic/README.md)
