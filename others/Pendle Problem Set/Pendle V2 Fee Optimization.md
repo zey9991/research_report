@@ -15,12 +15,10 @@ In Pendle V2, a variety of AMM pools are available, allowing traders to swap ass
 
 This situation is analogous to a **market competition model** in economics. In such models, a company’s revenue is given by $$R= P \times Q$$, where $$P$$ is the price and $$Q$$ is the quantity sold. If the price is set incorrectly, the revenue will not be optimized, even though the quantity $$Q$$ may increase.
 
-Previously, our team introduced the “Efficient Ratio” as an indicator to measure the effectiveness of fee settings in specific pools. This is similar to the concept of revenue $$R$$ in a market competition model.
+Previously, our team introduced the “Efficient Ratio” as an indicator to measure the effectiveness of fee settings in specific pools. In this data-driven report, we aim to explore the following:
 
-In this data-driven report, we aim to explore the following:
-
-- How do different fee tiers affect the “Efficient Ratio”? What is the optimal range according to historical data?
 - Has the “Efficient Ratio” functioned well in evaluating the effectiveness of fee settings? If not, is there a more suitable alternative indicator?
+- How do different fee tiers affect the “Efficient Ratio”? What is the optimal range according to historical data?
 
 ## Fee Calculation
 
@@ -218,34 +216,142 @@ Thus, we can define implicit fees as follows:
 
 **Implicit Fees** = The additional cost to the user compared to trading an infinitesimally small amount until the full trade is completed, excluding the portion of the cost caused by price impact.
 
+## Dataset Description
+
+The dataset used in this report can be accessed via the following link:
+
+{% embed url="https://docs.google.com/spreadsheets/d/1zj-_LgmqT0yYaYYzOe7SxgobeU4R3oa_/edit?gid=346510582#gid=346510582" %}
+
+**Note:** Data was accessed on January 26, 2025.
+
+### Data Preprocessing
+
+We have preemptively removed 14 pool samples with missing data, including:
+
+- Kyber Elastic axlWstEth-wstETH 28MAR2024
+- Syrup USDC 24APR2025
+- sETH-wstEthSilo 28MAR2024
+- vETH-WETH_BalancerLP Aura 26SEP2024
+- ether.fi eBTC 27MAR2025
+- Sophon Farming PEPE 26DEC2024
+- gDAI 26DEC2024
+- mPendle 26DEC2024
+- oETH 25DEC2025
+- Ethena sUSDE 31OCT2024
+- Staking MNT 26DEC2024
+- Stargate USDT 27JUN2024
+- PENDLE-ETH_Camelot 26JUN2025
+- Ethena USDe 31OCT2024
+
+### Descriptive Statistics
+
+Below is a summary of key statistics for the dataset:
+
+| pool               | Fee Tier | AverageIY | Average Daily LP TVL   | Total Swap Fee    | Total Swap Fee (im+ex) | Average Daily Swap Fee | EfficientRatio* | EfficientRatioB** |
+| ------------------ | -------- | --------- | ---------------------- | ----------------- | ---------------------- | ---------------------- | --------------- | ----------------- |
+| Minimum            | 0.03%    | 2.20%     | 62,036.00              | 96.00             | 207.62                 | 1.45                   | 0.03%           | 0.00%             |
+| Maximum            | 3.00%    | 153.40%   | 128,584,588.00         | 1,897,019.00      | 2,471,809.24           | 16,640.52              | 75.19%          | 235.00%           |
+| Average            | 0.21%    | 16.25%    | 11,518,886.41          | 64,581.49         | 113,792.33             | 742.86                 | 4.97%           | 14.77%            |
+| Median             | 0.10%    | 9.50%     | 4,350,257.00           | 4,464.00          | 9,986.41               | 56.80                  | 1.57%           | 5.00%             |
+| Standard Deviation | 0.29%    | 19.12%    | 19,660,958.27          | 182,101.40        | 289,744.22             | 1,965.29               | 9.62%           | 25.05%            |
+| Variance           | 0.000008 | 0.04      | 386,553,279,972,616.00 | 33,160,920,898.11 | 83,951,710,675.30      | 3,862,348.99           | 0.01            | 0.06              |
+| Skewness           | 5.08     | 4.05      | 3.08                   | 5.86              | 4.55                   | 4.56                   | 4.45            | 4.57              |
+| Kurtosis           | 39.53    | 22.78     | 11.05                  | 47.35             | 26.54                  | 25.96                  | 24.38           | 30.36             |
+
+**Statistical Observations**
+
+- **Right-Skewed Distribution (Positive Skewness):** Most variables exhibit strong positive skewness, indicating that the distributions have long right tails. This suggests that while the majority of pools operate within a relatively small range, a few pools have significantly higher values, pulling the mean upward.
+- **Leptokurtic Distributions (High Kurtosis):** The kurtosis values for most variables are extremely high (e.g., **Total Swap Fee = 47.35**, **Efficient RatioB = 30.36**), indicating **fat-tailed** distributions. This means that extreme values (outliers) occur more frequently than in a normal distribution. In other words, while most pools cluster around lower values, a few outliers experience extremely high activity.
+
 ## Evaluation of Efficient Ratio
 
-In microeconomics, when a company increases the selling price $$P$$ of its product, the demand $$Q$$ typically decreases. At some point, there exists an optimal price point where the revenue $$R=P\times Q$$ is maximized. It's important to note that the revenue in this context isn't solely determined by the price alone.
+From a user's perspective, the fee incurred in each transaction is an important consideration. However, from the protocol's point of view, the focus is on the overall fees generated by a pool over time, which reflects its revenue. Since pools can differ in terms of start date, expiry date, TVL, underlying assets, and other factors, comparing pools based solely on total fees may not be meaningful. Therefore, our team introduces **Efficient Ratios** to assess the **capital efficiency** of specific pools. 
 
-This situation is somewhat analogous to the one we face. Our goal is to maximize the “revenue” of a pool, where the fees act as the “price” in this context. However, the case we are dealing with is far more complex than the simple economic model described above.
+In this section, we aim to evaluate the effectiveness of these **Efficient Ratios** alongside other indicators that reflect the **capital efficiency** of pools, from both financial and statistical perspectives.
 
-- **Firstly**, the "price" $$P$$ in our case continuously changes with each transaction, impacted by factors such as the fee tier and the time remaining until maturity. While we know how each "price" is calculated for an individual swap, this dynamic pricing adds complexity to the problem.
-- **Secondly**, the "demand" $$Q$$ in our scenario is difficult to estimate because the "price" fluctuates. It's impossible to track the exact "demand" at each discrete price level, unlike in traditional economics.
+We assess these metrics based on three main tests:
 
-Given these complexities, we have no choice but to use metrics such as the **Efficient Ratio** to serve as a proxy for the "revenue" $$R$$ in this case.
+1. **Test One:** The efficiency metric must have a solid economic or financial basis. 
+2. **Test Two:** The efficiency metric must have strong explanatory or predictive power regarding the pool’s efficiency. Specifically, when we say a pool is efficient, we mean its transaction fees are relatively high while the total value locked (TVL) behind it is relatively low.
+3. **Test Three:** The efficiency metric should exhibit sensitivity to ensure it responds effectively to significant changes, making it capable of distinguishing pools with varying levels of efficiency.
 
-### Efficient Ratio
+### Candidate Metrics
 
-There are two key types of efficient ratio we consider:
+#### Swap Fees
+
+This includes the following metrics from the dataset:
+
+- Total Swap Fee
+- Total Swap Fee (im+ex)
+- Average Daily Swap Fee
+
+These metrics only account for the fees generated by the pool and do not consider the liquidity used. As such, they are not ideal efficiency metrics and are only included here for comparison purposes.
+
+#### TVL
+
+The **Average Daily LP TVL** in the dataset.
+
+Similarly, this metric only considers the cost side of the pool and is not a good efficiency metric on its own. It is included here for comparison.
+
+#### Efficient Ratio and its Variants
+
+There are two key types of **efficient ratio** we consider:
 $$
 \begin{aligned}
 &EfficientRatio=\frac{Average\ Daily\ Swap\ Fee * 365}{ Average\ Daily\ LP\ TVL}\\
 &EfficientRatioB= \frac{Notional\ Trading\ Volume }{Average\ Daily\ LP\ TVL}
 \end{aligned}
 $$
-Explanation of the Metrics:
+First, we observe that these are ratio metrics, and it is important to check both the numerator and denominator to ensure the whole fraction makes sense from an economic or financial perspective.
 
-1. **EfficientRatio**:
-   This ratio measures the efficiency of the liquidity pool (LP) in generating fees relative to the total value of liquidity provided. It compares the total annualized swap fees to the average daily TVL (Total Value Locked) of the pool. A higher value indicates that the pool is generating more fees for each unit of liquidity provided, which suggests better efficiency. This ratio gives a snapshot of how profitable the liquidity provision is based on the fees generated from daily swaps.
-2. **EfficientRatioB**:
-   This ratio provides insight into the scale of trading activity relative to the liquidity in the pool. It compares the notional trading volume (the total value of trades executed) to the average daily TVL of the pool. This metric helps evaluate how active the pool is relative to the liquidity it holds. A higher value indicates more trading activity per unit of liquidity, suggesting a more liquid and active market.
+For the first efficient ratio, it compares the total annualized swap fees to the average daily TVL (Total Value Locked) of the pool. A higher ratio indicates that the pool generates more fees for each unit of liquidity provided, which suggests better operational efficiency.
 
-Both of these ratios are crucial for understanding how well a liquidity pool is performing in terms of fee generation and trading volume relative to the liquidity it holds. They serve as indicators of pool efficiency, guiding decisions on optimal liquidity allocation.
+For the second efficient ratio, this metric helps assess how active the pool is relative to its liquidity. A higher ratio indicates more trading activity per unit of liquidity, suggesting that the pool is more liquid and active.
+
+The first efficient ratio is similar to a financial ratio in traditional finance: **asset turnover ratio**, which is typically defined as:
+$$
+\text{Asset Turnover Ratio}=\frac{\text{Sales Revenue}}{\text{Average Total Assets}}
+$$
+The asset turnover ratio measures how effectively a company uses its total assets to generate revenue. It reflects the amount of sales or revenue generated for every unit of asset employed.
+
+However, note that the numerator of the first efficient ratio uses an average, which is then simply annualized, rather than using a static value like sales revenue in the case of the asset turnover ratio. This approach better reflects the daily variations in the metric. Nevertheless, we could also design a similar efficiency ratio inspired by the asset turnover ratio:
+$$
+\begin{aligned}
+&EfficientRatioC=\frac{Total\ Swap\ Fees}{ Average\ Daily\ LP\ TVL}
+\end{aligned}
+$$
+The numerator of this ratio does not distinguish between the portion of swap fees that goes to LPs and vePendle voters. In reality, LPs receive 20% of the fees, so we can adjust the formula as follows:
+$$
+EfficientRatioforLP=\frac{0.2*Total\ Swap\ Fees}{Average\ Daily\ LP\ TVL}
+$$
+In many statistical analyses, multiplying **EfficientRatioC** by a fixed proportional constant (like 0.2 for LPs) does not affect the overall analysis. Thus, this modified version has a more solid economic or financial interpretation.
+
+We can also consider another variant of the efficient ratio defined as:
+$$
+EfficientRatio_{YRC}=\frac{Total\ Swap\ Fees}{Average\ Daily\ Yield\ Receviable}
+$$
+Where:
+$$
+Average\ Daily\ Yield\ Receviable=\frac{Average\ Daily\ LP\ TVL\times Average\ Implied\ Rate}{365}
+$$
+This metric measures how much swap fee is supported by the average daily yield generated by one unit of reward-bearing token in the pool.
+
+#### Efficiency Factor
+
+We can apply factor analysis, a statistical method, to reduce the dimensionality of variables that are strongly correlated. After testing the correlation assumptions, we use factor analysis on metrics related to Swap Fees and TVL. After a series of statistical treatments, we derive the following factor [1]:
+$$
+\begin{aligned}
+EfficientFactor1=&-0.245*Average\ Daily\ LP\ TVL+0.401 *Average\ Daily\ Swap\ Fee\\
+&+0.415Total Swap Fee+0.319Total Swap Fee(im+ex)\\
+EfficientFactor2=&1.056*Average\ Daily\ LP\ TVL-0.148*Average\ Daily\ Swap\ Fee\\
+&-0.144*Total Swap Fee+0.059*Total Swap Fee(im+ex)
+\end{aligned}
+$$
+The score coefficients of the first factor are primarily concentrated on the three swap fee-related variables, which can be interpreted as an income factor. The score coefficients of the second factor are mainly focused on TVL, which can be interpreted as a cost factor. Together, these two factors reflect the opposing forces of income and cost in evaluating efficiency.
+
+### Test 2: Explanatory Power
+
+### Test 3: Sensitivity
 
 
 
