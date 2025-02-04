@@ -24,8 +24,7 @@ Date: 2025-02-04
      3. [utest: Testing for U-shaped and Inverted U-shaped Relationships](https://zhuanlan.zhihu.com/p/150555194)
    - Machine learning model: An alternative approach, with slightly reduced interpretability.
 
-4. **Further Exploration** (Progress: 0%, Expected Completion: By 2.18)
-
+4. **Further Exploration** (Progress: 0%, Expected Completion: By 2.25)
    - Robustness analysis: Test the robustness of the model results
    - Heterogeneity analysis:
      1. Investigate how fee tier affects explicit and implicit costs
@@ -33,8 +32,8 @@ Date: 2025-02-04
         - Similarity of underlying assets
         - Start or expiry dates
    - Introduce additional data sources or metrics
-
-5. **Post-Completion Tasks** ((Progress: 0%, Expected Completion: TBD)
+   
+5. **Post-Completion Tasks** (Progress: 0%, Expected Completion: TBD)
 
    - Regularly update with the latest dataset to check for changes in results
 
