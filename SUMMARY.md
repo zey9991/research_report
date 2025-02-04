@@ -1,6 +1,10 @@
 # Table of contents
 * [Introduction](README.md)
 
+## Pendle
+* [V2 Swap Fee Optimization](<pendle/Pendle V2 Fee Optimization.md>)
+  * [Timeline](<pendle/V2 Fee Timeline.md>)
+
 ## Projects
 
 * [2412-XRP](projects/2412-XRP/README.md)
@@ -26,18 +30,10 @@
 ## Macro
 
 - [2501-Macro Weekly](macro/macro1.md)
-
-## Dune
-
-* [2410-gTrade Active Users](<dune/2410-gTrade Active Users/README.md>)
-
 ## Others
-* [Pendle Problem Set](<others/Pendle Problem Set/Pendle Problem Set.md>)
-  * [V2 Swap Fee](<others/Pendle Problem Set/Pendle V2 Fee Optimization.md>)
-* [Archived](<projects/Archived.md>)
+* [Tutorial](<others/Tutorial.md>)
   * [API Call Quick Guide](<others/2411-API Call Quick Guide/README.md>)
   * [Web3 Project Research Report Guide](<others/2409-Web3 Project Research Report Guide/README.md>)
   * [Recommended Research Reports](<others/Recommended Research Reports/README.md>)
   * [Recommended Research Institutions](<others/Recommended Research Instituitions/README.md>)
-
 
