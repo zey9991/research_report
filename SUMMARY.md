@@ -34,10 +34,10 @@
 ## Others
 * [Pendle Problem Set](<others/Pendle Problem Set/Pendle Problem Set.md>)
   * [V2 Swap Fee](<others/Pendle Problem Set/Pendle V2 Fee Optimization.md>)
-  * [V2 Pool](<others/Pendle Problem Set/Pendle V2 Pools Analyses.md>)
+* [Archived](<projects/Archived.md>)
+  * [API Call Quick Guide](<others/2411-API Call Quick Guide/README.md>)
+  * [Web3 Project Research Report Guide](<others/2409-Web3 Project Research Report Guide/README.md>)
+  * [Recommended Research Reports](<others/Recommended Research Reports/README.md>)
+  * [Recommended Research Institutions](<others/Recommended Research Instituitions/README.md>)
 
-* [API Call Quick Guide](<others/2411-API Call Quick Guide/README.md>)
-* [Web3 Project Research Report Guide](<others/2409-Web3 Project Research Report Guide/README.md>)
-* [Recommended Research Reports](<others/Recommended Research Reports/README.md>)
-* [Recommended Research Institutions](<others/Recommended Research Instituitions/README.md>)
 

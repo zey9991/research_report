@@ -275,7 +275,7 @@ We assess these metrics based on three main tests:
 2. **Test Two:** The efficiency metric must have strong explanatory or predictive power regarding the pool’s efficiency. Specifically, when we say a pool is efficient, we mean its transaction fees are relatively high while the total value locked (TVL) behind it is relatively low.
 3. **Test Three:** The efficiency metric should exhibit sensitivity to ensure it responds effectively to significant changes, making it capable of distinguishing pools with varying levels of efficiency.
 
-### Candidate Metrics
+### Candidate Metrics and Their Economic Meanings
 
 #### Swap Fees
 
