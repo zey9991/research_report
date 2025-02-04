@@ -355,6 +355,74 @@ The score coefficients of the first factor are primarily concentrated on the thr
 
 Next, we can examine the explanatory power of the previous candidate metrics in relation to these two efficiency factors, in order to identify the optimal candidate metric.
 
+To be more specific, we are going to use correlation coefficients to measure explanatory power. It has been tested that these variables do not conform to a normal distribution, so we may use the Spearman and Kendall tau-b correlation coefficients here.
+
+简单用英文介绍两个相关系数，记住给出计算公式。
+
+Here are the results:
+
+**Spearman's rho**
+Spearman's rank correlation coefficient measures the strength and direction of association between two ranked variables. It is calculated as follows:
+
+Where:
+$$
+\rho=1-\frac{6\sum d^2}{n(n^2-1)}
+$$
+
+- $$d$$ is the difference between the ranks of each pair of values.
+- $$n$$ is the number of observations.
+
+**Kendall's tau-b**
+Kendall's tau-b is another measure of correlation that evaluates the strength of association between two variables, specifically addressing ties. It is calculated as:
+$$
+\tau_b=\frac{P-Q}{\sqrt{(P+Q+T_1)(P+Q+T_2)}}
+$$
+Where:
+
+- $$P$$ is the number of concordant pairs.
+- $$Q$$ is the number of discordant pairs.
+- $$T_1$$ and $$T_2$$ are the number of ties in each variable.
+
+Here are the results:
+
+| Spearman's rho         | Average Daily LP TVL | Total Swap Fee | Total Swap Fee (im+ex) | Average Daily Swap Fee | EfficientRatio* | EfficientRatioB** | EfficientRatioC | EfficientRatioforLP | EfficientRatioYRC | EfficientFactor1 | EfficientFactor2 |
+| ---------------------- | -------------------- | -------------- | ---------------------- | ---------------------- | --------------- | ----------------- | --------------- | ------------------- | ----------------- | ---------------- | ---------------- |
+| Average Daily LP TVL   | --                   |                |                        |                        |                 |                   |                 |                     |                   |                  |                  |
+| Total Swap Fee         | .758**               | --             |                        |                        |                 |                   |                 |                     |                   |                  |                  |
+| Total Swap Fee (im+ex) | .701**               | .964**         | --                     |                        |                 |                   |                 |                     |                   |                  |                  |
+| Average Daily Swap Fee | .745**               | .915**         | .868**                 | --                     |                 |                   |                 |                     |                   |                  |                  |
+| EfficientRatio*        | -.155*               | .333**         | .415**                 | .455**                 | --              |                   |                 |                     |                   |                  |                  |
+| EfficientRatioB**      | 0.027                | .366**         | .421**                 | .504**                 | .810**          | --                |                 |                     |                   |                  |                  |
+| EfficientRatioC        | -0.098               | .474**         | .582**                 | .377**                 | .813**          | .586**            | --              |                     |                   |                  |                  |
+| EfficientRatioforLP    | -0.098               | .474**         | .582**                 | .377**                 | .813**          | .586**            | 1.000**         | --                  |                   |                  |                  |
+| EfficientRatioYRC      | -.163*               | .369**         | .436**                 | .180**                 | .494**          | .301**            | .804**          | .804**              | --                |                  |                  |
+| EfficientFactor1       | 0.097                | .600**         | .631**                 | .564**                 | .783**          | .598**            | .836**          | .836**              | .631**            | --               |                  |
+| EfficientFactor2       | .889**               | .557**         | .509**                 | .536**                 | -.343**         | -.133*            | -.279**         | -.279**             | -.284**           | -0.003           | --               |
+
+\*\* *Correlation is significant at the 0.01 level (2-tailed)*.
+\**Correlation is significant at the 0.05 level (2-tailed)*.
+
+
+
+| **Kendall's tau_b**    | Average Daily LP TVL | Total Swap Fee | Total Swap Fee (im+ex) | Average Daily Swap Fee | EfficientRatio* | EfficientRatioB** | EfficientRatioC | EfficientRatioforLP | EfficientRatioYRC | EfficientFactor1 | EfficientFactor2 |
+| ---------------------- | -------------------- | -------------- | ---------------------- | ---------------------- | --------------- | ----------------- | --------------- | ------------------- | ----------------- | ---------------- | ---------------- |
+| Average Daily LP TVL   | --                   |                |                        |                        |                 |                   |                 |                     |                   |                  |                  |
+| Total Swap Fee         | .557**               | --             |                        |                        |                 |                   |                 |                     |                   |                  |                  |
+| Total Swap Fee (im+ex) | .504**               | .853**         | --                     |                        |                 |                   |                 |                     |                   |                  |                  |
+| Average Daily Swap Fee | .538**               | .750**         | .686**                 | --                     |                 |                   |                 |                     |                   |                  |                  |
+| EfficientRatio         | -.119**              | .229**         | .287**                 | .316**                 | --              |                   |                 |                     |                   |                  |                  |
+| EfficientRatioB        | 0.013                | .260**         | .300**                 | .355**                 | .619**          | --                |                 |                     |                   |                  |                  |
+| EfficientRatioC        | -0.08                | .333**         | .416**                 | .258**                 | .637**          | .429**            | --              |                     |                   |                  |                  |
+| EfficientRatioforLP    | -0.08                | .333**         | .416**                 | .258**                 | .637**          | .429**            | 1.000**         | --                  |                   |                  |                  |
+| EfficientRatioYRC      | -.111*               | .250**         | .298**                 | .125**                 | .352**          | .227**            | .612**          | .612**              | --                |                  |                  |
+| EfficientFactor1       | 0.04                 | .453**         | .481**                 | .426**                 | .590**          | .427**            | .647**          | .647**              | .446**            | --               |                  |
+| EfficientFactor2       | .864**               | .425**         | .379**                 | .403**                 | -.246**         | -.095*            | -.202**         | -.202**             | -.194**           | -0.021           | --               |
+
+\*\* *Correlation is significant at the 0.01 level (2-tailed)*.
+\**Correlation is significant at the 0.05 level (2-tailed)*.
+
+
+
 ### Test 3: Sensitivity
 
 
