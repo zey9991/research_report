@@ -357,10 +357,6 @@ Next, we can examine the explanatory power of the previous candidate metrics in 
 
 To be more specific, we are going to use correlation coefficients to measure explanatory power. It has been tested that these variables do not conform to a normal distribution, so we may use the Spearman and Kendall tau-b correlation coefficients here.
 
-简单用英文介绍两个相关系数，记住给出计算公式。
-
-Here are the results:
-
 **Spearman's rho**
 Spearman's rank correlation coefficient measures the strength and direction of association between two ranked variables. It is calculated as follows:
 
