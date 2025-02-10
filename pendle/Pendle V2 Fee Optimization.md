@@ -244,7 +244,7 @@ Thus, the Efficient Ratio serves a similar purpose, indicating how effectively a
 - Unlike the traditional asset turnover ratio, the numerator here is the annualized daily "revenue" to reduce the influence of different maturity date of pools.
 - The average daily swap fees encompass all explicit and implicit fees, as well as limit order fees, measuring the overall revenue for all beneficiaries, including Liquidity Providers (LPs) and vePendle voters. Ideally, the denominator should also account for the value of vePendle votes to maintain accuracy. However, for simplicity and ease of interpretation, we focus solely on the LP TVL in the denominator.
 
-# Modeling the Relationship 
+# Modeling the Relationship Between FeeTier and EfficientRatio
 
 In this section, we aim to explore the relationship between fee tiers and efficient ratios. We have tried out three different models to capture the statistical relationship. Each of them are followed by sensitivity and heterohestic analyses.
 
