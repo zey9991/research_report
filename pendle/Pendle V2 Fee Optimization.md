@@ -579,7 +579,10 @@ The following figure illustrates the **nonparametric kernel regression** of **Ef
 
 The **shaded area** in the figure represents the **95% confidence interval**.
 
-From the plot, we observe that **EfficientRatio** and **FeeTier** exhibit an approximately **monotonic increasing** relationship, suggesting a **positive correlation** between the two variables.
+From the above discussion, we can conclude that:
+
+- From the plot, we observe that **EfficientRatio** and **FeeTier** exhibit an approximately **monotonic increasing** relationship, suggesting a **positive correlation** between the two variables.
+- On the other hand, since we cannot reject the null hypothesis that the nonparametric model can be approximated by the cubic polynomial model, this model **can be considered as a complement to the previous cubic model results**. In the plot, except at the right endpoint of the range, no strict maximum value is observed. This further indicates that the cubic model requires further robustness checks or sensitivity analysis to ensure the validity of the results.
 
 ## Conclusions
 
