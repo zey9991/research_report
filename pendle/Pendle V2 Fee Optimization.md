@@ -246,7 +246,7 @@ Thus, the Efficient Ratio serves a similar purpose, indicating how effectively a
 
 # Modeling the Relationship Between FeeTier and EfficientRatio
 
-In this section, we aim to explore the relationship between fee tiers and efficient ratios. We have tried out three different models to capture the statistical relationship. Each of them are followed by sensitivity and heterohestic analyses.
+In this section, we aim to explore the relationship between fee tiers and efficient ratios. We have tried out three different models to capture the statistical relationship. Each of them are followed by sensitivity and heterohestic analyses in the next section.
 
 ## Dataset Description
 
