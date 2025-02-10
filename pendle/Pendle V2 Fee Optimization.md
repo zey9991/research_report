@@ -299,7 +299,7 @@ Below is a summary of key statistics for the dataset:
 - **Right-Skewed Distribution (Positive Skewness):** Most variables exhibit strong positive skewness, indicating that the distributions have long right tails. This suggests that while the majority of pools operate within a relatively small range, a few pools have significantly higher values, pulling the mean upward.
 - **Leptokurtic Distributions (High Kurtosis):** The kurtosis values for most variables are extremely high (e.g., **Total Swap Fee = 47.35**, **Efficient RatioB = 30.36**), indicating **fat-tailed** distributions. This means that extreme values (outliers) occur more frequently than in a normal distribution. In other words, while most pools cluster around lower values, a few outliers experience extremely high activity.
 
-### Scatter Plot
+## Scatter Plot
 
 Before we proceed with modeling the relationship between Fee Tier and Efficient Ratio, we can visually examine their relationship using scatter plots.
 
@@ -333,7 +333,7 @@ Similarly, scatter plots can be created based on **Yield Source** and **Chain**.
 
 ![Scatter Plot of Fee Tier vs. Efficient Ratio (By YieldSource and Chain)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/scatterEffRatioandFeeTierByYieldSourceandChain.png)
 
-## Quadratic Regression Model
+## Polynomial Regression Model
 
 In this section, we consider using a quadratic regression model to attempt to describe the relationship between **Fee Tier** and **Efficient Ratio**, based primarily on the following expectations outlined at the beginning of the paper:
 
@@ -363,22 +363,230 @@ The parameters of the above model can still be estimated using ordinary least sq
 - The explanatory variables are nonlinearly correlated.
 - The error terms exhibit no autocorrelation.
 
-The estimation results are shown in the table below. To account for potential heteroscedasticity in the error terms, robust standard errors are used.
+The estimation results are shown in the table below. To account for potential heteroscedasticity in the error terms, robust standard errors are used. 
 
+For comparison, we also provide the regression results with one to five polynomial terms (the fifth-degree term was omitted due to multicollinearity).
 
+| Variable               | (1) Linear  | (2) Quadratic | (3) Cubic   | (4) Quartic  | (5) Quintic  |
+| ---------------------- | ----------- | ------------- | ----------- | ------------ | ------------ |
+| **FeeTier**            | 19.16***    | 11.98**       | -8.250      | 0.986        | 0.986        |
+|                        | (2.509)     | (5.628)       | (10.90)     | (28.33)      | (28.33)      |
+| **FeeTier2**           |             | 566.4         | 3999.2**    | 580.4        | 580.4        |
+|                        |             | (360.7)       | (1900.4)    | (9466.9)     | (9466.9)     |
+| **FeeTier3**           |             |               | -132549.2*  | 232538.8     | 232538.8     |
+|                        |             |               | (71531.9)   | (996142.7)   | (996142.7)   |
+| **FeeTier4**           |             |               |             | -10836336.9  | -10836336.9  |
+|                        |             |               |             | (29675548.0) | (29675548.0) |
+| **FeeTier5**           |             |               |             |              | 0 (omitted)  |
+|                        |             |               |             |              | (.)          |
+| **DurationDay**        | 0.0000269   | 0.0000158     | -0.00000167 | 0.000000287  | 0.000000287  |
+|                        | (0.0000319) | (0.0000296)   | (0.0000241) | (0.0000222)  | (0.0000222)  |
+| **BaseAsset==BTC**     | -0.0282**   | -0.0308***    | -0.0311***  | -0.0319***   | -0.0319***   |
+|                        | (0.0121)    | (0.0117)      | (0.0117)    | (0.0118)     | (0.0118)     |
+| **BaseAsset==ETH**     | 0.000603    | -0.00114      | -0.00284    | -0.00288     | -0.00288     |
+|                        | (0.0131)    | (0.0127)      | (0.0122)    | (0.0123)     | (0.0123)     |
+| **BaseAsset==Other**   | -0.00681    | -0.0101       | -0.00935    | -0.00895     | -0.00895     |
+|                        | (0.0170)    | (0.0169)      | (0.0166)    | (0.0168)     | (0.0168)     |
+| **Constant**           | 0.00800     | 0.0208        | 0.0442***   | 0.0383**     | 0.0383**     |
+|                        | (0.0153)    | (0.0151)      | (0.00986)   | (0.0192)     | (0.0192)     |
+| **Observations**       | 243         | 243           | 243         | 243          | 243          |
+| **R-squared**          | 0.234       | 0.240         | 0.253       | 0.253        | 0.253        |
+| **Adjusted R-squared** | 0.217       | 0.220         | 0.230       | 0.227        | 0.227        |
 
-From the results, we see that the regression coefficient for the quadratic term is positive, which is opposite to our expectation, and it is not statistically significant. The 95% confidence interval for the quadratic term is very wide, ranging from -144.1299 to 1276.973. From this, we can draw the following conclusions:
+***Note*:**  
 
-- If the inverted U-shape theory is correct, the lack of statistical evidence for this relationship may be due to insufficient data, model specification errors, omitted explanatory variables, outliers, or other statistical issues.
-- If the inverted U-shape theory is incorrect, we will need to abandon the previous assumption and adjust the model structure to more accurately capture the relationship between **Fee Tier** and **Efficient Ratio**.
+- **Standard errors** are shown in parentheses below the corresponding coefficient estimates.  
+- **Significance levels (p-values):**  
+  - \*\*\* represent p < 0.01 (**highly significant**)  
+  - \*\* represent p < 0.05 (**moderately significant**)  
+  - \* represents p < 0.1 (**weakly significant**)  
+  - No stars indicate **p ≥ 0.1**, meaning the result is not statistically significant.  
 
+As seen from the table above, in the quadratic model, the coefficient for the quadratic term is positive but not significant, which rules out a traditional inverted U-shaped relationship between the two variables. However, we cannot rule out the possibility of higher-order terms that could create an inverted U-shape.
 
+Specifically, when a cubic term is added, the quadratic term becomes significant at the 5% level, while the cubic term is significant at the 10% level. Additionally, the cubic model has the lowest adjusted R-squared among the models, as shown in the figure below (if higher fractional powers were included, the curve would be even smoother):
+
+![Adjusted R-Squared vs Polynomial Degree](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Adjusted%20R-Squared%20vs%20Polynomial%20Degree1.png)
+
+**Adjusted R-squared**: Unlike the regular R-squared, which can increase with more variables added to the model (even if those variables are irrelevant), the adjusted R-squared accounts for the number of predictors and introduces a penalty for adding unnecessary terms. This helps to prevent overfitting and provides a more reliable measure of model fit.
+
+Although the coefficient for the linear term is not significant, we can still write out the regression equation:
+$$
+E(EfficientRatio)=0.0442-8.25FeeTier+3999.2FeeTier^2-132549.2FeeTier^3+\sum_i\hat{\beta_i}Controls
+$$
+Where:
+
+- $$E(\cdot)$$ represents the expected value of EfficientRatio.
+- $$\hat{\beta_i}$$ represents the estimated regression coefficients for the control variables.
+
+Assuming all other control variables take on fixed values (such as the mean or median), we can plot the fitted relationship between FeeTier and EfficientRatio. That is,
+$$
+E(EfficientRatio|Controls=\text{fixed values})=0.0442-8.25FeeTier+3999.2FeeTier^2-132549.2FeeTier^3+\sum_i\hat{\beta_i}\times \text{fixed values}
+$$
+We can choose to set all control variables to their median values (instead of the mean, due to the presence of extreme outliers that could distort the average), so:
+$$
+E(EfficientRatio|Controls=\text{median value})=0.04397-8.25FeeTier+3999.2FeeTier^2-132549.2FeeTier^3
+$$
+The plot is as follows:
+
+![Predictive Margins with Control Variables at Median Value1](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Predictive%20Margins%20with%20Control%20Variables%20at%20Median%20Value1.png)
+
+From the plot, we can observe that although the cubic regression model doesn't strictly exhibit an inverted U-shape, it does show that as FeeTier increases, the expected EfficientRatio reaches a maximum value of 0.37781 at FeeTier = 0.01902. It's important to note that there is only one sample where FeeTier is greater than 0.01, so the data at this point is sparse. The maximum point may not be stable, and we will further discuss this in the robustness analysis.
+
+Based on the above discussion, we can draw the following conclusions:
+
+- Although the regression results do not show a strict inverted U-shape between EfficientRatio and FeeTier, the cubic model, which provides the best fit, indicates a peak value for EfficientRatio at FeeTier = 0.01902, which partially aligns with our theoretical expectation.
+- However, since most of the data points for FeeTier are small, the model may still suffer from estimation bias. The robustness of the model needs further validation.
 
 ## Threshold Regression Model
 
+In this section, we abandon the previous assumption of an inverted U-shaped relationship and aim to build a nonlinear model that is more data-driven.
+
+We employ a threshold regression model here. A threshold regression model, as proposed by **Hansen (2000)**, is a piecewise linear model that allows the relationship between the variables to change once a certain threshold is crossed. The basic idea is that the effect of the independent variable on the dependent variable differs across different regimes, defined by the threshold.
+
+Consider the following threshold regression model:
+$$
+\begin{cases} 
+EfficientRatio_i = \beta_1 + \beta_2 \cdot FeeTier +\sum_i\beta_iControls+ \epsilon_i & \text{if } FeeTier \leq \text{Threshold} \\
+EfficientRatio_i = \beta_1 + \beta_3 \cdot FeeTier +\sum_i\beta_iControls+  \epsilon_i & \text{if } FeeTier > \text{Threshold}
+\end{cases}
+$$
+We use this model because we hypothesize that the relationship between **FeeTier** and **EfficientRatio** involves a threshold value. When **FeeTier** is below or above the threshold, the relationship is governed by different parameters. Unlike the quadratic regression model, which assumes a continuous nonlinear relationship, the threshold regression model assumes a **piecewise linear** relationship between **FeeTier** and **EfficientRatio**.
+
+First, we need to conduct a threshold effect test to confirm whether a threshold value statistically exists. The LM statistic is used to test this hypothesis.
+
+| **Test of Null of No Threshold Against Alternative of Threshold** | **Value**  |
+| ------------------------------------------------------------ | ---------- |
+| Number of Bootstrap Replications                             | 5000       |
+| Trimming Percentage                                          | 0.15       |
+| LM-test for no threshold                                     | 34.4625546 |
+| Bootstrap P-Value                                            | 0          |
+
+In the table above, the **Bootstrap P-value** of the LM statistic is similar to the conventional p-value obtained from other econometric methods. Since it is very small (reported as 0), it indicates the presence of a threshold effect. **Trimming Percentage** refers to the percentage of data being trimmed, with the default set to 0.15%.
+
+Next, we estimate the parameters of the threshold regression model as follows:
+
+|                               | Estimate | St Error | t Value | p value | 95% Confidence Interval Lower | 95% Confidence Interval Upper |
+| ----------------------------- | -------- | -------- | ------- | ------- | ----------------------------- | ----------------------------- |
+| FeeTier(FeeTier ≤ Threshold)  | -13.9097 | 7.4970   | -1.8554 | 0.0653  | -28.6037                      | 0.7843                        |
+| Constant(FeeTier ≤ Threshold) | 0.0402   | 0.0090   | 4.4667  | 0.0000  | 0.02259                       | 0.05773                       |
+| FeeTier(FeeTier > Threshold)  | 20.9689  | 3.0713   | 6.8274  | 0.0000  | 14.949                        | 26.9887                       |
+| Constant(FeeTier > Threshold) | 0.1331   | 0.0871   | 1.5281  | 0.1316  | -0.0376                       | 0.3037                        |
+| Threshold Value               | 0.0024   | /        | /       | /       | 0.0024                        | 0.0024                        |
+
+- The estimated threshold value is **0.0024**, which corresponds to the 72.43rd percentile of **FeeTier**. This means that there are 176 samples where **FeeTier** is less than 0.0024 and 67 samples where **FeeTier** is greater than 0.0024. Below is a scatter plot showing the data with the threshold value.
+- When **FeeTier ≤ Threshold**, the regression coefficient is -13.9097, which is only significant at the 10% significance level, and the confidence interval is wide and includes 0, suggesting a potential lack of robustness in this estimate.
+- When **FeeTier > Threshold**, the regression coefficient is 20.9689, which is significant at the 1% significance level, suggesting a strong positive relationship between **FeeTier** and **EfficientRatio** once the threshold is exceeded.
+
+![scatterThreshold](https://cdn.jsdelivr.net/gh/zey9991/mdpic/scatterThreshold.png)
+
+From the results, we conclude:
+
+- The estimated results show that when **FeeTier** is less than the threshold value of 0.0024 (0.24%), a 0.1% increase in **FeeTier** corresponds to a 1.39% decrease in **EfficientRatio**. However, when **FeeTier** exceeds the threshold, a 0.1% increase in **FeeTier** leads to a 2.10% increase in **EfficientRatio**.
+- The effect of **FeeTier** on **EfficientRatio** first decreases and then increases as **FeeTier** rises, forming a **V-shaped** curve.
+- This result initially seems completely opposite to our previous expectation of an inverted U-shape.
+
+The above results indicate the existence of a single threshold value but do not rule out the possibility of multiple thresholds. According to Hansen's paper, after excluding the 176 samples below the first threshold, we conduct another threshold effect test on the remaining 67 sub-samples. The Bootstrap P-value is very large (the result is not presented in this report), suggesting that there are no multiple threshold values.
+
+The following table presents the goodness of fit for the threshold regression model:
+
+|              | FeeTier ≤ 0.0024 | FeeTier > 0.0024 | Linear Model |
+| ------------ | ---------------- | ---------------- | ------------ |
+| Observations | 176              | 67               | 243.0000     |
+| R-squared    | 0.0340           | 0.3685           | 0.2340       |
+
+- **R-squared for FeeTier ≤ 0.0024 is very low, at just 3.4%**: While R-squared is not the most crucial metric in causal inference compared to predictive tasks, it can provide a useful indication of the model's explanatory power. In this case, the low R-squared suggests that the model does a poor job explaining the relationship between FeeTier and EfficientRatio when FeeTier is less than or equal to 0.0024. This could be due to factors such as a small sample size, the model not adequately capturing the complexity of the nonlinear relationship, or the presence of omitted variables. Moreover, this R-squared value is noticeably lower than that of the linear regression model (R² = 0.2340), highlighting that the threshold regression model performs poorly in this region.
+- **R-squared for FeeTier > 0.0024 is much higher, at 36.85%**: In contrast, when FeeTier exceeds 0.0024, the model performs significantly better, with an R-squared of 0.3685. This is notably higher than the 3.4% for the lower FeeTier range and also exceeds the R-squared of the linear regression model (0.2340). This indicates that, when FeeTier is greater than the threshold, the relationship between FeeTier and EfficientRatio is clearer and better captured by the model, suggesting that the model fits the data well in this range.
+
+### Why does this phenomenon occur?
+
+- **Parameter estimation errors**: The regression coefficient when **FeeTier ≤ Threshold** is only significant at the 10% significance level, and the wide confidence interval that includes 0 suggests potential estimation errors. Additionally, the goodness of fit for this part of the model is poor, with a very low R-squared (3.4%) indicating that the model struggles to explain the relationship between FeeTier and EfficientRatio in this range. This could be due to small sample sizes or incorrect model specification, which may lead to results that significantly differ from expectations. The low R-squared value in this range also suggests that the model does not adequately capture the complexity of the relationship, or there might be omitted variables influencing the results.
+- **If parameter estimation errors are ruled out**, this might suggest that when **FeeTier** is set close to the threshold, while LPs and vePendle voters are attracted to higher fees, the increase in **Swap Fees** generated by traders does not reach a higher level, leading to a further decrease in **EfficientRatio**. 
+- This effect, although counterintuitive, indicates that when setting **FeeTier**, we should avoid values close to the threshold. In simpler terms, one should either choose a very low or very high **FeeTier**, as values near the threshold might not be optimal.
+
+## **Semiparametric Estimation**
+
+The previous two models inevitably face the risk of **model misspecification**. To address this concern, this section further relaxes the assumptions imposed on the model, allowing the data to reveal more of its inherent structure and reducing the bias introduced by potential misspecification.
+
+Specifically, both of the previous models rely on **parametric estimation**, which implicitly assumes a specific distribution of the data and focuses entirely on estimating the associated parameters. *(This was not explicitly mentioned in the report because, under large sample sizes, the **Central Limit Theorem (CLT)** ensures that the estimators are asymptotically consistent, meaning they converge to the true values. Moreover, while we previously acknowledged that estimation errors could arise due to insufficient sample size, our dataset is sufficiently large for CLT to hold.)*
+
+To further relax these assumptions, we can remove the parametric constraints on data distribution—essentially admitting that we **know nothing** about the true distribution—and employ **nonparametric estimation** to analyze the relationship between **FeeTier** and **EfficientRatio**. However, a purely nonparametric approach has its own drawbacks:
+
+- Although control variables (such as **Duration**) can still be incorporated, doing so significantly reduces **estimation efficiency**, requiring a much larger sample size.
+- Conversely, if we omit control variables, we cannot rule out the possibility that these factors influence the relationship between **FeeTier** and **EfficientRatio**, leading to omitted variable bias.
+
+To navigate this trade-off, we adopt a **semiparametric estimation method**, specifically the **partially linear model (PLM)**, which is specified as follows:
+$$
+EfficientRatio_i=f(FeeTier)+\sum_i\beta_iControls+\epsilon_i
+$$
+where:
+
+- $$f(\cdot)$$ represents an **unknown function** of **FeeTier**, with no assumptions on its functional form.
+
+- This model still assumes that:
+  1. **Control variables** enter the model in a **linear form**, allowing us to estimate their coefficients while remaining agnostic about the functional relationship between **FeeTier** and **EfficientRatio**.
+  2. **Error terms exhibit no autocorrelation**.
+
+The estimation procedure can be intuitively understood as follows:
+
+- First, we estimate the regression coefficients for the **linear** variables.
+- Next, we compute the residuals—the portion of the dependent variable **EfficientRatio** that remains unexplained by the linear controls.
+- Finally, we attribute this residual variation to the **nonparametric** component and estimate it accordingly.
+
+The **parametric estimation results** and **goodness-of-fit metrics** for the partially linear model (PLM) are presented below, along with the corresponding results from a standard **linear regression model** for comparison：
+
+| Variable             | (1) PLM     | (2) Linear  |
+| -------------------- | ----------- | ----------- |
+| **FeeTier**          |             | 19.16***    |
+|                      |             | (2.402)     |
+| **Duration**         | 0.00000438  | 0.0000269   |
+|                      | (0.0000246) | (0.0000336) |
+| **BaseAsset==BTC**   | -0.0303***  | -0.0282     |
+|                      | (0.0109)    | (0.0204)    |
+| **BaseAsset==ETH**   | -0.00119    | 0.000603    |
+|                      | (0.0125)    | (0.0132)    |
+| **BaseAsset==Other** | -0.00651    | -0.00681    |
+|                      | (0.0170)    | (0.0183)    |
+| **Constant**         |             | 0.00800     |
+|                      |             | (0.0138)    |
+| **Observations**     | 243         | 243         |
+| **R-squared**        | 0.011       | 0.234       |
+
+***Note*:**  
+
+- **Standard errors** are shown in parentheses below the corresponding coefficient estimates.  
+- **Significance levels (p-values):**  
+  - \*\*\* represent p < 0.01 (**highly significant**)  
+  - \*\* represent p < 0.05 (**moderately significant**)  
+  - \* represents p < 0.1 (**weakly significant**)  
+  - No stars indicate **p ≥ 0.1**, meaning the result is not statistically significant.  
+
+Although the table shows that the R² for the **parametric component** of the PLM is quite low (only **0.011**), this does not imply that the model itself is weak. The reported **R²** reflects only the goodness of fit for the **parametric portion** (i.e., the linear controls) and does not account for the explanatory power of the **nonparametric component** (e.g., the kernel regression part). Thus, while the nonparametric component may significantly contribute to explaining variations in the dependent variable, its effect is not captured by the reported **R²** value.
+
+To further evaluate whether the **nonparametric fit** can be well approximated by a **parametric adjustment**, we conduct **Härdle and Mammen’s (1993) specification test**. The null hypothesis states that *parametric and nonparametric fits are not significantly different*.
+
+| **Polynomial Order** | Approximate p-value |
+| -------------------- | ------------------- |
+| 1                    | 0.08                |
+| 2                    | 0.10                |
+| 3                    | 0.35                |
+
+As shown in the table, when the **polynomial order reaches 3**, we can no longer reject the null hypothesis at the **90% confidence level**. This suggests that a **third-order polynomial** may provide a reasonable parametric approximation of the nonparametric model.
+
+The following figure illustrates the **nonparametric kernel regression** of **EfficientRatio** on **FeeTier**, capturing the flexible, data-driven relationship without imposing a specific functional form.
+
+![Kernel Regression Plot of EfficientRatio against FeeTier](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Kernel%20Regression%20Plot%20of%20EfficientRatio%20against%20FeeTier.png)
+
+The **shaded area** in the figure represents the **95% confidence interval**.
+
+From the plot, we observe that **EfficientRatio** and **FeeTier** exhibit an approximately **monotonic increasing** relationship, suggesting a **positive correlation** between the two variables.
+
+## Conclusions
 
 
-## References
+
+# References
 
 1. [MarketMathCore.sol - WORKSPACE - Blockscan contract source code viewer](https://vscode.blockscan.com/ethereum/0x40789E8536C668c6A249aF61c81b9dfaC3EB8F32)
 2. [PendleMarketV3.sol - WORKSPACE - Blockscan contract source code viewer](https://vscode.blockscan.com/ethereum/0x40789E8536C668c6A249aF61c81b9dfaC3EB8F32)
+3. [Sci-Hub |SAMPLE SPLITTING AND THRESHOLD ESTIMATION by Hansen ](https://sci-hub.st/10.2307/2999601)
