@@ -24,7 +24,7 @@ Date: 2025-02-11
    - Introduce additional data sources or metrics
 5. **Post-Completion Tasks** (Progress: 0%, Expected Completion: 2.26)
 - Regularly update with the latest dataset to check for changes in results
-   
+  
 -  Monitor whether the optimal fee tier identified in this report has increased the efficiency of the V2 pools in practice.
    
 - Consider automating certain processes through programming
