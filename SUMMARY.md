@@ -4,6 +4,7 @@
 ## Pendle
 * [V2 Swap Fee Optimization](<pendle/Pendle V2 Fee Optimization.md>)
   * [Timeline](<pendle/V2 Fee Timeline.md>)
+  * [Weekly Synup](<pendle/V2 Fee Weekly Synup.md>)
 
 ## Projects
 
