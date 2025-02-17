@@ -695,7 +695,7 @@ The following table illustrates how the adjusted R-squared of the quadratic mode
 | Trimmed at 2.5%    | 0.189       | 0.378         | 0.427           | 0.237         |
 | Trimmed at 5%      | 0.189       | 0.378         | 0.427           | 0.237         |
 
-From the two tables above, it is evident that both Winsorization and Trimming improve the model’s goodness of fit.
+From the two tables above, it is evident that nearly both Winsorization and Trimming improve the model’s goodness of fit.
 
 In economics, a well-known phenomenon is that when a firm operates at a low production level, increasing output enhances profitability. However, beyond a certain threshold, further increasing output leads to diminishing returns and eventually reduces profit. Our use of the quadratic regression model was inspired by this principle—**suggesting that EfficientRatio and FeeTier should exhibit an inverted U-shaped economic relationship**.
 
@@ -757,35 +757,35 @@ As previously mentioned, we do not include all these control variables in the mo
 
 First, we replace **BaseAsset** with **Chain** and re-run the polynomial regression. The regression results are shown below:
 
-|                   | (1) Linear  | (2) Quadratic | (3) Cubic   | (4) Quartic  | (5) Quintic  |
-| ----------------- | ----------- | ------------- | ----------- | ------------ | ------------ |
-| **DurationDay**   | 0.0000412   | 0.0000309     | 0.00000871  | 0.00000957   | 0.00000957   |
-|                   | (0.0000371) | (0.0000342)   | (0.0000272) | (0.0000252)  | (0.0000252)  |
-| **chain==ETH**    | 0.0264***   | 0.0274***     | 0.0321***   | 0.0322***    | 0.0322***    |
-|                   | (0.00914)   | (0.00901)     | (0.00937)   | (0.00914)    | (0.00914)    |
-| **chain==OP**     | -0.00813    | -0.00771      | -0.00309    | -0.00336     | -0.00336     |
-|                   | (0.00728)   | (0.00691)     | (0.00599)   | (0.00528)    | (0.00528)    |
-| **chain==BSC**    | 0.00222     | 0.00557       | 0.0168      | 0.0166       | 0.0166       |
-|                   | (0.0147)    | (0.0152)      | (0.0168)    | (0.0169)     | (0.0169)     |
-| **chain==Mantle** | 0.0167      | 0.0179        | 0.0148      | 0.0147       | 0.0147       |
-|                   | (0.0137)    | (0.0152)      | (0.0130)    | (0.0132)     | (0.0132)     |
-| **chain==Base**   | -0.0301*    | -0.0262*      | -0.0206     | -0.0197      | -0.0197      |
-|                   | (0.0159)    | (0.0144)      | (0.0150)    | (0.0135)     | (0.0135)     |
-| **FeeTier**       | 19.45***    | 12.95**       | -10.98      | -7.393       | -7.393       |
-|                   | (2.572)     | (5.899)       | (12.13)     | (26.71)      | (26.71)      |
-| **FeeTier2**      |             | 510.6         | 4559.6**    | 3229.3       | 3229.3       |
-|                   |             | (396.2)       | (2012.6)    | (8498.8)     | (8498.8)     |
-| **FeeTier3**      |             |               | -155741.6** | -13456.1     | -13456.1     |
-|                   |             |               | (73635.0)   | (885160.9)   | (885160.9)   |
-| **FeeTier4**      |             |               |             | -4225662.0   | -4225662.0   |
-|                   |             |               |             | (26330208.8) | (26330208.8) |
-| **FeeTier5**      |             |               |             |              | 0            |
-|                   |             |               |             |              | (.)          |
-| **Constant**      | -0.0162     | -0.00683      | 0.0167      | 0.0143       | 0.0143       |
-|                   | (0.0100)    | (0.0110)      | (0.0106)    | (0.0186)     | (0.0186)     |
-| **N**             | 243         | 243           | 243         | 243          | 243          |
-| **R-sq**          | 0.247       | 0.252         | 0.269       | 0.269        | 0.269        |
-| **adj. R-sq**     | 0.225       | 0.226         | 0.241       | 0.238        | 0.238        |
+|                        | (1) Linear  | (2) Quadratic | (3) Cubic   | (4) Quartic  | (5) Quintic  |
+| ---------------------- | ----------- | ------------- | ----------- | ------------ | ------------ |
+| **DurationDay**        | 0.0000412   | 0.0000309     | 0.00000871  | 0.00000957   | 0.00000957   |
+|                        | (0.0000371) | (0.0000342)   | (0.0000272) | (0.0000252)  | (0.0000252)  |
+| **chain==ETH**         | 0.0264***   | 0.0274***     | 0.0321***   | 0.0322***    | 0.0322***    |
+|                        | (0.00914)   | (0.00901)     | (0.00937)   | (0.00914)    | (0.00914)    |
+| **chain==OP**          | -0.00813    | -0.00771      | -0.00309    | -0.00336     | -0.00336     |
+|                        | (0.00728)   | (0.00691)     | (0.00599)   | (0.00528)    | (0.00528)    |
+| **chain==BSC**         | 0.00222     | 0.00557       | 0.0168      | 0.0166       | 0.0166       |
+|                        | (0.0147)    | (0.0152)      | (0.0168)    | (0.0169)     | (0.0169)     |
+| **chain==Mantle**      | 0.0167      | 0.0179        | 0.0148      | 0.0147       | 0.0147       |
+|                        | (0.0137)    | (0.0152)      | (0.0130)    | (0.0132)     | (0.0132)     |
+| **chain==Base**        | -0.0301*    | -0.0262*      | -0.0206     | -0.0197      | -0.0197      |
+|                        | (0.0159)    | (0.0144)      | (0.0150)    | (0.0135)     | (0.0135)     |
+| **FeeTier**            | 19.45***    | 12.95**       | -10.98      | -7.393       | -7.393       |
+|                        | (2.572)     | (5.899)       | (12.13)     | (26.71)      | (26.71)      |
+| **FeeTier2**           |             | 510.6         | 4559.6**    | 3229.3       | 3229.3       |
+|                        |             | (396.2)       | (2012.6)    | (8498.8)     | (8498.8)     |
+| **FeeTier3**           |             |               | -155741.6** | -13456.1     | -13456.1     |
+|                        |             |               | (73635.0)   | (885160.9)   | (885160.9)   |
+| **FeeTier4**           |             |               |             | -4225662.0   | -4225662.0   |
+|                        |             |               |             | (26330208.8) | (26330208.8) |
+| **FeeTier5**           |             |               |             |              | 0            |
+|                        |             |               |             |              | (.)          |
+| **Constant**           | -0.0162     | -0.00683      | 0.0167      | 0.0143       | 0.0143       |
+|                        | (0.0100)    | (0.0110)      | (0.0106)    | (0.0186)     | (0.0186)     |
+| **N**                  | 243         | 243           | 243         | 243          | 243          |
+| **R-squared**          | 0.247       | 0.252         | 0.269       | 0.269        | 0.269        |
+| **Adjusted R-squared** | 0.225       | 0.226         | 0.241       | 0.238        | 0.238        |
 
 ***Note*:**  
 
@@ -838,8 +838,8 @@ Next, we replace **BaseAsset** with **YieldSource**:
 | **Constant**                | 0.0103      | 0.0168        | 0.0330**    | 0.00358      | 0.00358      |
 |                             | (0.0147)    | (0.0151)      | (0.0155)    | (0.0229)     | (0.0229)     |
 | **N**                       | 243         | 243           | 243         | 243          | 243          |
-| **R-sq**                    | 0.319       | 0.322         | 0.330       | 0.337        | 0.337        |
-| **adj. R-sq**               | 0.292       | 0.293         | 0.299       | 0.303        | 0.303        |
+| **R-squared**               | 0.319       | 0.322         | 0.330       | 0.337        | 0.337        |
+| **Adjusted R-squared**      | 0.292       | 0.293         | 0.299       | 0.303        | 0.303        |
 
 ***Note*:**  
 
@@ -866,9 +866,135 @@ The overall shape of the fitted curve is illustrated below:
 
 # Heterogeneity Analyses
 
+Do the regression results differ significantly when the underlying asset is BTC, ETH, Stable, or Other? In this section, we explore the regression results of different models based on BaseAsset grouping.
 
+### Why not group by other variables?
 
+- Grouping by **YieldSource** or **Chain** results in large disparities in sample sizes between groups. For instance, when grouped by YieldSource, there are only 8 observations for YieldSource == RWA, and when grouped by Chain, there are just 2 observations for Chain == 10 (OP). Such small sample sizes could lead to significant bias in the regression results.
+- In contrast, when grouping by **BaseAsset**, the smallest group contains 25 observations. Although this is not very large, it is much better than the other two groupings, where the sample sizes are too small for reliable analysis.
+- With larger sample sizes in the future, we could consider grouping by YieldSource or Chain.
 
+### Haven’t control variables already been added? Why group then? What’s the significance of doing so?
+
+- When **BaseAsset** is included as a control variable, we are essentially adding three 0-1 variables. These variables can only take values of 0 or 1. For example, **BaseAsset_d1** (previously written as BaseAsset == BTC) takes the value of 1 only when BaseAsset is BTC, and 0 otherwise. In this case, we assume that the errors across the groups are identical, represented as $$\epsilon_{i}$$. Additionally, we assume that the heterogeneity in BaseAsset only affects the model's intercept.
+- In the case of **grouped regression**, we assume that the heterogeneity across the groups is large enough that we cannot use the same error term. Instead, each group should have its own error term. Furthermore, the model forms across different groups may differ significantly, not just in the intercept but in the entire model.
+
+To visually examine the data distribution based on BaseAsset, we can create the following scatter plot:
+
+![scatterEffRatioandFeeTierByBaseAsset2](https://cdn.jsdelivr.net/gh/zey9991/mdpic/scatterEffRatioandFeeTierByBaseAsset2.png)
+
+## Polynomial Regression Model
+
+### BaseAsset==BTC
+
+|                 | (1)         | (2)         | (3)         | (4)         | (5)         |
+| --------------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| **Model**       | Linear      | Quadratic   | Cubic       | Quartic     | Quintic     |
+| **DurationDay** | 0.000108*** | 0.0000962** | 0.0000954** | 0.0000954** | 0.0000954** |
+| (Std. Error)    | (0.0000246) | (0.0000340) | (0.0000364) | (0.0000364) | (0.0000364) |
+| **FeeTier**     | 15.03***    | 5.519       | 1.665       | 1.665       | 1.665       |
+| (Std. Error)    | (2.222)     | (11.71)     | (38.27)     | (38.27)     | (38.27)     |
+| **FeeTier2**    |             | 2542.2      | 5023.8      | 5023.8      | 5023.8      |
+| (Std. Error)    |             | (2835.5)    | (23526.1)   | (23526.1)   | (23526.1)   |
+| **FeeTier3**    |             |             | -472302.6   | -472302.6   | -472302.6   |
+| (Std. Error)    |             |             | (4332461.9) | (4332461.9) | (4332461.9) |
+| **FeeTier4**    |             |             |             | 0           | 0           |
+| (Std. Error)    |             |             |             | (.)         | (.)         |
+| **FeeTier5**    |             |             |             |             | 0           |
+| (Std. Error)    |             |             |             |             | (.)         |
+| **_cons**       | -0.0250***  | -0.0162     | -0.0143     | -0.0143     | -0.0143     |
+| (Std. Error)    | (0.00520)   | (0.0131)    | (0.0223)    | (0.0223)    | (0.0223)    |
+| **N**           | 25          | 25          | 25          | 25          | 25          |
+| **R-sq**        | 0.653       | 0.666       | 0.667       | 0.667       | 0.667       |
+| **Adj. R-sq**   | 0.622       | 0.619       | 0.600       | 0.600       | 0.600       |
+
+As shown in the table above:
+
+- For the group with BaseAsset = BTC, the linear relationship between **EfficientRatio** and **FeeTier** is more apparent, and the model has a higher explanatory power (adjusted R-squared is higher than in other higher-degree polynomial models in the table). This can also be visually confirmed in the scatter plot at the beginning of this section.
+- The regression coefficient estimates suggest that when **FeeTier** increases by 1%, the model predicts that **EfficientRatio** will increase by 15.03%. This estimate is significantly different from 0 at the 1% significance level.
+
+### BaseAsset==ETH
+
+|                 | (1)         | (2)         | (3)          | (4)          | (5)          |
+| --------------- | ----------- | ----------- | ------------ | ------------ | ------------ |
+| **Model**       | Linear      | Quadratic   | Cubic        | Quartic      | Quintic      |
+| **DurationDay** | 0.0000427   | 0.0000227   | 0.00000559   | 0.00000559   | 0.00000559   |
+| (Std. Error)    | (0.0000371) | (0.0000310) | (0.0000269)  | (0.0000269)  | (0.0000269)  |
+| **FeeTier**     | 12.72***    | -6.337      | -135.8*      | -135.8*      | -135.8*      |
+| (Std. Error)    | (2.966)     | (11.29)     | (69.40)      | (69.40)      | (69.40)      |
+| **FeeTier2**    |             | 1930.1*     | 48714.1**    | 48714.1**    | 48714.1**    |
+| (Std. Error)    |             | (1008.4)    | (22761.1)    | (22761.1)    | (22761.1)    |
+| **FeeTier3**    |             |             | -3459493.1** | -3459493.1** | -3459493.1** |
+| (Std. Error)    |             |             | (1635347.0)  | (1635347.0)  | (1635347.0)  |
+| **FeeTier4**    |             |             |              | 0            | 0            |
+| (Std. Error)    |             |             |              | (.)          | (.)          |
+| **FeeTier5**    |             |             |              |              | 0            |
+| (Std. Error)    |             |             |              |              | (.)          |
+| **_cons**       | 0.0165      | 0.0407**    | 0.115**      | 0.115**      | 0.115**      |
+| (Std. Error)    | (0.0103)    | (0.0187)    | (0.0504)     | (0.0504)     | (0.0504)     |
+| **N**           | 114         | 114         | 114          | 114          | 114          |
+| **R-sq**        | 0.070       | 0.086       | 0.116        | 0.116        | 0.116        |
+| **Adj. R-sq**   | 0.053       | 0.061       | 0.083        | 0.083        | 0.083        |
+
+From the table above:
+
+- In the polynomial models, the optimal fit is the cubic regression model, as indicated by the highest adjusted R-squared. The coefficients for the first, second, and third-degree terms are significantly different from 0 at the 10%, 5%, and 5% significance levels, respectively.
+- The fitted cubic model reveals that when other control variables are at their median values, the minimum value occurs at **(FeeTier = 0.00585, EfficientRatio = 0.14674)** and the maximum value occurs at **(FeeTier = 0.00282, EfficientRatio = 0.16458)**.
+
+### BaseAsset==Stable
+
+|                 | (1) Linear | (2) Quadratic | (3) Cubic   | (4) Quartic | (5) Quintic |
+| --------------- | ---------- | ------------- | ----------- | ----------- | ----------- |
+| **DurationDay** | -0.000157  | -0.000212     | -0.000196   | -0.000196   | -0.000196   |
+|                 | (0.000161) | (0.000134)    | (0.000132)  | (0.000132)  | (0.000132)  |
+| **FeeTier**     | 20.46***   | 1.635         | 63.25       | 63.25       | 63.25       |
+|                 | (3.457)    | (12.54)       | (37.96)     | (37.96)     | (37.96)     |
+| **FeeTier2**    |            | 1807.4        | -16615.4*   | -16615.4*   | -16615.4*   |
+|                 |            | (1323.6)      | (9670.6)    | (9670.6)    | (9670.6)    |
+| **FeeTier3**    |            |               | 1276871.6** | 1276871.6** | 1276871.6** |
+|                 |            |               | (610776.3)  | (610776.3)  | (610776.3)  |
+| **FeeTier4**    |            |               |             | 0           | 0           |
+|                 |            |               |             | (.)         | (.)         |
+| **FeeTier5**    |            |               |             |             | 0           |
+|                 |            |               |             |             | (.)         |
+| **_cons**       | 0.0357     | 0.0699***     | 0.0232      | 0.0232      | 0.0232      |
+|                 | (0.0412)   | (0.0258)      | (0.0187)    | (0.0187)    | (0.0187)    |
+| **N**           | 71         | 71            | 71          | 71          | 71          |
+| **R-sq**        | 0.272      | 0.284         | 0.301       | 0.301       | 0.301       |
+| **adj. R-sq**   | 0.251      | 0.252         | 0.259       | 0.259       | 0.259       |
+
+From the table above:
+
+- The optimal fit in the polynomial model is also the cubic regression model, as it has the highest adjusted R-squared. The coefficients for the second- and third-degree terms are significantly different from 0 at the 10% and 5% significance levels, respectively.
+
+- The cubic model reveals that when other control variables are at their median values, the minimum value occurs at **(FeeTier = 0.00170, EfficientRatio = 0.00868)** and the maximum value occurs at **(FeeTier = 0.00768, EfficientRatio = 0.37899)**.
+
+### BaseAsset==Other
+
+|                 | (1) Linear  | (2) Quadratic | (3) Cubic   | (4) Quartic  | (5) Quintic  |
+| --------------- | ----------- | ------------- | ----------- | ------------ | ------------ |
+| **DurationDay** | -0.0000611  | -0.0000636    | -0.000104*  | -0.0000775*  | -0.0000775*  |
+|                 | (0.0000409) | (0.0000536)   | (0.0000535) | (0.0000447)  | (0.0000447)  |
+| **FeeTier**     | 21.53***    | 19.86         | -49.23      | 47.10        | 47.10        |
+|                 | (5.551)     | (21.49)       | (36.25)     | (60.00)      | (60.00)      |
+| **FeeTier2**    |             | 97.00         | 11156.5     | -20088.8     | -20088.8     |
+|                 |             | (942.8)       | (7586.5)    | (21719.0)    | (21719.0)    |
+| **FeeTier3**    |             |               | -393397.6   | 2789837.2    | 2789837.2    |
+|                 |             |               | (294436.1)  | (2534777.2)  | (2534777.2)  |
+| **FeeTier4**    |             |               |             | -92673363.3  | -92673363.3  |
+|                 |             |               |             | (80157694.3) | (80157694.3) |
+| **FeeTier5**    |             |               |             |              | 0            |
+|                 |             |               |             |              | (.)          |
+| **_cons**       | 0.0104      | 0.0134        | 0.0887**    | 0.0168       | 0.0168       |
+|                 | (0.0153)    | (0.0378)      | (0.0362)    | (0.0442)     | (0.0442)     |
+| **N**           | 33          | 33            | 33          | 33           | 33           |
+| **R-sq**        | 0.576       | 0.576         | 0.673       | 0.702        | 0.702        |
+| **adj. R-sq**   | 0.547       | 0.532         | 0.626       | 0.647        | 0.647        |
+
+From the table above:
+
+- The optimal fit in the polynomial models is the linear regression model. Although higher-degree polynomial models have a higher adjusted R-squared, their coefficients are not significantly different from 0, making the estimated parameters unreliable. This is also evident in the scatter plot at the beginning of this section.
+- The regression coefficient estimates indicate that when **FeeTier** increases by 1%, the model predicts that **EfficientRatio** will increase by 21.53%. This estimate is significantly different from 0 at the 1% significance level.
 
 # References
 
