@@ -744,9 +744,125 @@ Next, let's take a closer look at these outlier data points, which are summarize
 - The **ether.fi weETH 27JUN2024** and **wstETH 28MAR2024** pools have already become inactive, and their data can be considered accurate, provided our database is reliable.
 - On the other hand, the **USUALX 27MAR2025** pool is set to expire on **March 27, 2025**, and if its **EfficientRatio** changes before that date, it could significantly impact the parameters of the cubic regression model.
 
+## Replacing Control Variables
 
+In this section, we attempt to replace several control variables in our model to assess its sensitivity to these changes. Specifically, we substitute **BaseAsset** with the following variables and examine the model parameters:
 
+- **YieldSource**: The classification of revenue sources for different pools.
+- **Chain**: The blockchain on which each pool operates.
 
+As previously mentioned, we do not include all these control variables in the model simultaneously due to their high collinearity, which could lead to multicollinearity issues.
+
+### Polynomial Regression Model
+
+First, we replace **BaseAsset** with **Chain** and re-run the polynomial regression. The regression results are shown below:
+
+|                   | (1) Linear  | (2) Quadratic | (3) Cubic   | (4) Quartic  | (5) Quintic  |
+| ----------------- | ----------- | ------------- | ----------- | ------------ | ------------ |
+| **DurationDay**   | 0.0000412   | 0.0000309     | 0.00000871  | 0.00000957   | 0.00000957   |
+|                   | (0.0000371) | (0.0000342)   | (0.0000272) | (0.0000252)  | (0.0000252)  |
+| **chain==ETH**    | 0.0264***   | 0.0274***     | 0.0321***   | 0.0322***    | 0.0322***    |
+|                   | (0.00914)   | (0.00901)     | (0.00937)   | (0.00914)    | (0.00914)    |
+| **chain==OP**     | -0.00813    | -0.00771      | -0.00309    | -0.00336     | -0.00336     |
+|                   | (0.00728)   | (0.00691)     | (0.00599)   | (0.00528)    | (0.00528)    |
+| **chain==BSC**    | 0.00222     | 0.00557       | 0.0168      | 0.0166       | 0.0166       |
+|                   | (0.0147)    | (0.0152)      | (0.0168)    | (0.0169)     | (0.0169)     |
+| **chain==Mantle** | 0.0167      | 0.0179        | 0.0148      | 0.0147       | 0.0147       |
+|                   | (0.0137)    | (0.0152)      | (0.0130)    | (0.0132)     | (0.0132)     |
+| **chain==Base**   | -0.0301*    | -0.0262*      | -0.0206     | -0.0197      | -0.0197      |
+|                   | (0.0159)    | (0.0144)      | (0.0150)    | (0.0135)     | (0.0135)     |
+| **FeeTier**       | 19.45***    | 12.95**       | -10.98      | -7.393       | -7.393       |
+|                   | (2.572)     | (5.899)       | (12.13)     | (26.71)      | (26.71)      |
+| **FeeTier2**      |             | 510.6         | 4559.6**    | 3229.3       | 3229.3       |
+|                   |             | (396.2)       | (2012.6)    | (8498.8)     | (8498.8)     |
+| **FeeTier3**      |             |               | -155741.6** | -13456.1     | -13456.1     |
+|                   |             |               | (73635.0)   | (885160.9)   | (885160.9)   |
+| **FeeTier4**      |             |               |             | -4225662.0   | -4225662.0   |
+|                   |             |               |             | (26330208.8) | (26330208.8) |
+| **FeeTier5**      |             |               |             |              | 0            |
+|                   |             |               |             |              | (.)          |
+| **Constant**      | -0.0162     | -0.00683      | 0.0167      | 0.0143       | 0.0143       |
+|                   | (0.0100)    | (0.0110)      | (0.0106)    | (0.0186)     | (0.0186)     |
+| **N**             | 243         | 243           | 243         | 243          | 243          |
+| **R-sq**          | 0.247       | 0.252         | 0.269       | 0.269        | 0.269        |
+| **adj. R-sq**     | 0.225       | 0.226         | 0.241       | 0.238        | 0.238        |
+
+***Note*:**  
+
+- **Standard errors** are shown in parentheses below the corresponding coefficient estimates.  
+- **Significance levels (p-values):**  
+  - \*\*\* represent p < 0.01 (**highly significant**)  
+  - \*\* represent p < 0.05 (**moderately significant**)  
+  - \* represents p < 0.1 (**weakly significant**)  
+  - No stars indicate **p ≥ 0.1**, meaning the result is not statistically significant.  
+
+From the table, we observe that the cubic regression model remains the optimal model in terms of adjusted R-squared, with a value of **0.241**, slightly higher than **0.230** when using **BaseAsset**. Additionally, the cubic term coefficient remains negative and statistically significant at the 5% level.
+
+By setting other variables to their median values, we can estimate the turning points of the fitted curve:
+
+- The **minimum** occurs at **(FeeTier = 0.00129, EfficientRatio = 0.04306)**.
+- The **maximum** occurs at **(FeeTier = 0.01823, EfficientRatio = 0.42157)**.
+
+These values remain largely consistent with the results obtained using **BaseAsset**.
+
+Next, we replace **BaseAsset** with **YieldSource**:
+
+|                             | (1) Linear  | (2) Quadratic | (3) Cubic   | (4) Quartic  | (5) Quintic  |
+| --------------------------- | ----------- | ------------- | ----------- | ------------ | ------------ |
+| **DurationDay**             | 0.00000109  | -0.00000737   | -0.0000215  | -0.0000147   | -0.0000147   |
+|                             | (0.0000221) | (0.0000213)   | (0.0000191) | (0.0000194)  | (0.0000194)  |
+| **YieldSource==Staking**    | -0.0164     | -0.0137       | -0.0103     | -0.00878     | -0.00878     |
+|                             | (0.0137)    | (0.0134)      | (0.0127)    | (0.0133)     | (0.0133)     |
+| **YieldSource==Restaking**  | -0.0118     | -0.00968      | -0.00705    | -0.00830     | -0.00830     |
+|                             | (0.0137)    | (0.0137)      | (0.0132)    | (0.0136)     | (0.0136)     |
+| **YieldSource==Lending**    | -0.0106     | -0.00940      | -0.00742    | -0.00608     | -0.00608     |
+|                             | (0.0140)    | (0.0137)      | (0.0131)    | (0.0136)     | (0.0136)     |
+| **YieldSource==DEX**        | 0.1000*     | 0.101*        | 0.100*      | 0.107*       | 0.107*       |
+|                             | (0.0569)    | (0.0567)      | (0.0565)    | (0.0561)     | (0.0561)     |
+| **YieldSource==Derivative** | -0.0192     | -0.0181       | -0.0153     | -0.0191      | -0.0191      |
+|                             | (0.0132)    | (0.0129)      | (0.0123)    | (0.0131)     | (0.0131)     |
+| **YieldSource==Stable**     | 0.0332      | 0.0354        | 0.0380      | 0.0418*      | 0.0418*      |
+|                             | (0.0253)    | (0.0246)      | (0.0241)    | (0.0251)     | (0.0251)     |
+| **YieldSource==RWA**        | -0.0117     | -0.00685      | 0.00106     | 0.00523      | 0.00523      |
+|                             | (0.0166)    | (0.0165)      | (0.0162)    | (0.0152)     | (0.0152)     |
+| **FeeTier**                 | 17.83***    | 12.40**       | -4.231      | 41.10        | 41.10        |
+|                             | (2.535)     | (5.476)       | (10.50)     | (28.28)      | (28.28)      |
+| **FeeTier2**                |             | 424.5         | 3229.7*     | -13558.1     | -13558.1     |
+|                             |             | (356.4)       | (1801.8)    | (10113.9)    | (10113.9)    |
+| **FeeTier3**                |             |               | -107809.1   | 1683360.6    | 1683360.6    |
+|                             |             |               | (65856.1)   | (1071212.3)  | (1071212.3)  |
+| **FeeTier4**                |             |               |             | -53133753.4* | -53133753.4* |
+|                             |             |               |             | (31831102.3) | (31831102.3) |
+| **FeeTier5**                |             |               |             |              | 0            |
+|                             |             |               |             |              | (.)          |
+| **Constant**                | 0.0103      | 0.0168        | 0.0330**    | 0.00358      | 0.00358      |
+|                             | (0.0147)    | (0.0151)      | (0.0155)    | (0.0229)     | (0.0229)     |
+| **N**                       | 243         | 243           | 243         | 243          | 243          |
+| **R-sq**                    | 0.319       | 0.322         | 0.330       | 0.337        | 0.337        |
+| **adj. R-sq**               | 0.292       | 0.293         | 0.299       | 0.303        | 0.303        |
+
+***Note*:**  
+
+- **Standard errors** are shown in parentheses below the corresponding coefficient estimates.  
+- **Significance levels (p-values):**  
+  - \*\*\* represent p < 0.01 (**highly significant**)  
+  - \*\* represent p < 0.05 (**moderately significant**)  
+  - \* represents p < 0.1 (**weakly significant**)  
+  - No stars indicate **p ≥ 0.1**, meaning the result is not statistically significant.  
+
+From the table, we find that in this case, the **quartic regression model** becomes the best-fitting model, though only the fourth-degree term is statistically significant at the 10% level. Moreover, its adjusted R-squared is only slightly higher than that of the cubic model. Despite this change in the highest-order term, we can still derive the following key insights:
+
+- When setting other control variables to their median values, the **maximum** occurs at **(FeeTier = 0.01688, EfficientRatio = 0.61392)**.
+- Within the open interval **FeeTier ∈ (0, 2%)**, the fitted curve does not exhibit a minimum point.
+
+The overall shape of the fitted curve is illustrated below:
+
+![YieldSourceFittedCurve](https://cdn.jsdelivr.net/gh/zey9991/mdpic/YieldSourceFittedCurve.png)
+
+**Conclusion**
+
+- **Replacing BaseAsset with Chain has minimal impact on the model results**, as the cubic regression remains the best-fitting model. However, **when replacing BaseAsset with YieldSource, the quartic model shows a slight advantage**.
+- That said, the turning points of the fitted curve remain relatively stable. When using **Chain**, the maximum occurs at **FeeTier = 0.01823**, while using **YieldSource**, it occurs at **FeeTier = 0.01688**. Both cases indicate that even if the relationship between **EfficientRatio** and **FeeTier** is not strictly inverted U-shaped, the current **FeeTier** is still suboptimal—suggesting that it is set too low.
 
 # Heterogeneity Analyses
 
