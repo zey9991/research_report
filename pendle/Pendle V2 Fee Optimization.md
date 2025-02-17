@@ -643,6 +643,10 @@ Similarly, we generate plots for adjustments at the **2.5% and 5% percentiles**:
 
 Since the **FeeTier** variable has the same **2.5% and 5% percentile values**, as well as **95% and 97.5% percentile values**, the **vertical boundaries** remain unchanged across the last two plots.
 
+Another point worth noting is that although the 1% percentile of the **FeeTier** variable differs from the 2.5% and 5% percentiles, it can be observed that in all three cases, the number of samples to be processed remains the same at three. This is why, in the subsequent robustness analysis, many parameters do not change when trimming at 1%, 2.5%, and 5%.
+
+Lastly, since the percentiles of a variable **X** and its square **X²** typically do not align, we did not directly apply percentile-based trimming or Winsorization to **FeeTier²**. Instead, we performed trimming or Winsorization based on the percentiles of **FeeTier** to maintain consistency in the data.
+
 ### Quadratic Regression Model
 
 We apply **Winsorization** at **1%, 2.5%, and 5%** to both EfficientRatio and FeeTier. The resulting quadratic regression coefficients are presented below:
@@ -650,7 +654,7 @@ We apply **Winsorization** at **1%, 2.5%, and 5%** to both EfficientRatio and Fe
 | FeeTier\EfficientRatio | No Winsorization | Winsorized at 1% | Winsorized at 2.5% | Winsorized at 5% |
 | ---------------------- | ---------------- | ---------------- | ------------------ | ---------------- |
 | No Winsorization       | 566.422          | 565.962          | 327.695            | 19.897           |
-| Winsorized at 1%       | 2,441.446***     | 2,477.559***     | 2,176.726***       | 1,588.870***     |
+| Winsorized at 1%       | 2,442.106***     | 2,478.189***     | 2,177.282***       | 1,589.315***     |
 | Winsorized at 2.5%     | 2,441.446***     | 2,477.559***     | 2,176.726***       | 1,588.870***     |
 | Winsorized at 5%       | 2,441.446***     | 2,477.559***     | 2,176.726***       | 1,588.870***     |
 
@@ -661,9 +665,9 @@ Next, we apply **trimming** at different percentile levels:
 | FeeTier\EfficientRatio | No Trimming | Trimmed at 1% | Trimmed at 2.5% | Trimmed at 5% |
 | ---------------------- | ----------- | ------------- | --------------- | ------------- |
 | No Trimming            | 566.422     | 575.411       | 1,835.490***    | 794.550**     |
-| Trimmed at 1%          | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
-| Trimmed at 2.5%        | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
-| Trimmed at 5%          | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
+| Trimmed at 1%          | 2,227.771** | 2,413.150***  | 1,853.897***    | 810.543**     |
+| Trimmed at 2.5%        | 2,227.771** | 2,413.150***  | 1,853.897***    | 810.543**     |
+| Trimmed at 5%          | 2,227.771** | 2,413.150***  | 1,853.897***    | 810.543**     |
 
 *Note*: *Asterisks indicate statistical significance as previously defined*.
 
@@ -687,9 +691,9 @@ The following table illustrates how the adjusted R-squared of the quadratic mode
 | Adjusted R-squared | No Trimming | Trimmed at 1% | Trimmed at 2.5% | Trimmed at 5% |
 | ------------------ | ----------- | ------------- | --------------- | ------------- |
 | No Trimming        | 0.220       | 0.409         | 0.427           | 0.237         |
-| Trimmed at 1%      | 0.341       | 0.498         | 0.563           | 0.329         |
-| Trimmed at 2.5%    | 0.341       | 0.498         | 0.563           | 0.329         |
-| Trimmed at 5%      | 0.341       | 0.498         | 0.563           | 0.329         |
+| Trimmed at 1%      | 0.189       | 0.378         | 0.427           | 0.237         |
+| Trimmed at 2.5%    | 0.189       | 0.378         | 0.427           | 0.237         |
+| Trimmed at 5%      | 0.189       | 0.378         | 0.427           | 0.237         |
 
 From the two tables above, it is evident that both Winsorization and Trimming improve the model’s goodness of fit.
 
@@ -699,49 +703,46 @@ If the inverted U-shaped relationship between EfficientRatio and FeeTier holds t
 
 ### Cubic Regression Model
 
-我们可以对三次项回归模型进行类似的稳健性分析。The resulting cubic regression coefficients are presented below:
+We can perform a similar robustness analysis for the cubic regression model. The resulting cubic regression coefficients are presented below:
 
 | FeeTier\EfficientRatio | No Winsorization | Winsorized at 1% | Winsorized at 2.5% | Winsorized at 5% |
 | ---------------------- | ---------------- | ---------------- | ------------------ | ---------------- |
 | No Winsorization       | -132,549.151*    | -135,119.058**   | -137,466.328***    | -123,117.639***  |
-| Winsorized at 1%       | 316,751.208      | 369,409.870      | 314,918.717        | 235,720.528      |
-| Winsorized at 2.5%     | 316,751.208      | 369,409.870      | 314,918.717        | 235,720.528      |
-| Winsorized at 5%       | 316,751.208      | 369,409.870      | 314,918.717        | 235,720.528      |
+| Winsorized at 1%       | 315,506.811      | 368,484.888      | 314,068.688        | 234,889.858      |
+| Winsorized at 2.5%     | 316,752.006      | 369,410.658      | 314,919.215        | 235,720.692      |
+| Winsorized at 5%       | 316,752.006      | 369,410.658      | 314,919.215        | 235,720.692      |
 
 *Note*: *Asterisks indicate statistical significance as previously defined*.
 
-Similarily, we apply **trimming** at different percentile levels:
+Similarly, we apply **trimming** at different percentile levels:
 
 | FeeTier\EfficientRatio | No Trimming   | Trimmed at 1%  | Trimmed at 2.5% | Trimmed at 5% |
 | ---------------------- | ------------- | -------------- | --------------- | ------------- |
 | No Trimming            | -132,549.151* | -145,425.009** | 337,534.238     | 251,277.926   |
-| Trimmed at 1%          | 1,715.276     | -217,311.097   | -326,727.498    | -225,577.613  |
-| Trimmed at 2.5%        | 1,715.276     | -217,311.097   | -326,727.498    | -225,577.613  |
-| Trimmed at 5%          | 1,715.276     | -217,311.097   | -326,727.498    | -225,577.613  |
+| Trimmed at 1%          | 240,248.170   | 435,210.539    | 331,722.864     | 245,964.709   |
+| Trimmed at 2.5%        | 240,248.170   | 435,210.539    | 331,722.864     | 245,964.709   |
+| Trimmed at 5%          | 240,248.170   | 435,210.539    | 331,722.864     | 245,964.709   |
 
 *Note*: *Asterisks indicate statistical significance as previously defined*.
 
-可以看出，当FeeTier未做处理时，即使EfficientRatio分别在1%，2.5%和5%上做了缩尾处理，三次项系数仍然显著异于0。而EfficientRatio在1%做了截尾处理时，三次项系数仍然显著异于0。但是在2.5%和5%上做了截尾处理后，三次项系数翻转未正且不显著异于0。除此之外，当FeeTier做了缩尾或截尾处理后，三次项系数均不显著异于0，甚至可能会翻转为正。
+It can be observed that when **FeeTier** is unprocessed, the cubic regression coefficients remain significantly different from zero even after **EfficientRatio** is Winsorized at the 1%, 2.5%, and 5% levels. When **EfficientRatio** is trimmed at the 1% level, the cubic coefficients also remain statistically significant. However, when trimming is applied at the 2.5% and 5% levels, the cubic coefficients flip to positive and become statistically insignificant. Furthermore, when **FeeTier** undergoes Winsorization or trimming, the cubic coefficients generally lose their statistical significance, and some even flip to positive.
 
-直觉上，这说明三次项回归模型对FeeTier的改变更加敏感，我们可以通过检验调整R方来进一步验证这一点：
+This suggests that:
 
-| FeeTier\EfficientRatio | No Winsorization | Winsorized at 1% | Winsorized at 2.5% | Winsorized at 5% |
-| ---------------------- | ---------------- | ---------------- | ------------------ | ---------------- |
-| No Winsorization       | 0.230            | 0.297            | 0.384              | 0.405            |
-| Winsorized at 1%       | 0.219            | 0.284            | 0.377              | 0.407            |
-| Winsorized at 2.5%     | 0.219            | 0.284            | 0.377              | 0.407            |
-| Winsorized at 5%       | 0.219            | 0.284            | 0.377              | 0.407            |
+- The model is more sensitive to changes in the **FeeTier** variable within the dataset.
+- The reliability of the results from the cubic regression model depends significantly on the accuracy of outliers in the dataset. In fact, if these outliers are genuine and reliable, rather than being caused by erroneous data or errors, then our Winsorization or trimming treatment might distort meaningful data, which would hinder the model's interpretability. 
+- In conclusion, if these outliers are authentic and trustworthy, the results of the cubic regression model can still offer considerable insights for setting the **FeeTier** in **V2**.
 
-下表显示了截尾处理的调整R方变化：
+Next, let's take a closer look at these outlier data points, which are summarized in the table below:
 
-| FeeTier\EfficientRatio | No Trimming | Trimmed at 1% | Trimmed at 2.5% | Trimmed at 5% |
-| ---------------------- | ----------- | ------------- | --------------- | ------------- |
-| No Trimming            | 0.230       | 0.435         | 0.429           | 0.238         |
-| Trimmed at 1%          | 0.0837      | 0.119         | 0.152           | 0.166         |
-| Trimmed at 2.5%        | 0.0837      | 0.119         | 0.152           | 0.166         |
-| Trimmed at 5%          | 0.0837      | 0.119         | 0.152           | 0.166         |
+| pool                     | Fee Tier | Start Date | Expiry Date | Duration(Day) | Yield Source  | Base Asset | Underlying Issuer | chain | AverageIY   | Average Daily LP TVL | Total Swap Fee | Total Swap Fee (im+ex) | Average Daily Swap Fee | Average Daily Swap Fee (im + ex) | EfficientRatio |
+| ------------------------ | -------- | ---------- | ----------- | ------------- | ------------- | ---------- | ----------------- | ----- | ----------- | -------------------- | -------------- | ---------------------- | ---------------------- | -------------------------------- | -------------- |
+| ether.fi weETH 27JUN2024 | 0.0003   | 2024/1/9   | 2024/6/27   | 170           | 2-Restaking   | ETH        | Ether.fi          | 1     | 0.273473729 | 113169762.6          | 339111.7124    | 1913242.003            | 2006.57818             | 11320.9586                       | 0.036512844    |
+| wstETH 28MAR2024         | 0.0003   | 2023/12/5  | 2024/3/28   | 114           | 1-Staking     | ETH        | Lido              | 42161 | 0.037198349 | 3828171.07           | 6693.907152    | 7197.568515            | 59.23811639            | 63.69529659                      | 0.006073078    |
+| USUALX 27MAR2025         | 0.02     | 2024/12/20 | 2025/3/27   | 97            | 6-Stablecoins | Other      | Usual             | 1     | 1.414833232 | 7557514.454          | 410948.9924    | 420511.1122            | 8218.979848            | 8410.222245                      | 0.406182633    |
 
-通过以上两个表格可以看出，在FeeTier缩尾处理时，模型的调整R方变化较小，但是在FeeTier截尾处理后，模型的调整R方降低的幅度更大。
+- The **ether.fi weETH 27JUN2024** and **wstETH 28MAR2024** pools have already become inactive, and their data can be considered accurate, provided our database is reliable.
+- On the other hand, the **USUALX 27MAR2025** pool is set to expire on **March 27, 2025**, and if its **EfficientRatio** changes before that date, it could significantly impact the parameters of the cubic regression model.
 
 
 
