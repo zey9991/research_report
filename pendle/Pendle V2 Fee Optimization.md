@@ -589,6 +589,89 @@ From the above discussion, we can conclude that:
 
 ## Conclusions
 
+# Robustness Analyses
+
+In this section, we conduct robustness analyses on the statistical models presented earlier to ensure that our results are not driven by outliers or randomness.
+
+## Winsorization and Trimming
+
+Winsorization and trimming are two commonly used techniques for handling extreme values in a dataset.
+
+- **Winsorization**: Instead of removing extreme values, Winsorization replaces them with the closest threshold values. For example, in a 5% Winsorization, values below the 5th percentile are set to the 5th percentile value, and values above the 95th percentile are set to the 95th percentile value.
+- **Trimming**: Unlike Winsorization, trimming removes extreme values entirely from the dataset. A 5% trimming means that observations below the 5th percentile and above the 95th percentile are excluded from analysis.
+
+Commonly used Winsorization and trimming thresholds include 1%, 2.5%, and 5%. These adjustments can be applied to either one or both tails of the distribution.
+
+Given the descriptive statistics observed earlier, we note that both **FeeTier** and **EfficientRatio** exhibit **right-skewness** and **high kurtosis**. Therefore, we apply Winsorization and trimming to both ends of their distributions.
+
+Below, we present the percentile values for FeeTier and EfficientRatio:
+
+| Percentile | FeeTier Centile | EfficientRatio Centile |
+| ---------- | --------------- | ---------------------- |
+| 0          | 0.0003          | 0.0003647              |
+| 1          | 0.000388        | 0.0004194              |
+| 2.5        | 0.0005          | 0.0008641              |
+| 5          | 0.0005          | 0.0015495              |
+| 95         | 0.01            | 0.2257768              |
+| 97.5       | 0.01            | 0.3733998              |
+| 99         | 0.01            | 0.6541161              |
+| 100        | 0.02            | 0.7678162              |
+
+To better visualize the data points that will be Winsorized or trimmed, we generate the following scatter plot:
+
+![Winsorized or Trimmed at 1 Percent1](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Winsorized%20or%20Trimmed%20at%201%20Percent1.png)
+
+In the plot above:
+
+- The two **vertical dashed lines** represent the **1st and 99th percentiles** of **FeeTier**.
+- The two **horizontal dashed lines** represent the **1st and 99th percentiles** of **EfficientRatio**.
+
+The **enclosed region** (including data points on the dashed lines) consists of values **retained** without modification. The data points **outside** this region (colored differently) are subject to Winsorization or trimming.
+
+Similarly, we generate plots for adjustments at the **2.5% and 5% percentiles**:
+
+
+
+![Winsorized or Trimmed at 2point5 Percent2](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Winsorized%20or%20Trimmed%20at%202point5%20Percent2.png)
+
+![Winsorized or Trimmed at 5 Percent1](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Winsorized%20or%20Trimmed%20at%205%20Percent1.png)
+
+Since the **FeeTier** variable has the same **2.5% and 5% percentile values**, as well as **95% and 97.5% percentile values**, the **vertical boundaries** remain unchanged across the last two plots.
+
+### Quadratic Regression Model
+
+We apply **Winsorization** at **1%, 2.5%, and 5%** to both EfficientRatio and FeeTier. The resulting quadratic regression coefficients are presented below:
+
+| FeeTier\EfficientRatio | No Winsorization | Winsorized at 1% | Winsorized at 2.5% | Winsorized at 5% |
+| ---------------------- | ---------------- | ---------------- | ------------------ | ---------------- |
+| No Winsorization       | 566.422          | 565.962          | 327.695            | 19.897           |
+| Winsorized at 1%       | 2,441.446***     | 2,477.559***     | 2,176.726***       | 1,588.870***     |
+| Winsorized at 2.5%     | 2,441.446***     | 2,477.559***     | 2,176.726***       | 1,588.870***     |
+| Winsorized at 5%       | 2,441.446***     | 2,477.559***     | 2,176.726***       | 1,588.870***     |
+
+*Note*: *Asterisks indicate statistical significance as previously defined*.
+
+Next, we apply **trimming** at different percentile levels:
+
+| Quadratic       | No Trimming | Trimmed at 1% | Trimmed at 2.5% | Trimmed at 5% |
+| --------------- | ----------- | ------------- | --------------- | ------------- |
+| No Trimming     | 566.422     | 575.411       | 1,835.490***    | 794.550**     |
+| Trimmed at 1%   | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
+| Trimmed at 2.5% | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
+| Trimmed at 5%   | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
+
+*Note*: *Asterisks indicate statistical significance as previously defined*.
+
+
+
+
+
+
+
+# Heterogeneity Analyses
+
+
+
 
 
 # References
