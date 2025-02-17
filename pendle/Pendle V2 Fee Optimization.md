@@ -628,6 +628,11 @@ In the plot above:
 
 The **enclosed region** (including data points on the dashed lines) consists of values **retained** without modification. The data points **outside** this region (colored differently) are subject to Winsorization or trimming.
 
+Intuitively:
+
+- **Winsorization** replaces data points exceeding a boundary with the value of the nearest boundary within the enclosed region. If data points exceed both boundaries, their values are replaced by the nearest vertex of the enclosed region.
+- **Trimming**, on the other hand, completely discards data points that fall outside the boundaries.
+
 Similarly, we generate plots for adjustments at the **2.5% and 5% percentiles**:
 
 
@@ -653,16 +658,90 @@ We apply **Winsorization** at **1%, 2.5%, and 5%** to both EfficientRatio and Fe
 
 Next, we apply **trimming** at different percentile levels:
 
-| Quadratic       | No Trimming | Trimmed at 1% | Trimmed at 2.5% | Trimmed at 5% |
-| --------------- | ----------- | ------------- | --------------- | ------------- |
-| No Trimming     | 566.422     | 575.411       | 1,835.490***    | 794.550**     |
-| Trimmed at 1%   | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
-| Trimmed at 2.5% | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
-| Trimmed at 5%   | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
+| FeeTier\EfficientRatio | No Trimming | Trimmed at 1% | Trimmed at 2.5% | Trimmed at 5% |
+| ---------------------- | ----------- | ------------- | --------------- | ------------- |
+| No Trimming            | 566.422     | 575.411       | 1,835.490***    | 794.550**     |
+| Trimmed at 1%          | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
+| Trimmed at 2.5%        | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
+| Trimmed at 5%          | 1,753.746*  | 2,248.785***  | 1,801.280***    | 720.240*      |
 
 *Note*: *Asterisks indicate statistical significance as previously defined*.
 
+We observe that, for the quadratic regression model, the quadratic term remains consistently positive across all cases, regardless of whether Winsorization or Trimming is applied. In most cases, the quadratic term, which was initially insignificant, becomes significantly different from zero after Winsorization or Trimming. 
 
+Moreover, as seen in the earlier scatter plots, these transformations make the positive correlation between **EfficientRatio** and **FeeTier** more visually apparent.
+
+To quantify this effect, we first check whether the fitted quadratic curve has a minimum within the open interval (0%, 2%) of FeeTier. Based on the regression coefficients, it is evident that none of the quadratic curves have a minimum within this interval, meaning that all the fitted quadratic curves are shaped like the right half of a U-curve, without any decreasing followed by increasing pattern (the testing process is not presented in this report).
+
+Then, we examine the adjusted R-squared values of the quadratic regression model, as shown in the table below:
+
+| Adjusted R-squared | No Winsorization | Winsorized at 1% | Winsorized at 2.5% | Winsorized at 5% |
+| ------------------ | ---------------- | ---------------- | ------------------ | ---------------- |
+| No Winsorization   | 0.220            | 0.283            | 0.357              | 0.370            |
+| Winsorized at 1%   | 0.221            | 0.285            | 0.377              | 0.408            |
+| Winsorized at 2.5% | 0.221            | 0.285            | 0.377              | 0.408            |
+| Winsorized at 5%   | 0.221            | 0.285            | 0.377              | 0.408            |
+
+The following table illustrates how the adjusted R-squared of the quadratic model changes after Trimming:
+
+| Adjusted R-squared | No Trimming | Trimmed at 1% | Trimmed at 2.5% | Trimmed at 5% |
+| ------------------ | ----------- | ------------- | --------------- | ------------- |
+| No Trimming        | 0.220       | 0.409         | 0.427           | 0.237         |
+| Trimmed at 1%      | 0.341       | 0.498         | 0.563           | 0.329         |
+| Trimmed at 2.5%    | 0.341       | 0.498         | 0.563           | 0.329         |
+| Trimmed at 5%      | 0.341       | 0.498         | 0.563           | 0.329         |
+
+From the two tables above, it is evident that both Winsorization and Trimming improve the model’s goodness of fit.
+
+In economics, a well-known phenomenon is that when a firm operates at a low production level, increasing output enhances profitability. However, beyond a certain threshold, further increasing output leads to diminishing returns and eventually reduces profit. Our use of the quadratic regression model was inspired by this principle—**suggesting that EfficientRatio and FeeTier should exhibit an inverted U-shaped economic relationship**.
+
+If the inverted U-shaped relationship between EfficientRatio and FeeTier holds theoretically, it implies that the current EfficientRatio may not have reached its optimal level due to an insufficiently high FeeTier. **Our next strategic step is to experiment with increasing the FeeTier in the liquidity pool and observe at what FeeTier level this inverted U-shaped relationship becomes statistically significant.**
+
+### Cubic Regression Model
+
+我们可以对三次项回归模型进行类似的稳健性分析。The resulting cubic regression coefficients are presented below:
+
+| FeeTier\EfficientRatio | No Winsorization | Winsorized at 1% | Winsorized at 2.5% | Winsorized at 5% |
+| ---------------------- | ---------------- | ---------------- | ------------------ | ---------------- |
+| No Winsorization       | -132,549.151*    | -135,119.058**   | -137,466.328***    | -123,117.639***  |
+| Winsorized at 1%       | 316,751.208      | 369,409.870      | 314,918.717        | 235,720.528      |
+| Winsorized at 2.5%     | 316,751.208      | 369,409.870      | 314,918.717        | 235,720.528      |
+| Winsorized at 5%       | 316,751.208      | 369,409.870      | 314,918.717        | 235,720.528      |
+
+*Note*: *Asterisks indicate statistical significance as previously defined*.
+
+Similarily, we apply **trimming** at different percentile levels:
+
+| FeeTier\EfficientRatio | No Trimming   | Trimmed at 1%  | Trimmed at 2.5% | Trimmed at 5% |
+| ---------------------- | ------------- | -------------- | --------------- | ------------- |
+| No Trimming            | -132,549.151* | -145,425.009** | 337,534.238     | 251,277.926   |
+| Trimmed at 1%          | 1,715.276     | -217,311.097   | -326,727.498    | -225,577.613  |
+| Trimmed at 2.5%        | 1,715.276     | -217,311.097   | -326,727.498    | -225,577.613  |
+| Trimmed at 5%          | 1,715.276     | -217,311.097   | -326,727.498    | -225,577.613  |
+
+*Note*: *Asterisks indicate statistical significance as previously defined*.
+
+可以看出，当FeeTier未做处理时，即使EfficientRatio分别在1%，2.5%和5%上做了缩尾处理，三次项系数仍然显著异于0。而EfficientRatio在1%做了截尾处理时，三次项系数仍然显著异于0。但是在2.5%和5%上做了截尾处理后，三次项系数翻转未正且不显著异于0。除此之外，当FeeTier做了缩尾或截尾处理后，三次项系数均不显著异于0，甚至可能会翻转为正。
+
+直觉上，这说明三次项回归模型对FeeTier的改变更加敏感，我们可以通过检验调整R方来进一步验证这一点：
+
+| FeeTier\EfficientRatio | No Winsorization | Winsorized at 1% | Winsorized at 2.5% | Winsorized at 5% |
+| ---------------------- | ---------------- | ---------------- | ------------------ | ---------------- |
+| No Winsorization       | 0.230            | 0.297            | 0.384              | 0.405            |
+| Winsorized at 1%       | 0.219            | 0.284            | 0.377              | 0.407            |
+| Winsorized at 2.5%     | 0.219            | 0.284            | 0.377              | 0.407            |
+| Winsorized at 5%       | 0.219            | 0.284            | 0.377              | 0.407            |
+
+下表显示了截尾处理的调整R方变化：
+
+| FeeTier\EfficientRatio | No Trimming | Trimmed at 1% | Trimmed at 2.5% | Trimmed at 5% |
+| ---------------------- | ----------- | ------------- | --------------- | ------------- |
+| No Trimming            | 0.230       | 0.435         | 0.429           | 0.238         |
+| Trimmed at 1%          | 0.0837      | 0.119         | 0.152           | 0.166         |
+| Trimmed at 2.5%        | 0.0837      | 0.119         | 0.152           | 0.166         |
+| Trimmed at 5%          | 0.0837      | 0.119         | 0.152           | 0.166         |
+
+通过以上两个表格可以看出，在FeeTier缩尾处理时，模型的调整R方变化较小，但是在FeeTier截尾处理后，模型的调整R方降低的幅度更大。
 
 
 
