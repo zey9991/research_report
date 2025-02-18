@@ -1,5 +1,23 @@
 ### **Weekly Meeting Update:**
 
+Date: 2025-02-18
+
+Most of the robustness and heterogeneity analyses have been completed, with the remaining parts expected to be finished shortly.
+
+**Robustness Analysis Results**
+
+The results from the polynomial regression model show that the outcomes are not particularly sensitive to the replacement of control variables. The maximum value still occurs when **FeeTier** is large (close to 1.7%).
+
+In contrast, the polynomial regression model is more sensitive to tail-trimming and winsorization. This is reflected in the increased explanatory power of the quadratic model with a monotonically increasing relationship, while the cubic model’s cubic term becomes insignificant more frequently. This suggests that the cubic model's results are more heavily influenced by extreme values. 
+
+- Notably, a pool with a 2% FeeTier (**USUALX 27MAR2025**) is still active, and if its **EfficientRatio** changes significantly in the future, it may have a substantial impact on the results of this model.
+
+**Heterogeneity Analysis Results**
+
+When performing grouped regressions based on **BaseAsset**, the cubic regression model remains the optimal choice only when **BaseAsset** is ETH, and both the minimum and maximum values are detected. For **BaseAsset** values of BTC, Stable, or Other, there is a more monotonic relationship between **EfficientRatio** and **FeeTier**, with the fitted curve not showing a minimum or maximum within the open interval of **FeeTier**.
+
+----------
+
 Date: 2025-02-14
 
 The dataset has been updated with February 8th data. 
