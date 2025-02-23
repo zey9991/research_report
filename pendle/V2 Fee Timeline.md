@@ -2,9 +2,9 @@
 
 Date: 2025-02-23
 
-1. ##### Initial Preparations (Progress: 0%, Expected Completion by 2.25)
+1. ##### Initial Preparations (Progress: 0%, Expected Completion by 2.26)
 
-- [ ] **Dataset Consolidation**
+- [ ] **Merge Dataset**
   - To construct time series data, Pool Metrics must be manually downloaded for each day (or at another chosen frequency).
   - It may be worth consulting the Data Group to explore potential simplifications.
   - If no simplifications are available, we could consider leveraging web scraping techniques to batch-download and merge the data.
@@ -15,7 +15,7 @@ Date: 2025-02-23
   - Defined as: **Fee Ratio = Current Fee Tier / Current Implied APY**
   - Currently, our team manually sets the initial Fee Ratio at **0.02** upon pool activation (so-called the "Golden Number").
 
-2. ##### Optimizing the Initial Fee Ratio (Progress: 0%, Expected Completion by 03.04)
+2. ##### Optimizing the Initial Fee Ratio (Progress: 0%, Expected Completion by 3.6)
 
 **Model 1: ARMAX**
 
