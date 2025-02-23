@@ -1,46 +1,49 @@
 ### Tasks and Timeline
 
-Relative Fee
+Date: 2025-02-23
 
-Date: 2025-02-21
+1. ##### Initial Preparations (Progress: 0%, Expected Completion by 2.25)
 
-1. Initial Preparations (Progress: 0%, Expected Completion by 2.25)
-
-- **Dataset Consolidation**
+- [ ] **Dataset Consolidation**
   - To construct time series data, Pool Metrics must be manually downloaded for each day (or at another chosen frequency).
   - It may be worth consulting the Data Group to explore potential simplifications.
   - If no simplifications are available, we could consider leveraging web scraping techniques to batch-download and merge the data.
-- **Data Preprocessing**
+- [ ] **Data Preprocessing**
   - Review and remove outlier samples from the dataset where appropriate.
   - Centralize the time series for all pools by assuming they share a common start date.
-- **Introduction to Fee Ratio**
+- [ ] **Introduction to Fee Ratio**
   - Defined as: **Fee Ratio = Current Fee Tier / Current Implied APY**
-  - Currently, our team manually sets the initial Fee Ratio at **0.02** upon pool activation (considered the "Golden Number").
+  - Currently, our team manually sets the initial Fee Ratio at **0.02** upon pool activation (so-called the "Golden Number").
 
-2. Optimizing the Initial Fee Ratio (Progress: 0%, Expected Completion by 3.4)
+2. ##### Optimizing the Initial Fee Ratio (Progress: 0%, Expected Completion by 03.04)
 
-**Model 1: ADL Model for Fee Ratio**
+**Model 1: ARMAX**
 
-- The optimal initial **Fee Ratio** can be determined as the long-term equilibrium in this model.
-- For each pool:
-  - Define an **error correction model** (ECM). If Fee Ratio is a stationary process, its long-term equilibrium value can be directly estimated.
-  - If Fee Ratio is non-stationary, special handling is required. In extreme cases, non-stationary samples may need to be excluded.
-  - Iterate through all pools to compute their long-term equilibrium values.
-- The global optimal initial Fee Ratio can then be derived via a weighted average approach:
-  - Possible weighting factors include **TVL, Trading Volume, or Efficient Ratio**.
-- Similarly, an optimal initial Fee Ratio can be computed for different pool categories (e.g., pools where **Base Asset = ETH**).
-- **Limitation:** This model does not explicitly establish a relationship between **Fee Ratio** and the optimal **Efficient Ratio**. Efficient Ratio remains a latent variable in this framework, meaning the model cannot directly confirm whether the computed long-term equilibrium of Fee Ratio actually leads to optimal efficiency.
+- [ ] This model assumes that the **Efficient Ratio** is influenced by its own past values (lagged terms) as well as the past values of the **Fee Ratio**.
+- [ ] For each pool:
+  - If the **Efficient Ratio** is stationary, no further transformation is required.
+  - If the **Efficient Ratio** is non-stationary, apply appropriate transformations, such as first-order differencing (converting ARMAX into ARIMAX), Box-Cox transformations, etc.
+  - Iterate through all pools.
+- [ ] Conduct residual diagnostics to ensure model assumptions hold.
+- [ ] Examine the impact of each variable on the **Efficient Ratio** using **Impulse Response Functions (IRF)**. For long-term effects, compute the **Cumulative Impulse Response Function (CIRF)** to assess the influence of the **Fee Ratio** on the **Efficient Ratio**.
 
-**Model 2: Long-Term Equilibrium Between Fee Ratio and Efficient Ratio**
+**Model 2: VAR**
 
-- This model assumes that **Efficient Ratio** is influenced by its own past values (lagged terms) as well as the past values of **Fee Ratio**.
-- For each pool:
-  - If both **Fee Ratio** and **Efficient Ratio** are stationary, long-term equilibrium parameters can be estimated.
-  - If both variables are non-stationary but exhibit **cointegration**, long-term equilibrium parameters can still be derived.
-  - Iterate through all pools to compute their long-term equilibrium parameters.
-- The global optimal initial Fee Ratio can then be derived via a weighted average approach:
-  - Possible weighting factors include **TVL, Trading Volume, or Efficient Ratio**.
-- Similarly, an optimal initial Fee Ratio can be computed for different pool categories (e.g., pools where **Base Asset = ETH**).
-- Limitation: This model assumes a linear long-term equilibrium, expressed as $$y=ϕ+θx$$, where ϕ and θ are the estimated long-term parameters.
-  - Within this linear framework, the optimal **Fee Ratio** for maximizing **Efficient Ratio** is restricted to the endpoints of the estimated range.
-  - This means the model cannot precisely determine the true optimal initial **Fee Ratio** beyond these constraints.
+- [ ] This model treats **Efficient Ratio** and **Fee Tier** as a system, assuming mutual influence between the two.
+- [ ] For each pool, construct a VAR model incorporating both Efficient Ratio and Fee Tier, determining the optimal number of lags using BIC or similar criteria.
+  - If both variables are stationary, no transformation is needed.
+  - If both are non-stationary, first check for **cointegration relationships** before proceeding.
+- [ ] Estimate model parameters, removing insignificant coefficients.
+- [ ] Conduct residual diagnostics to validate assumptions.
+- [ ] Compute **Impulse Response Functions (IRF)** and **Cumulative Impulse Response Functions (CIRF)** to analyze the impact of the **Fee Ratio** on the **Efficient Ratio**.
+
+**Model 3: GARCH**
+
+- [ ] Building upon **Model 1**, examine whether the squared residuals exhibit autocorrelation to determine if conditional heteroskedasticity exists. If present, volatility modeling is required.
+- [ ] Prioritize the **GARCH model** to reduce the number of parameters and improve estimation efficiency.
+- [ ] Perform diagnostics on the squared residuals to ensure model validity.
+- [ ] Analyze **Impulse Response Functions (IRF)** and **Cumulative Impulse Response Functions (CIRF)** under the **GARCH framework**.
+
+##### 3. Aggregating Results
+
+- [ ] Based on the established models, derive optimal **Fee Ratio** parameters for specific groupings (e.g., pools where the base asset is **ETH**) and at a global level.
