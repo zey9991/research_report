@@ -32,6 +32,7 @@
 
 ## Macro
 
+- [2502-Macro Weekly](macro/macro2.md)
 - [2501-Macro Weekly](macro/macro1.md)
 ## Others
 * [Tutorial](<others/Tutorial.md>)
