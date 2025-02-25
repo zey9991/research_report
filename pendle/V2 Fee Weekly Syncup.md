@@ -1,5 +1,22 @@
 ### **Weekly Meeting Update:**
 
+Date: 2025-02-25
+
+Over the past week, I’ve been reviewing various time-series models and have largely finalized the models needed for modeling **Fee Ratio** and **Efficient Ratio**. My main focus for the upcoming week will be attempting to implement these models.
+
+**Question on Data Retrieval**
+
+Does Looker Studio provide an efficient way to export time-series data? Specifically:
+
+- For **By EfficientRatio** under **Pool Metrics**, is there a way to transform this into a time-series format (e.g., daily data) for export?
+- For **By SwapFee**, the time span can be selected, but if the data needs to be downloaded manually for each period, the process becomes quite tedious.
+
+Is there a more streamlined way to handle this? If not, I may need to explore web scraping techniques as an alternative.
+
+—>Yes, we can. With Jon and AR7's assistance, we anticipate resolving the data retrieval issue very soon.
+
+-------------
+
 Date: 2025-02-18
 
 Most of the robustness and heterogeneity analyses have been completed, with the remaining parts expected to be finished shortly.
