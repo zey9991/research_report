@@ -1,5 +1,43 @@
 ### **Weekly Meeting Update:**
 
+Date: 2025-03-03
+
+Over the past week, my primary focus has been on the following tasks:
+
+- After discussing with Jon, I completed the data cleaning process, ensuring that the remaining FeeRatio and EfficientRatio values for all samples are free from missing data. Additionally, even with updates to the dataset, the code remains reusable.
+- I tested the stationarity of FeeRatio and EfficientRatio and found that most FeeRatios fail the unit root test, indicating that they are not stationary. Furthermore, the stationarity of FeeRatio and EfficientRatio varies across different pools, as detailed in the table below.
+
+|                   | FeeRatio_none_p | FeeRatio_drift_p | FeeRatio_trend_p | EfficientRatio_3_none_p | EfficientRatio_3_drift_p | EfficientRatio_3_trend_p |
+| :---------------- | :-------------- | :--------------- | :--------------- | :---------------------- | :----------------------- | :----------------------- |
+| (0,0.01] Count    | 4.00000000      | 11.00000000      | 18.00000000      | 146.00000000            | 150.00000000             | 153.00000000             |
+| (0.01,0.05] Count | 8.00000000      | 4.00000000       | 13.00000000      | 17.00000000             | 10.00000000              | 14.00000000              |
+| (0.05,0.10] Count | 4.00000000      | 7.00000000       | 8.00000000       | 10.00000000             | 9.00000000               | 8.00000000               |
+| (0.10,1] Count    | 182.00000000    | 176.00000000     | 159.00000000     | 25.00000000             | 29.00000000              | 23.00000000              |
+| (0,0.01] Prop     | 0.02020202      | 0.05555556       | 0.09090909       | 0.73737374              | 0.75757576               | 0.77272727               |
+| (0.01,0.05] Prop  | 0.04040404      | 0.02020202       | 0.06565657       | 0.08585859              | 0.05050505               | 0.07070707               |
+| (0.05,0.10] Prop  | 0.02020202      | 0.03535354       | 0.04040404       | 0.05050505              | 0.04545455               | 0.04040404               |
+| (0.10,1] Prop     | 0.91919192      | 0.88888889       | 0.80303030       | 0.12626263              | 0.14646465               | 0.11616162               |
+
+- Stationarity is a critical aspect in traditional time-series modeling. The inconsistency in stationarity between the two variables has made the previously selected model unsuitable in all cases. For example, one variable might be stationary while the other is not, requiring differencing, but differenced models make the coefficients difficult to interpret. This led me to explore a new theoretical approach: the state-space model. This model can unify the previously selected models and is more concise and powerful. It can accommodate both linear and nonlinear situations, but I will need several days to review the literature and familiarize myself with it. Here is a brief idea of how I plan to model it:
+
+$$
+\begin{aligned}
+FeeRatio_t & =AFeeRatio_{t-1}+\epsilon_t,\ \{\epsilon_t\}\sim \text{i.i.d}\ N(0,\sigma_\epsilon^2)\\
+EfficientRatio_{t+1} & =BEfficientRatio_t+\eta_t,\ \{\eta_t\} \sim \text{i.i.d}\  N(0,\sigma_\eta^2)
+\end{aligned}
+$$
+
+- In practice, we can consider a fixed coefficient regression model. However, the limitations of this model are not yet fully clarified and may include at least two factors: (1) testing for synchronization effects and (2) whether the model is stationary. If stationarity is not required, this approach may be suitable for our problem.
+
+$$
+\begin{aligned}
+EfficientRatio_t&=\beta_1FeeRatio_t+\beta_2FeeRatio_t^2(+...) \\
+FeeRatio_t&=FeeRatio_{t-1}+\eta_t,\ \{\eta_t\} \sim \text{i.i.d}\  N(0,\sigma_\eta^2)
+\end{aligned}
+$$
+
+----------
+
 Date: 2025-02-25
 
 Over the past week, I’ve been reviewing various time-series models and have largely finalized the models needed for modeling **Fee Ratio** and **Efficient Ratio**. My main focus for the upcoming week will be attempting to implement these models.

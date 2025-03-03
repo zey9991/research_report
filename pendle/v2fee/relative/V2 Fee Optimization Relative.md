@@ -45,16 +45,31 @@ Our preprocessing steps primarily involved:
 - Removing observations with date parsing issues
 - Dropping observations where the date (`dt`) fell outside the pool's active period (i.e., `dt < Start Date` or `dt > Expiry Date`)
 - Deleting data for pools that had no transactions upon launch, resulting in missing **AverageIY** and **FeeRatio** values
-- Performing linear interpolation for pools with missing AMM TVL data, and removing pools that had missing data at either end of the time window
-- Deleting data from 2025-02-28 for pools with missing **AverageIY** and **FeeRatio** values
+- Performing linear interpolation for pools with missing **AMM TVL** data, and removing pools that had missing data at either end of the time window
+- Performing linear interpolation for pools with missing **FeeRatio** data, and removing pools that had missing data at either end of the time window
+- Deleting data from 2025-02-28 for pools with missing **AverageIY** and **FeeRatio** values。
 
 Through these preprocessing operations, we ensured that no missing values for **FeeRatio** or **EfficientRatio** remained in the dataset.
 
-After these operations, we were left with a dataset containing 34,549 rows and 200 unique pools.
+After these operations, we were left with a dataset containing 33,636 rows and 198 unique pools.
 
 # Modeling: An Example
 
-To illustrate the process of modeling the relationship between time-series FeeRatio and EfficientRatio, we can give an example.
+To illustrate the process of modeling the relationship between the time-series data of FeeRatio and EfficientRatio, we can present an example.
+
+In this section, we select one pool for analysis. Here, we choose **Bedrock UniETH 27JUN2024**.
+
+We can visualize the changes in FeeTier, Average Implied APY, FeeRatio, and EfficientRatio through the following graphs.
+
+![Bedrock_UniETH_27JUN2024](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Bedrock_UniETH_27JUN2024.jpeg)
+
+From the graph above, we observe the following for **Bedrock UniETH 27JUN2024**:
+
+- The **FeeTier** was slightly reduced on **2024-03-29**.
+- There is a clear negative correlation between the trends of **FeeRatio** and **Average Implied APY**.
+- The **EfficientRatio** shows significant fluctuations, especially after the pool was launched. There was a brief and sharp rise and fall in **EfficientRatio** shortly after the pool went live, reaching a peak after the minor FeeTier adjustment, followed by a gradual decline.
+
+
 
 
 

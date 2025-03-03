@@ -412,7 +412,7 @@ Specifically, when a cubic term is added, the quadratic term becomes significant
 
 Although the coefficient for the linear term is not significant, we can still write out the regression equation:
 $$
-E(EfficientRatio)=0.0442-8.25FeeTier+3999.2FeeTier^2-132549.2FeeTier^3+\sum_i\hat{\beta_i}Controls
+E(EfficientRatio|FeeTier)=0.0442-8.25FeeTier+3999.2FeeTier^2-132549.2FeeTier^3+\sum_i\hat{\beta_i}Controls
 $$
 Where:
 
@@ -421,11 +421,11 @@ Where:
 
 Assuming all other control variables take on fixed values (such as the mean or median), we can plot the fitted relationship between FeeTier and EfficientRatio. That is,
 $$
-E(EfficientRatio|Controls=\text{fixed values})=0.0442-8.25FeeTier+3999.2FeeTier^2-132549.2FeeTier^3+\sum_i\hat{\beta_i}\times \text{fixed values}
+E(EfficientRatio|FeeTier,Controls=\text{fixed values})=0.0442-8.25FeeTier+3999.2FeeTier^2-132549.2FeeTier^3+\sum_i\hat{\beta_i}\times \text{fixed values}
 $$
 We can choose to set all control variables to their median values (instead of the mean, due to the presence of extreme outliers that could distort the average), so:
 $$
-E(EfficientRatio|Controls=\text{median value})=0.04397-8.25FeeTier+3999.2FeeTier^2-132549.2FeeTier^3
+E(EfficientRatio|FeeTier,Controls=\text{median value})=0.04397-8.25FeeTier+3999.2FeeTier^2-132549.2FeeTier^3
 $$
 The plot is as follows:
 
