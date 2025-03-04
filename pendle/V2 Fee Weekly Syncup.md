@@ -5,7 +5,7 @@ Date: 2025-03-03
 Over the past week, my primary focus has been on the following tasks:
 
 - After discussing with Jon, I completed the data cleaning process, ensuring that the remaining FeeRatio and EfficientRatio values for all samples are free from missing data. Additionally, even with updates to the dataset, the code remains reusable.
-- I tested the stationarity of FeeRatio and EfficientRatio and found that most FeeRatios fail the unit root test, indicating that they are not stationary. Furthermore, the stationarity of FeeRatio and EfficientRatio varies across different pools, as detailed in the table below.
+- I tested the stationarity / ˌsteɪʃənˈærətɪ / of FeeRatio and EfficientRatio and found that most FeeRatios fail the unit root test, indicating that they are not stationary. Furthermore, the stationarity of FeeRatio and EfficientRatio varies across different pools, as detailed in the table below.
 
 |                   | FeeRatio_none_p | FeeRatio_drift_p | FeeRatio_trend_p | EfficientRatio_3_none_p | EfficientRatio_3_drift_p | EfficientRatio_3_trend_p |
 | :---------------- | :-------------- | :--------------- | :--------------- | :---------------------- | :----------------------- | :----------------------- |
@@ -18,7 +18,8 @@ Over the past week, my primary focus has been on the following tasks:
 | (0.05,0.10] Prop  | 0.02020202      | 0.03535354       | 0.04040404       | 0.05050505              | 0.04545455               | 0.04040404               |
 | (0.10,1] Prop     | 0.91919192      | 0.88888889       | 0.80303030       | 0.12626263              | 0.14646465               | 0.11616162               |
 
-- Stationarity is a critical aspect in traditional time-series modeling. The inconsistency in stationarity between the two variables has made the previously selected model unsuitable in all cases. For example, one variable might be stationary while the other is not, requiring differencing, but differenced models make the coefficients difficult to interpret. This led me to explore a new theoretical approach: the state-space model. This model can unify the previously selected models and is more concise and powerful. It can accommodate both linear and nonlinear situations, but I will need several days to review the literature and familiarize myself with it. Here is a brief idea of how I plan to model it:
+- Stationarity is a critical aspect in traditional time-series modeling. The inconsistency in stationarity between the two variables has made the previously selected model cumbersome in all cases. For example, one variable might be stationary while the other is not, requiring differencing, but differenced models make the coefficients difficult to interpret. Moreover, these variables may have different orders of integration, meaning that the two variables in different pools may require a different number of differencing steps to achieve stationarity.
+- This led me to explore a new theoretical approach: the state-space model. This model can unify the previously selected models and is more concise and powerful. It can accommodate both linear and nonlinear situations, but I will need several days to review the literature and familiarize myself with it. Here is a brief idea of how I plan to model it:
 
 $$
 \begin{aligned}
