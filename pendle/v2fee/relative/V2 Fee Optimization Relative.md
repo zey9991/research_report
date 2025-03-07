@@ -292,7 +292,6 @@ $$
 In polynomial model, we make the following assumptions:
 
 - **FeeRatio only has a contemporaneous effect** on EfficientRatio, so we do not include any time-lagged terms in the model. This is essentially equivalent to a fixed-coefficient regression model that does not account for time-series properties.
-- **FeeRatio has a nonlinear impact** on EfficientRatio, meaning it will generally maximize EfficientRatio at some point.
 - The **coefficients remain fixed** over time, i.e., they do not change over time t.
 
 If we assume that $$\varepsilon_t$$ follows an **independently and identically distributed normal distribution** for all t, we can estimate the parameters using **Ordinary Least Squares (OLS)**.
@@ -375,30 +374,39 @@ The first method is the weighted average. For example, we can set the weights ba
 
 Here, we demonstrate a weighted average method based on the historical average TVL of the pools. For example, below are the historical average TVL and the corresponding optimal FeeRatios for 10 pools:
 
+| Pool                                   | Max Fee Ratio | TVL                |
+| -------------------------------------- | ------------- | ------------------ |
+| Aave_aUSDC_26DEC2024                   | 0.007500975   | 579748.0574682716  |
+| Aave_Ethereum_USDT_26JUN2025           | 0.020744433   | 239716.48101730828 |
+| Aerodrome_VIR/CBBTC_26JUN2025          | 0.019218241   | 1242137.948072133  |
+| Aladdin_sdCRV_26JUN2025                | 0.014224466   | 318792.09819704015 |
+| Amphor_LRT_26DEC2024                   | 0.009941479   | 5106022.381041232  |
+| Amphor_LRT_26SEP2024                   | 0.014894995   | 9335083.455937527  |
+| ankrBNB_26JUN2025                      | 0.019481182   | 754382.9861734031  |
+| ankrETH_WETH_BalancerLP_Aura_26SEP2024 | 0.041466278   | 314340.80509406887 |
+| ankrETH_WETH_BalancerLP_Aura_28MAR2024 | 0.003118437   | 169800.63078518893 |
+| ARB_ETH_Camelot_27JUN2024              | 0.032033558   | 809023.8249134828  |
 
+The global optimal FeeRatio for these samples would be: **0.014929819**
 
-The global optimal FeeRatio for these samples would be:
-
-
-
-Once we have this data for all pools, we can calculate the global optimal FeeRatio that applies to all 206 pools:
-
-
-
-
+Once we have this data for all pools, we can calculate the global optimal FeeRatio that applies to all 206 pools: 
+$$
+OptimalFeeRatio_{wa}= 0.01520877
+$$
 
 ## Estimating the Overall Mean
 
 Another way to aggregate the data from all pools is through the estimation of the overall mean. Compared to the weighted average method, this approach has more statistical grounding. Specifically, we can assume that the global optimal FeeRatio follows a specific distribution, such as a normal distribution. With the optimal FeeRatios from over two hundred pools, we can treat these as samples drawn from this distribution. We can then apply specific methods, such as Maximum Likelihood Estimation (MLE), to estimate the mean and variance of this overall distribution. In particular, the mean we estimate can be considered a statistically sound estimate of the global optimal FeeRatio, which we can use to set the global parameter.
 
-We can estimate the overall mean to be: (Insert estimated mean value)
- This implies that the global optimal FeeRatio should be set to: (Insert global optimal FeeRatio)
+We can estimate the overall mean to be: **0.02796956**
 
-Another benefit of using this method is that we can provide a confidence interval for the estimate. The 95% confidence interval for the overall mean is calculated as: (Insert 95% confidence interval)
+This implies that the global optimal FeeRatio should be set to:
+$$
+OptimalFeeRatio_{om}=0.02796956
+$$
+Another benefit of using this method is that we can provide a confidence interval for the estimate. The 95% confidence interval for the overall mean is calculated as: **( 0.008019949 , 0.04791916 )**
 
-The downside of this method is that it relies on our assumption about the overall distribution. If the optimal FeeRatio does not follow a normal distribution or any other distribution we have assumed, then our estimate may be flawed.
-
-
+**Note:** Even if our assumption about the underlying distribution is incorrect—that is, the true distribution of the optimal FeeRatio is not normal—the consistency of our estimate remains valid. This is ensured by the **Central Limit Theorem (CLT)**, which states that as the sample size approaches infinity, the sampling distribution of the sample mean converges in distribution to a normal distribution, provided that the samples are independently and identically distributed (i.i.d.).
 
 # Robustness Analyses
 
@@ -406,7 +414,7 @@ The downside of this method is that it relies on our assumption about the overal
 
 Since our current model essentially ignores the time-series characteristics and resembles a cross-sectional regression, we can pool all the data from the active periods of each pool into a single dataset, comprising over 30,000 data points. Using this dataset, we can directly estimate the regression parameters, fit the curve, and find the FeeRatio that maximizes the fitted curve. This will serve as the global optimal FeeRatio parameter.
 
-Why didn’t we do this from the beginning? This is because, when considering the time-series characteristics, the differences between the pools are substantial, such as differing active days. Consequently, we cannot use this method of pooling all the pools’ data to directly estimate parameters. This means that we must estimate the optimal FeeRatio for each pool separately and aggregate the results. In the next subsection, we will see this more clearly when we apply specialized time-series modeling techniques—specifically, the State Space Model.
+**Why didn’t we do this from the beginning?** This is because, when considering the time-series characteristics, the differences between the pools are substantial, such as differing active days. Consequently, we cannot use this method of pooling all the pools’ data to directly estimate parameters. This means that we must estimate the optimal FeeRatio for each pool separately and aggregate the results. In the next subsection, we will see this more clearly when we apply specialized time-series modeling techniques—specifically, the State Space Model.
 
 ## Estimate the parameters using State Space Model
 
