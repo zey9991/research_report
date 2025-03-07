@@ -251,7 +251,7 @@ Our preprocessing steps primarily involved:
 - Deleting data for pools that had no transactions upon launch, resulting in missing **AverageIY** and **FeeRatio** values
 - Performing linear interpolation for pools with missing **AMM TVL** data, and removing pools that had missing data at either end of the time window
 - Performing linear interpolation for pools with missing **FeeRatio** data, and removing pools that had missing data at either end of the time window
-- Deleting data from 2025-02-28 for pools with missing **AverageIY** and **FeeRatio** values。
+- Deleting data from 2025-03-07 for pools with missing **AverageIY** and **FeeRatio** values。
 
 Through these preprocessing operations, we ensured that no missing values for **FeeRatio** or **EfficientRatio** remained in the dataset.
 
@@ -273,7 +273,7 @@ From the graph above, we observe the following for **Bedrock UniETH 27JUN2024**:
 - There is a clear negative correlation between the trends of **FeeRatio** and **Average Implied APY**.
 - The **EfficientRatio** shows significant fluctuations, especially after the pool was launched. There was a brief and sharp rise and fall in **EfficientRatio** shortly after the pool went live, reaching a peak after the minor FeeTier adjustment, followed by a gradual decline.
 
-忽略时间序列特性，我们可以直接将FeeRatio和EfficientRatio绘制于一张散点图上：
+Ignoring the time-series characteristics, we can directly plot FeeRatio and EfficientRatio on a scatter plot:
 
 ![Bedrock_UniETH_27JUN2024_scatter](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Bedrock_UniETH_27JUN2024_scatter.png)
 
