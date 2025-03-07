@@ -291,7 +291,7 @@ EfficientRatio_t=\beta_0+\beta_1FeeRatio_t+\beta_2FeeRatio_t^2+\varepsilon_t
 $$
 In polynomial model, we make the following assumptions:
 
-- **FeeRatio has a contemporaneous effect** on EfficientRatio, so we do not include any time-lagged terms in the model. This is essentially equivalent to a fixed-coefficient regression model that does not account for time-series properties.
+- **FeeRatio only has a contemporaneous effect** on EfficientRatio, so we do not include any time-lagged terms in the model. This is essentially equivalent to a fixed-coefficient regression model that does not account for time-series properties.
 - **FeeRatio has a nonlinear impact** on EfficientRatio, meaning it will generally maximize EfficientRatio at some point.
 - The **coefficients remain fixed** over time, i.e., they do not change over time t.
 
@@ -301,7 +301,7 @@ However, since time-series variables often exhibit autocorrelation, which violat
 
 For the **Bedrock UniETH 27JUN2024** pool, to avoid overfitting, we can determine the order of the polynomial by using information criteria such as AIC, BIC, and adjusted R-squared
 
-- In the previous **Absolute Fee Report**, we primarily used adjusted R2R^2R2 to determine the order of the model. To make the results more robust, here we also include two well-known information criteria: **Akaike Information Criterion (AIC)** and **Bayesian Information Criterion (BIC)**.
+- In the previous **Absolute Fee Report**, we primarily used adjusted R-squared to determine the order of the model. To make the results more robust, here we also include two well-known information criteria: **Akaike Information Criterion (AIC)** and **Bayesian Information Criterion (BIC)**.
 - **AIC (Akaike Information Criterion)** is a measure used to assess the quality of a statistical model, taking into account both the goodness of fit and the complexity of the model. 
 - **BIC (Bayesian Information Criterion)** is similar to AIC but adds a stronger penalty for model complexity. 
 
@@ -323,7 +323,7 @@ Below are the results of the model order selection using these criteria:
 - In the table, "Order" represents the highest degree term included in the model. For example, "Order 5" means that terms up to the fifth power are included in the model.
 - The asterisk (*) indicates the optimal choice for each criterion.
 
-As can be seen, both AIC and adjusted R2R^2R2 suggest including up to the 8th-degree terms, while BIC supports a model with up to the 5th degree. We can further examine the parameter estimates for both models to make a more informed decision:
+As can be seen, both AIC and adjusted R-squared suggest including up to the 8th-degree terms, while BIC supports a model with up to the 5th degree. We can further examine the parameter estimates for both models to make a more informed decision:
 
 First, here are the regression coefficients and their significance for the 5th-degree model:
 
