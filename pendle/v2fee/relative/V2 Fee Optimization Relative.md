@@ -360,6 +360,7 @@ $$
 (FeeRatio=2.165444\%, Expected EfficientRatio=5.642599\%)
 $$
 To visually demonstrate this, we can plot the following graph:
+
 ![image-20250307165143450](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20250307165143450.png)
 
 # Aggregating Results
