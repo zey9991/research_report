@@ -244,6 +244,51 @@ Thus, the Efficient Ratio serves a similar purpose, indicating how effectively a
 - Unlike the traditional asset turnover ratio, the numerator in this case is the annualized daily 'revenue', which helps mitigate the impact of varying pool maturity dates.
 - The average daily swap fees encompass all explicit and implicit fees, as well as limit order fees, measuring the overall revenue for all beneficiaries, including Liquidity Providers (LPs) and vePendle voters. Ideally, the denominator should also account for the value of vePendle votes to maintain accuracy. However, for simplicity and ease of interpretation, we focus solely on the LP TVL in the denominator.
 
+# Guideline
+
+## Methodology Used in the Absolute Fee Report
+
+To illustrate the differences, let’s first revisit the approach we took in the Absolute report.
+
+### **Objective**
+
+Our goal was to determine the optimal **FeeTier** that maximizes the **EfficientRatio**.
+
+### **Challenge**
+
+The exact functional relationship between these two variables is unknown.
+
+### **Strategy**
+
+To address this, we aimed to maximize the expected **EfficientRatio** given a specific **FeeTier** and then determine the optimal **FeeTier** accordingly. Mathematically, this can be expressed as the following optimization problem:
+$$
+arg\max_{FeeTier} E(EfficientRatio|FeeTier)
+$$
+where E(EfficientRatio∣FeeTier)E(\text{EfficientRatio} | \text{FeeTier})E(EfficientRatio∣FeeTier) represents the conditional expectation of **EfficientRatio** given **FeeTier**. Alternatively, we can interpret it as a function of **FeeTier**: 
+$$
+E(EfficientRatio|FeeTier)=f(FeeTier)
+$$
+In an informal way,, we assume the following relationship holds:
+$$
+EfficientRatio=f(FeeTier)
+$$
+Thus our goal it to 
+$$
+arg\max_{FeeTier}f(FeeTier)
+$$
+
+### **Implementation**
+
+To estimate this function, we employed appropriate regression models. Specifically, when setting all control variables to their median values, we obtained the following estimated function:
+$$
+f(FeeTier)=0.04397-8.25FeeTier+3999.2FeeTier^2-132549.2FeeTier^3
+$$
+Using this estimated function, we derived the optimal **FeeTier** accordingly.
+
+The figure below illustrates the predicted **EfficientRatio** across different **FeeTier** values while holding control variables at their median values.
+
+![Predictive Margins with Control Variables at Median Value](https://cdn.jsdelivr.net/gh/zey9991/mdpic/Predictive%20Margins%20with%20Control%20Variables%20at%20Median%20Value2.png)
+
 # Modeling the Relationship Between FeeTier and EfficientRatio
 
 In this section, we aim to explore the relationship between fee tiers and efficient ratios. We have tried out three different models to capture the statistical relationship. Each of them are followed by sensitivity and heterohestic analyses in the next section.
