@@ -242,7 +242,7 @@ This ratio compares the total annualized swap fees to the **Average Daily LP TVL
 
 # Dataset Preprocessing
 
-The dataset utilized in this report is available in the "Adhoc Report" section of the Pool Metrics dataset, with data retrieved on 2025-02-28.
+The dataset utilized in this report is available in the "Adhoc Report" section of the Pool Metrics dataset, with data retrieved on 2025-03-07.
 
 Our preprocessing steps primarily involved:
 
@@ -356,7 +356,7 @@ Considering that BIC favors simpler models and the significance levels of the re
 
 Additionally, we can calculate the maximum point of the fitted curve, which represents the optimal FeeRatio for maximizing EfficientRatio.
 $$
-(FeeRatio=2.165444\%, Expected EfficientRatio=5.642599\%)
+OptimalFeeRatio_{Bedrock UniETH 27JUN2024}=0.02165444
 $$
 To visually demonstrate this, we can plot the following graph:
 
@@ -387,7 +387,7 @@ Here, we demonstrate a weighted average method based on the historical average T
 | ankrETH_WETH_BalancerLP_Aura_28MAR2024 | 0.003118437   | 169800.63078518893 |
 | ARB_ETH_Camelot_27JUN2024              | 0.032033558   | 809023.8249134828  |
 
-The global optimal FeeRatio for these samples would be: **0.014929819**
+The global optimal FeeRatio for these samples would be: 0.014929819
 
 Once we have this data for all pools, we can calculate the global optimal FeeRatio that applies to all 206 pools: 
 $$
@@ -406,7 +406,23 @@ OptimalFeeRatio_{om}=0.02796956
 $$
 Another benefit of using this method is that we can provide a confidence interval for the estimate. The 95% confidence interval for the overall mean is calculated as: **( 0.008019949 , 0.04791916 )**
 
-**Note:** Even if our assumption about the underlying distribution is incorrect—that is, the true distribution of the optimal FeeRatio is not normal—the consistency of our estimate remains valid. This is ensured by the **Central Limit Theorem (CLT)**, which states that as the sample size approaches infinity, the sampling distribution of the sample mean converges in distribution to a normal distribution, provided that the samples are independently and identically distributed (i.i.d.).
+Even if our assumption about the underlying distribution is incorrect—that is, the true distribution of the optimal FeeRatio is not normal—the consistency of our estimate remains valid. This is ensured by the **Central Limit Theorem (CLT)**, which states that as the sample size approaches infinity, the sampling distribution of the sample mean converges in distribution to a normal distribution, provided that the samples are independently and identically distributed (i.i.d.).
+
+To gain a better understanding of the distribution of optimal FeeRatios, we visualize it using both a **histogram** and a **kernel density estimate (KDE)**. While a histogram represents the frequency distribution of observed values, the KDE provides a **smoother approximation** of the underlying probability density function.
+
+The plot below illustrates the histogram alongside the kernel density estimate:
+
+
+
+![Histogram and Kernel Density](https://cdn.jsdelivr.net/gh/zey9991/mdpic/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250308101706.png)
+
+**Note:** One extreme outlier has been removed. The pool *Lombard_LBTC_26JUN2025* is estimated to be optimized at a FeeRatio of **2.0997459579**, which is due to the fact that this pool contains only **16 samples**, making the estimate highly unstable.
+
+**Key Observations**
+
+- Even with a large sample size, we do not observe a clear bell-shaped normal density curve. This is primarily due to **truncation near zero**, where optimal FeeRatios are bounded from below. However, this truncation does **not** invalidate the Central Limit Theorem. If a random variable is truncated within a certain range (e.g., near zero), its shape may be altered, but as long as the truncated variable remains **i.i.d. with finite variance**, the CLT still holds, and the sample mean will converge to a normal distribution.
+
+- Additionally, the distribution of **Optimal FeeRatios appears to exhibit heavier tails** than a normal distribution. This suggests the possibility of **infinite variance**, which would **invalidate the CLT**. In such cases, the sample mean may converge to a **stable distribution** other than the normal distribution. A more rigorous discussion on this topic will be provided in subsequent reports.
 
 # Robustness Analyses
 
@@ -416,7 +432,54 @@ Since our current model essentially ignores the time-series characteristics and 
 
 **Why didn’t we do this from the beginning?** This is because, when considering the time-series characteristics, the differences between the pools are substantial, such as differing active days. Consequently, we cannot use this method of pooling all the pools’ data to directly estimate parameters. This means that we must estimate the optimal FeeRatio for each pool separately and aggregate the results. In the next subsection, we will see this more clearly when we apply specialized time-series modeling techniques—specifically, the State Space Model.
 
+To initiate our global regression model, we first visualize the relationship between **FeeRatio** and **Coefficient** using a scatter plot, similar to our approach in the previous section.
+
+![image-20250308095745817](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20250308095745817.png)
+
+From the plot above, we observe several **outliers** in both **FeeRatio** and **EfficientRatio**. Since **Ordinary Least Squares regression is highly sensitive to outliers**, it is prudent to address these extreme values. However, for completeness, we will still provide the original regression results without outlier adjustments.
+
+As in the **Absolute Fee Report**, we employ **winsorization** and **trimming** at the **1%**, **2.5%**, and **5%** tails to mitigate the impact of outliers. The table below presents the corresponding results:
+
+| scenario       | best_degree | Optimal FeeRatio       |
+| -------------- | ----------- | ---------------------- |
+| None           | 1           | 4.161816589(discarded) |
+| Trim_1%        | 10          | 0.050055974            |
+| Trim_2.5%      | 10          | 0.005280442            |
+| Trim_5%        | 7           | 0.004971396            |
+| Winsorize_1%   | 8           | 0.052772435            |
+| Winsorize_2.5% | 10          | 0.034525311            |
+| Winsorize_5%   | 9           | 0.019269072            |
+
+From the table above, we observe that performing global regression without any outlier adjustment produces an **Optimal FeeRatio** of approximately **4.16**, which is clearly unreasonable and should be discarded. In contrast, applying **trimming** and **winsorization** yields significantly lower and more reasonable values for the **Optimal FeeRatio**.
+
+However, the **Optimal FeeRatio** obtained from **2.5% and 5% trimming** appears **too low**, suggesting that these levels of trimming might be excessive. Meanwhile, the results from **winsorization** exhibit much smaller variations. This makes sense, as **trimming removes extreme samples entirely**, whereas **winsorization only replaces extreme values with threshold values**, making the results more sensitive to trimming than winsorization.
+
+Considering that the scatter plot does not reveal an overwhelming number of outliers, a **1% trimming or winsorization** appears to be the most appropriate choice, while **2.5% and 5% adjustments might be overly aggressive**.
+
+For reference, our previous **weighted average approach** suggested an **Optimal FeeRatio** of approximately **0.015**, while the **overall mean estimation** approach yielded **0.028**. If we believe that a **1% adjustment is sufficient**, the **Optimal FeeRatio** could be even higher, around **0.05**.
+
 ## Estimate the parameters using State Space Model
+
+In the previous section, we consider the polynomial regression model:
+$$
+EfficientRatio_t=\beta_0+\sum_{i=1}^l\beta_iFeeRatio_t^i+\varepsilon_t  
+$$
+We may rewrite it in the form of state space model(SSM). 
+
+请你简要补充介绍SSM
+
+Specifically, we consider the state space model as follows:
+$$
+\begin{aligned}
+EfficientRatio_t&=\beta_0+\sum_{i=1}^l\beta_iFeeRatio_t^i+\varepsilon_t \\
+\beta_{it}&=\beta_{it}, \text{ for i=0,1,2,...,l}
+\end{aligned}\tag{2}
+$$
+In this case, the state space model still represents a fixed-coefficient regression model and the estimated parameters are believed to be very close to what we have done for model (1). For instance, we may continue to use the pool, Bedrock UniETH 27JUN2024, as an example.
+
+To estimate the parameter, we may combine Kalman filter with likelyhood maximum estimation. The estimation results of model (2) are shown below: 
+
+
 
 # Heterogeneity Analysis
 
