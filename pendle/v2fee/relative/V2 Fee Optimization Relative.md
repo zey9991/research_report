@@ -364,6 +364,8 @@ The table below presents the estimated **population mean and variance** for each
 - The **optimal FeeRatio** estimated for the **BTC group** is slightly **lower** than that obtained via the weighted average method, whereas the remaining three groups exhibit **higher values**.
 - Notably, the **ETH group's optimal FeeRatio has increased significantly** to **0.0209**, deviating from the weighted average estimate.
 
+### Statistical Tests for Group Differences
+
 To rigorously assess whether the differences across these four groups are **statistically significant**, we conduct formal hypothesis testing.
 
 - If the test confirms **significant differences**, it would justify **group-specific** optimal FeeRatio settings.
