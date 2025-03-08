@@ -455,11 +455,11 @@ OptimalFeeRatio_{log(om)}=0.01832333
 $$
 This result is **remarkably close** to our earlier estimate of **0.01786333**, obtained after removing the extreme outlier.
 
-The **95% confidence interval** for the log-transformed mean is **(-4.512649 , -4.270271)**. To compute the variance of the original distribution, we apply the following transformation:
+The **95% confidence interval** for the log-transformed mean is (-4.512649 , -4.270271). To compute the variance of the original distribution, we apply the following transformation:
 $$
 Var(X)=e^{2\mu+\sigma^2}(e^{\sigma^2}-1)
 $$
-Substituting our estimates, we obtain the original variance as $$3.99431929\times10^{-4}$$. Consequently, the **95% confidence interval** for the back-transformed mean is ( 0.01558748 , 0.02105918 )
+Substituting our estimates, we obtain the original variance as $$3.99431929\times10^{-4}$$. Consequently, the **95% confidence interval** for the back-transformed mean is **(0.01558748 , 0.02105918)**
 
 Thus, we can conclude that the **optimal FeeRatio** should be set to approximately 0.01832333. This transformation-based estimate aligns with previous results while providing **greater statistical robustness** by addressing potential distributional issues.
 
@@ -537,7 +537,107 @@ We can also estimate the parameter in that model. To estimate the parameter, we 
 
 # Heterogeneity Analysis
 
-Previously, we aggregated the data using two methods to obtain the global optimal FeeRatio parameter. However, we are also concerned whether the optimal FeeRatio parameter changes by grouping—for example, whether adjustments are needed for pools with BaseAssets of ETH or Stablecoins. In this section, we will focus on exploring this issue.
+Previously, we aggregated the data using two different approaches to derive the globally optimal **FeeRatio** parameter. However, an important question remains: **Does the optimal FeeRatio parameter vary across different groups?** Specifically, do pools with BaseAssets such as **ETH** or **Stablecoins** require different adjustments? In this section, we investigate this issue in detail.
+
+## Weighted Average
+
+By applying the **historical average TVL-weighted** approach to different BaseAssets, we can efficiently compute the **Optimal FeeRatio** for each group. The results are summarized in the table below:
+
+| Base Asset | Weighted Avg Optimal FeeRatio | Pool Count |
+| ---------- | ----------------------------- | ---------- |
+| BTC        | 0.0283                        | 16         |
+| ETH        | 0.0142                        | 109        |
+| Other      | 0.0130                        | 27         |
+| Stable     | 0.0129                        | 59         |
+
+The findings suggest that **BTC pools can sustain a significantly higher FeeRatio**, nearly twice that of ETH pools. Meanwhile, the remaining three groups (ETH, Other, and Stablecoins) exhibit relatively **lower optimal FeeRatios**.
+
+## Estimating the Overall Mean
+
+An alternative approach is to estimate the **overall mean** within each group. However, it is crucial to acknowledge a limitation: Some groups contain **relatively small sample sizes** (e.g., the BTC group has only **16 samples**), which may not be sufficient for the **central limit theorem** to hold. As a result, the estimated values might not be highly reliable. Nevertheless, as we accumulate more within-group samples in the future, the precision of our estimates will improve.
+
+The table below presents the estimated **population mean and variance** for each group, obtained by leveraging the properties of the **log-normal distribution**. The last two columns provide the **95% confidence intervals** for the estimated means.
+
+| Base Asset | n    | Estimated Mean | Estimated Variance | Lower Mean | Upper Mean |
+| ---------- | ---- | -------------- | ------------------ | ---------- | ---------- |
+| BTC        | 15   | 0.0258         | 0.000390           | 0.0177     | 0.0375     |
+| ETH        | 109  | 0.0209         | 0.000563           | 0.0176     | 0.0248     |
+| Other      | 27   | 0.0141         | 0.000468           | 0.00914    | 0.0218     |
+| Stable     | 59   | 0.0145         | 0.000113           | 0.0123     | 0.0172     |
+
+- The **optimal FeeRatio** estimated for the **BTC group** is slightly **lower** than that obtained via the weighted average method, whereas the remaining three groups exhibit **higher values**.
+- Notably, the **ETH group's optimal FeeRatio has increased significantly** to **0.0209**, deviating from the weighted average estimate.
+
+To rigorously assess whether the differences across these four groups are **statistically significant**, we conduct formal hypothesis testing.
+
+- If the test confirms **significant differences**, it would justify **group-specific** optimal FeeRatio settings.
+- Conversely, if no significant differences are found, it suggests that all samples might originate from a **single underlying distribution**, meaning we could use the **global mean** estimated in the previous section (*Aggregating Results*).
+
+Since the **log-transformed Optimal FeeRatio** follows a distribution closer to normality, we apply a **one-way ANOVA** to examine differences in **log(Optimal FeeRatio)** across groups.
+
+On the other hand, since the **original Optimal FeeRatio** follows a **log-normal-like** distribution, we use a **non-parametric test** (e.g., the **Kruskal–Wallis test**) to compare group differences.
+
+**One-Way ANOVA Results (log-transformed Optimal FeeRatio)**
+
+| Factor     | Df   | Sum Sq | Mean Sq | F Value | Pr(>F)  |
+| ---------- | ---- | ------ | ------- | ------- | ------- |
+| Base Asset | 3    | 11.18  | 3.728   | 5.043   | 0.00216 |
+| Residuals  | 206  | 152.29 | 0.739   | -       | -       |
+
+Since the **p-value** is **0.00216 < 0.01**, we can conclude with **99% confidence** that the four groups come from **different populations**.
+
+**Kruskal–Wallis Test Results (Original Optimal FeeRatio)**
+
+| Test                         | Chi-Squared | Df   | P-Value  |
+| ---------------------------- | ----------- | ---- | -------- |
+| Kruskal-Wallis rank sum test | 13.621      | 3    | 0.003469 |
+
+Similarly, since the **p-value** is **0.003469 < 0.01**, we again conclude with **99% confidence** that the four groups come from **different distributions**.
+
+Both the parametric (**ANOVA**) and non-parametric (**Kruskal–Wallis**) tests confirm that **the four groups belong to different populations**, providing strong justification for estimating and applying **group-specific optimal FeeRatios**.
+
+## Grouped Regression
+
+Similar to our approach in the **robustness analysis**, we conduct **grouped regression** on all observed data to determine the **optimal FeeRatio** for each group. At the same time, we must remain mindful of **outlier treatment**.
+
+The table below presents the **optimal FeeRatio** and the corresponding **expected EfficientRatio** for each group under different outlier treatment strategies. 
+
+We include **expected EfficientRatio** as an additional reference metric, as it helps assess the validity of the estimated **optimal FeeRatio**. 
+
+For instance, in the **ETH group**, while the estimated **optimal FeeRatio** of **0.126472967** falls within a plausible range, the corresponding **expected EfficientRatio** is an **unreasonably high** **179.44558250**. This suggests that the **optimal FeeRatio** for this group should be discarded.
+
+| Base Asset | Scenario       | Best Degree | Optimal FeeRatio       | Max EfficientRatio      |
+| ---------- | -------------- | ----------- | ---------------------- | ----------------------- |
+| ETH        | None           | 1           | 0.126472967            | 179.44558250(discarded) |
+| ETH        | Trim_1%        | 10          | 0.049968788            | 0.03776242              |
+| ETH        | Trim_2.5%      | 10          | 0.005258390            | 0.02293102              |
+| ETH        | Trim_5%        | 8           | 0.005351746            | 0.02314881              |
+| ETH        | Winsorize_1%   | 10          | 0.049490670            | 0.03995776              |
+| ETH        | Winsorize_2.5% | 10          | 0.044177179            | 0.02587934              |
+| ETH        | Winsorize_5%   | 7           | 0.004198041            | 0.02890451              |
+| Other      | None           | 10          | 0.163047672            | 0.33788477              |
+| Other      | Trim_1%        | 9           | 0.014886009            | 0.04869810              |
+| Other      | Trim_2.5%      | 2           | 0.015837980            | 0.02334372              |
+| Other      | Trim_5%        | 5           | 0.005269409            | 0.01938041              |
+| Other      | Winsorize_1%   | 9           | 0.014886009            | 0.06479983              |
+| Other      | Winsorize_2.5% | 10          | 0.014415999            | 0.06136141              |
+| Other      | Winsorize_5%   | 10          | 0.013305047            | 0.03348580              |
+| Stable     | None           | 5           | 0.143177100            | 0.26432985              |
+| Stable     | Trim_1%        | 6           | 0.053678695            | 0.09706117              |
+| Stable     | Trim_2.5%      | 9           | 0.029525993            | 0.09703206              |
+| Stable     | Trim_5%        | 7           | 0.029069703            | 0.07220110              |
+| Stable     | Winsorize_1%   | 4           | 0.036057461            | 0.09251266              |
+| Stable     | Winsorize_2.5% | 9           | 0.029689288            | 0.10027767              |
+| Stable     | Winsorize_5%   | 7           | 0.029086683            | 0.09372134              |
+| BTC        | None           | 1           | 4.161816589(discarded) | 0.04456677              |
+| BTC        | Trim_1%        | 10          | 0.020167154            | 0.02367652              |
+| BTC        | Trim_2.5%      | 10          | 0.020335376            | 0.02232156              |
+| BTC        | Trim_5%        | 10          | 0.028928699            | 0.02290693              |
+| BTC        | Winsorize_1%   | 10          | 0.020586818            | 0.02452002              |
+| BTC        | Winsorize_2.5% | 10          | 0.029047145            | 0.02379953              |
+| BTC        | Winsorize_5%   | 10          | 0.028618067            | 0.02545570              |
+
+
 
 # Conclusions
 
