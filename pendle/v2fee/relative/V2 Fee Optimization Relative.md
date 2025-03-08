@@ -454,7 +454,13 @@ From the table above, we observe that performing global regression without any o
 
 However, the **Optimal FeeRatio** obtained from **2.5% and 5% trimming** appears **too low**, suggesting that these levels of trimming might be excessive. Meanwhile, the results from **winsorization** exhibit much smaller variations. This makes sense, as **trimming removes extreme samples entirely**, whereas **winsorization only replaces extreme values with threshold values**, making the results more sensitive to trimming than winsorization.
 
-Considering that the scatter plot does not reveal an overwhelming number of outliers, a **1% trimming or winsorization** appears to be the most appropriate choice, while **2.5% and 5% adjustments might be overly aggressive**.
+Considering that the scatter plot does not reveal an overwhelming number of outliers, a **1% trimming or winsorization** appears to be the most appropriate choice, while **2.5% and 5% adjustments might be overly aggressive**. 
+
+To illustrate this point, we provide scatter plots for the **1% trimming** and **1% winsorization** cases below. As shown, after applying these adjustments, there are no apparent outliers remaining. This further supports the conclusion that a **1% adjustment is sufficient**, while **higher levels of trimming or winsorization may be unnecessary**.
+
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20250308114734472.png)
+
+![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20250308114654930.png)
 
 For reference, our previous **weighted average approach** suggested an **Optimal FeeRatio** of approximately **0.015**, while the **overall mean estimation** approach yielded **0.028**. If we believe that a **1% adjustment is sufficient**, the **Optimal FeeRatio** could be even higher, around **0.05**.
 
@@ -477,7 +483,7 @@ EfficientRatio_t&=\beta_0+\sum_{i=1}^l\beta_iFeeRatio_t^i+\varepsilon_t \\
 $$
 In this case, the state space model still represents a fixed-coefficient regression model and the estimated parameters are believed to be very close to what we have done for model (1). For instance, we may continue to use the pool, Bedrock UniETH 27JUN2024, as an example.
 
-To estimate the parameter, we may combine Kalman filter with likelyhood maximum estimation. The estimation results of model (2) are shown below: 
+To estimate the parameter, we may combine Kalman filter with likelyhood maximum estimation. The estimation results of model (2) with the degree = 8  are shown below: 
 
 
 
