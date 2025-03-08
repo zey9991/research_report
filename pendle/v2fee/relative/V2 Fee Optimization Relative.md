@@ -396,33 +396,56 @@ $$
 
 ## Estimating the Overall Mean
 
-Another way to aggregate the data from all pools is through the estimation of the overall mean. Compared to the weighted average method, this approach has more statistical grounding. Specifically, we can assume that the global optimal FeeRatio follows a specific distribution, such as a normal distribution. With the optimal FeeRatios from over two hundred pools, we can treat these as samples drawn from this distribution. We can then apply specific methods, such as Maximum Likelihood Estimation (MLE), to estimate the mean and variance of this overall distribution. In particular, the mean we estimate can be considered a statistically sound estimate of the global optimal FeeRatio, which we can use to set the global parameter.
+Another way to aggregate data from all pools is by estimating the **overall mean**. Compared to the weighted average method, this approach is more **statistically rigorous**. Specifically, we assume that the global optimal **FeeRatio** follows a specific probability distribution—such as a normal distribution. Given that we have **over two hundred pools**, we can treat their optimal FeeRatios as **samples drawn from this distribution**. Using **Maximum Likelihood Estimation (MLE)**, we can estimate the **mean** and **variance** of the overall distribution. The estimated mean, in particular, serves as a **statistically sound global optimal FeeRatio**, which we can use to set the **global parameter**.
 
-We can estimate the overall mean to be: **0.02796956**
+The estimated overall mean is: **0.02796956**. This implies that the global optimal FeeRatio should be set to this number.
 
-This implies that the global optimal FeeRatio should be set to:
-$$
-OptimalFeeRatio_{om}=0.02796956
-$$
-Another benefit of using this method is that we can provide a confidence interval for the estimate. The 95% confidence interval for the overall mean is calculated as: **( 0.008019949 , 0.04791916 )**
+One advantage of this method is that it allows us to **construct a confidence interval** for our estimate. The **95% confidence interval** for the overall mean is: **( 0.008019949 , 0.04791916 )**
 
-Even if our assumption about the underlying distribution is incorrect—that is, the true distribution of the optimal FeeRatio is not normal—the consistency of our estimate remains valid. This is ensured by the **Central Limit Theorem (CLT)**, which states that as the sample size approaches infinity, the sampling distribution of the sample mean converges in distribution to a normal distribution, provided that the samples are independently and identically distributed (i.i.d.).
+Even if our assumption of normality does not hold—i.e., the true distribution of the **optimal FeeRatio** is not exactly normal—our estimate remains **statistically valid** due to the **Central Limit Theorem (CLT)**. The CLT states that as the **sample size increases**, the **sampling distribution of the sample mean** approaches a normal distribution, **provided that the samples are independently and identically distributed (i.i.d.)**.
 
 To gain a better understanding of the distribution of optimal FeeRatios, we visualize it using both a **histogram** and a **kernel density estimate (KDE)**. While a histogram represents the frequency distribution of observed values, the KDE provides a **smoother approximation** of the underlying probability density function.
 
 The plot below illustrates the histogram alongside the kernel density estimate:
 
+![Histogram, Kernel Density and Normal Density of Optimal FeeRatio](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20250308152141718.png)
 
-
-![Histogram and Kernel Density](https://cdn.jsdelivr.net/gh/zey9991/mdpic/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250308101706.png)
-
-**Note:** One extreme outlier has been removed. The pool *Lombard_LBTC_26JUN2025* is estimated to be optimized at a FeeRatio of **2.0997459579**, which is due to the fact that this pool contains only **16 samples**, making the estimate highly unstable.
+> **Note:** One extreme outlier has been **removed**. The pool **Lombard_LBTC_26JUN2025** has an estimated **optimal FeeRatio** of **2.0997459579**, which is likely **unreliable** due to the **small sample size (only 16 samples)**, making the estimate highly unstable.
+>
+> As a comparison, after removing this extreme outlier, the **new estimate** for the overall mean is **0.01786333** with a **95% confidence interval** of (0.01547763,0.02024903). This result aligns closely with the **weighted average method**. Thus, if we consider removing this extreme outlier to be **reasonable**, we may set the **optimal FeeRatio** as **0.01786333**.
 
 **Key Observations**
 
 - Even with a large sample size, we do not observe a clear bell-shaped normal density curve. This is primarily due to **truncation near zero**, where optimal FeeRatios are bounded from below. However, this truncation does **not** invalidate the Central Limit Theorem. If a random variable is truncated within a certain range (e.g., near zero), its shape may be altered, but as long as the truncated variable remains **i.i.d. with finite variance**, the CLT still holds, and the sample mean will converge to a normal distribution.
 
-- Additionally, the distribution of **Optimal FeeRatios appears to exhibit heavier tails** than a normal distribution. This suggests the possibility of **infinite variance**, which would **invalidate the CLT**. In such cases, the sample mean may converge to a **stable distribution** other than the normal distribution. A more rigorous discussion on this topic will be provided in subsequent reports.
+- Additionally, the distribution of **Optimal FeeRatios exhibit heavier tails** than a normal distribution. This suggests the possibility of **infinite variance**, which would **invalidate the CLT**. In such cases, the sample mean may converge to a **stable distribution** other than the normal distribution. 
+
+To make the data **better conform to a normal distribution**, we apply a **log transformation** to the **optimal FeeRatio** and replot the histogram and KDE for comparison:
+
+![Histogram, Kernel Density and Normal Density of log(Optimal FeeRatio)](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20250308154954780.png)
+
+The transformed distribution **appears much closer** to a normal probability density curve.
+
+To formally verify whether the **log-transformed optimal FeeRatio** follows a normal distribution, we conduct **three common normality tests**:
+
+| Test Method                          | Test Statistic | p-value | Conclusion (α = 0.05)                                |
+| ------------------------------------ | -------------- | ------- | ---------------------------------------------------- |
+| Shapiro-Wilk Normality Test          | W = 0.98976    | 0.1523  | Fail to reject H₀ (Data may be normally distributed) |
+| Anderson-Darling Normality Test      | A = 0.7594     | 0.0475  | Reject H₀ (Data may not be normally distributed)     |
+| Lilliefors (Kolmogorov-Smirnov) Test | D = 0.056449   | 0.1145  | Fail to reject H₀ (Data may be normally distributed) |
+
+- The **Shapiro-Wilk** and **Lilliefors tests** yield **p-values > 0.05**, meaning we **fail to reject** the null hypothesis, suggesting that the **data may be normally distributed**.
+- However, the **Anderson-Darling test** produces a **p-value slightly below 0.05**, indicating a **potential deviation** from normality.
+- Since different tests have varying **sensitivity and statistical power**, results can differ. Overall, while the **Anderson-Darling test** suggests some deviation, the other two tests **do not detect significant departures from normality**.
+- Therefore, the **log-transformed optimal FeeRatio** can be **reasonably approximated** by a normal distribution.
+
+Using this transformation, we estimate the **mean of the log-transformed distribution** to be -4.39146. Exponentiating this value gives:
+$$
+OptimalFeeRatio_{log(om)}=0.01238264
+$$
+The **95% confidence interval** for the log-transformed mean is (-4.512649 , -4.270271). Exponentiating the confidence interval bounds yields (0.01096936,0.01397799)。
+
+Thus, we can conclude that the **optimal FeeRatio** should be set to approximately 0.01238264. This transformation-based estimate aligns with previous results while providing **greater statistical robustness** by addressing potential distributional issues.
 
 # Robustness Analyses
 
@@ -462,9 +485,9 @@ To illustrate this point, we provide scatter plots for the **1% trimming** and *
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20250308114654930.png)
 
-For reference, our previous **weighted average approach** suggested an **Optimal FeeRatio** of approximately **0.015**, while the **overall mean estimation** approach yielded **0.028**. If we believe that a **1% adjustment is sufficient**, the **Optimal FeeRatio** could be even higher, around **0.05**.
+For reference, our previous **weighted average approach** suggested an **Optimal FeeRatio** of approximately **0.015**, while the **overall mean estimation** approach yielded **0.012**. If we believe that a **1% adjustment is sufficient**, the **Optimal FeeRatio** could be even higher, around **0.05**.
 
-## Estimate the parameters using State Space Model
+## Involving in Time-varying intercept
 
 In the previous section, we consider the polynomial regression model:
 $$
@@ -483,7 +506,16 @@ EfficientRatio_t&=\beta_0+\sum_{i=1}^l\beta_iFeeRatio_t^i+\varepsilon_t \\
 $$
 In this case, the state space model still represents a fixed-coefficient regression model and the estimated parameters are believed to be very close to what we have done for model (1). For instance, we may continue to use the pool, Bedrock UniETH 27JUN2024, as an example.
 
-To estimate the parameter, we may combine Kalman filter with likelyhood maximum estimation. The estimation results of model (2) with the degree = 8  are shown below: 
+In the previous section, we find the quintic regression model fit the best, which is
+$$
+\begin{aligned}
+EfficientRatio_t&=\beta_0+\sum_{i=1}^5\beta_iFeeRatio_t^i+\varepsilon_t \\
+\beta_{it}&=\beta_{it}, \text{ for i=0,1,2,...,5}
+\end{aligned}
+$$
+
+
+We can also estimate the parameter in that model. To estimate the parameter, we may combine Kalman filter with likelyhood maximum estimation. The estimation results of model (2) with the degree = 5  are shown below: 
 
 
 
