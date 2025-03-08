@@ -439,13 +439,29 @@ To formally verify whether the **log-transformed optimal FeeRatio** follows a no
 - Since different tests have varying **sensitivity and statistical power**, results can differ. Overall, while the **Anderson-Darling test** suggests some deviation, the other two tests **do not detect significant departures from normality**.
 - Therefore, the **log-transformed optimal FeeRatio** can be **reasonably approximated** by a normal distribution.
 
-Using this transformation, we estimate the **mean of the log-transformed distribution** to be -4.39146. Exponentiating this value gives:
-$$
-OptimalFeeRatio_{log(om)}=0.01238264
-$$
-The **95% confidence interval** for the log-transformed mean is (-4.512649 , -4.270271). Exponentiating the confidence interval bounds yields (0.01096936,0.01397799)。
+Using this transformation, we estimate the **mean of the log-transformed distribution** to be **-4.39146**, with an estimated variance of **0.78376**.
 
-Thus, we can conclude that the **optimal FeeRatio** should be set to approximately 0.01238264. This transformation-based estimate aligns with previous results while providing **greater statistical robustness** by addressing potential distributional issues.
+To express this result in our desired form, we must recall the properties of the **log-normal distribution**. Suppose a random variable $$X$$ follows a log-normal distribution, meaning:
+$$
+lnX\sim N(\mu, \sigma^2)
+$$
+Letting $$Y=lnX$$， we know that for a normally distributed variable $$Y$$, the expectation and variance are given by $$E(Y)=\mu$$ and $$Var(Y)=\sigma^2$$. Now, we seek to recover the expected value of $$X$$ . It can be shown that:
+$$
+E(X)=e^{\mu+\frac{\sigma^2}{2}}
+$$
+Using this formula, we compute the back-transformed mean as **0.01832333**, suggesting that we should set:
+$$
+OptimalFeeRatio_{log(om)}=0.01832333
+$$
+This result is **remarkably close** to our earlier estimate of **0.01786333**, obtained after removing the extreme outlier.
+
+The **95% confidence interval** for the log-transformed mean is **(-4.512649 , -4.270271)**. To compute the variance of the original distribution, we apply the following transformation:
+$$
+Var(X)=e^{2\mu+\sigma^2}(e^{\sigma^2}-1)
+$$
+Substituting our estimates, we obtain the original variance as $$3.99431929\times10^{-4}$$. Consequently, the **95% confidence interval** for the back-transformed mean is ( 0.01558748 , 0.02105918 )
+
+Thus, we can conclude that the **optimal FeeRatio** should be set to approximately 0.01832333. This transformation-based estimate aligns with previous results while providing **greater statistical robustness** by addressing potential distributional issues.
 
 # Robustness Analyses
 
@@ -485,9 +501,9 @@ To illustrate this point, we provide scatter plots for the **1% trimming** and *
 
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20250308114654930.png)
 
-For reference, our previous **weighted average approach** suggested an **Optimal FeeRatio** of approximately **0.015**, while the **overall mean estimation** approach yielded **0.012**. If we believe that a **1% adjustment is sufficient**, the **Optimal FeeRatio** could be even higher, around **0.05**.
+For reference, our previous **weighted average approach** suggested an **Optimal FeeRatio** of approximately **0.015**, while the **overall mean estimation** approach yielded **0.018**. If we believe that a **1% adjustment is sufficient**, the **Optimal FeeRatio** could be even higher, around **0.05**.
 
-## Involving in Time-varying intercept
+## Involving in Time-varying intercepts
 
 In the previous section, we consider the polynomial regression model:
 $$
@@ -495,13 +511,13 @@ EfficientRatio_t=\beta_0+\sum_{i=1}^l\beta_iFeeRatio_t^i+\varepsilon_t
 $$
 We may rewrite it in the form of state space model(SSM). 
 
-请你简要补充介绍SSM
+A state-space model (SSM) is a framework for modeling dynamic systems where the observed data is assumed to be driven by a set of **latent (unobserved) states** that evolve over time. SSMs are widely used in time series analysis, signal processing, and econometrics to model **time-varying parameters** and capture dependencies in sequential data.
 
 Specifically, we consider the state space model as follows:
 $$
 \begin{aligned}
 EfficientRatio_t&=\beta_0+\sum_{i=1}^l\beta_iFeeRatio_t^i+\varepsilon_t \\
-\beta_{it}&=\beta_{it}, \text{ for i=0,1,2,...,l}
+\beta_{it}&=\beta_{it}, \text{ for } i=0,1,2,...,l 
 \end{aligned}\tag{2}
 $$
 In this case, the state space model still represents a fixed-coefficient regression model and the estimated parameters are believed to be very close to what we have done for model (1). For instance, we may continue to use the pool, Bedrock UniETH 27JUN2024, as an example.
@@ -510,7 +526,7 @@ In the previous section, we find the quintic regression model fit the best, whic
 $$
 \begin{aligned}
 EfficientRatio_t&=\beta_0+\sum_{i=1}^5\beta_iFeeRatio_t^i+\varepsilon_t \\
-\beta_{it}&=\beta_{it}, \text{ for i=0,1,2,...,5}
+\beta_{it}&=\beta_{it}, \text{ for } i=0,1,2,...,5 
 \end{aligned}
 $$
 
