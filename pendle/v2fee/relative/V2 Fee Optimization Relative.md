@@ -480,3 +480,8 @@ As mentioned earlier, we can consider that 1% trimming and winsorizing are suffi
 | Other      | 0.014886009              | 0.014886009                   | 0.014886009          |
 | Stable     | 0.053678695              | 0.036057461                   | 0.044868078          |
 
+# References
+
+1. [Absolute Fee | Peyton's Web3 Research Reports](https://peyton404.gitbook.io/research_reports/pendle/v2-swap-fee-optimization/v2-fee-optimization-absolute)
+2. [Advanced Econometrics and Stata Applications (2nd Edition) | Chen Qiang | Download on Z-Library](https://zh.z-lib.gl/book/5422112/b9d59c/高级计量经济学及stata应用第二版.html)
+3. [Statistics (8th Edition) | Jia Junping | Download on Z-Library](https://zh.z-lib.gl/book/27323331/fb6108/统计学第8版.html)
