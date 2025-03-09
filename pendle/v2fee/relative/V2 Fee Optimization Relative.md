@@ -226,6 +226,8 @@ Here, we demonstrate a weighted average method based on the historical average T
 | ankrETH_WETH_BalancerLP_Aura_28MAR2024 | 0.003118437      | 169800.63078518893 |
 | ARB_ETH_Camelot_27JUN2024              | 0.032033558      | 809023.8249134828  |
 
+Note: Here, **TVL** refers to the historical average TVL for the most recent day of active pools in the current dataset. For inactive pools, it refers to the TVL on the last active day. For inactive pools, this metric takes into account the TVL performance during all previously active periods.
+
 The global optimal FeeRatio for these samples would be: 0.014929819
 
 Once we have this data for all pools, we can calculate the global optimal FeeRatio that applies to all 206 pools: 
