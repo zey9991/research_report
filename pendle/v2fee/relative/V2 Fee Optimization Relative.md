@@ -170,18 +170,18 @@ The first method is the weighted average. For example, we can set the weights ba
 
 Here, we demonstrate a weighted average method based on the historical average TVL of the pools. For example, below are the historical average TVL and the corresponding optimal FeeRatios for 10 pools:
 
-| Pool                                   | Max Fee Ratio | TVL                |
-| -------------------------------------- | ------------- | ------------------ |
-| Aave_aUSDC_26DEC2024                   | 0.007500975   | 579748.0574682716  |
-| Aave_Ethereum_USDT_26JUN2025           | 0.020744433   | 239716.48101730828 |
-| Aerodrome_VIR/CBBTC_26JUN2025          | 0.019218241   | 1242137.948072133  |
-| Aladdin_sdCRV_26JUN2025                | 0.014224466   | 318792.09819704015 |
-| Amphor_LRT_26DEC2024                   | 0.009941479   | 5106022.381041232  |
-| Amphor_LRT_26SEP2024                   | 0.014894995   | 9335083.455937527  |
-| ankrBNB_26JUN2025                      | 0.019481182   | 754382.9861734031  |
-| ankrETH_WETH_BalancerLP_Aura_26SEP2024 | 0.041466278   | 314340.80509406887 |
-| ankrETH_WETH_BalancerLP_Aura_28MAR2024 | 0.003118437   | 169800.63078518893 |
-| ARB_ETH_Camelot_27JUN2024              | 0.032033558   | 809023.8249134828  |
+| Pool                                   | Optimal FeeRatio | TVL                |
+| -------------------------------------- | ---------------- | ------------------ |
+| Aave_aUSDC_26DEC2024                   | 0.007500975      | 579748.0574682716  |
+| Aave_Ethereum_USDT_26JUN2025           | 0.020744433      | 239716.48101730828 |
+| Aerodrome_VIR/CBBTC_26JUN2025          | 0.019218241      | 1242137.948072133  |
+| Aladdin_sdCRV_26JUN2025                | 0.014224466      | 318792.09819704015 |
+| Amphor_LRT_26DEC2024                   | 0.009941479      | 5106022.381041232  |
+| Amphor_LRT_26SEP2024                   | 0.014894995      | 9335083.455937527  |
+| ankrBNB_26JUN2025                      | 0.019481182      | 754382.9861734031  |
+| ankrETH_WETH_BalancerLP_Aura_26SEP2024 | 0.041466278      | 314340.80509406887 |
+| ankrETH_WETH_BalancerLP_Aura_28MAR2024 | 0.003118437      | 169800.63078518893 |
+| ARB_ETH_Camelot_27JUN2024              | 0.032033558      | 809023.8249134828  |
 
 The global optimal FeeRatio for these samples would be: 0.014929819
 
@@ -265,7 +265,7 @@ Thus, we can conclude that the **optimal FeeRatio** should be set to approximate
 
 Since our current model essentially ignores the time-series characteristics and resembles a cross-sectional regression, we can pool all the data from the active periods of each pool into a single dataset, comprising over 30,000 data points. Using this dataset, we can directly estimate the regression parameters, fit the curve, and find the FeeRatio that maximizes the fitted curve. This will serve as the global optimal FeeRatio parameter.
 
-**Why didn’t we do this from the beginning?** This is because, when considering the time-series characteristics, the differences between the pools are substantial, such as differing active days. Consequently, we cannot use this method of pooling all the pools’ data to directly estimate parameters. This means that we must estimate the optimal FeeRatio for each pool separately and aggregate the results. In the next subsection, we will see this more clearly when we apply specialized time-series modeling techniques—specifically, the State Space Model.
+**Why didn’t we do this from the beginning?** This is because, when considering the time-series characteristics, the differences between the pools are substantial, such as differing active days. Consequently, we cannot use this method of pooling all the pools’ data to directly estimate parameters. This means that we must estimate the optimal FeeRatio for each pool separately and aggregate the results. In subsequent reports, we will see this more clearly when we apply specialized time-series modeling techniques.
 
 To initiate our global regression model, we first visualize the relationship between **FeeRatio** and **Coefficient** using a scatter plot, similar to our approach in the previous section.
 
@@ -298,38 +298,6 @@ To illustrate this point, we provide scatter plots for the **1% trimming** and *
 ![](https://cdn.jsdelivr.net/gh/zey9991/mdpic/image-20250308114654930.png)
 
 For reference, our previous **weighted average approach** suggested an **Optimal FeeRatio** of approximately **0.015**, while the **overall mean estimation** approach yielded **0.018**. If we believe that a **1% adjustment is sufficient**, the **Optimal FeeRatio** could be even higher, around **0.05**.
-
-## Involving in Time-varying intercepts
-
-In the previous section, we consider the polynomial regression model:
-$$
-EfficientRatio_t=\beta_0+\sum_{i=1}^l\beta_iFeeRatio_t^i+\varepsilon_t  
-$$
-We may rewrite it in the form of state space model(SSM). 
-
-A state-space model (SSM) is a framework for modeling dynamic systems where the observed data is assumed to be driven by a set of **latent (unobserved) states** that evolve over time. SSMs are widely used in time series analysis, signal processing, and econometrics to model **time-varying parameters** and capture dependencies in sequential data.
-
-Specifically, we consider the state space model as follows:
-$$
-\begin{aligned}
-EfficientRatio_t&=\beta_0+\sum_{i=1}^l\beta_iFeeRatio_t^i+\varepsilon_t \\
-\beta_{it}&=\beta_{it}, \text{ for } i=0,1,2,...,l 
-\end{aligned}\tag{2}
-$$
-In this case, the state space model still represents a fixed-coefficient regression model and the estimated parameters are believed to be very close to what we have done for model (1). For instance, we may continue to use the pool, Bedrock UniETH 27JUN2024, as an example.
-
-In the previous section, we find the quintic regression model fit the best, which is
-$$
-\begin{aligned}
-EfficientRatio_t&=\beta_0+\sum_{i=1}^5\beta_iFeeRatio_t^i+\varepsilon_t \\
-\beta_{it}&=\beta_{it}, \text{ for } i=0,1,2,...,5 
-\end{aligned}
-$$
-
-
-We can also estimate the parameter in that model. To estimate the parameter, we may combine Kalman filter with likelyhood maximum estimation. The estimation results of model (2) with the degree = 5  are shown below: 
-
-
 
 # Heterogeneity Analysis
 
@@ -404,39 +372,61 @@ We include **expected EfficientRatio** as an additional reference metric, as it 
 
 For instance, in the **ETH group**, while the estimated **optimal FeeRatio** of **0.126472967** falls within a plausible range, the corresponding **expected EfficientRatio** is an **unreasonably high** **179.44558250**. This suggests that the **optimal FeeRatio** for this group should be discarded.
 
-| Base Asset | Scenario       | Best Degree | Optimal FeeRatio       | Max EfficientRatio      |
-| ---------- | -------------- | ----------- | ---------------------- | ----------------------- |
-| ETH        | None           | 1           | 0.126472967            | 179.44558250(discarded) |
-| ETH        | Trim_1%        | 10          | 0.049968788            | 0.03776242              |
-| ETH        | Trim_2.5%      | 10          | 0.005258390            | 0.02293102              |
-| ETH        | Trim_5%        | 8           | 0.005351746            | 0.02314881              |
-| ETH        | Winsorize_1%   | 10          | 0.049490670            | 0.03995776              |
-| ETH        | Winsorize_2.5% | 10          | 0.044177179            | 0.02587934              |
-| ETH        | Winsorize_5%   | 7           | 0.004198041            | 0.02890451              |
-| Other      | None           | 10          | 0.163047672            | 0.33788477              |
-| Other      | Trim_1%        | 9           | 0.014886009            | 0.04869810              |
-| Other      | Trim_2.5%      | 2           | 0.015837980            | 0.02334372              |
-| Other      | Trim_5%        | 5           | 0.005269409            | 0.01938041              |
-| Other      | Winsorize_1%   | 9           | 0.014886009            | 0.06479983              |
-| Other      | Winsorize_2.5% | 10          | 0.014415999            | 0.06136141              |
-| Other      | Winsorize_5%   | 10          | 0.013305047            | 0.03348580              |
-| Stable     | None           | 5           | 0.143177100            | 0.26432985              |
-| Stable     | Trim_1%        | 6           | 0.053678695            | 0.09706117              |
-| Stable     | Trim_2.5%      | 9           | 0.029525993            | 0.09703206              |
-| Stable     | Trim_5%        | 7           | 0.029069703            | 0.07220110              |
-| Stable     | Winsorize_1%   | 4           | 0.036057461            | 0.09251266              |
-| Stable     | Winsorize_2.5% | 9           | 0.029689288            | 0.10027767              |
-| Stable     | Winsorize_5%   | 7           | 0.029086683            | 0.09372134              |
-| BTC        | None           | 1           | 4.161816589(discarded) | 0.04456677              |
-| BTC        | Trim_1%        | 10          | 0.020167154            | 0.02367652              |
-| BTC        | Trim_2.5%      | 10          | 0.020335376            | 0.02232156              |
-| BTC        | Trim_5%        | 10          | 0.028928699            | 0.02290693              |
-| BTC        | Winsorize_1%   | 10          | 0.020586818            | 0.02452002              |
-| BTC        | Winsorize_2.5% | 10          | 0.029047145            | 0.02379953              |
-| BTC        | Winsorize_5%   | 10          | 0.028618067            | 0.02545570              |
+**Grouped Regression Results for Base Asset ETH**
 
+| Scenario       | Best Degree | Optimal FeeRatio | Expected EfficientRatio |
+| -------------- | ----------- | ---------------- | ----------------------- |
+| None           | 1           | 0.126472967      | 179.44558250            |
+| Trim_1%        | 10          | 0.049968788      | 0.03776242              |
+| Trim_2.5%      | 10          | 0.005258390      | 0.02293102              |
+| Trim_5%        | 8           | 0.005351746      | 0.02314881              |
+| Winsorize_1%   | 10          | 0.049490670      | 0.03995776              |
+| Winsorize_2.5% | 10          | 0.044177179      | 0.02587934              |
+| Winsorize_5%   | 7           | 0.004198041      | 0.02890451              |
 
+- The result without any trimming or winsorizing (the first row in the table above) should be discarded because the expected **Efficient Ratio** is clearly too high and unreasonable.
+
+**Grouped Regression Results for Base Asset BTC**
+
+| Scenario       | Best Degree | Optimal FeeRatio | Expected EfficientRatio |
+| -------------- | ----------- | ---------------- | ----------------------- |
+| None           | 1           | 4.161816589      | 0.04456677              |
+| Trim_1%        | 10          | 0.020167154      | 0.02367652              |
+| Trim_2.5%      | 10          | 0.020335376      | 0.02232156              |
+| Trim_5%        | 10          | 0.028928699      | 0.02290693              |
+| Winsorize_1%   | 10          | 0.020586818      | 0.02452002              |
+| Winsorize_2.5% | 10          | 0.029047145      | 0.02379953              |
+| Winsorize_5%   | 10          | 0.028618067      | 0.02545570              |
+
+- The result without any trimming or winsorizing (the first row in the table above) should be discarded because the expected **Optimal Fee Ratio** is clearly too high and unreasonable.
+
+**Grouped Regression Results for Base Asset Stable**
+
+| Scenario       | Best Degree | Optimal FeeRatio | Expected EfficientRatio |
+| -------------- | ----------- | ---------------- | ----------------------- |
+| None           | 5           | 0.143177100      | 0.26432985              |
+| Trim_1%        | 6           | 0.053678695      | 0.09706117              |
+| Trim_2.5%      | 9           | 0.029525993      | 0.09703206              |
+| Trim_5%        | 7           | 0.029069703      | 0.07220110              |
+| Winsorize_1%   | 4           | 0.036057461      | 0.09251266              |
+| Winsorize_2.5% | 9           | 0.029689288      | 0.10027767              |
+| Winsorize_5%   | 7           | 0.029086683      | 0.09372134              |
+
+**Grouped Regression Results for Base Asset Other**
+
+| Scenario       | Best Degree | Optimal FeeRatio | Expected EfficientRatio |
+| -------------- | ----------- | ---------------- | ----------------------- |
+| None           | 10          | 0.163047672      | 0.33788477              |
+| Trim_1%        | 9           | 0.014886009      | 0.04869810              |
+| Trim_2.5%      | 2           | 0.015837980      | 0.02334372              |
+| Trim_5%        | 5           | 0.005269409      | 0.01938041              |
+| Winsorize_1%   | 9           | 0.014886009      | 0.06479983              |
+| Winsorize_2.5% | 10          | 0.014415999      | 0.06136141              |
+| Winsorize_5%   | 10          | 0.013305047      | 0.03348580              |
 
 # Conclusions
 
-1
+本文提供了一种粗略地设置每个pool的最优FeeRatio的几种方法，不同的方法结果各异，方法也各有优劣。具体来说
+
+- 如果我们采用求解各个池子的最优FeeRatio并聚合的方法
+- 如果我们采用直接对全部样本回归
