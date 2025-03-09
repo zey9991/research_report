@@ -9,8 +9,8 @@ This situation is analogous to a **market competition model** in economics. In s
 
 Previously, our team introduced the “Efficient Ratio” as an indicator to measure the effectiveness of fee settings in specific pools. In this data-driven report, we aim to explore the following:
 
-- Has the “Efficient Ratio” functioned well in evaluating the effectiveness of fee settings? If not, is there a more suitable alternative indicator?
-- How do different fee tiers affect the “Efficient Ratio”? What is the optimal range according to historical data?
+- How do different fee tiers affect the “Efficient Ratio”? 
+- What is the optimal range according to historical data?
 
 # Fee Calculation
 
@@ -1100,4 +1100,4 @@ Additionally, **in some cases, the model detected a minimum value**. **The reaso
 1. [MarketMathCore.sol - WORKSPACE - Blockscan contract source code viewer](https://vscode.blockscan.com/ethereum/0x40789E8536C668c6A249aF61c81b9dfaC3EB8F32)
 2. [PendleMarketV3.sol - WORKSPACE - Blockscan contract source code viewer](https://vscode.blockscan.com/ethereum/0x40789E8536C668c6A249aF61c81b9dfaC3EB8F32)
 3. [Sci-Hub |SAMPLE SPLITTING AND THRESHOLD ESTIMATION by Hansen ](https://sci-hub.st/10.2307/2999601)
-4. 
+4. [Advanced Econometrics and Stata Applications (2nd Edition) | Chen Qiang | Download on Z-Library](https://zh.z-lib.gl/book/5422112/b9d59c/高级计量经济学及stata应用第二版.html)
