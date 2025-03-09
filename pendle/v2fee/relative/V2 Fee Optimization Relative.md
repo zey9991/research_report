@@ -417,7 +417,7 @@ The table below presents the **optimal FeeRatio** and the corresponding **expect
 
 We include **expected EfficientRatio** as an additional reference metric, as it helps assess the validity of the estimated **optimal FeeRatio**. 
 
-For instance, in the **ETH group**, while the estimated **optimal FeeRatio** of **0.126472967** falls within a plausible range, the corresponding **expected EfficientRatio** is an **unreasonably high** **179.44558250**. This suggests that the **optimal FeeRatio** for this group should be discarded.
+For instance, in the **ETH group**, while the estimated **optimal FeeRatio** of **0.126472967** falls within a plausible range, the corresponding **expected EfficientRatio** is an **unreasonably high** **179.44558250**. This suggests that the **optimal FeeRatio** for this scenario should be discarded.
 
 **Grouped Regression Results for Base Asset ETH**
 
