@@ -264,7 +264,7 @@ To address this, we aimed to maximize the expected **EfficientRatio** given a sp
 $$
 arg\max_{FeeTier} E(EfficientRatio|FeeTier)
 $$
-where E(EfficientRatio∣FeeTier)E(\text{EfficientRatio} | \text{FeeTier})E(EfficientRatio∣FeeTier) represents the conditional expectation of **EfficientRatio** given **FeeTier**. Alternatively, we can interpret it as a function of **FeeTier**: 
+where $$E(EfficientRatio∣FeeTier)$$ represents the conditional expectation of **EfficientRatio** given **FeeTier**. Alternatively, we can interpret it as a function of **FeeTier**: 
 $$
 E(EfficientRatio|FeeTier)=f(FeeTier)
 $$
