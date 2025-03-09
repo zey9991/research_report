@@ -39,6 +39,8 @@
 | Other      | 0.014886009              | 0.014886009                   | 0.014886009          |
 | Stable     | 0.053678695              | 0.036057461                   | 0.044868078          |
 
+3. It is important to note that these methods still have certain limitations, such as the lack of additional control variables or data features, and the failure to fully account for the characteristics of time series data. The accuracy of the model can still be further improved, and we anticipate gradually refining them in future reports.
+
 # Background
 
 In the previous report, we explored the relationship between **FeeTier** and **EfficientRatio** on an absolute basis, where the **FeeTier** used was a fixed value.
