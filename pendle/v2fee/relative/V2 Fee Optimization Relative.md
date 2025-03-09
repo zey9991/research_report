@@ -1,3 +1,44 @@
+# Summary
+
+1. This report **provides several methods for setting the optimal FeeRatio for Pendle V2 pools**, with different methods having their own advantages and disadvantages, leading to varying results. Specifically:
+
+- If we adopt a **bottom-up** approach:
+  - The global optimal FeeRatio calculated using the historical TVL weighted average is around **0.01520877**.
+  - The global optimal FeeRatio estimated using the overall mean method is **0.01832333**, with a 95% confidence interval of **(0.01558748, 0.02105918)**. FeeRatios exceeding this range can serve as a basis for resetting the FeeRatio.
+- If we adopt a **top-down** approach:
+  - The global optimal FeeRatio calculated varies depending on the method used for handling outliers.
+  - It can be considered that trimming and winsorizing both tails by 1% of the outliers is sufficient, and the corresponding global optimal FeeRatio is around **0.05**.
+- The results from the two methods differ significantly, with **the top-down approach yielding a notably higher optimal FeeRatio**.
+
+2. The statistical tests on the grouped data **suggest that it is necessary to set the FeeRatio based on different Base Asset** groupings. Specifically:
+
+- The historical TVL weighted average results for each group are as follows:
+
+| Base Asset | Weighted Avg Optimal FeeRatio | Pool Count |
+| ---------- | ----------------------------- | ---------- |
+| BTC        | 0.0283                        | 16         |
+| ETH        | 0.0142                        | 109        |
+| Other      | 0.0130                        | 27         |
+| Stable     | 0.0129                        | 59         |
+
+- The results from estimating the overall mean for each group are shown in the table below. The 95% confidence intervals can serve as a basis for adjusting the optimal FeeRatio:
+
+| Base Asset | Optimal FeeRatio | 95% Confidence Interval Lower Bound | 95% Confidence Interval Upper Bound |
+| ---------- | ---------------- | ----------------------------------- | ----------------------------------- |
+| BTC        | 0.0258           | 0.0177                              | 0.0375                              |
+| ETH        | 0.0209           | 0.0176                              | 0.0248                              |
+| Other      | 0.0141           | 0.00914                             | 0.0218                              |
+| Stable     | 0.0145           | 0.0123                              | 0.0172                              |
+
+- The results from the grouped regressions are as follows:
+
+| Base Asset | Trim 1% Optimal FeeRatio | Winsorize 1% Optimal FeeRatio | Avg Optimal FeeRatio |
+| ---------- | ------------------------ | ----------------------------- | -------------------- |
+| BTC        | 0.020167154              | 0.020586818                   | 0.020376986          |
+| ETH        | 0.049968788              | 0.049490670                   | 0.049729729          |
+| Other      | 0.014886009              | 0.014886009                   | 0.014886009          |
+| Stable     | 0.053678695              | 0.036057461                   | 0.044868078          |
+
 # Background
 
 In the previous report, we explored the relationship between **FeeTier** and **EfficientRatio** on an absolute basis, where the **FeeTier** used was a fixed value.
@@ -6,9 +47,11 @@ However, the current approach employed by our team adjusts the pools' **FeeTier*
 
 If this **FeeRatio** deviates significantly from 0.02 (e.g., below 0.016 or above 0.025), the **FeeTier** is adjusted to bring the ratio closer to 0.02.
 
-In this report, we aim to expand our analysis of **FeeTier** and **EfficientRatio** by examining them dynamically. By modeling the time-series relationship between **FeeRatio** and **EfficientRatio**, we can evaluate how fluctuations in the **FeeRatio** affect the pool’s **EfficientRatio**.
+In this report, we temporarily set aside the time-series characteristics of the **FeeRatio** and **EfficientRatio** to quickly estimate the optimal **FeeRatio** that should be set.
 
-The ultimate goal of this report is to determine whether setting the **FeeRatio** at 0.02 is optimal. If not, we seek to identify a more suitable value.
+The ultimate goal of this report is to determine whether setting the **FeeRatio** at 0.02 is optimal. If not, we aim to identify a more suitable value.
+
+In future reports, we will look into improving our model, particularly by incorporating more control variables and considering the time-series properties of the data.
 
 # Definition
 
@@ -424,9 +467,12 @@ For instance, in the **ETH group**, while the estimated **optimal FeeRatio** of 
 | Winsorize_2.5% | 10          | 0.014415999      | 0.06136141              |
 | Winsorize_5%   | 10          | 0.013305047      | 0.03348580              |
 
-# Conclusions
+As mentioned earlier, we can consider that 1% trimming and winsorizing are sufficient. Below, we aggregate the results of 1% trimming and winsorizing for each group as follows:
 
-本文提供了一种粗略地设置每个pool的最优FeeRatio的几种方法，不同的方法结果各异，方法也各有优劣。具体来说
+| Base Asset | Trim 1% Optimal FeeRatio | Winsorize 1% Optimal FeeRatio | Avg Optimal FeeRatio |
+| ---------- | ------------------------ | ----------------------------- | -------------------- |
+| BTC        | 0.020167154              | 0.020586818                   | 0.020376986          |
+| ETH        | 0.049968788              | 0.049490670                   | 0.049729729          |
+| Other      | 0.014886009              | 0.014886009                   | 0.014886009          |
+| Stable     | 0.053678695              | 0.036057461                   | 0.044868078          |
 
-- 如果我们采用求解各个池子的最优FeeRatio并聚合的方法
-- 如果我们采用直接对全部样本回归
