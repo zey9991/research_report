@@ -1,13 +1,6 @@
 # Table of contents
 * [Introduction](README.md)
 
-## Pendle
-* [V2 Swap Fee Optimization](<pendle/Pendle V2 Fee Optimization.md>)
-  * [Relative Fee](<pendle/v2fee/relative/V2 Fee Optimization Relative.md>)
-  * [Absolute Fee](<pendle/v2fee/absolute/V2 Fee Optimization Absolute.md>)
-  * [Timeline](<pendle/V2 Fee Timeline.md>)
-  * [Weekly Syncup](<pendle/V2 Fee Weekly Syncup.md>)
-
 ## Macro
 
 - [2503-Macro Weekly](macro/macro0309.md)
