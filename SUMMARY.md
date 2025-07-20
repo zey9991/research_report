@@ -28,9 +28,5 @@
 * [2407-Restaking](sectors/2407-Restaking/README.md)
 
 ## Others
-* [Tutorial](<others/Tutorial.md>)
-  * [API Call Quick Guide](<others/2411-API Call Quick Guide/README.md>)
-  * [Web3 Project Research Report Guide](<others/2409-Web3 Project Research Report Guide/README.md>)
-  * [Recommended Research Reports](<others/Recommended Research Reports/README.md>)
-  * [Recommended Research Institutions](<others/Recommended Research Instituitions/README.md>)
+* [web3-research-handbook](https://lys-lab.gitbook.io/web3-research-handbook)
 
