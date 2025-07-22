@@ -39,7 +39,7 @@ Contact Information:
 - Discord: 0xpeyton404
 
 Professional Experience:
-- 2024.05–Present: Researcher at LYS Lab(Part-time)
+- 2024.05–Present: Researcher at LYS Lab (Part-time)
 - 2025.01–2025.04: Research Analyst/Data Analyst at Pendle
 - 2024.09–2024.10: Graduate of Gryphsis Academy
 - 2024.05–2024.08: Content Operator/Analyst Intern at 7UpDAO
@@ -47,7 +47,7 @@ Professional Experience:
 
 Research Areas:
 - Decentralized Finance (DeFi)
-- Macro Analysis
+- Macroeconomics Analysis (Macro)
 
 Awards:
 - AI Doge Whale Fast-Track Award😂, LXDAO AI Casual Hackathon, 2025
