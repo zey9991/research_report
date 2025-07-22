@@ -21,8 +21,7 @@ icon: github
 
 研究领域：
 - 去中心化金融（DeFi）
-- 去中心化基础设施（DePin）
-- 区块链游戏（GameFi）
+- 宏观经济分析（Macro）
 
 获奖经历：
 - AI狗庄速成奖😂，LXDAO AI开发工具黑客松，2025
@@ -48,8 +47,7 @@ Professional Experience:
 
 Research Areas:
 - Decentralized Finance (DeFi)
-- Decentralized Infrastructure (DePin)
-- Blockchain Gaming (GameFi)
+- Macro Analysis
 
 Awards:
 - AI Doge Whale Fast-Track Award😂, LXDAO AI Casual Hackathon, 2025
